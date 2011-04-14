@@ -8,6 +8,10 @@
 
 #import "CheckInViewController.h"
 
+@interface CheckInViewController (Private)
+- (void)loadTickerFindViewController:(int)checkInType;
+@end
+
 
 @implementation CheckInViewController
 @synthesize scrollView = _scrollView;
@@ -32,11 +36,25 @@
     // e.g. self.myOutlet = nil;
 }
 
-
 - (void)dealloc {
 	[_scrollView release];
     [super dealloc];
 }
 
+- (void)loadTickerFindViewController:(int)checkInType {
+	TickerFindViewController *controller = [[TickerFindViewController alloc] init];
+	[controller setCheckInType:checkInType];
+	[controller setHidesBottomBarWhenPushed:YES];
+	[self.navigationController pushViewController:controller animated:YES];
+	[controller release];
+}
+
+- (IBAction)iBoughtAStockPressed:(id)sender {
+	[self loadTickerFindViewController:kCheckInTypeBoughtAStock];
+}
+
+- (IBAction)iSoldAStockPressed:(id)sender {
+	[self loadTickerFindViewController:kCheckInTypeSoldAStock];
+}
 
 @end

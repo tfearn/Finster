@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Globals.h"
+#import "TickerFindViewController.h"
 
 @interface CheckInViewController : UIViewController {
 	IBOutlet UIScrollView *_scrollView;
 }
 @property (nonatomic, retain) UIScrollView *scrollView;
+
+- (IBAction)iBoughtAStockPressed:(id)sender;
+- (IBAction)iSoldAStockPressed:(id)sender;
 
 @end
