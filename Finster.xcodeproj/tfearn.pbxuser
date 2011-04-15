@@ -40,7 +40,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					817,
+					713,
 					20,
 					48,
 					43,
@@ -57,10 +57,13 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 324557139;
-			PBXWorkspaceStateSaveDate = 324557139;
+			PBXPerProjectTemplateStateSaveDate = 324557358;
+			PBXWorkspaceStateSaveDate = 324557358;
 		};
 		perUserProjectItems = {
+			A83CF2FE13585CC7002D4F43 /* PBXTextBookmark */ = A83CF2FE13585CC7002D4F43 /* PBXTextBookmark */;
+			A83CF30B1358603C002D4F43 /* PlistBookmark */ = A83CF30B1358603C002D4F43 /* PlistBookmark */;
+			A83CF31613586413002D4F43 /* PBXTextBookmark */ = A83CF31613586413002D4F43 /* PBXTextBookmark */;
 			A8718C261357BF3C0054D85C /* PBXTextBookmark */ = A8718C261357BF3C0054D85C /* PBXTextBookmark */;
 			A8718C281357BF3C0054D85C /* PBXTextBookmark */ = A8718C281357BF3C0054D85C /* PBXTextBookmark */;
 			A8718C4D1357C3F70054D85C /* PBXTextBookmark */ = A8718C4D1357C3F70054D85C /* PBXTextBookmark */;
@@ -70,7 +73,6 @@
 			A8718C741357CAB90054D85C /* PBXTextBookmark */ = A8718C741357CAB90054D85C /* PBXTextBookmark */;
 			A8718C751357CAB90054D85C /* PBXTextBookmark */ = A8718C751357CAB90054D85C /* PBXTextBookmark */;
 			A8718C761357CAB90054D85C /* PBXTextBookmark */ = A8718C761357CAB90054D85C /* PBXTextBookmark */;
-			A8718C7C1357E1E40054D85C /* PBXTextBookmark */ = A8718C7C1357E1E40054D85C /* PBXTextBookmark */;
 			A877443F1356918400DD721B /* PBXTextBookmark */ = A877443F1356918400DD721B /* PBXTextBookmark */;
 			A87744401356918400DD721B /* PBXTextBookmark */ = A87744401356918400DD721B /* PBXTextBookmark */;
 			A87744421356918400DD721B /* PBXTextBookmark */ = A87744421356918400DD721B /* PBXTextBookmark */;
@@ -79,8 +81,6 @@
 			A87744451356918400DD721B /* PBXBookmark */ = A87744451356918400DD721B /* PBXBookmark */;
 			A87744461356918400DD721B /* PBXTextBookmark */ = A87744461356918400DD721B /* PBXTextBookmark */;
 			A87744471356918400DD721B /* PBXTextBookmark */ = A87744471356918400DD721B /* PBXTextBookmark */;
-			A89279BF13570633006BD022 /* PlistBookmark */ = A89279BF13570633006BD022 /* PlistBookmark */;
-			A8F7340B135859780012699E /* PBXTextBookmark */ = A8F7340B135859780012699E /* PBXTextBookmark */;
 		};
 		sourceControlManager = A877439B135660B600DD721B /* Source Control */;
 		userBuildSettings = {
@@ -128,6 +128,45 @@
 			sepNavVisRange = "{306, 782}";
 			sepNavWindowFrame = "{{-1905, 5}, {1085, 790}}";
 		};
+	};
+	A83CF2FE13585CC7002D4F43 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A87743A11356636F00DD721B /* CheckInViewController.h */;
+		name = "CheckInViewController.h: 10";
+		rLen = 0;
+		rLoc = 193;
+		rType = 0;
+		vrLen = 673;
+		vrLoc = 0;
+	};
+	A83CF30713586029002D4F43 /* SettingsViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {891, 465}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 238}";
+		};
+	};
+	A83CF30B1358603C002D4F43 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Finster-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleIdentifier,
+		);
+		name = "/Users/tfearn/Project/Finster/Finster-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	A83CF31613586413002D4F43 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A83CF30713586029002D4F43 /* SettingsViewController.h */;
+		name = "SettingsViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 238;
+		vrLoc = 0;
 	};
 	A8718C261357BF3C0054D85C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -219,16 +258,6 @@
 		vrLen = 1474;
 		vrLoc = 567;
 	};
-	A8718C7C1357E1E40054D85C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = A87743A11356636F00DD721B /* CheckInViewController.h */;
-		name = "CheckInViewController.h: 25";
-		rLen = 0;
-		rLoc = 667;
-		rType = 0;
-		vrLen = 673;
-		vrLoc = 0;
-	};
 	A877438C135660B100DD721B /* Finster */ = {
 		isa = PBXExecutable;
 		activeArgIndices = (
@@ -277,8 +306,8 @@
 	};
 	A87743A11356636F00DD721B /* CheckInViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {995, 469}}";
-			sepNavSelRange = "{667, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {995, 465}}";
+			sepNavSelRange = "{193, 0}";
 			sepNavVisRange = "{0, 673}";
 		};
 	};
@@ -410,28 +439,6 @@
 		rLoc = 0;
 		rType = 0;
 		vrLen = 480;
-		vrLoc = 0;
-	};
-	A89279BF13570633006BD022 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* Finster-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			CFBundleVersion,
-		);
-		name = "/Users/tfearn/Project/MoneyMouth/Money Mouth-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775808;
-	};
-	A8F7340B135859780012699E /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = A87743A11356636F00DD721B /* CheckInViewController.h */;
-		name = "CheckInViewController.h: 25";
-		rLen = 0;
-		rLoc = 667;
-		rType = 0;
-		vrLen = 673;
 		vrLoc = 0;
 	};
 }

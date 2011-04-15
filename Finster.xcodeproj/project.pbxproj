@@ -41,6 +41,11 @@
 		82C107A71357984B00302082 /* TickerFindViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82C107A61357984B00302082 /* TickerFindViewCell.xib */; };
 		82C107F51357A09C00302082 /* CheckInDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C107F41357A09C00302082 /* CheckInDetailViewController.m */; };
 		82C107F71357A0AB00302082 /* CheckInDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82C107F61357A0AB00302082 /* CheckInDetailView.xib */; };
+		A83CF2FA13585BFF002D4F43 /* app-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A83CF2F913585BFF002D4F43 /* app-icon.png */; };
+		A83CF30313585DE6002D4F43 /* tabbar-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = A83CF30213585DE6002D4F43 /* tabbar-redo.png */; };
+		A83CF30613585F43002D4F43 /* tabbar-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = A83CF30513585F43002D4F43 /* tabbar-gear.png */; };
+		A83CF30913586029002D4F43 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83CF30813586029002D4F43 /* SettingsViewController.m */; };
+		A83CF30F13586075002D4F43 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83CF30E13586075002D4F43 /* SettingsView.xib */; };
 		A8718C331357C1A50054D85C /* thumbs-down-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8718C2F1357C1A50054D85C /* thumbs-down-icon.png */; };
 		A8718C341357C1A50054D85C /* thumbs-up-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8718C301357C1A50054D85C /* thumbs-up-icon.png */; };
 		A8718C351357C1A50054D85C /* dollars-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8718C311357C1A50054D85C /* dollars-icon.png */; };
@@ -57,7 +62,6 @@
 		A87743BE135667DE00DD721B /* tabbar-user.png in Resources */ = {isa = PBXBuildFile; fileRef = A87743BD135667DE00DD721B /* tabbar-user.png */; };
 		A87743C1135668DF00DD721B /* tabbar-tags.png in Resources */ = {isa = PBXBuildFile; fileRef = A87743BF135668DF00DD721B /* tabbar-tags.png */; };
 		A87743C2135668DF00DD721B /* tabbar-line-chart.png in Resources */ = {isa = PBXBuildFile; fileRef = A87743C0135668DF00DD721B /* tabbar-line-chart.png */; };
-		A87743DB13566EB100DD721B /* moneymouth-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A87743DA13566EB100DD721B /* moneymouth-icon.png */; };
 		A87743E2135676F500DD721B /* news-on-a-stock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A87743DE135676F500DD721B /* news-on-a-stock-icon.png */; };
 		A87743E5135676F500DD721B /* thinking-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A87743E1135676F500DD721B /* thinking-icon.png */; };
 		A87744271356873E00DD721B /* tabbar-group.png in Resources */ = {isa = PBXBuildFile; fileRef = A87744261356873E00DD721B /* tabbar-group.png */; };
@@ -133,6 +137,12 @@
 		82C107F41357A09C00302082 /* CheckInDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInDetailViewController.m; sourceTree = "<group>"; };
 		82C107F61357A0AB00302082 /* CheckInDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInDetailView.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Finster-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Finster-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		A83CF2F913585BFF002D4F43 /* app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon.png"; path = "images/app-icon.png"; sourceTree = "<group>"; };
+		A83CF30213585DE6002D4F43 /* tabbar-redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar-redo.png"; path = "images/tabbar-redo.png"; sourceTree = "<group>"; };
+		A83CF30513585F43002D4F43 /* tabbar-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar-gear.png"; path = "images/tabbar-gear.png"; sourceTree = "<group>"; };
+		A83CF30713586029002D4F43 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		A83CF30813586029002D4F43 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		A83CF30E13586075002D4F43 /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 		A8718C2F1357C1A50054D85C /* thumbs-down-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "thumbs-down-icon.png"; path = "images/thumbs-down-icon.png"; sourceTree = "<group>"; };
 		A8718C301357C1A50054D85C /* thumbs-up-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "thumbs-up-icon.png"; path = "images/thumbs-up-icon.png"; sourceTree = "<group>"; };
 		A8718C311357C1A50054D85C /* dollars-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dollars-icon.png"; path = "images/dollars-icon.png"; sourceTree = "<group>"; };
@@ -153,7 +163,6 @@
 		A87743BD135667DE00DD721B /* tabbar-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar-user.png"; path = "images/tabbar-user.png"; sourceTree = "<group>"; };
 		A87743BF135668DF00DD721B /* tabbar-tags.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar-tags.png"; path = "images/tabbar-tags.png"; sourceTree = "<group>"; };
 		A87743C0135668DF00DD721B /* tabbar-line-chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar-line-chart.png"; path = "images/tabbar-line-chart.png"; sourceTree = "<group>"; };
-		A87743DA13566EB100DD721B /* moneymouth-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "moneymouth-icon.png"; path = "images/moneymouth-icon.png"; sourceTree = "<group>"; };
 		A87743DE135676F500DD721B /* news-on-a-stock-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "news-on-a-stock-icon.png"; path = "images/news-on-a-stock-icon.png"; sourceTree = "<group>"; };
 		A87743E1135676F500DD721B /* thinking-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "thinking-icon.png"; path = "images/thinking-icon.png"; sourceTree = "<group>"; };
 		A87744261356873E00DD721B /* tabbar-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar-group.png"; path = "images/tabbar-group.png"; sourceTree = "<group>"; };
@@ -229,8 +238,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Finster-Info.plist */,
+				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
 				A87743A41356638500DD721B /* CheckInView.xib */,
 				82C107F61357A0AB00302082 /* CheckInDetailView.xib */,
 				A87743A91356641A00DD721B /* ActivityView.xib */,
@@ -238,6 +247,7 @@
 				A87743B31356647F00DD721B /* YouView.xib */,
 				A877442E1356881D00DD721B /* TickerFindView.xib */,
 				82C107A61357984B00302082 /* TickerFindViewCell.xib */,
+				A83CF30E13586075002D4F43 /* SettingsView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -297,6 +307,8 @@
 		82C104291357370D00302082 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A83CF30713586029002D4F43 /* SettingsViewController.h */,
+				A83CF30813586029002D4F43 /* SettingsViewController.m */,
 				82C107A3135797C800302082 /* TickerFindView */,
 				82C10428135736D200302082 /* CheckInView */,
 				82C10427135736BB00302082 /* ActivityView */,
@@ -443,6 +455,9 @@
 		A87743BA1356669500DD721B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				A83CF30513585F43002D4F43 /* tabbar-gear.png */,
+				A83CF30213585DE6002D4F43 /* tabbar-redo.png */,
+				A83CF2F913585BFF002D4F43 /* app-icon.png */,
 				A8718C2F1357C1A50054D85C /* thumbs-down-icon.png */,
 				A8718C301357C1A50054D85C /* thumbs-up-icon.png */,
 				A8718C311357C1A50054D85C /* dollars-icon.png */,
@@ -452,7 +467,6 @@
 				A87744261356873E00DD721B /* tabbar-group.png */,
 				A87743DE135676F500DD721B /* news-on-a-stock-icon.png */,
 				A87743E1135676F500DD721B /* thinking-icon.png */,
-				A87743DA13566EB100DD721B /* moneymouth-icon.png */,
 				A87743BF135668DF00DD721B /* tabbar-tags.png */,
 				A87743C0135668DF00DD721B /* tabbar-line-chart.png */,
 				A87743BD135667DE00DD721B /* tabbar-user.png */,
@@ -519,7 +533,6 @@
 				A87743BE135667DE00DD721B /* tabbar-user.png in Resources */,
 				A87743C1135668DF00DD721B /* tabbar-tags.png in Resources */,
 				A87743C2135668DF00DD721B /* tabbar-line-chart.png in Resources */,
-				A87743DB13566EB100DD721B /* moneymouth-icon.png in Resources */,
 				A87743E2135676F500DD721B /* news-on-a-stock-icon.png in Resources */,
 				A87743E5135676F500DD721B /* thinking-icon.png in Resources */,
 				A87744271356873E00DD721B /* tabbar-group.png in Resources */,
@@ -532,6 +545,10 @@
 				A8718C341357C1A50054D85C /* thumbs-up-icon.png in Resources */,
 				A8718C351357C1A50054D85C /* dollars-icon.png in Resources */,
 				A8718C361357C1A50054D85C /* piechart-icon.png in Resources */,
+				A83CF2FA13585BFF002D4F43 /* app-icon.png in Resources */,
+				A83CF30313585DE6002D4F43 /* tabbar-redo.png in Resources */,
+				A83CF30613585F43002D4F43 /* tabbar-gear.png in Resources */,
+				A83CF30F13586075002D4F43 /* SettingsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,6 +588,7 @@
 				82C1064313575F3A00302082 /* SBJsonWriter.m in Sources */,
 				82C107A01357970700302082 /* TickerFindViewCell.m in Sources */,
 				82C107F51357A09C00302082 /* CheckInDetailViewController.m in Sources */,
+				A83CF30913586029002D4F43 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
