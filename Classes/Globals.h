@@ -24,4 +24,8 @@
 
 }
 
++ (NSString *)getLastTickerSearch;
++ (void)setLastTickerSearch:(NSString *)newLastTickerSearch;
+	
+
 @end

@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FBConnect.h"
 
-@interface MoneyMouthAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
+@interface MoneyMouthAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, FBSessionDelegate> {
     UIWindow *window;
     UITabBarController *tabBarController;
+	Facebook *facebook;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
+@property (nonatomic, retain) Facebook *facebook;
 
 @end

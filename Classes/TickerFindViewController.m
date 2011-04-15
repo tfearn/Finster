@@ -8,6 +8,10 @@
 
 #import "TickerFindViewController.h"
 
+@interface TickerFindViewController(Private)
+- (void)doTickerRequest:(NSString *)searchText;
+@end
+
 
 @implementation TickerFindViewController
 @synthesize searchBar = _searchBar;
@@ -34,6 +38,13 @@
 	_jsonParser = [SBJsonStreamParser new];
 	self.jsonParser.delegate = self.jsonAdapter;
 	self.jsonParser.multi = YES;
+
+	// If there was a ticker entered previously, use it
+	NSString *lastTicker = [Globals getLastTickerSearch];
+	if([lastTicker length]) {
+		[self.searchBar setText:lastTicker];
+		[self doTickerRequest:lastTicker];
+	}
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,6 +82,7 @@
 	NSString *urlString = [NSString stringWithFormat:kUrlTickerLookup, searchText];
 	NSURL *url = [NSURL URLWithString:urlString];
 	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+	[request setDownloadCache:[ASIDownloadCache sharedCache]];
 	[request setDelegate:self];
 	[self.queue addOperation:request];
 }
@@ -207,6 +219,8 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
 	[self doTickerRequest:searchText];
+	
+	[Globals setLastTickerSearch:searchText];
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {

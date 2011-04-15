@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Globals.h"
 #import "ASIHTTPRequest.h"
+#import "ASIDownloadCache.h"
 #import "JSON.h"
 #import "Ticker.h"
 #import "TickerFindViewCell.h"

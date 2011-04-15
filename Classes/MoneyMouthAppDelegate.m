@@ -13,6 +13,7 @@
 
 @synthesize window;
 @synthesize tabBarController;
+@synthesize facebook;
 
 
 #pragma mark -
@@ -25,8 +26,17 @@
     // Add the tab bar controller's view to the window and display.
     [self.window addSubview:tabBarController.view];
     [self.window makeKeyAndVisible];
-
+	
+	// Authenticate with Facebook
+	facebook = [[Facebook alloc] initWithAppId:@"215815565097885"];
+	[facebook authorize:nil delegate:self];
+	
     return YES;
+}
+
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [facebook handleOpenURL:url]; 
 }
 
 
@@ -97,6 +107,7 @@
 - (void)dealloc {
     [tabBarController release];
     [window release];
+	[facebook release];
     [super dealloc];
 }
 

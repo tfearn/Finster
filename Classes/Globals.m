@@ -9,6 +9,22 @@
 #import "Globals.h"
 
 
+static NSString *lastTickerSearch;
+
+
 @implementation Globals
+
++ (void)initialize {
+	lastTickerSearch = [[NSString alloc] init];
+}
+
++ (NSString *)getLastTickerSearch {
+	return lastTickerSearch;
+}
+
++ (void)setLastTickerSearch:(NSString *)newLastTickerSearch {
+	[lastTickerSearch release];
+	lastTickerSearch = [newLastTickerSearch retain];
+}
 
 @end
