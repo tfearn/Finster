@@ -71,10 +71,10 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* MoneyMouthAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyMouthAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* MoneyMouthAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyMouthAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* Money Mouth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Money Mouth.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* Finster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		28A0AB4B0D9B1048005BE974 /* Money Mouth_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Money Mouth_Prefix.pch"; sourceTree = "<group>"; };
+		28A0AB4B0D9B1048005BE974 /* Finster_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Finster_Prefix.pch; sourceTree = "<group>"; };
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		82C1042F135737F000302082 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 		82C107F31357A09C00302082 /* CheckInDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInDetailViewController.h; sourceTree = "<group>"; };
 		82C107F41357A09C00302082 /* CheckInDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInDetailViewController.m; sourceTree = "<group>"; };
 		82C107F61357A0AB00302082 /* CheckInDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInDetailView.xib; sourceTree = "<group>"; };
-		8D1107310486CEB800E47090 /* Money Mouth-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Money Mouth-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Finster-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Finster-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		A8718C2F1357C1A50054D85C /* thumbs-down-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "thumbs-down-icon.png"; path = "images/thumbs-down-icon.png"; sourceTree = "<group>"; };
 		A8718C301357C1A50054D85C /* thumbs-up-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "thumbs-up-icon.png"; path = "images/thumbs-up-icon.png"; sourceTree = "<group>"; };
 		A8718C311357C1A50054D85C /* dollars-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dollars-icon.png"; path = "images/dollars-icon.png"; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* Money Mouth.app */,
+				1D6058910D05DD3D006BFB54 /* Finster.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -220,7 +220,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				28A0AB4B0D9B1048005BE974 /* Money Mouth_Prefix.pch */,
+				28A0AB4B0D9B1048005BE974 /* Finster_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -230,7 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
-				8D1107310486CEB800E47090 /* Money Mouth-Info.plist */,
+				8D1107310486CEB800E47090 /* Finster-Info.plist */,
 				A87743A41356638500DD721B /* CheckInView.xib */,
 				82C107F61357A0AB00302082 /* CheckInDetailView.xib */,
 				A87743A91356641A00DD721B /* ActivityView.xib */,
@@ -464,9 +464,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* Money Mouth */ = {
+		1D6058900D05DD3D006BFB54 /* Finster */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Money Mouth" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Finster" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -476,9 +476,9 @@
 			);
 			dependencies = (
 			);
-			name = "Money Mouth";
+			name = Finster;
 			productName = MoneyMouth;
-			productReference = 1D6058910D05DD3D006BFB54 /* Money Mouth.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* Finster.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -486,7 +486,7 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Money Mouth" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Finster" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -500,7 +500,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* Money Mouth */,
+				1D6058900D05DD3D006BFB54 /* Finster */,
 			);
 		};
 /* End PBXProject section */
@@ -585,9 +585,9 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Money Mouth_Prefix.pch";
-				INFOPLIST_FILE = "Money Mouth-Info.plist";
-				PRODUCT_NAME = "Money Mouth";
+				GCC_PREFIX_HEADER = Finster_Prefix.pch;
+				INFOPLIST_FILE = "Finster-Info.plist";
+				PRODUCT_NAME = Finster;
 			};
 			name = Debug;
 		};
@@ -597,9 +597,9 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Money Mouth_Prefix.pch";
-				INFOPLIST_FILE = "Money Mouth-Info.plist";
-				PRODUCT_NAME = "Money Mouth";
+				GCC_PREFIX_HEADER = Finster_Prefix.pch;
+				INFOPLIST_FILE = "Finster-Info.plist";
+				PRODUCT_NAME = Finster;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -634,7 +634,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Money Mouth" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Finster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
@@ -643,7 +643,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Money Mouth" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Finster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
