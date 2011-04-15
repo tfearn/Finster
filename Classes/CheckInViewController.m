@@ -49,12 +49,33 @@
 	[controller release];
 }
 
-- (IBAction)iBoughtAStockPressed:(id)sender {
-	[self loadTickerFindViewController:kCheckInTypeBoughtAStock];
+- (IBAction)iBoughtPressed:(id)sender {
+	[self loadTickerFindViewController:kCheckInTypeBought];
 }
 
-- (IBAction)iSoldAStockPressed:(id)sender {
-	[self loadTickerFindViewController:kCheckInTypeSoldAStock];
+- (IBAction)iSoldPressed:(id)sender {
+	[self loadTickerFindViewController:kCheckInTypeSold];
 }
 
+- (IBAction)shouldIBuyPressed:(id)sender {
+	[self loadTickerFindViewController:kCheckinTypeShouldIBuy];
+}
+
+- (IBAction)shouldISellPressed:(id)sender {
+	[self loadTickerFindViewController:kCheckInTypeShouldISell];
+}
+
+- (IBAction)imBullishPressed:(id)sender {
+	[self loadTickerFindViewController:kCheckInTypeImBullish];
+}
+
+- (IBAction)imBearishPressed:(id)sender {
+	[self loadTickerFindViewController:kCheckInTypeImBearish];
+}
+
+- (IBAction)imThinkingPressed:(id)sender {
+	[self loadTickerFindViewController:kCheckInTypeImThinking];
+}
+
+	 
 @end

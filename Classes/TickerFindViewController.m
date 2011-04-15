@@ -192,7 +192,14 @@
 #pragma mark UITableViewDelegate Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	
+	int row = [indexPath row];
+	Ticker *ticker = [self.tickers objectAtIndex:row];
+
+	CheckInDetailViewController *controller = [[CheckInDetailViewController alloc] init];
+	controller.ticker = ticker;
+	controller.checkInType = self.checkInType;
+	[self.navigationController pushViewController:controller animated:YES];
+	[controller release];
 }
 
 #pragma mark -

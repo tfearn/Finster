@@ -15,7 +15,12 @@
 }
 @property (nonatomic, retain) UIScrollView *scrollView;
 
-- (IBAction)iBoughtAStockPressed:(id)sender;
-- (IBAction)iSoldAStockPressed:(id)sender;
+- (IBAction)iBoughtPressed:(id)sender;
+- (IBAction)iSoldPressed:(id)sender;
+- (IBAction)shouldIBuyPressed:(id)sender;
+- (IBAction)shouldISellPressed:(id)sender;
+- (IBAction)imBullishPressed:(id)sender;
+- (IBAction)imBearishPressed:(id)sender;
+- (IBAction)imThinkingPressed:(id)sender;
 
 @end

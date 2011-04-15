@@ -12,6 +12,7 @@
 #import "JSON.h"
 #import "Ticker.h"
 #import "TickerFindViewCell.h"
+#import "CheckInDetailViewController.h"
 
 @interface TickerFindViewController : UIViewController <UIScrollViewDelegate, ASIHTTPRequestDelegate, SBJsonStreamParserAdapterDelegate> {
 	IBOutlet UISearchBar *_searchBar;

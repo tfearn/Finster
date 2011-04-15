@@ -9,8 +9,13 @@
 #import <Foundation/Foundation.h>
 
 // Check In Types
-#define kCheckInTypeBoughtAStock	1
-#define kCheckInTypeSoldAStock		2
+#define kCheckInTypeBought			1
+#define kCheckInTypeSold			2
+#define kCheckInTypeImBullish		3
+#define kCheckInTypeImBearish		4
+#define kCheckinTypeShouldIBuy		5
+#define kCheckInTypeShouldISell		6
+#define kCheckInTypeImThinking		7
 
 // URLs
 #define kUrlTickerLookup			@"http://d.yimg.com/autoc.finance.yahoo.com/autoc?query=%@&callback=YAHOO.Finance.SymbolSuggest.ssCallback"
