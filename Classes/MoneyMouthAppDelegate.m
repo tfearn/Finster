@@ -28,8 +28,8 @@
     [self.window makeKeyAndVisible];
 	
 	// Authenticate with Facebook
-	facebook = [[Facebook alloc] initWithAppId:@"215815565097885"];
-	[facebook authorize:nil delegate:self];
+	//facebook = [[Facebook alloc] initWithAppId:@"215815565097885"];
+	//[facebook authorize:nil delegate:self];
 	
     return YES;
 }

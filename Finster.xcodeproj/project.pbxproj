@@ -74,6 +74,16 @@
 		A8ED1E081358DE410003115F /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ED1DFD1358DE410003115F /* SBJsonStreamWriterState.m */; };
 		A8ED1E091358DE410003115F /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ED1DFF1358DE410003115F /* SBJsonTokeniser.m */; };
 		A8ED1E0A1358DE410003115F /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ED1E011358DE410003115F /* SBJsonWriter.m */; };
+		A8ED1E98135C99700003115F /* CheckInConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */; };
+		A8ED1E9A135C99830003115F /* CheckInConfirmView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8ED1E99135C99830003115F /* CheckInConfirmView.xib */; };
+		A8ED1EA7135C9FCB0003115F /* facebook-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8ED1EA5135C9FCB0003115F /* facebook-icon.png */; };
+		A8ED1EA8135C9FCB0003115F /* twitter-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8ED1EA6135C9FCB0003115F /* twitter-icon.png */; };
+		A8ED1EAB135CA2570003115F /* facebook-grey-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8ED1EA9135CA2570003115F /* facebook-grey-icon.png */; };
+		A8ED1EAC135CA2570003115F /* twitter-grey-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8ED1EAA135CA2570003115F /* twitter-grey-icon.png */; };
+		A8ED1EB5135CA82C0003115F /* BaseCheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ED1EB4135CA82C0003115F /* BaseCheckInViewController.m */; };
+		A8ED1F55135CC2760003115F /* check-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8ED1F54135CC2760003115F /* check-icon.png */; };
+		A8ED1F5B135CD3790003115F /* CheckInResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ED1F5A135CD3790003115F /* CheckInResultViewController.m */; };
+		A8ED1F5D135CD38D0003115F /* CheckInResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8ED1F5C135CD38D0003115F /* CheckInResultView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -186,6 +196,19 @@
 		A8ED1DFF1358DE410003115F /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
 		A8ED1E001358DE410003115F /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		A8ED1E011358DE410003115F /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		A8ED1E96135C99700003115F /* CheckInConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInConfirmViewController.h; sourceTree = "<group>"; };
+		A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInConfirmViewController.m; sourceTree = "<group>"; };
+		A8ED1E99135C99830003115F /* CheckInConfirmView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInConfirmView.xib; sourceTree = "<group>"; };
+		A8ED1EA5135C9FCB0003115F /* facebook-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "facebook-icon.png"; path = "images/facebook-icon.png"; sourceTree = "<group>"; };
+		A8ED1EA6135C9FCB0003115F /* twitter-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter-icon.png"; path = "images/twitter-icon.png"; sourceTree = "<group>"; };
+		A8ED1EA9135CA2570003115F /* facebook-grey-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "facebook-grey-icon.png"; path = "images/facebook-grey-icon.png"; sourceTree = "<group>"; };
+		A8ED1EAA135CA2570003115F /* twitter-grey-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter-grey-icon.png"; path = "images/twitter-grey-icon.png"; sourceTree = "<group>"; };
+		A8ED1EB3135CA82C0003115F /* BaseCheckInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCheckInViewController.h; sourceTree = "<group>"; };
+		A8ED1EB4135CA82C0003115F /* BaseCheckInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCheckInViewController.m; sourceTree = "<group>"; };
+		A8ED1F54135CC2760003115F /* check-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "check-icon.png"; path = "images/check-icon.png"; sourceTree = "<group>"; };
+		A8ED1F59135CD3790003115F /* CheckInResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInResultViewController.h; sourceTree = "<group>"; };
+		A8ED1F5A135CD3790003115F /* CheckInResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInResultViewController.m; sourceTree = "<group>"; };
+		A8ED1F5C135CD38D0003115F /* CheckInResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInResultView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +280,8 @@
 				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
 				A87743A41356638500DD721B /* CheckInView.xib */,
 				82C107F61357A0AB00302082 /* CheckInDetailView.xib */,
+				A8ED1E99135C99830003115F /* CheckInConfirmView.xib */,
+				A8ED1F5C135CD38D0003115F /* CheckInResultView.xib */,
 				A87743A91356641A00DD721B /* ActivityView.xib */,
 				A87743AE1356646500DD721B /* BadgesView.xib */,
 				A87743B31356647F00DD721B /* YouView.xib */,
@@ -311,10 +336,16 @@
 		82C10428135736D200302082 /* CheckInView */ = {
 			isa = PBXGroup;
 			children = (
+				A8ED1EB3135CA82C0003115F /* BaseCheckInViewController.h */,
+				A8ED1EB4135CA82C0003115F /* BaseCheckInViewController.m */,
 				A87743A11356636F00DD721B /* CheckInViewController.h */,
 				A87743A21356636F00DD721B /* CheckInViewController.m */,
 				82C107F31357A09C00302082 /* CheckInDetailViewController.h */,
 				82C107F41357A09C00302082 /* CheckInDetailViewController.m */,
+				A8ED1E96135C99700003115F /* CheckInConfirmViewController.h */,
+				A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */,
+				A8ED1F59135CD3790003115F /* CheckInResultViewController.h */,
+				A8ED1F5A135CD3790003115F /* CheckInResultViewController.m */,
 			);
 			name = CheckInView;
 			sourceTree = "<group>";
@@ -382,6 +413,11 @@
 		A87743BA1356669500DD721B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				A8ED1F54135CC2760003115F /* check-icon.png */,
+				A8ED1EA9135CA2570003115F /* facebook-grey-icon.png */,
+				A8ED1EAA135CA2570003115F /* twitter-grey-icon.png */,
+				A8ED1EA5135C9FCB0003115F /* facebook-icon.png */,
+				A8ED1EA6135C9FCB0003115F /* twitter-icon.png */,
 				A83CF30513585F43002D4F43 /* tabbar-gear.png */,
 				A83CF30213585DE6002D4F43 /* tabbar-redo.png */,
 				A83CF2F913585BFF002D4F43 /* app-icon.png */,
@@ -621,6 +657,13 @@
 				A83CF30613585F43002D4F43 /* tabbar-gear.png in Resources */,
 				A83CF30F13586075002D4F43 /* SettingsView.xib in Resources */,
 				A8ED1DA81358D8530003115F /* FBDialog.bundle in Resources */,
+				A8ED1E9A135C99830003115F /* CheckInConfirmView.xib in Resources */,
+				A8ED1EA7135C9FCB0003115F /* facebook-icon.png in Resources */,
+				A8ED1EA8135C9FCB0003115F /* twitter-icon.png in Resources */,
+				A8ED1EAB135CA2570003115F /* facebook-grey-icon.png in Resources */,
+				A8ED1EAC135CA2570003115F /* twitter-grey-icon.png in Resources */,
+				A8ED1F55135CC2760003115F /* check-icon.png in Resources */,
+				A8ED1F5D135CD38D0003115F /* CheckInResultView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,6 +708,9 @@
 				A8ED1E081358DE410003115F /* SBJsonStreamWriterState.m in Sources */,
 				A8ED1E091358DE410003115F /* SBJsonTokeniser.m in Sources */,
 				A8ED1E0A1358DE410003115F /* SBJsonWriter.m in Sources */,
+				A8ED1E98135C99700003115F /* CheckInConfirmViewController.m in Sources */,
+				A8ED1EB5135CA82C0003115F /* BaseCheckInViewController.m in Sources */,
+				A8ED1F5B135CD3790003115F /* CheckInResultViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

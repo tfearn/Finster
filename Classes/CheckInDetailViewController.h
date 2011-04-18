@@ -7,22 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Ticker.h"
+#import "BaseCheckInViewController.h"
+#import "CheckInConfirmViewController.h"
 
-
-@interface CheckInDetailViewController : UIViewController {
-	IBOutlet UILabel *_description;
-	IBOutlet UILabel *_symbolName;
-	IBOutlet UILabel *_exchangeName;
+@interface CheckInDetailViewController : BaseCheckInViewController {
 	IBOutlet UITableView *_tableView;
-	int _checkInType;
-	Ticker *_ticker;
 }
-@property (nonatomic, retain) UILabel *description;
-@property (nonatomic, retain) UILabel *symbolName;
-@property (nonatomic, retain) UILabel *exchangeName;
 @property (nonatomic, retain) UITableView *tableView;
-@property int checkInType;
-@property (nonatomic, retain) Ticker *ticker;
+
+- (IBAction)checkInButtonPressed:(id)sender;
 
 @end

@@ -20,6 +20,10 @@
 // URLs
 #define kUrlTickerLookup			@"http://d.yimg.com/autoc.finance.yahoo.com/autoc?query=%@&callback=YAHOO.Finance.SymbolSuggest.ssCallback"
 
+// Notifications
+#define kNotificationCheckInComplete	@"NotificationCheckInComplete"
+
+
 @interface Globals : NSObject {
 
 }

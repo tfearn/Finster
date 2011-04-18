@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="1"/>
+			<integer value="24"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -135,7 +135,7 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">piechart-icon.png</string>
+									<string key="NSResourceName">check-icon.png</string>
 								</object>
 							</object>
 							<object class="IBUILabel" id="854069047">
@@ -1148,7 +1148,7 @@
 			<integer value="3100" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
-		<string key="IBDocument.LastKnownRelativeProjectPath">Money Mouth.xcodeproj</string>
+		<string key="IBDocument.LastKnownRelativeProjectPath">Finster.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1156,8 +1156,8 @@
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>bearish-icon.png</string>
 				<string>bullish-icon.png</string>
+				<string>check-icon.png</string>
 				<string>dollars-icon.png</string>
-				<string>piechart-icon.png</string>
 				<string>thinking-icon.png</string>
 				<string>thumbs-down-icon.png</string>
 				<string>thumbs-up-icon.png</string>
