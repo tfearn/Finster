@@ -244,6 +244,8 @@
 				82C104291357370D00302082 /* ViewControllers */,
 				1D3623240D0F684500981E51 /* MoneyMouthAppDelegate.h */,
 				1D3623250D0F684500981E51 /* MoneyMouthAppDelegate.m */,
+				A83CF30713586029002D4F43 /* SettingsViewController.h */,
+				A83CF30813586029002D4F43 /* SettingsViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -359,8 +361,6 @@
 		82C104291357370D00302082 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A83CF30713586029002D4F43 /* SettingsViewController.h */,
-				A83CF30813586029002D4F43 /* SettingsViewController.m */,
 				82C107A3135797C800302082 /* TickerFindView */,
 				82C10428135736D200302082 /* CheckInView */,
 				82C10427135736BB00302082 /* ActivityView */,

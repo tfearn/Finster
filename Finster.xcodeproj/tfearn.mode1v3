@@ -229,6 +229,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -265,24 +267,20 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
-								<string>82C1042C1357373700302082</string>
 								<string>82C104291357370D00302082</string>
-								<string>82C10428135736D200302082</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>25</integer>
-									<integer>15</integer>
-									<integer>11</integer>
+									<integer>7</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 146}, {296, 610}}</string>
+							<string>{{0, 0}, {296, 610}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -312,14 +310,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CheckInResultViewController.m</string>
+								<string>SettingsViewController.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,11 +323,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CheckInResultViewController.m</string>
+										<string>SettingsViewController.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>A86C2F87135D1A0400535BBB</string>
+										<string>A86C2FA2135DBAB400535BBB</string>
 										<key>history</key>
 										<array>
 											<string>A877443F1356918400DD721B</string>
@@ -355,7 +351,6 @@
 											<string>A8ED1E60135BBC880003115F</string>
 											<string>A8ED1E61135BBC880003115F</string>
 											<string>A8ED1E7A135C95C30003115F</string>
-											<string>A8ED1E9D135C99890003115F</string>
 											<string>A8ED1EA0135C99890003115F</string>
 											<string>A8ED1EBA135CA9010003115F</string>
 											<string>A8ED1EC9135CAA1B0003115F</string>
@@ -366,10 +361,15 @@
 											<string>A8ED1F7B135CDC1A0003115F</string>
 											<string>A8ED1FFF135CE41D0003115F</string>
 											<string>A8ED201D135CE77E0003115F</string>
-											<string>A8ED2032135CEE180003115F</string>
 											<string>A8ED2034135CEE180003115F</string>
 											<string>A86C2F85135D1A0400535BBB</string>
-											<string>A86C2F86135D1A0400535BBB</string>
+											<string>A86C2F9C135DBAB400535BBB</string>
+											<string>A86C2F9D135DBAB400535BBB</string>
+											<string>A86C2F9E135DBAB400535BBB</string>
+											<string>A86C2F9F135DBAB400535BBB</string>
+											<string>A86C2FA0135DBAB400535BBB</string>
+											<string>A86C2FA1135DBAB400535BBB</string>
+											<string>A8ED1E9D135C99890003115F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -567,7 +567,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>A86C2F88135D1A0400535BBB</string>
 		<string>A86C2F89135D1A0400535BBB</string>
 		<string>A86C2F7E135D186200535BBB</string>
 		<string>1C78EAAD065D492600B07095</string>
@@ -592,12 +591,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>User.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
