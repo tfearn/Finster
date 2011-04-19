@@ -29,16 +29,16 @@
 			self.description.text = [NSString stringWithFormat:@"Ok! You Sold %@", self.ticker.symbol];
 			break;
 		case kCheckinTypeShouldIBuy:
-			self.description.text = [NSString stringWithFormat:@"Ok! Your status is 'Should I Buy %@?'", self.ticker.symbol];
+			self.description.text = [NSString stringWithFormat:@"Ok! We've got your status as 'Should I Buy %@?'", self.ticker.symbol];
 			break;
 		case kCheckInTypeShouldISell:
-			self.description.text = [NSString stringWithFormat:@"Ok! Your status is 'Should I Sell %@?'", self.ticker.symbol];
+			self.description.text = [NSString stringWithFormat:@"Ok! We've got your status as 'Should I Sell %@?'", self.ticker.symbol];
 			break;
 		case kCheckInTypeImBullish:
-			self.description.text = [NSString stringWithFormat:@"Ok! Your status is 'I am Bullish on %@'", self.ticker.symbol];
+			self.description.text = [NSString stringWithFormat:@"Ok! We've got your status as 'I am Bullish on %@'", self.ticker.symbol];
 			break;
 		case kCheckInTypeImBearish:
-			self.description.text = [NSString stringWithFormat:@"Ok! Your status is 'I am Bearish on %@'", self.ticker.symbol];
+			self.description.text = [NSString stringWithFormat:@"Ok! We've got your status as 'I am Bearish on %@'", self.ticker.symbol];
 			break;
 		case kCheckInTypeImThinking:
 			self.description.text = [NSString stringWithFormat:@"Ok! We submitted your 'Thoughts on %@'", self.ticker.symbol];

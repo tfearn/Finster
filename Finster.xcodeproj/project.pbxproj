@@ -28,6 +28,8 @@
 		A83CF30613585F43002D4F43 /* tabbar-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = A83CF30513585F43002D4F43 /* tabbar-gear.png */; };
 		A83CF30913586029002D4F43 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83CF30813586029002D4F43 /* SettingsViewController.m */; };
 		A83CF30F13586075002D4F43 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83CF30E13586075002D4F43 /* SettingsView.xib */; };
+		A86C2F8D135D1ADE00535BBB /* CheckIn.m in Sources */ = {isa = PBXBuildFile; fileRef = A86C2F8C135D1ADE00535BBB /* CheckIn.m */; };
+		A86C2F90135D1D1800535BBB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A86C2F8F135D1D1800535BBB /* User.m */; };
 		A8718C331357C1A50054D85C /* thumbs-down-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8718C2F1357C1A50054D85C /* thumbs-down-icon.png */; };
 		A8718C341357C1A50054D85C /* thumbs-up-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8718C301357C1A50054D85C /* thumbs-up-icon.png */; };
 		A8718C351357C1A50054D85C /* dollars-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8718C311357C1A50054D85C /* dollars-icon.png */; };
@@ -117,6 +119,10 @@
 		A83CF30713586029002D4F43 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		A83CF30813586029002D4F43 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		A83CF30E13586075002D4F43 /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
+		A86C2F8B135D1ADE00535BBB /* CheckIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckIn.h; sourceTree = "<group>"; };
+		A86C2F8C135D1ADE00535BBB /* CheckIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckIn.m; sourceTree = "<group>"; };
+		A86C2F8E135D1D1800535BBB /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		A86C2F8F135D1D1800535BBB /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		A8718C2F1357C1A50054D85C /* thumbs-down-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "thumbs-down-icon.png"; path = "images/thumbs-down-icon.png"; sourceTree = "<group>"; };
 		A8718C301357C1A50054D85C /* thumbs-up-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "thumbs-up-icon.png"; path = "images/thumbs-up-icon.png"; sourceTree = "<group>"; };
 		A8718C311357C1A50054D85C /* dollars-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dollars-icon.png"; path = "images/dollars-icon.png"; sourceTree = "<group>"; };
@@ -385,6 +391,10 @@
 				82C10430135737F000302082 /* Globals.m */,
 				82C1048C135741E500302082 /* Ticker.h */,
 				82C1048D135741E500302082 /* Ticker.m */,
+				A86C2F8B135D1ADE00535BBB /* CheckIn.h */,
+				A86C2F8C135D1ADE00535BBB /* CheckIn.m */,
+				A86C2F8E135D1D1800535BBB /* User.h */,
+				A86C2F8F135D1D1800535BBB /* User.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -711,6 +721,8 @@
 				A8ED1E98135C99700003115F /* CheckInConfirmViewController.m in Sources */,
 				A8ED1EB5135CA82C0003115F /* BaseCheckInViewController.m in Sources */,
 				A8ED1F5B135CD3790003115F /* CheckInResultViewController.m in Sources */,
+				A86C2F8D135D1ADE00535BBB /* CheckIn.m in Sources */,
+				A86C2F90135D1D1800535BBB /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

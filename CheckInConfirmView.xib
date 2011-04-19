@@ -84,7 +84,7 @@
 						<string key="IBUIText">symbol-name</string>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Helvetica</string>
-							<double key="NSSize">18</double>
+							<double key="NSSize">17</double>
 							<int key="NSfFlags">16</int>
 						</object>
 						<object class="NSColor" key="IBUITextColor">
@@ -93,7 +93,6 @@
 						</object>
 						<reference key="IBUIHighlightedColor" ref="623950624"/>
 						<int key="IBUIBaselineAdjustment">1</int>
-						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 						<float key="IBUIMinimumFontSize">10</float>
 					</object>
 					<object class="IBUILabel" id="366597523">
@@ -118,7 +117,6 @@
 						</object>
 						<reference key="IBUIHighlightedColor" ref="623950624"/>
 						<int key="IBUIBaselineAdjustment">1</int>
-						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 						<float key="IBUIMinimumFontSize">10</float>
 					</object>
 					<object class="IBUILabel" id="297603121">
@@ -143,7 +141,6 @@
 						</object>
 						<reference key="IBUIHighlightedColor" ref="623950624"/>
 						<int key="IBUIBaselineAdjustment">1</int>
-						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 						<float key="IBUIMinimumFontSize">10</float>
 					</object>
 					<object class="IBUILabel" id="698628373">
@@ -164,13 +161,12 @@
 						</object>
 						<reference key="IBUIHighlightedColor" ref="623950624"/>
 						<int key="IBUIBaselineAdjustment">1</int>
-						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 						<float key="IBUIMinimumFontSize">10</float>
 					</object>
 					<object class="IBUITextView" id="754608503">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 133}, {280, 71}}</string>
+						<string key="NSFrame">{{20, 130}, {280, 71}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="IBUIBackgroundColor" ref="43111535"/>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -257,7 +253,7 @@
 					<object class="IBUIImageView" id="243752315">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{150, 215}, {30, 30}}</string>
+						<string key="NSFrame">{{150, 216}, {30, 30}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
