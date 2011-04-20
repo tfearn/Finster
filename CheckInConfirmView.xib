@@ -166,7 +166,7 @@
 					<object class="IBUITextView" id="754608503">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 130}, {280, 71}}</string>
+						<string key="NSFrame">{{20, 128}, {280, 71}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="IBUIBackgroundColor" ref="43111535"/>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -236,7 +236,7 @@
 					<object class="IBUIButton" id="960793581">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{148, 212}, {35, 35}}</string>
+						<string key="NSFrame">{{148, 211}, {35, 35}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -253,7 +253,7 @@
 					<object class="IBUIImageView" id="243752315">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{150, 216}, {30, 30}}</string>
+						<string key="NSFrame">{{150, 215}, {30, 30}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -523,7 +523,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>CheckInConfirmViewController</string>
 					<string>UIResponder</string>
-					<string>{{403, 118}, {320, 480}}</string>
+					<string>{{375, 245}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

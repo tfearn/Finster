@@ -11,10 +11,12 @@
 
 @interface User : NSObject {
 	NSString *_userID;
+	NSString *_groupType;	// You, Friend, Network
 	NSString *_userName;
 	NSURL *_imageUrl;
 }
 @property (nonatomic, retain) NSString *userID;
+@property (nonatomic, retain) NSString *groupType;
 @property (nonatomic, retain) NSString *userName;
 @property (nonatomic, retain) NSURL *imageUrl;
 

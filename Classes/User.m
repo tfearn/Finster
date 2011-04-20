@@ -11,11 +11,13 @@
 
 @implementation User
 @synthesize userID = _userID;
+@synthesize groupType = _groupType;
 @synthesize userName = _userName;
 @synthesize imageUrl = _imageUrl;
 
 - (void)dealloc {
 	[_userID release];
+	[_groupType release];
 	[_userName release];
 	[_imageUrl release];
 	[super dealloc];

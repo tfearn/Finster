@@ -14,12 +14,14 @@
 @synthesize timestamp = _timestamp;
 @synthesize checkinType = _checkinType;
 @synthesize user = _user;
+@synthesize ticker = _ticker;
 @synthesize comment = _comment;
 
 - (void)dealloc {
 	[_checkinID release];
 	[_timestamp release];
 	[_user release];
+	[_ticker release];
 	[_comment release];
 	[super dealloc];
 }
