@@ -19,6 +19,7 @@
 
 // URLs
 #define kUrlTickerLookup			@"http://d.yimg.com/autoc.finance.yahoo.com/autoc?query=%@&callback=YAHOO.Finance.SymbolSuggest.ssCallback"
+#define kUrlGetWall					@"http://www.idata.net/finster/wall.xml"
 
 // Notifications
 #define kNotificationCheckInComplete	@"NotificationCheckInComplete"
