@@ -13,6 +13,6 @@
 
 }
 
-+ (NSString *)getCheckInString:(int)checkInType symbol:(NSString *)symbol;
++ (NSString *)getCheckInString:(NSString *)string checkInType:(int)checkInType symbol:(NSString *)symbol;
 
 @end

@@ -50,11 +50,11 @@
 }
 
 - (IBAction)iBoughtPressed:(id)sender {
-	[self loadTickerFindViewController:kCheckInTypeBought];
+	[self loadTickerFindViewController:kCheckInTypeIBought];
 }
 
 - (IBAction)iSoldPressed:(id)sender {
-	[self loadTickerFindViewController:kCheckInTypeSold];
+	[self loadTickerFindViewController:kCheckInTypeISold];
 }
 
 - (IBAction)shouldIBuyPressed:(id)sender {

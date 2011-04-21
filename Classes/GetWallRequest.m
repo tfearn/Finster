@@ -8,69 +8,27 @@
 
 #import "GetWallRequest.h"
 
-@interface GetWallRequest (Private)
-- (void)parseData:(NSData *)data;
-@end
-
-
 @implementation GetWallRequest
-@synthesize delegate;
-@synthesize request = _request;
-@synthesize error = _error;
 @synthesize checkIns = _checkIns;
 
 - (void)doRequest {
+	[_checkIns release];
+	_checkIns = [[NSMutableArray alloc] init];
+
 	NSURL *url = [NSURL URLWithString:kUrlGetWall];
-	_request = [ASIHTTPRequest requestWithURL:url];
-	[self.request setDelegate:self];
-	[self.request startAsynchronous];
+	[super doRequest:url];
+}
+
+- (NSObject *)getParsedDataObject {
+	return self.checkIns;
 }
 
 - (void)dealloc {
-	if(self.request != nil)
-		[self.request clearDelegatesAndCancel];
-	
-	[_request release];
-	[_error release];
 	[_checkIns release];
 	[super dealloc];
 }
 
-- (void)requestFinished:(ASIHTTPRequest *)request {
-	[_checkIns release];
-	_checkIns = [[NSMutableArray alloc] init];
-	
-	// Parse the return data
-	[self parseData:[request responseData]];
-
-	 // Call the delegate
-	 if(self.delegate != NULL && [self.delegate respondsToSelector:@selector(getWallRequestComplete:)]) {
-		 [self.delegate getWallRequestComplete:self];
-	 }
-}
-
-- (void)requestFailed:(ASIHTTPRequest *)request {
-	self.error = [request error];
-	
-	// Call the delegate
-	if(self.delegate != NULL && [self.delegate respondsToSelector:@selector(getWallRequestFailure:)]) {
-		[self.delegate getWallRequestFailure:self];
-	}
-}
-
 #pragma mark XML Parsing
-
-- (void)parseData:(NSData *)data {
-    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
-	
-    [parser setDelegate:self]; // The parser calls methods in this class
-    [parser setShouldProcessNamespaces:NO]; // We don't care about namespaces
-    [parser setShouldReportNamespacePrefixes:NO]; 
-    [parser setShouldResolveExternalEntities:NO]; // We just want data, no other stuff
-	
-    [parser parse]; // Parse that data..
-	[parser release];
-}
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
 	
@@ -122,19 +80,19 @@
 		if(checkIn.ticker != nil)
 			checkIn.ticker.typeName = string;
 		else {
-			if([string caseInsensitiveCompare:@"CheckInTypeBought"])
-				checkIn.checkinType = kCheckInTypeBought;
-			else if([string caseInsensitiveCompare:@"CheckInTypeSold"])
-				checkIn.checkinType = kCheckInTypeSold;
-			else if([string caseInsensitiveCompare:@"CheckInTypeImBullish"])
+			if([string isEqualToString:@"CheckInTypeIBought"])
+				checkIn.checkinType = kCheckInTypeIBought;
+			else if([string isEqualToString:@"CheckInTypeISold"])
+				checkIn.checkinType = kCheckInTypeISold;
+			else if([string isEqualToString:@"CheckInTypeImBullish"])
 				checkIn.checkinType = kCheckInTypeImBullish;
-			else if([string caseInsensitiveCompare:@"CheckInTypeImBearish"])
+			else if([string isEqualToString:@"CheckInTypeImBearish"])
 				checkIn.checkinType = kCheckInTypeImBearish;
-			else if([string caseInsensitiveCompare:@"CheckinTypeShouldIBuy"])
+			else if([string isEqualToString:@"CheckinTypeShouldIBuy"])
 				checkIn.checkinType = kCheckinTypeShouldIBuy;
-			else if([string caseInsensitiveCompare:@"CheckInTypeShouldISell"])
+			else if([string isEqualToString:@"CheckInTypeShouldISell"])
 				checkIn.checkinType = kCheckInTypeShouldISell;
-			else if([string caseInsensitiveCompare:@"CheckInTypeImThinking"])
+			else if([string isEqualToString:@"CheckInTypeImThinking"])
 				checkIn.checkinType = kCheckInTypeImThinking;
 		}
 	}

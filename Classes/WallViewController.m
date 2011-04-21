@@ -53,20 +53,21 @@
 }
 
 #pragma mark -
-#pragma mark GetWallRequestDelegate Methods
+#pragma mark GetXMLRequestDelegate Methods
 
--(void)getWallRequestComplete:(GetWallRequest *)getWallRequest {
-	self.checkIns = getWallRequest.checkIns;
-	[getWallRequest release];
+-(void)getXMLRequestComplete:(NSObject *)data {
+	self.checkIns = (NSMutableArray *)data;
+	
+	// TO DO: Release the request
 	
 	[self.tableView reloadData];
 }
 
--(void)getWallRequestFailure:(GetWallRequest *)getWallRequest {
+-(void)getXMLRequestFailure:(NSError *)error {
 	// TO DO: Just push the error to the console for now
-	MyLog(@"GetWallRequest error: %@", [getWallRequest.error description]);
+	MyLog(@"GetWallRequest error: %@", [error description]);
 
-	[getWallRequest release];
+	// TO DO: Release the request
 }
 
 #pragma mark -
@@ -99,16 +100,18 @@
 	CheckIn *checkIn = [self.checkIns objectAtIndex:row];
 	cell.username.text = checkIn.user.userName;
 	cell.ticker.text = checkIn.ticker.symbol;
-	cell.title.text = [Utility getCheckInString:checkIn.checkinType symbol:checkIn.ticker.symbol];
+	NSString *title = [[[NSString alloc] init] autorelease];
+	title = [Utility getCheckInString:title checkInType:checkIn.checkinType symbol:checkIn.ticker.symbol];
+	cell.title.text = title;
 	
 	
 	NSTimeInterval interval = [checkIn.timestamp timeIntervalSinceNow];	
 	
 	switch (checkIn.checkinType) {
-		case kCheckInTypeBought:
+		case kCheckInTypeIBought:
 			cell.checkInImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dollars-icon" ofType:@"png"]];
 			break;
-		case kCheckInTypeSold:
+		case kCheckInTypeISold:
 			cell.checkInImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"check-icon" ofType:@"png"]];
 			break;
 		case kCheckinTypeShouldIBuy:

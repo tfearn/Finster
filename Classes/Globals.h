@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 // Check In Types
-#define kCheckInTypeBought			1
-#define kCheckInTypeSold			2
+#define kCheckInTypeIBought			1
+#define kCheckInTypeISold			2
 #define kCheckInTypeImBullish		3
 #define kCheckInTypeImBearish		4
 #define kCheckinTypeShouldIBuy		5
@@ -20,6 +20,7 @@
 // URLs
 #define kUrlTickerLookup			@"http://d.yimg.com/autoc.finance.yahoo.com/autoc?query=%@&callback=YAHOO.Finance.SymbolSuggest.ssCallback"
 #define kUrlGetWall					@"http://www.idata.net/finster/wall2.xml"
+//#define kUrlGetWall					@"https://hostname/getcheckins.cgi?start=1&limit=20&feed=you+wall&type=CheckInTypeAll&ticker=all"
 
 // Notifications
 #define kNotificationCheckInComplete	@"NotificationCheckInComplete"

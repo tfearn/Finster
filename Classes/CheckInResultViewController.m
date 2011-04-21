@@ -22,10 +22,10 @@
 	[self.navigationController setNavigationBarHidden:YES animated:NO]; 
 	
 	switch (self.checkInType) {
-		case kCheckInTypeBought:
+		case kCheckInTypeIBought:
 			self.description.text = [NSString stringWithFormat:@"Ok! You Bought %@", self.ticker.symbol];
 			break;
-		case kCheckInTypeSold:
+		case kCheckInTypeISold:
 			self.description.text = [NSString stringWithFormat:@"Ok! You Sold %@", self.ticker.symbol];
 			break;
 		case kCheckinTypeShouldIBuy:

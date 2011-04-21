@@ -7,30 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ASIHTTPRequest.h"
-#import "Globals.h"
+#import "GetXMLRequest.h"
 #import "CheckIn.h"
 
-@class GetWallRequest;
-
-@protocol GetWallRequestDelegate <NSObject>
--(void)getWallRequestComplete:(GetWallRequest *)getWallRequest;
--(void)getWallRequestFailure:(GetWallRequest *)getWallRequest;
-@end
-
-@interface GetWallRequest : NSObject <NSXMLParserDelegate> {
-	id<GetWallRequestDelegate> delegate;
-	ASIHTTPRequest *_request;
-	NSError *_error;
+@interface GetWallRequest : GetXMLRequest {
 	NSMutableArray *_checkIns;
 	
 	// Parsing members
 	NSString *lastStartElement;
 	CheckIn *checkIn;
 }
-@property (assign) id<GetWallRequestDelegate> delegate;
-@property (nonatomic, retain) ASIHTTPRequest *request;
-@property (nonatomic, retain) NSError *error;
 @property (nonatomic, retain) NSMutableArray *checkIns;
 
 - (void)doRequest;

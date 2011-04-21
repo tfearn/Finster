@@ -10,7 +10,8 @@
 
 
 @interface ActivityViewController : UIViewController {
-
+	IBOutlet UITableView *_tableView;
 }
+@property (nonatomic, retain) UITableView *tableView;
 
 @end

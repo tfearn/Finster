@@ -24,10 +24,10 @@
 	self.navigationItem.title = @"Check In";
 	
 	switch (self.checkInType) {
-		case kCheckInTypeBought:
+		case kCheckInTypeIBought:
 			self.description.text = [NSString stringWithFormat:@"I Bought %@", self.ticker.symbol];
 			break;
-		case kCheckInTypeSold:
+		case kCheckInTypeISold:
 			self.description.text = [NSString stringWithFormat:@"I Sold %@", self.ticker.symbol];
 			break;
 		case kCheckinTypeShouldIBuy:

@@ -13,7 +13,7 @@
 #import "WallViewCell.h"
 #import "GetWallRequest.h"
 
-@interface WallViewController : UIViewController <GetWallRequestDelegate> {
+@interface WallViewController : UIViewController <GetXMLRequestDelegate> {
 	IBOutlet UITableView *_tableView;
 	NSMutableArray *_checkIns;
 }
