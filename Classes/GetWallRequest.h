@@ -21,10 +21,16 @@
 @interface GetWallRequest : NSObject <NSXMLParserDelegate> {
 	id<GetWallRequestDelegate> delegate;
 	ASIHTTPRequest *_request;
+	NSError *_error;
 	NSMutableArray *_checkIns;
+	
+	// Parsing members
+	NSString *lastStartElement;
+	CheckIn *checkIn;
 }
 @property (assign) id<GetWallRequestDelegate> delegate;
 @property (nonatomic, retain) ASIHTTPRequest *request;
+@property (nonatomic, retain) NSError *error;
 @property (nonatomic, retain) NSMutableArray *checkIns;
 
 - (void)doRequest;

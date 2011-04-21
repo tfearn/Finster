@@ -8,6 +8,10 @@
 
 #import "WallViewController.h"
 
+@interface WallViewController (Private)
+- (void)getData;
+@end
+
 
 @implementation WallViewController
 @synthesize tableView = _tableView;
@@ -16,6 +20,11 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	[self.tableView setRowHeight:85.0];
+	
+	// Do the initial request for data
+	[self getData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,6 +44,29 @@
 	[_tableView release];
 	[_checkIns release];
     [super dealloc];
+}
+
+- (void)getData {
+	GetWallRequest *request = [[GetWallRequest alloc] init];
+	request.delegate = self;
+	[request doRequest];
+}
+
+#pragma mark -
+#pragma mark GetWallRequestDelegate Methods
+
+-(void)getWallRequestComplete:(GetWallRequest *)getWallRequest {
+	self.checkIns = getWallRequest.checkIns;
+	[getWallRequest release];
+	
+	[self.tableView reloadData];
+}
+
+-(void)getWallRequestFailure:(GetWallRequest *)getWallRequest {
+	// TO DO: Just push the error to the console for now
+	MyLog(@"GetWallRequest error: %@", [getWallRequest.error description]);
+
+	[getWallRequest release];
 }
 
 #pragma mark -
@@ -63,11 +95,43 @@
                 cell = (WallViewCell *)oneObject;
     }
 	
-	//int row = [indexPath row];
-	//CheckIn *checkIn = [self.checkIns objectAtIndex:row];
+	int row = [indexPath row];
+	CheckIn *checkIn = [self.checkIns objectAtIndex:row];
+	cell.username.text = checkIn.user.userName;
+	cell.ticker.text = checkIn.ticker.symbol;
+	cell.title.text = [Utility getCheckInString:checkIn.checkinType symbol:checkIn.ticker.symbol];
 	
 	
-	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	NSTimeInterval interval = [checkIn.timestamp timeIntervalSinceNow];	
+	
+	switch (checkIn.checkinType) {
+		case kCheckInTypeBought:
+			cell.checkInImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dollars-icon" ofType:@"png"]];
+			break;
+		case kCheckInTypeSold:
+			cell.checkInImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"check-icon" ofType:@"png"]];
+			break;
+		case kCheckinTypeShouldIBuy:
+			cell.checkInImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"thumbs-up-icon" ofType:@"png"]];
+			break;
+		case kCheckInTypeShouldISell:
+			cell.checkInImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"thumbs-down-icon" ofType:@"png"]];
+			break;
+		case kCheckInTypeImBullish:
+			cell.checkInImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"bullish-icon" ofType:@"png"]];
+			break;
+		case kCheckInTypeImBearish:
+			cell.checkInImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"bearish-icon" ofType:@"png"]];
+			break;
+		case kCheckInTypeImThinking:
+			cell.checkInImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"thinking-icon" ofType:@"png"]];
+			break;
+		default:
+			break;
+	}
+	
+	
+	//cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	
     return cell;
 }

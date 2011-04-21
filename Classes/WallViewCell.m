@@ -10,6 +10,12 @@
 
 
 @implementation WallViewCell
+@synthesize userImageView = _userImageView;
+@synthesize checkInImageView = _checkInImageView;
+@synthesize username = _username;
+@synthesize ticker = _ticker;
+@synthesize title = _title;
+@synthesize timestamp = _timestamp;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     
@@ -30,6 +36,12 @@
 
 
 - (void)dealloc {
+	[_userImageView release];
+	[_checkInImageView release];
+	[_username release];
+	[_ticker release];
+	[_title release];
+	[_timestamp release];
     [super dealloc];
 }
 

@@ -18,6 +18,8 @@
 		822435CE135F813E00C6258F /* WallViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 822435CD135F813E00C6258F /* WallViewCell.xib */; };
 		822435D9135F81D300C6258F /* WallViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 822435D8135F81D300C6258F /* WallViewCell.m */; };
 		822435E6135F829000C6258F /* GetWallRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 822435E5135F829000C6258F /* GetWallRequest.m */; };
+		824D9DB51360990400631120 /* default-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 824D9DB41360990400631120 /* default-user.png */; };
+		824D9DB91360AF5400631120 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 824D9DB81360AF5400631120 /* Utility.m */; };
 		82C10431135737F000302082 /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C10430135737F000302082 /* Globals.m */; };
 		82C1048E135741E500302082 /* Ticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C1048D135741E500302082 /* Ticker.m */; };
 		82C1058813574E6C00302082 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C1058713574E6C00302082 /* CFNetwork.framework */; };
@@ -109,6 +111,9 @@
 		822435D8135F81D300C6258F /* WallViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallViewCell.m; sourceTree = "<group>"; };
 		822435E4135F829000C6258F /* GetWallRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetWallRequest.h; sourceTree = "<group>"; };
 		822435E5135F829000C6258F /* GetWallRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetWallRequest.m; sourceTree = "<group>"; };
+		824D9DB41360990400631120 /* default-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default-user.png"; path = "../../Project/Finster/images/default-user.png"; sourceTree = SOURCE_ROOT; };
+		824D9DB71360AF5400631120 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		824D9DB81360AF5400631120 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		82C1042F135737F000302082 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		82C10430135737F000302082 /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
 		82C1048C135741E500302082 /* Ticker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ticker.h; sourceTree = "<group>"; };
@@ -392,6 +397,8 @@
 		82C1042A1357372200302082 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				824D9DB71360AF5400631120 /* Utility.h */,
+				824D9DB81360AF5400631120 /* Utility.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -444,6 +451,7 @@
 		A87743BA1356669500DD721B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				824D9DB41360990400631120 /* default-user.png */,
 				A8ED1F54135CC2760003115F /* check-icon.png */,
 				A8ED1EA9135CA2570003115F /* facebook-grey-icon.png */,
 				A8ED1EAA135CA2570003115F /* twitter-grey-icon.png */,
@@ -696,6 +704,7 @@
 				A8ED1F5D135CD38D0003115F /* CheckInResultView.xib in Resources */,
 				822435AA135F7DF100C6258F /* WallView.xib in Resources */,
 				822435CE135F813E00C6258F /* WallViewCell.xib in Resources */,
+				824D9DB51360990400631120 /* default-user.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -747,6 +756,7 @@
 				822435A8135F7DE000C6258F /* WallViewController.m in Sources */,
 				822435D9135F81D300C6258F /* WallViewCell.m in Sources */,
 				822435E6135F829000C6258F /* GetWallRequest.m in Sources */,
+				824D9DB91360AF5400631120 /* Utility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

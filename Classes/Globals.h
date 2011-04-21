@@ -19,11 +19,17 @@
 
 // URLs
 #define kUrlTickerLookup			@"http://d.yimg.com/autoc.finance.yahoo.com/autoc?query=%@&callback=YAHOO.Finance.SymbolSuggest.ssCallback"
-#define kUrlGetWall					@"http://www.idata.net/finster/wall.xml"
+#define kUrlGetWall					@"http://www.idata.net/finster/wall2.xml"
 
 // Notifications
 #define kNotificationCheckInComplete	@"NotificationCheckInComplete"
 
+// Macros
+#ifndef NDEBUG
+#define MyLog(s, ... ) NSLog(@"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#else
+#define MyLog( s, ... )
+#endif
 
 @interface Globals : NSObject {
 
