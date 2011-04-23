@@ -20,8 +20,8 @@
 // URLs
 #define kUrlTickerLookup			@"http://d.yimg.com/autoc.finance.yahoo.com/autoc?query=%@&callback=YAHOO.Finance.SymbolSuggest.ssCallback"
 //#define kUrlGetWall					@"http://www.idata.net/finster/wall3.xml"
-#define kUrlGetWall					@"https://173.203.238.148/getcheckins.cgi?start=1&limit=20&feed=you+wall&type=CheckInTypeIBought&ticker=all"
-#define kUrlPostCheckIn				@"http://173.203.238.148/checkin.cgi?type=%@&ticker=%@"
+#define kUrlGetWall					@"http://173.203.238.148/cgi-bin/getcheckins.cgi?start=1&limit=20&feed=you+wall&type=CheckInTypeIBought&ticker=all"
+#define kUrlPostCheckIn				@"http://173.203.238.148/cgi-bin/checkin.cgi?type=%@&ticker=%@"
 
 // Notifications
 #define kNotificationCheckInComplete	@"NotificationCheckInComplete"
