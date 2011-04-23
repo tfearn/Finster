@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Globals.h"
+#import "BaseViewController.h"
 #import "ASIHTTPRequest.h"
 #import "ASIDownloadCache.h"
 #import "JSON.h"
@@ -15,7 +16,7 @@
 #import "TickerFindViewCell.h"
 #import "CheckInDetailViewController.h"
 
-@interface TickerFindViewController : UIViewController <UIScrollViewDelegate, ASIHTTPRequestDelegate, SBJsonStreamParserAdapterDelegate> {
+@interface TickerFindViewController : BaseViewController <UIScrollViewDelegate, ASIHTTPRequestDelegate, SBJsonStreamParserAdapterDelegate> {
 	IBOutlet UISearchBar *_searchBar;
 	IBOutlet UITableView *_tableView;
 	int _checkInType;

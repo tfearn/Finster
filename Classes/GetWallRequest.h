@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GetXMLRequest.h"
+#import "Request.h"
 #import "CheckIn.h"
 
-@interface GetWallRequest : GetXMLRequest {
+@interface GetWallRequest : Request {
 	NSMutableArray *_checkIns;
 	
 	// Parsing members
@@ -19,6 +19,6 @@
 }
 @property (nonatomic, retain) NSMutableArray *checkIns;
 
-- (void)doRequest;
+- (void)get;
 
 @end

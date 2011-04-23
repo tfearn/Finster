@@ -15,6 +15,7 @@
 @synthesize twitterImageView = _twitterImageView;
 @synthesize facebookButton = _facebookButton;
 @synthesize twitterButton = _twitterButton;
+@synthesize request = _request;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -47,6 +48,7 @@
 	[_twitterImageView release];
 	[_facebookButton release];
 	[_twitterButton release];
+	[_request release];
     [super dealloc];
 }
 
@@ -85,6 +87,59 @@
 }
 
 - (IBAction)checkInButtonPressed:(id)sender {
+
+	// Do the check in request
+	//
+	
+	NSString *type = @"";
+	switch (self.checkInType) {
+		case kCheckInTypeIBought:
+			type = @"CheckInTypeIBought";
+			break;
+		case kCheckInTypeISold:
+			type = @"CheckInTypeISold";
+			break;
+		case kCheckinTypeShouldIBuy:
+			type = @"CheckinTypeShouldIBuy";
+			break;
+		case kCheckInTypeShouldISell:
+			type = @"CheckInTypeShouldISell";
+			break;
+		case kCheckInTypeImBullish:
+			type = @"CheckInTypeImBullish";
+			break;
+		case kCheckInTypeImBearish:
+			type = @"CheckInTypeImBearish";
+			break;
+		case kCheckInTypeImThinking:
+			type = @"CheckInTypeImThinking";
+			break;
+		default:
+			break;
+	}
+			
+	NSString *urlString = [NSString stringWithFormat:kUrlPostCheckIn, type, self.ticker.symbol];
+	if([[self.textView text] length])
+		urlString = [urlString stringByAppendingFormat:@"&comment=%@", [self.textView text]];
+	if(facebookOn)
+		urlString = [urlString stringByAppendingString:@"&sharefacebook=1"];
+	if(twitterOn)
+		urlString = [urlString stringByAppendingString:@"&sharetwitter=1"];
+	
+	[self showWaitView:@"Checking in..."];
+
+	[_request release];
+	_request = [[Request alloc] init];
+	self.request.delegate = self;
+	[self.request post:[NSURL URLWithString:urlString] postData:nil];
+}
+
+#pragma mark -
+#pragma mark RequestDelegate Methods
+
+-(void)requestComplete:(NSObject *)data {
+	[self dismissWaitView];
+	
 	CheckInResultViewController *controller = [[CheckInResultViewController alloc] init];
 	controller.ticker = self.ticker;
 	controller.checkInType = self.checkInType;
@@ -92,5 +147,11 @@
 	[controller release];
 }
 
+-(void)requestFailure:(NSError *)error {
+	[self dismissWaitView];
+
+	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:[error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+	[alert show];
+}
 
 @end

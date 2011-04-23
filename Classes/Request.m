@@ -1,36 +1,50 @@
 //
-//  GetXMLRequest.m
+//  Requester.m
 //  Finster
 //
 //  Created by Todd Fearn on 4/21/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "GetXMLRequest.h"
+#import "Request.h"
 
-@interface GetXMLRequest (Private)
+@interface Request (Private)
+- (void)doRequest;
 - (void)parseData:(NSData *)data;
 @end
 
 
-@implementation GetXMLRequest
+@implementation Request
 @synthesize delegate;
 @synthesize request = _request;
 @synthesize error = _error;
 
-- (void)doRequest:(NSURL *)url {
+- (void)get:(NSURL *)url {
 	_request = [ASIHTTPRequest requestWithURL:url];
-	[self.request setDelegate:self];
-	[self.request startAsynchronous];
+	[self doRequest];
+}
+
+- (void)post:(NSURL *)url postData:(NSString *)postData {
+	_request = [ASIHTTPRequest requestWithURL:url];
+	
+	if(postData != nil)
+		[self.request appendPostData:[postData dataUsingEncoding:NSUTF8StringEncoding]];
+	[self doRequest];
 }
 
 - (void)dealloc {
-	if(self.request != nil)
+	if(self.request != nil && active)
 		[self.request clearDelegatesAndCancel];
 	
-	[_request release];
 	[_error release];
 	[super dealloc];
+}
+
+- (void)doRequest {
+	active = YES;
+	
+	[self.request setDelegate:self];
+	[self.request startAsynchronous];
 }
 
 - (NSObject *)getParsedDataObject {
@@ -39,24 +53,33 @@
 }
 
 - (void)requestFinished:(ASIHTTPRequest *)request {
-	// Parse the return data
-	[self parseData:[request responseData]];
+	active = NO;
 	
-	// Grab the data object from the subclass
-	NSObject *data = [self getParsedDataObject];
+	NSData *data = [request responseData];
+	
+	NSObject *parsedData = nil;
+	if([data length]) {
+		// Parse the return data
+		[self parseData:data];
+
+		// Grab the data object from the subclass
+		parsedData = [self getParsedDataObject];
+	}
 	
 	// Call the delegate
-	if(self.delegate != NULL && [self.delegate respondsToSelector:@selector(getXMLRequestComplete:)]) {
-		[self.delegate getXMLRequestComplete:data];
+	if(self.delegate != NULL && [self.delegate respondsToSelector:@selector(requestComplete:)]) {
+		[self.delegate requestComplete:parsedData];
 	}
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request {
+	active = NO;
+	
 	self.error = [request error];
 	
 	// Call the delegate
-	if(self.delegate != NULL && [self.delegate respondsToSelector:@selector(getXMLRequestFailure:)]) {
-		[self.delegate getXMLRequestFailure:self.error];
+	if(self.delegate != NULL && [self.delegate respondsToSelector:@selector(requestFailure:)]) {
+		[self.delegate requestFailure:self.error];
 	}
 }
 

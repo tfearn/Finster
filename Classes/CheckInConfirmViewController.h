@@ -9,13 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "BaseCheckInViewController.h"
 #import "CheckInResultViewController.h"
+#import "Request.h"
 
-@interface CheckInConfirmViewController : BaseCheckInViewController <UITextViewDelegate> {
+@interface CheckInConfirmViewController : BaseCheckInViewController <UITextViewDelegate, RequestDelegate> {
 	IBOutlet UITextView *_textView;
 	IBOutlet UIImageView *_facebookImageView;
 	IBOutlet UIImageView *_twitterImageView;
 	IBOutlet UIButton *_facebookButton;
 	IBOutlet UIButton *_twitterButton;
+	Request *_request;
 	BOOL commentExists;
 	BOOL facebookOn;
 	BOOL twitterOn;
@@ -25,6 +27,7 @@
 @property (nonatomic, retain) UIImageView *twitterImageView;
 @property (nonatomic, retain) UIButton *facebookButton;
 @property (nonatomic, retain) UIButton *twitterButton;
+@property (nonatomic, retain) Request *request;
 
 - (IBAction)facebookButtonPressed:(id)sender;
 - (IBAction)twitterButtonPressed:(id)sender;

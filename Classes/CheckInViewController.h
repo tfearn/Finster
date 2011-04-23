@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Globals.h"
+#import "BaseViewController.h"
 #import "TickerFindViewController.h"
 
-@interface CheckInViewController : UIViewController {
+@interface CheckInViewController : BaseViewController {
 	IBOutlet UIScrollView *_scrollView;
 }
 @property (nonatomic, retain) UIScrollView *scrollView;

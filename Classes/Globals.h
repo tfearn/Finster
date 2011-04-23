@@ -19,8 +19,9 @@
 
 // URLs
 #define kUrlTickerLookup			@"http://d.yimg.com/autoc.finance.yahoo.com/autoc?query=%@&callback=YAHOO.Finance.SymbolSuggest.ssCallback"
-#define kUrlGetWall					@"http://www.idata.net/finster/wall2.xml"
-//#define kUrlGetWall					@"https://hostname/getcheckins.cgi?start=1&limit=20&feed=you+wall&type=CheckInTypeAll&ticker=all"
+#define kUrlGetWall					@"http://www.idata.net/finster/wall3.xml"
+//#define kUrlGetWall				@"https://hostname/getcheckins.cgi?start=1&limit=20&feed=you+wall&type=CheckInTypeIBought&ticker=all"
+#define kUrlPostCheckIn				@"http://www.idata.net/finster/checkin.cgi?type=%@&ticker=%@"
 
 // Notifications
 #define kNotificationCheckInComplete	@"NotificationCheckInComplete"

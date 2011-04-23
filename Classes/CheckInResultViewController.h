@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Globals.h"
+#import "BaseViewController.h"
 #import "Ticker.h"
 
-@interface CheckInResultViewController : UIViewController {
+@interface CheckInResultViewController : BaseViewController {
 	IBOutlet UILabel *_description;
 	IBOutlet UITableView *_tableView;
 	int _checkInType;

@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Globals.h"
+#import "BaseViewController.h"
 #import "Ticker.h"
 
-@interface BaseCheckInViewController : UIViewController {
+@interface BaseCheckInViewController : BaseViewController {
 	IBOutlet UILabel *_description;
 	IBOutlet UILabel *_symbolName;
 	IBOutlet UILabel *_symbolType;

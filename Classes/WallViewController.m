@@ -15,6 +15,7 @@
 
 @implementation WallViewController
 @synthesize tableView = _tableView;
+@synthesize request = _request;
 @synthesize checkIns = _checkIns;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -42,20 +43,21 @@
 
 - (void)dealloc {
 	[_tableView release];
+	[_request release];
 	[_checkIns release];
     [super dealloc];
 }
 
 - (void)getData {
-	GetWallRequest *request = [[GetWallRequest alloc] init];
-	request.delegate = self;
-	[request doRequest];
+	_request = [[GetWallRequest alloc] init];
+	self.request.delegate = self;
+	[self.request get];
 }
 
 #pragma mark -
-#pragma mark GetXMLRequestDelegate Methods
+#pragma mark RequestDelegate Methods
 
--(void)getXMLRequestComplete:(NSObject *)data {
+-(void)requestComplete:(NSObject *)data {
 	self.checkIns = (NSMutableArray *)data;
 	
 	// TO DO: Release the request
@@ -63,7 +65,7 @@
 	[self.tableView reloadData];
 }
 
--(void)getXMLRequestFailure:(NSError *)error {
+-(void)requestFailure:(NSError *)error {
 	// TO DO: Just push the error to the console for now
 	MyLog(@"GetWallRequest error: %@", [error description]);
 
@@ -132,7 +134,6 @@
 		default:
 			break;
 	}
-	
 	
 	//cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	

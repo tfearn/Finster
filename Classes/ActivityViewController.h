@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-
-@interface ActivityViewController : UIViewController {
+@interface ActivityViewController : BaseViewController {
 	IBOutlet UITableView *_tableView;
 }
 @property (nonatomic, retain) UITableView *tableView;

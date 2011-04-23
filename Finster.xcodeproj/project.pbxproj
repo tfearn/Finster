@@ -35,7 +35,7 @@
 		A83CF30613585F43002D4F43 /* tabbar-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = A83CF30513585F43002D4F43 /* tabbar-gear.png */; };
 		A83CF30913586029002D4F43 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83CF30813586029002D4F43 /* SettingsViewController.m */; };
 		A83CF30F13586075002D4F43 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83CF30E13586075002D4F43 /* SettingsView.xib */; };
-		A8485BD31360DD3D0044EB0F /* GetXMLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A8485BD21360DD3D0044EB0F /* GetXMLRequest.m */; };
+		A8485BD31360DD3D0044EB0F /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = A8485BD21360DD3D0044EB0F /* Request.m */; };
 		A86C2F8D135D1ADE00535BBB /* CheckIn.m in Sources */ = {isa = PBXBuildFile; fileRef = A86C2F8C135D1ADE00535BBB /* CheckIn.m */; };
 		A86C2F90135D1D1800535BBB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A86C2F8F135D1D1800535BBB /* User.m */; };
 		A8718C331357C1A50054D85C /* thumbs-down-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8718C2F1357C1A50054D85C /* thumbs-down-icon.png */; };
@@ -57,6 +57,8 @@
 		A87744271356873E00DD721B /* tabbar-group.png in Resources */ = {isa = PBXBuildFile; fileRef = A87744261356873E00DD721B /* tabbar-group.png */; };
 		A877442D1356880B00DD721B /* TickerFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A877442C1356880B00DD721B /* TickerFindViewController.m */; };
 		A877442F1356881D00DD721B /* TickerFindView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A877442E1356881D00DD721B /* TickerFindView.xib */; };
+		A87EE79413622479000A91B6 /* WaitView.m in Sources */ = {isa = PBXBuildFile; fileRef = A87EE79313622479000A91B6 /* WaitView.m */; };
+		A87EE7971362248E000A91B6 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A87EE7961362248E000A91B6 /* BaseViewController.m */; };
 		A89279DD13570AFE006BD022 /* bearish-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A89279DB13570AFE006BD022 /* bearish-icon.png */; };
 		A89279DE13570AFE006BD022 /* bullish-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A89279DC13570AFE006BD022 /* bullish-icon.png */; };
 		A8ED1CDF1358A38D0003115F /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ED1CC41358A38D0003115F /* ASIAuthenticationDialog.m */; };
@@ -136,8 +138,8 @@
 		A83CF30713586029002D4F43 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		A83CF30813586029002D4F43 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		A83CF30E13586075002D4F43 /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
-		A8485BD11360DD3D0044EB0F /* GetXMLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetXMLRequest.h; sourceTree = "<group>"; };
-		A8485BD21360DD3D0044EB0F /* GetXMLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetXMLRequest.m; sourceTree = "<group>"; };
+		A8485BD11360DD3D0044EB0F /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
+		A8485BD21360DD3D0044EB0F /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
 		A86C2F8B135D1ADE00535BBB /* CheckIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckIn.h; sourceTree = "<group>"; };
 		A86C2F8C135D1ADE00535BBB /* CheckIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckIn.m; sourceTree = "<group>"; };
 		A86C2F8E135D1D1800535BBB /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -165,6 +167,10 @@
 		A877442B1356880B00DD721B /* TickerFindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TickerFindViewController.h; sourceTree = "<group>"; };
 		A877442C1356880B00DD721B /* TickerFindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TickerFindViewController.m; sourceTree = "<group>"; };
 		A877442E1356881D00DD721B /* TickerFindView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TickerFindView.xib; sourceTree = "<group>"; };
+		A87EE79213622479000A91B6 /* WaitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitView.h; sourceTree = "<group>"; };
+		A87EE79313622479000A91B6 /* WaitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitView.m; sourceTree = "<group>"; };
+		A87EE7951362248E000A91B6 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		A87EE7961362248E000A91B6 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		A89279DB13570AFE006BD022 /* bearish-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bearish-icon.png"; path = "images/bearish-icon.png"; sourceTree = "<group>"; };
 		A89279DC13570AFE006BD022 /* bullish-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bullish-icon.png"; path = "images/bullish-icon.png"; sourceTree = "<group>"; };
 		A8ED1CC31358A38D0003115F /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
@@ -387,6 +393,8 @@
 		82C104291357370D00302082 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A87EE7951362248E000A91B6 /* BaseViewController.h */,
+				A87EE7961362248E000A91B6 /* BaseViewController.m */,
 				82C10428135736D200302082 /* CheckIn */,
 				822435A5135F7DC100C6258F /* Wall */,
 				822435A4135F7D9000C6258F /* Settings */,
@@ -400,6 +408,8 @@
 		82C1042A1357372200302082 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				A87EE79213622479000A91B6 /* WaitView.h */,
+				A87EE79313622479000A91B6 /* WaitView.m */,
 				824D9DB71360AF5400631120 /* Utility.h */,
 				824D9DB81360AF5400631120 /* Utility.m */,
 			);
@@ -409,8 +419,8 @@
 		82C1042B1357372E00302082 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				A8485BD11360DD3D0044EB0F /* GetXMLRequest.h */,
-				A8485BD21360DD3D0044EB0F /* GetXMLRequest.m */,
+				A8485BD11360DD3D0044EB0F /* Request.h */,
+				A8485BD21360DD3D0044EB0F /* Request.m */,
 				822435E4135F829000C6258F /* GetWallRequest.h */,
 				822435E5135F829000C6258F /* GetWallRequest.m */,
 			);
@@ -762,7 +772,9 @@
 				822435D9135F81D300C6258F /* WallViewCell.m in Sources */,
 				822435E6135F829000C6258F /* GetWallRequest.m in Sources */,
 				824D9DB91360AF5400631120 /* Utility.m in Sources */,
-				A8485BD31360DD3D0044EB0F /* GetXMLRequest.m in Sources */,
+				A8485BD31360DD3D0044EB0F /* Request.m in Sources */,
+				A87EE79413622479000A91B6 /* WaitView.m in Sources */,
+				A87EE7971362248E000A91B6 /* BaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

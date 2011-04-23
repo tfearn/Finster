@@ -11,12 +11,12 @@
 @implementation GetWallRequest
 @synthesize checkIns = _checkIns;
 
-- (void)doRequest {
+- (void)get {
 	[_checkIns release];
 	_checkIns = [[NSMutableArray alloc] init];
 
 	NSURL *url = [NSURL URLWithString:kUrlGetWall];
-	[super doRequest:url];
+	[super get:url];
 }
 
 - (NSObject *)getParsedDataObject {
