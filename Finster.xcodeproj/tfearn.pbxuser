@@ -257,6 +257,13 @@
 			A87EE875136310D8000A91B6 /* PBXTextBookmark */ = A87EE875136310D8000A91B6 /* PBXTextBookmark */;
 			A87EE876136310D8000A91B6 /* XCBuildMessageTextBookmark */ = A87EE876136310D8000A91B6 /* XCBuildMessageTextBookmark */;
 			A87EE877136310D8000A91B6 /* PBXTextBookmark */ = A87EE877136310D8000A91B6 /* PBXTextBookmark */;
+			A87EE87C13631379000A91B6 /* PBXTextBookmark */ = A87EE87C13631379000A91B6 /* PBXTextBookmark */;
+			A87EE87F1363137F000A91B6 /* PBXTextBookmark */ = A87EE87F1363137F000A91B6 /* PBXTextBookmark */;
+			A87EE8801363137F000A91B6 /* PBXTextBookmark */ = A87EE8801363137F000A91B6 /* PBXTextBookmark */;
+			A87EE8811363137F000A91B6 /* PBXTextBookmark */ = A87EE8811363137F000A91B6 /* PBXTextBookmark */;
+			A87EE88513631449000A91B6 /* PBXTextBookmark */ = A87EE88513631449000A91B6 /* PBXTextBookmark */;
+			A87EE88613631449000A91B6 /* PBXTextBookmark */ = A87EE88613631449000A91B6 /* PBXTextBookmark */;
+			A87EE8891363144B000A91B6 /* PBXTextBookmark */ = A87EE8891363144B000A91B6 /* PBXTextBookmark */;
 			A8ED1D6F1358D6FC0003115F = A8ED1D6F1358D6FC0003115F /* PBXTextBookmark */;
 			A8ED1E221358DEEF0003115F = A8ED1E221358DEEF0003115F /* PBXTextBookmark */;
 			A8ED1E311358E1710003115F = A8ED1E311358E1710003115F /* PBXTextBookmark */;
@@ -428,9 +435,9 @@
 	};
 	A8485BD21360DD3D0044EB0F /* Request.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {845, 1612}}";
-			sepNavSelRange = "{738, 0}";
-			sepNavVisRange = "{352, 751}";
+			sepNavIntBoundsRect = "{{0, 0}, {1219, 1599}}";
+			sepNavSelRange = "{744, 0}";
+			sepNavVisRange = "{352, 579}";
 		};
 	};
 	A8485C051360F0050044EB0F /* PBXTextBookmark */ = {
@@ -1643,7 +1650,7 @@
 		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
 		name = "CheckInConfirmViewController.m: 129";
 		rLen = 0;
-		rLoc = 3878;
+		rLoc = 4122;
 		rType = 0;
 		vrLen = 1193;
 		vrLoc = 2241;
@@ -1653,7 +1660,7 @@
 		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
 		name = "CheckInConfirmViewController.m: 129";
 		rLen = 0;
-		rLoc = 3878;
+		rLoc = 4122;
 		rType = 0;
 		vrLen = 1172;
 		vrLoc = 2241;
@@ -1673,7 +1680,7 @@
 		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
 		name = "CheckInConfirmViewController.m: 129";
 		rLen = 0;
-		rLoc = 3878;
+		rLoc = 4122;
 		rType = 0;
 		vrLen = 1092;
 		vrLoc = 3071;
@@ -1683,7 +1690,7 @@
 		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
 		name = "CheckInConfirmViewController.m: 121";
 		rLen = 0;
-		rLoc = 3516;
+		rLoc = 3573;
 		rType = 0;
 		vrLen = 1090;
 		vrLoc = 3071;
@@ -1703,7 +1710,7 @@
 		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
 		name = "CheckInConfirmViewController.m: 121";
 		rLen = 0;
-		rLoc = 3516;
+		rLoc = 3573;
 		rType = 0;
 		vrLen = 1131;
 		vrLoc = 3030;
@@ -1713,7 +1720,7 @@
 		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
 		name = "CheckInConfirmViewController.m: 121";
 		rLen = 0;
-		rLoc = 3501;
+		rLoc = 3558;
 		rType = 0;
 		vrLen = 1070;
 		vrLoc = 3030;
@@ -1722,7 +1729,7 @@
 		isa = PBXTextBookmark;
 		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
 		rLen = 1;
-		rLoc = 140;
+		rLoc = 144;
 		rType = 1;
 	};
 	A87EE801136307CA000A91B6 /* PBXTextBookmark */ = {
@@ -1730,7 +1737,7 @@
 		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
 		name = "CheckInConfirmViewController.m: 121";
 		rLen = 0;
-		rLoc = 3516;
+		rLoc = 3573;
 		rType = 0;
 		vrLen = 1261;
 		vrLoc = 3434;
@@ -1740,7 +1747,7 @@
 		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
 		name = "CheckInConfirmViewController.m: 121";
 		rLen = 0;
-		rLoc = 3516;
+		rLoc = 3573;
 		rType = 0;
 		vrLen = 1256;
 		vrLoc = 3434;
@@ -1750,7 +1757,7 @@
 		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
 		name = "CheckInConfirmViewController.m: 121";
 		rLen = 0;
-		rLoc = 3516;
+		rLoc = 3573;
 		rType = 0;
 		vrLen = 1275;
 		vrLoc = 2102;
@@ -1780,7 +1787,7 @@
 		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
 		name = "CheckInConfirmViewController.m: 141";
 		rLen = 25;
-		rLoc = 4136;
+		rLoc = 4387;
 		rType = 0;
 		vrLen = 1251;
 		vrLoc = 3444;
@@ -1790,7 +1797,7 @@
 		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
 		name = "CheckInConfirmViewController.m: 141";
 		rLen = 25;
-		rLoc = 4136;
+		rLoc = 4387;
 		rType = 0;
 		vrLen = 1051;
 		vrLoc = 2393;
@@ -1800,7 +1807,7 @@
 		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
 		name = "CheckInConfirmViewController.m: 141";
 		rLen = 25;
-		rLoc = 4136;
+		rLoc = 4387;
 		rType = 0;
 		vrLen = 1051;
 		vrLoc = 2393;
@@ -1810,7 +1817,7 @@
 		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
 		name = "CheckInConfirmViewController.m: 141";
 		rLen = 25;
-		rLoc = 4136;
+		rLoc = 4387;
 		rType = 0;
 		vrLen = 1274;
 		vrLoc = 3413;
@@ -1840,7 +1847,7 @@
 		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
 		name = "CheckInConfirmViewController.m: 95";
 		rLen = 0;
-		rLoc = 2873;
+		rLoc = 2930;
 		rType = 0;
 		vrLen = 1136;
 		vrLoc = 2241;
@@ -1889,7 +1896,7 @@
 		isa = PBXTextBookmark;
 		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
 		rLen = 0;
-		rLoc = 94;
+		rLoc = 95;
 		rType = 1;
 	};
 	A87EE83513630A1B000A91B6 /* PBXTextBookmark */ = {
@@ -1897,7 +1904,7 @@
 		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
 		name = "CheckInConfirmViewController.m: 95";
 		rLen = 0;
-		rLoc = 2873;
+		rLoc = 2930;
 		rType = 0;
 		vrLen = 1136;
 		vrLoc = 2241;
@@ -1907,7 +1914,7 @@
 		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
 		name = "CheckInConfirmViewController.m: 95";
 		rLen = 0;
-		rLoc = 2873;
+		rLoc = 2930;
 		rType = 0;
 		vrLen = 1136;
 		vrLoc = 2241;
@@ -2224,6 +2231,73 @@
 		vrLen = 751;
 		vrLoc = 352;
 	};
+	A87EE87C13631379000A91B6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
+		rLen = 1;
+		rLoc = 124;
+		rType = 1;
+	};
+	A87EE87F1363137F000A91B6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A8485BD21360DD3D0044EB0F /* Request.m */;
+		name = "Request.m: 37";
+		rLen = 0;
+		rLoc = 738;
+		rType = 0;
+		vrLen = 801;
+		vrLoc = 352;
+	};
+	A87EE8801363137F000A91B6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
+		name = "CheckInConfirmViewController.m: 125";
+		rLen = 0;
+		rLoc = 3717;
+		rType = 0;
+		vrLen = 1179;
+		vrLoc = 3243;
+	};
+	A87EE8811363137F000A91B6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
+		name = "CheckInConfirmViewController.m: 125";
+		rLen = 0;
+		rLoc = 3717;
+		rType = 0;
+		vrLen = 1145;
+		vrLoc = 3243;
+	};
+	A87EE88513631449000A91B6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A8485BD21360DD3D0044EB0F /* Request.m */;
+		name = "Request.m: 37";
+		rLen = 0;
+		rLoc = 744;
+		rType = 0;
+		vrLen = 579;
+		vrLoc = 352;
+	};
+	A87EE88613631449000A91B6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 822435A7135F7DE000C6258F /* WallViewController.m */;
+		name = "WallViewController.m: 68";
+		rLen = 0;
+		rLoc = 1405;
+		rType = 0;
+		vrLen = 297;
+		vrLoc = 1282;
+	};
+	A87EE8891363144B000A91B6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
+		name = "CheckInConfirmViewController.m: 118";
+		rLen = 0;
+		rLoc = 3489;
+		rType = 0;
+		vrLen = 1171;
+		vrLoc = 3243;
+	};
 	A8ED1CCE1358A38D0003115F /* ASIHTTPRequest.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {845, 13299}}";
@@ -2431,9 +2505,9 @@
 	};
 	A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1055, 2106}}";
-			sepNavSelRange = "{2873, 0}";
-			sepNavVisRange = "{2241, 1136}";
+			sepNavIntBoundsRect = "{{0, 0}, {1055, 2132}}";
+			sepNavSelRange = "{3489, 0}";
+			sepNavVisRange = "{3243, 1171}";
 		};
 	};
 	A8ED1EB3135CA82C0003115F /* BaseCheckInViewController.h */ = {
@@ -2539,7 +2613,7 @@
 		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
 		name = "CheckInConfirmViewController.m: 91";
 		rLen = 0;
-		rLoc = 4038;
+		rLoc = 4289;
 		rType = 0;
 		vrLen = 1677;
 		vrLoc = 1355;

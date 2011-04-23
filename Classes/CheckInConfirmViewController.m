@@ -8,6 +8,7 @@
 
 #import "CheckInConfirmViewController.h"
 
+#define kTextViewDefaultMessage		@"Add a comment..."
 
 @implementation CheckInConfirmViewController
 @synthesize textView = _textView;
@@ -62,7 +63,7 @@
         [textView resignFirstResponder];
 		
 		if([self.textView.text length] == 0)
-			self.textView.text = @"Add a comment...";
+			self.textView.text = kTextViewDefaultMessage;
 		
         return FALSE;
     }
@@ -119,19 +120,22 @@
 	}
 			
 	NSString *urlString = [NSString stringWithFormat:kUrlPostCheckIn, type, self.ticker.symbol];
-	if([[self.textView text] length])
-		urlString = [urlString stringByAppendingFormat:@"&comment=%@", [self.textView text]];
+	if([[self.textView text] length]) {
+		if([[self.textView text] isEqualToString:kTextViewDefaultMessage] == NO)
+			urlString = [urlString stringByAppendingFormat:@"&comment=%@", [self.textView text]];
+	}
 	if(facebookOn)
 		urlString = [urlString stringByAppendingString:@"&sharefacebook=1"];
 	if(twitterOn)
 		urlString = [urlString stringByAppendingString:@"&sharetwitter=1"];
+	NSString* escapedUrlString =[urlString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
 	
 	[self showWaitView:@"Checking in..."];
 
 	[_request release];
 	_request = [[Request alloc] init];
 	self.request.delegate = self;
-	[self.request post:[NSURL URLWithString:urlString] postData:nil];
+	[self.request post:[NSURL URLWithString:escapedUrlString] postData:nil];
 }
 
 #pragma mark -
