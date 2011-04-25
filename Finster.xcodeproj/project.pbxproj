@@ -13,12 +13,12 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		4D73A27F1363984300688230 /* default-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D73A27E1363984300688230 /* default-user.png */; };
 		822435A8135F7DE000C6258F /* WallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 822435A7135F7DE000C6258F /* WallViewController.m */; };
 		822435AA135F7DF100C6258F /* WallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 822435A9135F7DF100C6258F /* WallView.xib */; };
 		822435CE135F813E00C6258F /* WallViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 822435CD135F813E00C6258F /* WallViewCell.xib */; };
 		822435D9135F81D300C6258F /* WallViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 822435D8135F81D300C6258F /* WallViewCell.m */; };
 		822435E6135F829000C6258F /* GetWallRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 822435E5135F829000C6258F /* GetWallRequest.m */; };
-		824D9DB51360990400631120 /* default-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 824D9DB41360990400631120 /* default-user.png */; };
 		824D9DB91360AF5400631120 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 824D9DB81360AF5400631120 /* Utility.m */; };
 		82C10431135737F000302082 /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C10430135737F000302082 /* Globals.m */; };
 		82C1048E135741E500302082 /* Ticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C1048D135741E500302082 /* Ticker.m */; };
@@ -106,6 +106,7 @@
 		28A0AB4B0D9B1048005BE974 /* Finster_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Finster_Prefix.pch; sourceTree = "<group>"; };
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4D73A27E1363984300688230 /* default-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default-user.png"; path = "images/default-user.png"; sourceTree = "<group>"; };
 		822435A6135F7DE000C6258F /* WallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallViewController.h; sourceTree = "<group>"; };
 		822435A7135F7DE000C6258F /* WallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallViewController.m; sourceTree = "<group>"; };
 		822435A9135F7DF100C6258F /* WallView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WallView.xib; sourceTree = "<group>"; };
@@ -114,7 +115,6 @@
 		822435D8135F81D300C6258F /* WallViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallViewCell.m; sourceTree = "<group>"; };
 		822435E4135F829000C6258F /* GetWallRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetWallRequest.h; sourceTree = "<group>"; };
 		822435E5135F829000C6258F /* GetWallRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetWallRequest.m; sourceTree = "<group>"; };
-		824D9DB41360990400631120 /* default-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default-user.png"; path = "../../Project/Finster/images/default-user.png"; sourceTree = SOURCE_ROOT; };
 		824D9DB71360AF5400631120 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		824D9DB81360AF5400631120 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		82C1042F135737F000302082 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
@@ -466,7 +466,7 @@
 		A87743BA1356669500DD721B /* images */ = {
 			isa = PBXGroup;
 			children = (
-				824D9DB41360990400631120 /* default-user.png */,
+				4D73A27E1363984300688230 /* default-user.png */,
 				A8ED1F54135CC2760003115F /* check-icon.png */,
 				A8ED1EA9135CA2570003115F /* facebook-grey-icon.png */,
 				A8ED1EAA135CA2570003115F /* twitter-grey-icon.png */,
@@ -719,7 +719,7 @@
 				A8ED1F5D135CD38D0003115F /* CheckInResultView.xib in Resources */,
 				822435AA135F7DF100C6258F /* WallView.xib in Resources */,
 				822435CE135F813E00C6258F /* WallViewCell.xib in Resources */,
-				824D9DB51360990400631120 /* default-user.png in Resources */,
+				4D73A27F1363984300688230 /* default-user.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
