@@ -107,7 +107,21 @@
 	cell.title.text = title;
 	
 	
-	NSTimeInterval interval = [checkIn.timestamp timeIntervalSinceNow];	
+	// Get the system calendar
+	NSCalendar *sysCalendar = [NSCalendar currentCalendar];
+	
+	// Create the NSDates
+	NSDate *now = [[NSDate alloc] init];
+	
+	// Get conversion to months, days, hours, minutes
+	unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit;
+	
+	NSDateComponents *breakdownInfo = [sysCalendar components:unitFlags fromDate:checkIn.timestamp  toDate:now  options:0];
+	
+	MyLog(@"Break down: %dmin %dhours %ddays %dmoths",[breakdownInfo minute], [breakdownInfo hour], [breakdownInfo day], [breakdownInfo month]);
+	
+	[now release];
+	
 	
 	switch (checkIn.checkinType) {
 		case kCheckInTypeIBought:
