@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CSqliteDatabase.h"
 
 // Check In Types
 #define kCheckInTypeIBought			1
@@ -31,6 +32,9 @@
 // Notifications
 #define kNotificationCheckInComplete	@"NotificationCheckInComplete"
 
+// Other defines
+#define kDatabaseFilename			@"finster.sqlite"
+
 // Macros
 #ifndef NDEBUG
 #define MyLog(s, ... ) NSLog(@"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
@@ -48,6 +52,7 @@
 + (void)setPassword:(NSString *)newPassword;
 + (NSString *)getLastTickerSearch;
 + (void)setLastTickerSearch:(NSString *)newLastTickerSearch;
-	
++ (NSError *)openDatabase:(NSString *)filename;
++ (CSqliteDatabase *)getDatabaseHandle;
 
 @end

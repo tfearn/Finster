@@ -9,6 +9,7 @@
 #import "MoneyMouthAppDelegate.h"
 
 @interface MoneyMouthAppDelegate (Private)
+- (BOOL)initializeDatabase;
 - (void)doLogin;
 @end
 
@@ -35,8 +36,49 @@
 	//facebook = [[Facebook alloc] initWithAppId:@"215815565097885"];
 	//[facebook authorize:nil delegate:self];
 	
+	// Initialize the Db
+	if(! [self initializeDatabase]) {
+		// TODO:  We have problems here, fix
+		return NO;
+	}
+	
 	// Login
 	[self doLogin];
+	
+	return YES;
+}
+
+
+- (BOOL)initializeDatabase {
+	
+	// If the database does not exist, copy it from the bundle to the documents path
+	//
+	
+    NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsPath = [[searchPaths objectAtIndex:0] stringByAppendingPathComponent:kDatabaseFilename];
+    if(! [[NSFileManager defaultManager] fileExistsAtPath:documentsPath]) {
+		
+		NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"finster" ofType:@"sqlite"];
+		if(bundlePath == nil) {
+			UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Internal Error" message:@"Could not find database inside bundle." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+			[alert show];
+			return NO;
+		}
+		
+        if(! [[NSFileManager defaultManager] copyItemAtPath:bundlePath toPath:documentsPath error:nil]) {
+			UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Internal Error" message:@"Could not copy database from bundle." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+			[alert show];
+			return NO;
+		}
+	}
+	
+	// Open the database
+	NSError *error = [Globals openDatabase:documentsPath];
+	if(error != nil) {
+		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Internal Database Error" message:[error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+		[alert show];
+		return NO;
+	}
 	
 	return YES;
 }

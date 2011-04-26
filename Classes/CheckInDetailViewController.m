@@ -11,6 +11,11 @@
 @implementation CheckInDetailViewController
 @synthesize tableView = _tableView;
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+	
+	//
+}
 
 - (void)dealloc {
 	[_tableView release];

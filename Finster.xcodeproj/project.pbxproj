@@ -95,6 +95,14 @@
 		A8FD2628136719690099E7FC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FD2627136719690099E7FC /* LoginViewController.m */; };
 		A8FD262A136719D10099E7FC /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8FD2629136719D10099E7FC /* LoginView.xib */; };
 		A8FD262F13671BD40099E7FC /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FD262E13671BD40099E7FC /* banner.png */; };
+		A8FD2785136766390099E7FC /* CSqliteDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FD2766136766390099E7FC /* CSqliteDatabase.m */; };
+		A8FD2786136766390099E7FC /* CSqliteDatabase_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FD2768136766390099E7FC /* CSqliteDatabase_Extensions.m */; };
+		A8FD2787136766390099E7FC /* CSqliteDatabase_Functions.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FD276A136766390099E7FC /* CSqliteDatabase_Functions.m */; };
+		A8FD2788136766390099E7FC /* CSqliteEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FD276C136766390099E7FC /* CSqliteEnumerator.m */; };
+		A8FD2789136766390099E7FC /* CSqliteStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FD276E136766390099E7FC /* CSqliteStatement.m */; };
+		A8FD286F1367674C0099E7FC /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A8FD286E1367674C0099E7FC /* libsqlite3.0.dylib */; };
+		A8FD28C0136772510099E7FC /* finster.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A8FD28BF136772510099E7FC /* finster.sqlite */; };
+		A8FD28D2136776E00099E7FC /* DbSearchedTickerInsert.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FD28D1136776E00099E7FC /* DbSearchedTickerInsert.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -239,6 +247,21 @@
 		A8FD2627136719690099E7FC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		A8FD2629136719D10099E7FC /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		A8FD262E13671BD40099E7FC /* banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banner.png; path = images/banner.png; sourceTree = "<group>"; };
+		A8FD2765136766390099E7FC /* CSqliteDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSqliteDatabase.h; sourceTree = "<group>"; };
+		A8FD2766136766390099E7FC /* CSqliteDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSqliteDatabase.m; sourceTree = "<group>"; };
+		A8FD2767136766390099E7FC /* CSqliteDatabase_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSqliteDatabase_Extensions.h; sourceTree = "<group>"; };
+		A8FD2768136766390099E7FC /* CSqliteDatabase_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSqliteDatabase_Extensions.m; sourceTree = "<group>"; };
+		A8FD2769136766390099E7FC /* CSqliteDatabase_Functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSqliteDatabase_Functions.h; sourceTree = "<group>"; };
+		A8FD276A136766390099E7FC /* CSqliteDatabase_Functions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSqliteDatabase_Functions.m; sourceTree = "<group>"; };
+		A8FD276B136766390099E7FC /* CSqliteEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSqliteEnumerator.h; sourceTree = "<group>"; };
+		A8FD276C136766390099E7FC /* CSqliteEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSqliteEnumerator.m; sourceTree = "<group>"; };
+		A8FD276D136766390099E7FC /* CSqliteStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSqliteStatement.h; sourceTree = "<group>"; };
+		A8FD276E136766390099E7FC /* CSqliteStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSqliteStatement.m; sourceTree = "<group>"; };
+		A8FD2784136766390099E7FC /* TouchSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchSQL.h; sourceTree = "<group>"; };
+		A8FD286E1367674C0099E7FC /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		A8FD28BF136772510099E7FC /* finster.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = finster.sqlite; sourceTree = "<group>"; };
+		A8FD28D0136776E00099E7FC /* DbSearchedTickerInsert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbSearchedTickerInsert.h; sourceTree = "<group>"; };
+		A8FD28D1136776E00099E7FC /* DbSearchedTickerInsert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbSearchedTickerInsert.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +276,7 @@
 				82C1058A13574E8400302082 /* SystemConfiguration.framework in Frameworks */,
 				82C1058C13574E9A00302082 /* MobileCoreServices.framework in Frameworks */,
 				82C105D013574EDD00302082 /* libz.1.2.3.dylib in Frameworks */,
+				A8FD286F1367674C0099E7FC /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				82C1042C1357373700302082 /* Model */,
+				A8FD28CF136776BA0099E7FC /* Database */,
 				82C1042B1357372E00302082 /* Network */,
 				82C1042A1357372200302082 /* Util */,
 				82C104291357370D00302082 /* ViewControllers */,
@@ -306,6 +331,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A8FD28BF136772510099E7FC /* finster.sqlite */,
 				A8FD2629136719D10099E7FC /* LoginView.xib */,
 				8D1107310486CEB800E47090 /* Finster-Info.plist */,
 				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
@@ -333,6 +359,7 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
 				82C105CF13574EDD00302082 /* libz.1.2.3.dylib */,
+				A8FD286E1367674C0099E7FC /* libsqlite3.0.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -438,6 +465,7 @@
 		82C1064413575F4100302082 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				A8FD2763136766390099E7FC /* TouchSQL */,
 				A8ED1DED1358DE410003115F /* json-framework */,
 				A8ED1D8D1358D8530003115F /* facebook-ios-sdk */,
 				A8ED1CC11358A38D0003115F /* ASIHTTPRequest */,
@@ -639,6 +667,41 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		A8FD2763136766390099E7FC /* TouchSQL */ = {
+			isa = PBXGroup;
+			children = (
+				A8FD2764136766390099E7FC /* Source */,
+			);
+			path = TouchSQL;
+			sourceTree = "<group>";
+		};
+		A8FD2764136766390099E7FC /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A8FD2765136766390099E7FC /* CSqliteDatabase.h */,
+				A8FD2766136766390099E7FC /* CSqliteDatabase.m */,
+				A8FD2767136766390099E7FC /* CSqliteDatabase_Extensions.h */,
+				A8FD2768136766390099E7FC /* CSqliteDatabase_Extensions.m */,
+				A8FD2769136766390099E7FC /* CSqliteDatabase_Functions.h */,
+				A8FD276A136766390099E7FC /* CSqliteDatabase_Functions.m */,
+				A8FD276B136766390099E7FC /* CSqliteEnumerator.h */,
+				A8FD276C136766390099E7FC /* CSqliteEnumerator.m */,
+				A8FD276D136766390099E7FC /* CSqliteStatement.h */,
+				A8FD276E136766390099E7FC /* CSqliteStatement.m */,
+				A8FD2784136766390099E7FC /* TouchSQL.h */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		A8FD28CF136776BA0099E7FC /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				A8FD28D0136776E00099E7FC /* DbSearchedTickerInsert.h */,
+				A8FD28D1136776E00099E7FC /* DbSearchedTickerInsert.m */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -724,6 +787,7 @@
 				4D73A27F1363984300688230 /* default-user.png in Resources */,
 				A8FD262A136719D10099E7FC /* LoginView.xib in Resources */,
 				A8FD262F13671BD40099E7FC /* banner.png in Resources */,
+				A8FD28C0136772510099E7FC /* finster.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -779,6 +843,12 @@
 				A87EE79413622479000A91B6 /* WaitView.m in Sources */,
 				A87EE7971362248E000A91B6 /* BaseViewController.m in Sources */,
 				A8FD2628136719690099E7FC /* LoginViewController.m in Sources */,
+				A8FD2785136766390099E7FC /* CSqliteDatabase.m in Sources */,
+				A8FD2786136766390099E7FC /* CSqliteDatabase_Extensions.m in Sources */,
+				A8FD2787136766390099E7FC /* CSqliteDatabase_Functions.m in Sources */,
+				A8FD2788136766390099E7FC /* CSqliteEnumerator.m in Sources */,
+				A8FD2789136766390099E7FC /* CSqliteStatement.m in Sources */,
+				A8FD28D2136776E00099E7FC /* DbSearchedTickerInsert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

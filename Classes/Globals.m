@@ -11,6 +11,7 @@
 static NSString *username;
 static NSString *password;
 static NSString *lastTickerSearch;
+static CSqliteDatabase *db;
 
 
 @implementation Globals
@@ -47,5 +48,31 @@ static NSString *lastTickerSearch;
 	[lastTickerSearch release];
 	lastTickerSearch = [newLastTickerSearch retain];
 }
+
++ (NSError *)openDatabase:(NSString *)filename {
+	
+	// Close the existing database if open
+	if(db != nil) {
+		[db close];
+		[db release];
+		db = nil;
+	}
+	
+	db = [[CSqliteDatabase alloc] initWithPath:filename];
+	
+    // Open DB
+    NSError *error = nil;
+    [db open:&error];
+	if(error != nil)
+		return error;
+	
+	return nil;
+}
+
++ (CSqliteDatabase *)getDatabaseHandle {
+	return db;
+}
+
+
 
 @end
