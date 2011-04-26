@@ -43,6 +43,8 @@
 - (void)doRequest {
 	active = YES;
 	
+	[self.request setUsername:[Globals getUsername]];
+	[self.request setPassword:[Globals getPassword]];
 	[self.request setDelegate:self];
 	[self.request startAsynchronous];
 }

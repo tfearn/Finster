@@ -31,6 +31,10 @@
 	//facebook = [[Facebook alloc] initWithAppId:@"215815565097885"];
 	//[facebook authorize:nil delegate:self];
 	
+	// TO DO: Remove later - hard code the username/password for now
+	[Globals setUsername:@"markb"];
+	[Globals setPassword:@"fullers"];
+	
     return YES;
 }
 

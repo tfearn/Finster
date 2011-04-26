@@ -8,14 +8,35 @@
 
 #import "Globals.h"
 
-
+static NSString *username;
+static NSString *password;
 static NSString *lastTickerSearch;
 
 
 @implementation Globals
 
 + (void)initialize {
+	username = [[NSString alloc] init];
+	password = [[NSString alloc] init];
 	lastTickerSearch = [[NSString alloc] init];
+}
+
++ (NSString *)getUsername {
+	return username;
+}
+
++ (void)setUsername:(NSString *)newUsername {
+	[username release];
+	username = [newUsername retain];
+}
+
++ (NSString *)getPassword {
+	return password;
+}
+
++ (void)setPassword:(NSString *)newPassword {
+	[password release];
+	password = [newPassword retain];
 }
 
 + (NSString *)getLastTickerSearch {

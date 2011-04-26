@@ -106,21 +106,41 @@
 	title = [Utility getCheckInString:title checkInType:checkIn.checkinType symbol:checkIn.ticker.symbol];
 	cell.title.text = title;
 	
-	
-	// Get the system calendar
+
+	// Determine the differnce between the check-in time and the current time
 	NSCalendar *sysCalendar = [NSCalendar currentCalendar];
-	
-	// Create the NSDates
-	NSDate *now = [[NSDate alloc] init];
-	
-	// Get conversion to months, days, hours, minutes
+	NSDate *now = [[[NSDate alloc] init] autorelease];
 	unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit;
-	
 	NSDateComponents *breakdownInfo = [sysCalendar components:unitFlags fromDate:checkIn.timestamp  toDate:now  options:0];
+	int months = [breakdownInfo month];
+	int days = [breakdownInfo day];
+	int hours = [breakdownInfo hour];
+	int minutes = [breakdownInfo minute];
 	
-	MyLog(@"Break down: %dmin %dhours %ddays %dmoths",[breakdownInfo minute], [breakdownInfo hour], [breakdownInfo day], [breakdownInfo month]);
-	
-	[now release];
+	if(months > 0) {
+		if(months > 1)
+			cell.timestamp.text = [NSString stringWithFormat:@"%d months ago", months];
+		else
+			cell.timestamp.text = [NSString stringWithFormat:@"%d month ago", months];
+	}
+	else if(days > 0) {
+		if(days > 1)
+			cell.timestamp.text = [NSString stringWithFormat:@"%d days ago", days];
+		else
+			cell.timestamp.text = [NSString stringWithFormat:@"%d day ago", days];
+	}
+	else if(hours > 0) {
+		if(hours > 1)
+			cell.timestamp.text = [NSString stringWithFormat:@"%d hours ago", hours];
+		else
+			cell.timestamp.text = [NSString stringWithFormat:@"%d hour ago", hours];
+	}
+	else if(minutes > 0) {
+		if(minutes > 1)
+			cell.timestamp.text = [NSString stringWithFormat:@"%d minutes ago", minutes];
+		else
+			cell.timestamp.text = [NSString stringWithFormat:@"%d minute ago", minutes];
+	}
 	
 	
 	switch (checkIn.checkinType) {
@@ -148,8 +168,6 @@
 		default:
 			break;
 	}
-	
-	//cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	
     return cell;
 }
