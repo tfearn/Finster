@@ -14,7 +14,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	//
+	// Insert the ticker into the database
+	NSError *error = [DbSearchedTickerInsert doInsert:self.ticker];
 }
 
 - (void)dealloc {

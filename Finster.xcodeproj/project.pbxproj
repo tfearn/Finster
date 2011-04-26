@@ -30,6 +30,7 @@
 		82C107A71357984B00302082 /* TickerFindViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82C107A61357984B00302082 /* TickerFindViewCell.xib */; };
 		82C107F51357A09C00302082 /* CheckInDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C107F41357A09C00302082 /* CheckInDetailViewController.m */; };
 		82C107F71357A0AB00302082 /* CheckInDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82C107F61357A0AB00302082 /* CheckInDetailView.xib */; };
+		A83419241367845C00DA62D1 /* DbSearchedTickerGet.m in Sources */ = {isa = PBXBuildFile; fileRef = A83419231367845C00DA62D1 /* DbSearchedTickerGet.m */; };
 		A83CF2FA13585BFF002D4F43 /* app-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A83CF2F913585BFF002D4F43 /* app-icon.png */; };
 		A83CF30313585DE6002D4F43 /* tabbar-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = A83CF30213585DE6002D4F43 /* tabbar-redo.png */; };
 		A83CF30613585F43002D4F43 /* tabbar-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = A83CF30513585F43002D4F43 /* tabbar-gear.png */; };
@@ -141,6 +142,8 @@
 		82C107F41357A09C00302082 /* CheckInDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInDetailViewController.m; sourceTree = "<group>"; };
 		82C107F61357A0AB00302082 /* CheckInDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInDetailView.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Finster-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Finster-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		A83419221367845C00DA62D1 /* DbSearchedTickerGet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbSearchedTickerGet.h; sourceTree = "<group>"; };
+		A83419231367845C00DA62D1 /* DbSearchedTickerGet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbSearchedTickerGet.m; sourceTree = "<group>"; };
 		A83CF2F913585BFF002D4F43 /* app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon.png"; path = "images/app-icon.png"; sourceTree = "<group>"; };
 		A83CF30213585DE6002D4F43 /* tabbar-redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar-redo.png"; path = "images/tabbar-redo.png"; sourceTree = "<group>"; };
 		A83CF30513585F43002D4F43 /* tabbar-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar-gear.png"; path = "images/tabbar-gear.png"; sourceTree = "<group>"; };
@@ -698,6 +701,8 @@
 			children = (
 				A8FD28D0136776E00099E7FC /* DbSearchedTickerInsert.h */,
 				A8FD28D1136776E00099E7FC /* DbSearchedTickerInsert.m */,
+				A83419221367845C00DA62D1 /* DbSearchedTickerGet.h */,
+				A83419231367845C00DA62D1 /* DbSearchedTickerGet.m */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -849,6 +854,7 @@
 				A8FD2788136766390099E7FC /* CSqliteEnumerator.m in Sources */,
 				A8FD2789136766390099E7FC /* CSqliteStatement.m in Sources */,
 				A8FD28D2136776E00099E7FC /* DbSearchedTickerInsert.m in Sources */,
+				A83419241367845C00DA62D1 /* DbSearchedTickerGet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

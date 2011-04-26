@@ -45,6 +45,14 @@
 		[self.searchBar setText:lastTicker];
 		[self doTickerRequest:lastTicker];
 	}
+	else {
+		DbSearchedTickerGet *get = [[[DbSearchedTickerGet alloc] init] autorelease];
+		NSError *error = [get doSelect];
+		if(error != nil)
+			MyLog(@"%@", [error description]);
+		
+	}
+
 }
 
 - (void)didReceiveMemoryWarning {

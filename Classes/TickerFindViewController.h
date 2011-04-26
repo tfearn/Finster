@@ -15,6 +15,7 @@
 #import "Ticker.h"
 #import "TickerFindViewCell.h"
 #import "CheckInDetailViewController.h"
+#import "DbSearchedTickerGet.h"
 
 @interface TickerFindViewController : BaseViewController <UIScrollViewDelegate, ASIHTTPRequestDelegate, SBJsonStreamParserAdapterDelegate> {
 	IBOutlet UISearchBar *_searchBar;

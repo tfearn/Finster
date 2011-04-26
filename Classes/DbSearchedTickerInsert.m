@@ -11,4 +11,16 @@
 
 @implementation DbSearchedTickerInsert
 
++ (NSError *)doInsert:(Ticker *)ticker {
+	
+	CSqliteDatabase *dbHandle = [Globals getDatabaseHandle];
+
+	NSString *insert =  [NSString stringWithFormat:kSqlInsertSearchedTicker, ticker.symbol, ticker.symbolName, ticker.type, ticker.typeName, ticker.exchange, ticker.exchangeName];
+	NSError *error = nil;
+    if(! [dbHandle executeExpression:insert error:&error])
+		return error;
+	
+	return nil;
+}
+
 @end

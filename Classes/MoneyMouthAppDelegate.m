@@ -56,6 +56,8 @@
 	
     NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsPath = [[searchPaths objectAtIndex:0] stringByAppendingPathComponent:kDatabaseFilename];
+	MyLog(@"%@", documentsPath);
+	
     if(! [[NSFileManager defaultManager] fileExistsAtPath:documentsPath]) {
 		
 		NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"finster" ofType:@"sqlite"];
