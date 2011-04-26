@@ -17,7 +17,12 @@
 #define kCheckInTypeShouldISell		6
 #define kCheckInTypeImThinking		7
 
+// Keys
+#define kUsernameKey				@"username"
+#define kPasswordKey				@"password"
+
 // URLs
+#define kUrlLogin					@"http://173.203.238.148/cgi-bin/login.cgi"
 #define kUrlTickerLookup			@"http://d.yimg.com/autoc.finance.yahoo.com/autoc?query=%@&callback=YAHOO.Finance.SymbolSuggest.ssCallback"
 //#define kUrlGetWall					@"http://www.idata.net/finster/wall3.xml"
 #define kUrlGetWall					@"http://173.203.238.148/cgi-bin/getcheckins.cgi?start=1&limit=20&feed=you+wall&type=CheckInTypeIBought&ticker=all"

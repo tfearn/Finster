@@ -22,7 +22,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	[self.tableView setRowHeight:85.0];
+	[self.tableView setRowHeight:100.0];
+	
+	// Add the refresh button and the title button
+	UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshButtonPressed:)];
+	self.navigationItem.leftBarButtonItem = refreshButton; 
+	[refreshButton release];
 	
 	// Do the initial request for data
 	[self getData];
@@ -46,6 +51,10 @@
 	[_request release];
 	[_checkIns release];
     [super dealloc];
+}
+
+- (IBAction)refreshButtonPressed:(id)sender {
+	[self getData];
 }
 
 - (void)getData {
@@ -105,7 +114,7 @@
 	NSString *title = [[[NSString alloc] init] autorelease];
 	title = [Utility getCheckInString:title checkInType:checkIn.checkinType symbol:checkIn.ticker.symbol];
 	cell.title.text = title;
-	
+	cell.company.text = checkIn.ticker.symbolName;
 
 	// Determine the differnce between the check-in time and the current time
 	NSCalendar *sysCalendar = [NSCalendar currentCalendar];

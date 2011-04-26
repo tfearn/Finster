@@ -73,7 +73,8 @@
 	}
 	else if([lastStartElement isEqualToString:@"timestamp"]) {
 		NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-		[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzz"];
+		//[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzz"];
+		[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm zzz"];
 		checkIn.timestamp = [dateFormatter dateFromString:string];
 	}
 	else if([lastStartElement isEqualToString:@"type"]) {

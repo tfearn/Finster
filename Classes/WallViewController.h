@@ -23,4 +23,6 @@
 @property (nonatomic, retain) GetWallRequest *request;
 @property (nonatomic, retain) NSMutableArray *checkIns;
 
+- (IBAction)refreshButtonPressed:(id)sender;
+
 @end

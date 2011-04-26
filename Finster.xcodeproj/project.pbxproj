@@ -44,8 +44,6 @@
 		A8718C361357C1A50054D85C /* piechart-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8718C321357C1A50054D85C /* piechart-icon.png */; };
 		A87743A31356636F00DD721B /* CheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A87743A21356636F00DD721B /* CheckInViewController.m */; };
 		A87743A51356638500DD721B /* CheckInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A87743A41356638500DD721B /* CheckInView.xib */; };
-		A87743A81356640800DD721B /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A87743A71356640800DD721B /* ActivityViewController.m */; };
-		A87743AA1356641A00DD721B /* ActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A87743A91356641A00DD721B /* ActivityView.xib */; };
 		A87743AD1356645500DD721B /* BadgesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A87743AC1356645500DD721B /* BadgesViewController.m */; };
 		A87743AF1356646500DD721B /* BadgesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A87743AE1356646500DD721B /* BadgesView.xib */; };
 		A87743BC135666A900DD721B /* tabbar-clock.png in Resources */ = {isa = PBXBuildFile; fileRef = A87743BB135666A900DD721B /* tabbar-clock.png */; };
@@ -94,6 +92,9 @@
 		A8ED1F55135CC2760003115F /* check-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8ED1F54135CC2760003115F /* check-icon.png */; };
 		A8ED1F5B135CD3790003115F /* CheckInResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ED1F5A135CD3790003115F /* CheckInResultViewController.m */; };
 		A8ED1F5D135CD38D0003115F /* CheckInResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8ED1F5C135CD38D0003115F /* CheckInResultView.xib */; };
+		A8FD2628136719690099E7FC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FD2627136719690099E7FC /* LoginViewController.m */; };
+		A8FD262A136719D10099E7FC /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8FD2629136719D10099E7FC /* LoginView.xib */; };
+		A8FD262F13671BD40099E7FC /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FD262E13671BD40099E7FC /* banner.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -151,9 +152,6 @@
 		A87743A11356636F00DD721B /* CheckInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInViewController.h; sourceTree = "<group>"; };
 		A87743A21356636F00DD721B /* CheckInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInViewController.m; sourceTree = "<group>"; };
 		A87743A41356638500DD721B /* CheckInView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInView.xib; sourceTree = "<group>"; };
-		A87743A61356640800DD721B /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
-		A87743A71356640800DD721B /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
-		A87743A91356641A00DD721B /* ActivityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityView.xib; sourceTree = "<group>"; };
 		A87743AB1356645500DD721B /* BadgesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgesViewController.h; sourceTree = "<group>"; };
 		A87743AC1356645500DD721B /* BadgesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgesViewController.m; sourceTree = "<group>"; };
 		A87743AE1356646500DD721B /* BadgesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BadgesView.xib; sourceTree = "<group>"; };
@@ -237,6 +235,10 @@
 		A8ED1F59135CD3790003115F /* CheckInResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInResultViewController.h; sourceTree = "<group>"; };
 		A8ED1F5A135CD3790003115F /* CheckInResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInResultViewController.m; sourceTree = "<group>"; };
 		A8ED1F5C135CD38D0003115F /* CheckInResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInResultView.xib; sourceTree = "<group>"; };
+		A8FD2626136719690099E7FC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		A8FD2627136719690099E7FC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		A8FD2629136719D10099E7FC /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		A8FD262E13671BD40099E7FC /* banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banner.png; path = images/banner.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +306,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A8FD2629136719D10099E7FC /* LoginView.xib */,
 				8D1107310486CEB800E47090 /* Finster-Info.plist */,
 				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
 				A87743A41356638500DD721B /* CheckInView.xib */,
@@ -314,7 +317,6 @@
 				82C107A61357984B00302082 /* TickerFindViewCell.xib */,
 				822435A9135F7DF100C6258F /* WallView.xib */,
 				822435CD135F813E00C6258F /* WallViewCell.xib */,
-				A87743A91356641A00DD721B /* ActivityView.xib */,
 				A87743AE1356646500DD721B /* BadgesView.xib */,
 				A83CF30E13586075002D4F43 /* SettingsView.xib */,
 			);
@@ -364,15 +366,6 @@
 			name = BadgesView;
 			sourceTree = "<group>";
 		};
-		82C10427135736BB00302082 /* Activity */ = {
-			isa = PBXGroup;
-			children = (
-				A87743A61356640800DD721B /* ActivityViewController.h */,
-				A87743A71356640800DD721B /* ActivityViewController.m */,
-			);
-			name = Activity;
-			sourceTree = "<group>";
-		};
 		82C10428135736D200302082 /* CheckIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,11 +388,11 @@
 			children = (
 				A87EE7951362248E000A91B6 /* BaseViewController.h */,
 				A87EE7961362248E000A91B6 /* BaseViewController.m */,
+				A8FD260B1367190E0099E7FC /* Login */,
 				82C10428135736D200302082 /* CheckIn */,
 				822435A5135F7DC100C6258F /* Wall */,
 				822435A4135F7D9000C6258F /* Settings */,
 				82C107A3135797C800302082 /* TickerFind */,
-				82C10427135736BB00302082 /* Activity */,
 				82C10426135736AE00302082 /* BadgesView */,
 			);
 			name = ViewControllers;
@@ -466,6 +459,7 @@
 		A87743BA1356669500DD721B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				A8FD262E13671BD40099E7FC /* banner.png */,
 				4D73A27E1363984300688230 /* default-user.png */,
 				A8ED1F54135CC2760003115F /* check-icon.png */,
 				A8ED1EA9135CA2570003115F /* facebook-grey-icon.png */,
@@ -636,6 +630,15 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		A8FD260B1367190E0099E7FC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A8FD2626136719690099E7FC /* LoginViewController.h */,
+				A8FD2627136719690099E7FC /* LoginViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -687,7 +690,6 @@
 			files = (
 				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
 				A87743A51356638500DD721B /* CheckInView.xib in Resources */,
-				A87743AA1356641A00DD721B /* ActivityView.xib in Resources */,
 				A87743AF1356646500DD721B /* BadgesView.xib in Resources */,
 				A87743BC135666A900DD721B /* tabbar-clock.png in Resources */,
 				A87743BE135667DE00DD721B /* tabbar-user.png in Resources */,
@@ -720,6 +722,8 @@
 				822435AA135F7DF100C6258F /* WallView.xib in Resources */,
 				822435CE135F813E00C6258F /* WallViewCell.xib in Resources */,
 				4D73A27F1363984300688230 /* default-user.png in Resources */,
+				A8FD262A136719D10099E7FC /* LoginView.xib in Resources */,
+				A8FD262F13671BD40099E7FC /* banner.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,7 +737,6 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* MoneyMouthAppDelegate.m in Sources */,
 				A87743A31356636F00DD721B /* CheckInViewController.m in Sources */,
-				A87743A81356640800DD721B /* ActivityViewController.m in Sources */,
 				A87743AD1356645500DD721B /* BadgesViewController.m in Sources */,
 				A877442D1356880B00DD721B /* TickerFindViewController.m in Sources */,
 				82C10431135737F000302082 /* Globals.m in Sources */,
@@ -775,6 +778,7 @@
 				A8485BD31360DD3D0044EB0F /* Request.m in Sources */,
 				A87EE79413622479000A91B6 /* WaitView.m in Sources */,
 				A87EE7971362248E000A91B6 /* BaseViewController.m in Sources */,
+				A8FD2628136719690099E7FC /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

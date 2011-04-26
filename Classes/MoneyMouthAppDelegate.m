@@ -8,6 +8,10 @@
 
 #import "MoneyMouthAppDelegate.h"
 
+@interface MoneyMouthAppDelegate (Private)
+- (void)doLogin;
+@end
+
 
 @implementation MoneyMouthAppDelegate
 
@@ -31,11 +35,17 @@
 	//facebook = [[Facebook alloc] initWithAppId:@"215815565097885"];
 	//[facebook authorize:nil delegate:self];
 	
-	// TO DO: Remove later - hard code the username/password for now
-	[Globals setUsername:@"markb"];
-	[Globals setPassword:@"fullers"];
+	// Login
+	[self doLogin];
 	
-    return YES;
+	return YES;
+}
+
+
+- (void)doLogin {
+	LoginViewController *viewController = [[LoginViewController alloc] init];
+    [self.tabBarController presentModalViewController: viewController animated: NO];
+	[viewController release];
 }
 
 

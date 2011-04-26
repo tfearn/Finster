@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FBConnect.h"
-#import "Globals.h"
+#import "LoginViewController.h"
 
 @interface MoneyMouthAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, FBSessionDelegate> {
     UIWindow *window;
