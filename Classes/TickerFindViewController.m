@@ -50,7 +50,6 @@
 		NSError *error = [get doSelect];
 		if(error != nil)
 			MyLog(@"%@", [error description]);
-		
 	}
 
 }
