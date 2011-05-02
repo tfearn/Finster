@@ -10,6 +10,7 @@
 
 @interface MoneyMouthAppDelegate (Private)
 - (BOOL)initializeDatabase;
+- (void)doFacebookLogin;
 - (void)doLogin;
 @end
 
@@ -32,10 +33,10 @@
     [self.window addSubview:tabBarController.view];
     [self.window makeKeyAndVisible];
 	
-	// Authenticate with Facebook
-	//facebook = [[Facebook alloc] initWithAppId:@"215815565097885"];
-	//[facebook authorize:nil delegate:self];
+	[self doFacebookLogin];
 	
+	
+	/*
 	// Initialize the Db
 	if(! [self initializeDatabase]) {
 		// TODO:  We have problems here, fix
@@ -44,6 +45,7 @@
 	
 	// Login
 	[self doLogin];
+	 */
 	
 	return YES;
 }
@@ -84,15 +86,28 @@
 }
 
 
+- (void)doFacebookLogin {
+	// Authenticate with Facebook
+	facebook = [[Facebook alloc] initWithAppId:@"215815565097885"];
+	
+	facebook.accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:kFacebookAccessTokenKey];
+    facebook.expirationDate = [[NSUserDefaults standardUserDefaults] objectForKey:kFacebookExpirationDateKey];
+	
+	// only authorize if the access token isn't valid
+    if (![facebook isSessionValid]) {
+		NSArray* permissions =  [[NSArray arrayWithObjects:@"email", @"read_stream", nil] retain];
+        [facebook authorize:permissions delegate:self];
+    }
+	else {
+		[facebook requestWithGraphPath:@"me" andDelegate:self]; 
+	}
+}
+
+
 - (void)doLogin {
 	LoginViewController *viewController = [[LoginViewController alloc] init];
     [self.tabBarController presentModalViewController: viewController animated: NO];
 	[viewController release];
-}
-
-
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    return [facebook handleOpenURL:url]; 
 }
 
 
@@ -132,6 +147,49 @@
      See also applicationDidEnterBackground:.
      */
 }
+
+
+// Required by FBConnect
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [facebook handleOpenURL:url]; 
+}
+
+
+#pragma mark -
+#pragma mark FBLoginDialogDelegate methods
+
+- (void)fbDidLogin {
+	// store the access token and expiration date to the Facebook user defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:facebook.accessToken forKey:kFacebookAccessTokenKey];
+    [defaults setObject:facebook.expirationDate forKey:kFacebookExpirationDateKey];
+    [defaults synchronize];
+
+	[facebook requestWithGraphPath:@"me" andDelegate:self]; 
+}
+
+-(void)fbDidNotLogin:(BOOL)cancelled {
+	// TODO: Handle this later
+}
+
+- (void)fbDidLogout {
+}
+
+
+#pragma mark -
+#pragma mark FBLoginDialogDelegate methods
+
+- (void)request:(FBRequest *)request didReceiveResponse:(NSURLResponse *)response {
+}
+
+- (void)request:(FBRequest *)request didLoad:(id)result {
+	NSDictionary *dict = result;
+	NSLog(@"%@", dict);
+};
+
+- (void)request:(FBRequest *)request didFailWithError:(NSError *)error {
+};
+
 
 
 #pragma mark -

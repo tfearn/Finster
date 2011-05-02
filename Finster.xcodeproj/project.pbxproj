@@ -879,11 +879,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Todd Fearn (3TVVZ6J6JA)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Finster_Prefix.pch;
 				INFOPLIST_FILE = "Finster-Info.plist";
 				PRODUCT_NAME = Finster;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "694D8DF4-622B-4ADD-B3E0-B90F2AD655D7";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
