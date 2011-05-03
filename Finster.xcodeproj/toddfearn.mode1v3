@@ -264,28 +264,24 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
-								<string>A87743BA1356669500DD721B</string>
 								<string>080E96DDFE201D6D7F000001</string>
-								<string>82C1042C1357373700302082</string>
-								<string>82C1042B1357372E00302082</string>
-								<string>82C1042A1357372200302082</string>
 								<string>82C104291357370D00302082</string>
-								<string>82C10428135736D200302082</string>
-								<string>822435A5135F7DC100C6258F</string>
+								<string>A8FD260B1367190E0099E7FC</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>27</integer>
-									<integer>26</integer>
-									<integer>25</integer>
+									<integer>13</integer>
+									<integer>11</integer>
+									<integer>8</integer>
+									<integer>3</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 68}, {298, 1102}}</string>
+							<string>{{0, 0}, {298, 1102}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -304,7 +300,7 @@
 							<real>298</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>596 153 1716 1161 0 0 2560 1418 </string>
+						<string>453 157 1716 1161 0 0 2560 1418 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -322,7 +318,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Globals.h</string>
+								<string>FacebookLoginViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -330,17 +326,16 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Globals.h</string>
+										<string>FacebookLoginViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>824D9EC71360BD5300631120</string>
+										<string>82203E6313707B1B00FC642B</string>
 										<key>history</key>
 										<array>
 											<string>82C1044813573DF700302082</string>
 											<string>82C1044913573DF700302082</string>
 											<string>82C1044A13573DF700302082</string>
-											<string>82C1044D13573DF700302082</string>
 											<string>82C1077A135792D900302082</string>
 											<string>82C107C313579ACE00302082</string>
 											<string>82C107C413579ACE00302082</string>
@@ -376,7 +371,11 @@
 											<string>824D9EAE1360BA1B00631120</string>
 											<string>824D9EAF1360BA1B00631120</string>
 											<string>824D9EC51360BD5300631120</string>
-											<string>824D9EC61360BD5300631120</string>
+											<string>82203E4413707A2400FC642B</string>
+											<string>82203E4513707A2400FC642B</string>
+											<string>82203E6013707B1B00FC642B</string>
+											<string>82203E6113707B1B00FC642B</string>
+											<string>82203E6213707B1B00FC642B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -388,14 +387,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1396, 922}}</string>
+								<string>{{0, 0}, {1396, 914}}</string>
 								<key>RubberWindowFrame</key>
-								<string>596 153 1716 1161 0 0 2560 1418 </string>
+								<string>453 157 1716 1161 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>922pt</string>
+							<string>914pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -408,14 +407,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 927}, {1396, 193}}</string>
+								<string>{{0, 919}, {1396, 201}}</string>
 								<key>RubberWindowFrame</key>
-								<string>596 153 1716 1161 0 0 2560 1418 </string>
+								<string>453 157 1716 1161 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>193pt</string>
+							<string>201pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -434,9 +433,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>824D9D57136076F800631120</string>
+				<string>82203E5413707A3200FC642B</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>824D9D58136076F800631120</string>
+				<string>82203E5513707A3200FC642B</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -574,17 +573,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>824D9E0C1360B3B400631120</string>
-		<string>824D9DEE1360B28100631120</string>
-		<string>824D9DD71360B22B00631120</string>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
-		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>823615A5135731AE00935425</string>
 		<string>/Users/toddfearn/project/Finster/Finster.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>596 153 1716 1161 0 0 2560 1418 </string>
+	<string>453 157 1716 1161 0 0 2560 1418 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -605,7 +598,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>WallViewController.m</string>
+								<string>FacebookLoginViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -663,7 +656,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>823615A5135731AE00935425</string>
-				<string>824D9D52136076DE00631120</string>
+				<string>82203E5613707A3200FC642B</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
