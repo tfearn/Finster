@@ -332,7 +332,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>A854DAFF1370CCAA00CB1B30</string>
+										<string>A8E824AB13720CF600B3983B</string>
 										<key>history</key>
 										<array>
 											<string>A87744431356918400DD721B</string>
@@ -400,7 +400,7 @@
 											<string>A854DAEB1370CC3200CB1B30</string>
 											<string>A854DAEC1370CC3200CB1B30</string>
 											<string>A854DAED1370CC3200CB1B30</string>
-											<string>A854DAFD1370CC9300CB1B30</string>
+											<string>A854DAFF1370CCAA00CB1B30</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -412,14 +412,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1307, 860}}</string>
+								<string>{{0, 0}, {1307, 858}}</string>
 								<key>RubberWindowFrame</key>
 								<string>-1680 -195 1680 995 -1920 -280 1920 1080 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>860pt</string>
+							<string>858pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -432,14 +432,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 865}, {1307, 89}}</string>
+								<string>{{0, 863}, {1307, 91}}</string>
 								<key>RubberWindowFrame</key>
 								<string>-1680 -195 1680 995 -1920 -280 1920 1080 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>89pt</string>
+							<string>91pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -458,9 +458,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>A854DAA91370C6C500CB1B30</string>
+				<string>A8E824AC13720CF600B3983B</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>A854DAAA1370C6C500CB1B30</string>
+				<string>A8E824AD13720CF600B3983B</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -598,11 +598,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C530D57069F1CE1000CFCEE</string>
-		<string>A854DAC61370C83200CB1B30</string>
-		<string>A854DAB41370C6C500CB1B30</string>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>A8774399135660B600DD721B</string>
 		<string>/Users/tfearn/Project/Finster/Finster.xcodeproj</string>
 	</array>
@@ -684,7 +679,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>A8774399135660B600DD721B</string>
-				<string>A854DAAB1370C6C500CB1B30</string>
+				<string>A8E824AE13720CF600B3983B</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
