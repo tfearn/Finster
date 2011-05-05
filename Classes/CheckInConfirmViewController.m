@@ -118,8 +118,8 @@
 		default:
 			break;
 	}
-			
-	NSString *urlString = [NSString stringWithFormat:kUrlPostCheckIn, type, self.ticker.symbol];
+
+	NSString *urlString = [NSString stringWithFormat:kUrlPostCheckIn, type, self.ticker.symbol, self.ticker.symbolName, self.ticker.typeName, self.ticker.exchangeName];
 	if([[self.textView text] length]) {
 		if([[self.textView text] isEqualToString:kTextViewDefaultMessage] == NO)
 			urlString = [urlString stringByAppendingFormat:@"&comment=%@", [self.textView text]];
@@ -129,6 +129,7 @@
 	if(twitterOn)
 		urlString = [urlString stringByAppendingString:@"&sharetwitter=1"];
 	NSString* escapedUrlString =[urlString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+	MyLog(@"%@", escapedUrlString);
 	
 	[self showWaitView:@"Checking in..."];
 
