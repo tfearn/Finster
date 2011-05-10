@@ -265,6 +265,7 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>82C1042C1357373700302082</string>
 								<string>82C104291357370D00302082</string>
 								<string>A8FD260B1367190E0099E7FC</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
@@ -273,9 +274,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>13</integer>
-									<integer>11</integer>
-									<integer>8</integer>
+									<integer>5</integer>
+									<integer>4</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
@@ -300,7 +300,7 @@
 							<real>298</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>453 157 1716 1161 0 0 2560 1418 </string>
+						<string>459 165 1716 1161 0 0 2560 1418 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -318,7 +318,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>FacebookLoginViewController.m</string>
+								<string>CheckInDetailViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -326,11 +326,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>FacebookLoginViewController.m</string>
+										<string>CheckInDetailViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>82203E6313707B1B00FC642B</string>
+										<string>8253CCAA13733D8E00A01221</string>
 										<key>history</key>
 										<array>
 											<string>82C1044813573DF700302082</string>
@@ -351,7 +351,6 @@
 											<string>824D9D7F1360858B00631120</string>
 											<string>824D9DAB1360985400631120</string>
 											<string>824D9DC21360B22B00631120</string>
-											<string>824D9DC41360B22B00631120</string>
 											<string>824D9DC51360B22B00631120</string>
 											<string>824D9DC61360B22B00631120</string>
 											<string>824D9DC71360B22B00631120</string>
@@ -371,11 +370,12 @@
 											<string>824D9EAE1360BA1B00631120</string>
 											<string>824D9EAF1360BA1B00631120</string>
 											<string>824D9EC51360BD5300631120</string>
-											<string>82203E4413707A2400FC642B</string>
 											<string>82203E4513707A2400FC642B</string>
 											<string>82203E6013707B1B00FC642B</string>
-											<string>82203E6113707B1B00FC642B</string>
 											<string>82203E6213707B1B00FC642B</string>
+											<string>8253CCA713733D8E00A01221</string>
+											<string>8253CCA813733D8E00A01221</string>
+											<string>8253CCA913733D8E00A01221</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -387,14 +387,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1396, 914}}</string>
+								<string>{{0, 0}, {1396, 906}}</string>
 								<key>RubberWindowFrame</key>
-								<string>453 157 1716 1161 0 0 2560 1418 </string>
+								<string>459 165 1716 1161 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>914pt</string>
+							<string>906pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -407,14 +407,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 919}, {1396, 201}}</string>
+								<string>{{0, 911}, {1396, 209}}</string>
 								<key>RubberWindowFrame</key>
-								<string>453 157 1716 1161 0 0 2560 1418 </string>
+								<string>459 165 1716 1161 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>201pt</string>
+							<string>209pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -433,9 +433,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>82203E5413707A3200FC642B</string>
+				<string>8253CCAB13733D8E00A01221</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>82203E5513707A3200FC642B</string>
+				<string>8253CCAC13733D8E00A01221</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -573,11 +573,15 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>8253CCAD13733D8E00A01221</string>
+		<string>8253CCAE13733D8E00A01221</string>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>823615A5135731AE00935425</string>
 		<string>/Users/toddfearn/project/Finster/Finster.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>453 157 1716 1161 0 0 2560 1418 </string>
+	<string>459 165 1716 1161 0 0 2560 1418 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -598,7 +602,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>FacebookLoginViewController.m</string>
+								<string>CheckInDetailViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -656,7 +660,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>823615A5135731AE00935425</string>
-				<string>82203E5613707A3200FC642B</string>
+				<string>8253CC9913733C8A00A01221</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -700,8 +704,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {316, 198}}</string>
-											<string>{{316, 0}, {378, 198}}</string>
+											<string>{{0, 0}, {316, 201}}</string>
+											<string>{{316, 0}, {378, 201}}</string>
 										</array>
 									</dict>
 									<key>VerticalSplitView</key>
@@ -716,8 +720,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {694, 198}}</string>
-											<string>{{0, 198}, {694, 183}}</string>
+											<string>{{0, 0}, {694, 201}}</string>
+											<string>{{0, 201}, {694, 180}}</string>
 										</array>
 									</dict>
 								</dict>
@@ -750,7 +754,7 @@
 										<real>148</real>
 									</array>
 									<key>Frame</key>
-									<string>{{316, 0}, {378, 198}}</string>
+									<string>{{316, 0}, {378, 201}}</string>
 									<key>RubberWindowFrame</key>
 									<string>605 946 694 422 0 0 2560 1418 </string>
 								</dict>
@@ -778,13 +782,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>824D9DCD1360B22B00631120</string>
+				<string>8253CC9A13733C8A00A01221</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>824D9DCE1360B22B00631120</string>
-				<string>824D9DCF1360B22B00631120</string>
-				<string>824D9DD01360B22B00631120</string>
-				<string>824D9DD11360B22B00631120</string>
-				<string>824D9DD21360B22B00631120</string>
+				<string>8253CC9B13733C8A00A01221</string>
+				<string>8253CC9C13733C8A00A01221</string>
+				<string>8253CC9D13733C8A00A01221</string>
+				<string>8253CC9E13733C8A00A01221</string>
+				<string>8253CC9F13733C8A00A01221</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -903,8 +907,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -940,7 +942,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>824D9DD51360B22B00631120</string>
+				<string>8253CCA013733C8A00A01221</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
