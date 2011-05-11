@@ -85,14 +85,12 @@
 
 - (void)request:(FBRequest *)request didLoad:(id)result {
 	NSDictionary *dict = result;
-	MyLog(@"%@", dict);
 	
 	// Get the Facebook user ID
 	NSString *facebookUserID = [dict objectForKey:@"id"];
 	
 	// Call the server to get the session ID
 	NSString *url = [NSString stringWithFormat:kUrlLoginUsingFacebook, facebookUserID, self.facebook.accessToken];
-	MyLog(@"%@", url);
 	[_loginUsingFacebookRequest release];
 	_loginUsingFacebookRequest = [[Request alloc] init];
 	self.loginUsingFacebookRequest.delegate = self;
@@ -108,8 +106,6 @@
 #pragma mark RequestDelegate Methods
 
 -(void)requestComplete:(NSObject *)data {
-	// TODO: Save the session ID when the server returns this
-	
 	[self dismissWaitView];
 	[self dismissModalViewControllerAnimated:YES];
 }

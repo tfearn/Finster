@@ -26,11 +26,11 @@
 
 // URLs
 #define kUrlLogin					@"http://173.203.238.148/cgi-bin/login.cgi"
-#define kUrlLoginUsingFacebook		@"http://173.203.238.148/cgi-bin/loginUsingFacebook.cgi?facebookuserid=%@&accesstoken=%@"
+#define kUrlLoginUsingFacebook		@"http://209.114.35.245/loginUsingFacebook?facebookuserid=%@&accesstoken=%@"
 #define kUrlTickerLookup			@"http://d.yimg.com/autoc.finance.yahoo.com/autoc?query=%@&callback=YAHOO.Finance.SymbolSuggest.ssCallback"
-#define kUrlGetWall					@"http://www.idata.net/finster/wall3.xml"
-//#define kUrlGetWall					@"http://173.203.238.148/cgi-bin/getcheckins.cgi?start=1&limit=20&feed=you+wall&type=CheckInTypeIBought&ticker=all"
-#define kUrlPostCheckIn				@"http://173.203.238.148/cgi-bin/checkin.cgi?type=%@&symbol=%@&symbolName=%@&symbolType=%@&exchange=%@"
+//#define kUrlGetWall					@"http://www.idata.net/finster/wall3.xml"
+#define kUrlGetWall					@"http://209.114.35.245/getcheckins?start=1&limit=20&feed=network&type=CheckInTypeAll&ticker=all"
+#define kUrlPostCheckIn				@"http://209.114.35.245/checkin?type=%@&symbol=%@&symbolName=%@&symbolType=%@&exchange=%@"
 
 // Notifications
 #define kNotificationCheckInComplete	@"NotificationCheckInComplete"

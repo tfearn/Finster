@@ -61,6 +61,10 @@
 	
 	NSObject *parsedData = nil;
 	if([data length]) {
+		NSString *displayData = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+		MyLog(@"%@", displayData);
+		[displayData release];
+		
 		// Parse the return data
 		[self parseData:data];
 
