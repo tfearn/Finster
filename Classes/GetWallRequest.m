@@ -40,13 +40,17 @@
 	if(checkInList == nil)
 		return;
 
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss.s zzz"];
+	
 	// Walk through the array and parse the dictionaries
 	for(int i=0; i<[checkInList count]; i++) {
 		NSDictionary *checkInDict = [checkInList objectAtIndex:i];
 		
 		CheckIn *checkIn = [[CheckIn alloc] init];
 		checkIn.checkinID = [[checkInDict objectForKey:@"id"] longValue];
-		checkIn.timestamp = nil;
+		NSString *timestamp = [checkInDict objectForKey:@"timestamp"];
+		checkIn.timestamp = [dateFormatter dateFromString:timestamp];
 		NSString *checkInType = [checkInDict objectForKey:@"type"];
 		if([checkInType isEqualToString:@"CheckInTypeIBought"])
 			checkIn.checkinType = kCheckInTypeIBought;

@@ -227,6 +227,10 @@
 			82DB0AAA137B048200BF80FF /* PBXTextBookmark */ = 82DB0AAA137B048200BF80FF /* PBXTextBookmark */;
 			82DB0AAB137B048200BF80FF /* PBXTextBookmark */ = 82DB0AAB137B048200BF80FF /* PBXTextBookmark */;
 			82DB0AAC137B048200BF80FF /* PBXTextBookmark */ = 82DB0AAC137B048200BF80FF /* PBXTextBookmark */;
+			82DB0AB8137B095B00BF80FF /* PBXTextBookmark */ = 82DB0AB8137B095B00BF80FF /* PBXTextBookmark */;
+			82DB0AB9137B095B00BF80FF /* PBXTextBookmark */ = 82DB0AB9137B095B00BF80FF /* PBXTextBookmark */;
+			82DB0ABA137B095B00BF80FF /* PBXTextBookmark */ = 82DB0ABA137B095B00BF80FF /* PBXTextBookmark */;
+			82DB0ABB137B095B00BF80FF /* PBXTextBookmark */ = 82DB0ABB137B095B00BF80FF /* PBXTextBookmark */;
 		};
 		sourceControlManager = 823615961357319700935425 /* Source Control */;
 		userBuildSettings = {
@@ -361,9 +365,9 @@
 	};
 	822435E5135F829000C6258F /* GetWallRequest.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1335, 2688}}";
-			sepNavSelRange = "{2813, 0}";
-			sepNavVisRange = "{770, 2560}";
+			sepNavIntBoundsRect = "{{0, 0}, {1328, 1274}}";
+			sepNavSelRange = "{1377, 0}";
+			sepNavVisRange = "{550, 2512}";
 		};
 	};
 	82243601135F860500C6258F /* PBXTextBookmark */ = {
@@ -580,7 +584,7 @@
 		fRef = 822435E5135F829000C6258F /* GetWallRequest.m */;
 		name = "GetWallRequest.m: 50";
 		rLen = 0;
-		rLoc = 2833;
+		rLoc = 3064;
 		rType = 0;
 		vrLen = 1977;
 		vrLoc = 668;
@@ -1566,7 +1570,7 @@
 		fRef = 822435E5135F829000C6258F /* GetWallRequest.m */;
 		name = "GetWallRequest.m: 45";
 		rLen = 0;
-		rLoc = 2831;
+		rLoc = 3062;
 		rType = 0;
 		vrLen = 1570;
 		vrLoc = 448;
@@ -1650,7 +1654,7 @@
 		fRef = 822435E5135F829000C6258F /* GetWallRequest.m */;
 		name = "GetWallRequest.m: 47";
 		rLen = 0;
-		rLoc = 1023;
+		rLoc = 1152;
 		rType = 0;
 		vrLen = 1613;
 		vrLoc = 510;
@@ -1660,7 +1664,7 @@
 		fRef = 822435E5135F829000C6258F /* GetWallRequest.m */;
 		name = "GetWallRequest.m: 51";
 		rLen = 0;
-		rLoc = 1185;
+		rLoc = 1416;
 		rType = 0;
 		vrLen = 1613;
 		vrLoc = 510;
@@ -1677,7 +1681,7 @@
 		fRef = 822435E5135F829000C6258F /* GetWallRequest.m */;
 		name = "GetWallRequest.m: 52";
 		rLen = 0;
-		rLoc = 1246;
+		rLoc = 1477;
 		rType = 0;
 		vrLen = 1635;
 		vrLoc = 550;
@@ -1698,7 +1702,7 @@
 		fRef = 822435E5135F829000C6258F /* GetWallRequest.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 48;
+		rLoc = 52;
 		rType = 1;
 	};
 	82DB0A95137B024A00BF80FF /* PBXTextBookmark */ = {
@@ -1706,7 +1710,7 @@
 		fRef = 822435E5135F829000C6258F /* GetWallRequest.m */;
 		name = "GetWallRequest.m: 51";
 		rLen = 0;
-		rLoc = 1185;
+		rLoc = 1416;
 		rType = 0;
 		vrLen = 834;
 		vrLoc = 768;
@@ -1783,7 +1787,7 @@
 		fRef = 822435E5135F829000C6258F /* GetWallRequest.m */;
 		name = "GetWallRequest.m: 81";
 		rLen = 0;
-		rLoc = 2767;
+		rLoc = 2998;
 		rType = 0;
 		vrLen = 2499;
 		vrLoc = 747;
@@ -1793,10 +1797,47 @@
 		fRef = 822435E5135F829000C6258F /* GetWallRequest.m */;
 		name = "GetWallRequest.m: 86";
 		rLen = 0;
-		rLoc = 2831;
+		rLoc = 3062;
 		rType = 0;
 		vrLen = 2501;
 		vrLoc = 770;
+	};
+	82DB0AB8137B095B00BF80FF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 82203E4113707A0D00FC642B /* FacebookLoginViewController.m */;
+		name = "FacebookLoginViewController.m: 21";
+		rLen = 58;
+		rLoc = 543;
+		rType = 0;
+		vrLen = 1531;
+		vrLoc = 1842;
+	};
+	82DB0AB9137B095B00BF80FF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 822435E5135F829000C6258F /* GetWallRequest.m */;
+		name = "GetWallRequest.m: 53";
+		rLen = 0;
+		rLoc = 1478;
+		rType = 0;
+		vrLen = 2458;
+		vrLoc = 820;
+	};
+	82DB0ABA137B095B00BF80FF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 824D9DEA1360B28100631120 /* GetWallRequest.m */;
+		rLen = 0;
+		rLoc = 53;
+		rType = 1;
+	};
+	82DB0ABB137B095B00BF80FF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 822435E5135F829000C6258F /* GetWallRequest.m */;
+		name = "GetWallRequest.m: 53";
+		rLen = 0;
+		rLoc = 1377;
+		rType = 0;
+		vrLen = 2512;
+		vrLoc = 550;
 	};
 	A83CF30713586029002D4F43 /* SettingsViewController.h */ = {
 		uiCtxt = {
