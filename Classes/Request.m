@@ -10,7 +10,6 @@
 
 @interface Request (Private)
 - (void)doRequest;
-- (void)parseData:(NSData *)data;
 @end
 
 
@@ -18,6 +17,23 @@
 @synthesize delegate;
 @synthesize request = _request;
 @synthesize error = _error;
+@synthesize parseResponse = _parseResponse;
+@synthesize jsonParser = _jsonParser;
+@synthesize jsonAdapter = _jsonAdapter;
+
+-(id)init {
+    if ( self = [super init] ) {
+
+		// Setup the JSON Adapter & Parser
+		_jsonAdapter = [SBJsonStreamParserAdapter new];
+		self.jsonAdapter.delegate = self;
+		
+		_jsonParser = [SBJsonStreamParser new];
+		self.jsonParser.delegate = self.jsonAdapter;
+		self.jsonParser.multi = YES;
+    }
+    return self;
+}
 
 - (void)get:(NSURL *)url {
 	_request = [ASIHTTPRequest requestWithURL:url];
@@ -37,6 +53,8 @@
 		[self.request clearDelegatesAndCancel];
 	
 	[_error release];
+	[_jsonParser release];
+	[_jsonAdapter release];
 	[super dealloc];
 }
 
@@ -60,14 +78,20 @@
 	NSData *data = [request responseData];
 	
 	NSObject *parsedData = nil;
-	if([data length]) {
-		NSString *displayData = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-		MyLog(@"%@", displayData);
-		[displayData release];
+	if(self.parseResponse && [data length]) {
+		MyLog(@"%@", [[[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding] autorelease]);
 		
-		// Parse the return data
-		[self parseData:data];
+		// Parse the data
+		SBJsonStreamParserStatus status = [self.jsonParser parse:data];
+		if (status == SBJsonStreamParserError) {
+			MyLog(@"JSON Parser Error: %@", self.jsonParser.error);
 
+			if(self.delegate != NULL && [self.delegate respondsToSelector:@selector(requestFailure:)]) {
+				[self.delegate requestFailure:self.jsonParser.error];
+			}
+			return;
+		}
+		
 		// Grab the data object from the subclass
 		parsedData = [self getParsedDataObject];
 	}
@@ -85,33 +109,18 @@
 	
 	// Call the delegate
 	if(self.delegate != NULL && [self.delegate respondsToSelector:@selector(requestFailure:)]) {
-		[self.delegate requestFailure:self.error];
+		[self.delegate requestFailure:[self.error description]];
 	}
 }
 
-#pragma mark XML Parsing
+#pragma mark -
+#pragma mark SBJsonStreamParserAdapterDelegate Methods
 
-- (void)parseData:(NSData *)data {
-    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
-	
-    [parser setDelegate:self]; // The parser calls methods in this class
-    [parser setShouldProcessNamespaces:NO]; // We don't care about namespaces
-    [parser setShouldReportNamespacePrefixes:NO]; 
-    [parser setShouldResolveExternalEntities:NO]; // We just want data, no other stuff
-	
-    [parser parse]; // Parse that data..
-	[parser release];
-}
-
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
+- (void)parser:(SBJsonStreamParser *)parser foundArray:(NSArray *)array {
 	// empty
 }
 
-- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-	// empty
-}
-
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+- (void)parser:(SBJsonStreamParser *)parser foundObject:(NSDictionary *)dict {
 	// empty
 }
 

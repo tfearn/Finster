@@ -18,7 +18,6 @@
 @synthesize comment = _comment;
 
 - (void)dealloc {
-	[_checkinID release];
 	[_timestamp release];
 	[_user release];
 	[_ticker release];

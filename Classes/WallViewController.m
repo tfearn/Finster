@@ -74,9 +74,9 @@
 	[self.tableView reloadData];
 }
 
--(void)requestFailure:(NSError *)error {
+-(void)requestFailure:(NSString *)error {
 	// TO DO: Just push the error to the console for now
-	MyLog(@"GetWallRequest error: %@", [error description]);
+	MyLog(@"GetWallRequest error: %@", error);
 
 	// TO DO: Release the request
 }

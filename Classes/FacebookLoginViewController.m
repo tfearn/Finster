@@ -110,10 +110,10 @@
 	[self dismissModalViewControllerAnimated:YES];
 }
 
--(void)requestFailure:(NSError *)error {
+-(void)requestFailure:(NSString *)error {
 	[self dismissWaitView];
 	
-	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:[error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:error delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
 	[alert show];
 }
 

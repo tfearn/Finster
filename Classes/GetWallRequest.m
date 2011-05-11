@@ -16,6 +16,7 @@
 	_checkIns = [[NSMutableArray alloc] init];
 
 	NSURL *url = [NSURL URLWithString:kUrlGetWall];
+	[self setParseResponse:YES];	// Let's parse the JSON response
 	[super get:url];
 }
 
@@ -28,105 +29,57 @@
 	[super dealloc];
 }
 
-#pragma mark XML Parsing
-
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
-	
-	lastStartElement = elementName;
-	
-	if([elementName isEqualToString:@"checkin"]) {
-		checkIn = [[CheckIn alloc] init];
-	}
-	else if([elementName isEqualToString:@"user"]) {
-		checkIn.user = [[User alloc] init];
-	}
-	else if([elementName isEqualToString:@"ticker"]) {
-		checkIn.ticker = [[Ticker alloc] init];
-	}
+- (void)parser:(SBJsonStreamParser *)parser foundArray:(NSArray *)array {
+	// empty
 }
 
-- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-	
-	if([elementName isEqualToString:@"checkin"]) {
+- (void)parser:(SBJsonStreamParser *)parser foundObject:(NSDictionary *)dict {
+
+	// Get the ResultSet which is another dictionary
+	NSArray *checkInList = [dict objectForKey:@"checkInList"];
+	if(checkInList == nil)
+		return;
+
+	// Walk through the array and parse the dictionaries
+	for(int i=0; i<[checkInList count]; i++) {
+		NSDictionary *checkInDict = [checkInList objectAtIndex:i];
+		
+		CheckIn *checkIn = [[CheckIn alloc] init];
+		checkIn.checkinID = [[checkInDict objectForKey:@"id"] longValue];
+		checkIn.timestamp = nil;
+		NSString *checkInType = [checkInDict objectForKey:@"type"];
+		if([checkInType isEqualToString:@"CheckInTypeIBought"])
+			checkIn.checkinType = kCheckInTypeIBought;
+		else if([checkInType isEqualToString:@"CheckInTypeISold"])
+			checkIn.checkinType = kCheckInTypeISold;
+		else if([checkInType isEqualToString:@"CheckInTypeImBullish"])
+			checkIn.checkinType = kCheckInTypeImBullish;
+		else if([checkInType isEqualToString:@"CheckInTypeImBearish"])
+			checkIn.checkinType = kCheckInTypeImBearish;
+		else if([checkInType isEqualToString:@"CheckinTypeShouldIBuy"])
+			checkIn.checkinType = kCheckinTypeShouldIBuy;
+		else if([checkInType isEqualToString:@"CheckInTypeShouldISell"])
+			checkIn.checkinType = kCheckInTypeShouldISell;
+		else if([checkInType isEqualToString:@"CheckInTypeImThinking"])
+			checkIn.checkinType = kCheckInTypeImThinking;
+		checkIn.comment = [checkInDict objectForKey:@"comment"];
+		
+		NSDictionary *user = [checkInDict objectForKey:@"user"];
+		checkIn.user = [[User alloc] init];
+		checkIn.user.userID = [user objectForKey:@"id"];
+		checkIn.user.groupType = [user objectForKey:@"group"];
+		checkIn.user.userName = [user objectForKey:@"name"];
+		checkIn.user.imageUrl = [user objectForKey:@"image"];
+		
+		NSDictionary *ticker = [checkInDict objectForKey:@"ticker"];
+		checkIn.ticker = [[Ticker alloc] init];
+		checkIn.ticker.symbol = [ticker objectForKey:@"symbol"];
+		checkIn.ticker.symbolName = [ticker objectForKey:@"symbolName"];
+		checkIn.ticker.exchangeName = [ticker objectForKey:@"exchange"];
+		checkIn.ticker.typeName = [ticker objectForKey:@"type"];
+		
 		[self.checkIns addObject:checkIn];
 		[checkIn release];
-		checkIn = nil;
-	}
-	
-	lastStartElement = nil;
-}
-
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-
-	// Strip line feeds
-	NSString *trimmedString = [string stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-	string = trimmedString;
-	if([string length] == 0)
-		return;
-	
-	// CheckIn
-	if([lastStartElement isEqualToString:@"id"]) {
-		if(checkIn.user != nil)
-			checkIn.user.userID = string;
-		else
-			checkIn.checkinID = string;
-	}
-	else if([lastStartElement isEqualToString:@"timestamp"]) {
-		NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-		//[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzz"];
-		[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm zzz"];
-		checkIn.timestamp = [dateFormatter dateFromString:string];
-	}
-	else if([lastStartElement isEqualToString:@"type"]) {
-		if(checkIn.ticker != nil)
-			checkIn.ticker.typeName = string;
-		else {
-			if([string isEqualToString:@"CheckInTypeIBought"])
-				checkIn.checkinType = kCheckInTypeIBought;
-			else if([string isEqualToString:@"CheckInTypeISold"])
-				checkIn.checkinType = kCheckInTypeISold;
-			else if([string isEqualToString:@"CheckInTypeImBullish"])
-				checkIn.checkinType = kCheckInTypeImBullish;
-			else if([string isEqualToString:@"CheckInTypeImBearish"])
-				checkIn.checkinType = kCheckInTypeImBearish;
-			else if([string isEqualToString:@"CheckinTypeShouldIBuy"])
-				checkIn.checkinType = kCheckinTypeShouldIBuy;
-			else if([string isEqualToString:@"CheckInTypeShouldISell"])
-				checkIn.checkinType = kCheckInTypeShouldISell;
-			else if([string isEqualToString:@"CheckInTypeImThinking"])
-				checkIn.checkinType = kCheckInTypeImThinking;
-		}
-	}
-	if([lastStartElement isEqualToString:@"comment"]) {
-		checkIn.comment = string;
-	}
-		
-	// User
-	else if([lastStartElement isEqualToString:@"group"]) {
-		if(checkIn.user != nil)
-			checkIn.user.groupType = string;
-	}
-	else if([lastStartElement isEqualToString:@"name"]) {
-		if(checkIn.user != nil)
-			checkIn.user.userName = string;
-	}
-	else if([lastStartElement isEqualToString:@"image"]) {
-		if(checkIn.user != nil)
-			checkIn.user.imageUrl = [NSURL URLWithString:string];
-	}
-		
-	// Ticker
-	else if([lastStartElement isEqualToString:@"symbol"]) {
-		if(checkIn.ticker != nil)
-			checkIn.ticker.symbol = string;
-	}
-	else if([lastStartElement isEqualToString:@"symbolName"]) {
-		if(checkIn.ticker != nil)
-			checkIn.ticker.symbolName = string;
-	}
-	else if([lastStartElement isEqualToString:@"exchange"]) {
-		if(checkIn.ticker != nil)
-			checkIn.ticker.exchangeName = string;
 	}
 }
 

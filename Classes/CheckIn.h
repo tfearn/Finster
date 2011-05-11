@@ -11,14 +11,14 @@
 #import "Ticker.h"
 
 @interface CheckIn : NSObject {
-	NSString *_checkinID;
+	long _checkinID;
 	NSDate *_timestamp;
 	int _checkinType;
 	User *_user;
 	Ticker *_ticker;
 	NSString *_comment;
 }
-@property (nonatomic, retain) NSString *checkinID;
+@property long checkinID;
 @property (nonatomic, retain) NSDate *timestamp;
 @property int checkinType;
 @property (nonatomic, retain) User *user;

@@ -12,10 +12,6 @@
 
 @interface GetWallRequest : Request {
 	NSMutableArray *_checkIns;
-	
-	// Parsing members
-	NSString *lastStartElement;
-	CheckIn *checkIn;
 }
 @property (nonatomic, retain) NSMutableArray *checkIns;
 
