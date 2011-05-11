@@ -17,6 +17,7 @@
 @synthesize tableView = _tableView;
 @synthesize request = _request;
 @synthesize checkIns = _checkIns;
+@synthesize imageUrls = _imageUrls;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -50,6 +51,7 @@
 	[_tableView release];
 	[_request release];
 	[_checkIns release];
+	[_imageUrls release];
     [super dealloc];
 }
 
@@ -69,16 +71,27 @@
 -(void)requestComplete:(NSObject *)data {
 	self.checkIns = (NSMutableArray *)data;
 	
-	// TO DO: Release the request
+	// Create dictionary of the images to retrieve
+	self.imageUrls = nil;
+	_imageUrls = [[NSDictionary alloc] init];
+	for (CheckIn* checkIn in self.checkIns) {
+		// TODO: Finish this...
 	
+	}
+	
+	// Reload the table
 	[self.tableView reloadData];
+	
+	// Release the request
+	self.request = nil;
 }
 
 -(void)requestFailure:(NSString *)error {
 	// TO DO: Just push the error to the console for now
 	MyLog(@"GetWallRequest error: %@", error);
 	
-	// TO DO: Release the request
+	// Release the request
+	self.request = nil;
 }
 
 #pragma mark -
@@ -119,14 +132,7 @@
 	// Determine the differnce between the check-in time and the current time
 	NSCalendar *sysCalendar = [NSCalendar currentCalendar];
 	NSDate *now = [[[NSDate alloc] init] autorelease];
-	
-	/*
-	// Adjust for GMT
-	NSTimeInterval timeZoneOffset = [[NSTimeZone defaultTimeZone] secondsFromGMT]; // You could also use the systemTimeZone method
-	NSTimeInterval gmtTimeInterval = [now timeIntervalSinceReferenceDate] + timeZoneOffset;
-	now = [NSDate dateWithTimeIntervalSinceReferenceDate:gmtTimeInterval];
-	 */
-	
+		
     // Determine months, days, etc.
 	unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit;
 	NSDateComponents *breakdownInfo = [sysCalendar components:unitFlags fromDate:checkIn.timestamp  toDate:now  options:0];

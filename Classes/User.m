@@ -14,12 +14,14 @@
 @synthesize groupType = _groupType;
 @synthesize userName = _userName;
 @synthesize imageUrl = _imageUrl;
+@synthesize image = _image;
 
 - (void)dealloc {
 	[_userID release];
 	[_groupType release];
 	[_userName release];
 	[_imageUrl release];
+	[_image release];
 	[super dealloc];
 }
 

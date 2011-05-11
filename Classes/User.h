@@ -14,10 +14,12 @@
 	NSString *_groupType;	// You, Friend, Network
 	NSString *_userName;
 	NSURL *_imageUrl;
+	UIImage *_image;
 }
 @property (nonatomic, retain) NSString *userID;
 @property (nonatomic, retain) NSString *groupType;
 @property (nonatomic, retain) NSString *userName;
 @property (nonatomic, retain) NSURL *imageUrl;
+@property (nonatomic, retain) UIImage *image;
 
 @end

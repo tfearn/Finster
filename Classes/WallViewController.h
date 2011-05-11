@@ -18,10 +18,12 @@
 	IBOutlet UITableView *_tableView;
 	GetWallRequest *_request;
 	NSMutableArray *_checkIns;
+	NSDictionary *_imageUrls;
 }
 @property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, retain) GetWallRequest *request;
 @property (nonatomic, retain) NSMutableArray *checkIns;
+@property (nonatomic, retain) NSDictionary *imageUrls;
 
 - (IBAction)refreshButtonPressed:(id)sender;
 
