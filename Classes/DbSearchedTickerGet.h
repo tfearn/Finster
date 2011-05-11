@@ -11,7 +11,7 @@
 #import "Globals.h"
 #import "Ticker.h"
 
-#define kSelectGetSearchedTickers				@"SELECT * FROM searched_ticker ORDER BY timestamp limit 3;"
+#define kSelectGetSearchedTickers				@"SELECT * FROM searched_ticker GROUP BY symbol ORDER BY timestamp desc limit 10;"
 
 @interface DbSearchedTickerGet : NSObject {
 	NSMutableArray *_tickers;

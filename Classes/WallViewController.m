@@ -77,7 +77,7 @@
 -(void)requestFailure:(NSString *)error {
 	// TO DO: Just push the error to the console for now
 	MyLog(@"GetWallRequest error: %@", error);
-
+	
 	// TO DO: Release the request
 }
 
@@ -119,6 +119,15 @@
 	// Determine the differnce between the check-in time and the current time
 	NSCalendar *sysCalendar = [NSCalendar currentCalendar];
 	NSDate *now = [[[NSDate alloc] init] autorelease];
+	
+	/*
+	// Adjust for GMT
+	NSTimeInterval timeZoneOffset = [[NSTimeZone defaultTimeZone] secondsFromGMT]; // You could also use the systemTimeZone method
+	NSTimeInterval gmtTimeInterval = [now timeIntervalSinceReferenceDate] + timeZoneOffset;
+	now = [NSDate dateWithTimeIntervalSinceReferenceDate:gmtTimeInterval];
+	 */
+	
+    // Determine months, days, etc.
 	unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit;
 	NSDateComponents *breakdownInfo = [sysCalendar components:unitFlags fromDate:checkIn.timestamp  toDate:now  options:0];
 	int months = [breakdownInfo month];
@@ -149,6 +158,9 @@
 			cell.timestamp.text = [NSString stringWithFormat:@"%d minutes ago", minutes];
 		else
 			cell.timestamp.text = [NSString stringWithFormat:@"%d minute ago", minutes];
+	}
+	else {
+		cell.timestamp.text = @"just a moment ago";
 	}
 	
 	

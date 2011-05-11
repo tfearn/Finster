@@ -49,9 +49,17 @@
 		DbSearchedTickerGet *get = [[[DbSearchedTickerGet alloc] init] autorelease];
 		NSError *error = [get doSelect];
 		if(error != nil)
-			MyLog(@"%@", [error description]);
+			MyLog(@"Local Database Error: %@", [error description]);
+		else {
+			// Setup the ticker array
+			[_tickers release];
+			_tickers = [[NSMutableArray alloc] init];
+			self.tickers = get.tickers;
+			
+			// Refresh the table
+			[self.tableView reloadData];
+		}
 	}
-
 }
 
 - (void)didReceiveMemoryWarning {

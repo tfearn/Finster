@@ -30,7 +30,7 @@
 		ticker.symbol = [row objectForKey:@"symbol"];
 		ticker.symbolName = [row objectForKey:@"symbol_name"];
 		ticker.type = [row objectForKey:@"type"];
-		ticker.typeName = [row objectForKey:@"typeName"];
+		ticker.typeName = [row objectForKey:@"type_name"];
 		ticker.exchange = [row objectForKey:@"exchange"];
 		ticker.exchangeName = [row objectForKey:@"exchange_name"];
 		

@@ -33,19 +33,15 @@
     [self.window addSubview:tabBarController.view];
     [self.window makeKeyAndVisible];
 	
+	// Login via Facebook
 	[self doFacebookLogin];
 	
 	
-	/*
 	// Initialize the Db
 	if(! [self initializeDatabase]) {
 		// TODO:  We have problems here, fix
 		return NO;
 	}
-	
-	// Login
-	[self doLogin];
-	 */
 	
 	return YES;
 }
@@ -75,6 +71,7 @@
 	}
 	
 	// Open the database
+	MyLog(@"Local database file: %@", documentsPath);
 	NSError *error = [Globals openDatabase:documentsPath];
 	if(error != nil) {
 		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Internal Database Error" message:[error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
