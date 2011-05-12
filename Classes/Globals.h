@@ -29,7 +29,7 @@
 #define kUrlLoginUsingFacebook		@"http://209.114.35.245/loginUsingFacebook?facebookuserid=%@&accesstoken=%@"
 #define kUrlTickerLookup			@"http://d.yimg.com/autoc.finance.yahoo.com/autoc?query=%@&callback=YAHOO.Finance.SymbolSuggest.ssCallback"
 //#define kUrlGetWall					@"http://www.idata.net/finster/wall3.xml"
-#define kUrlGetWall					@"http://209.114.35.245/getcheckins?start=0&limit=20&feed=you;friend&type=CheckInTypeAll&ticker=all"
+#define kUrlGetWall					@"http://209.114.35.245/getcheckins?start=0&limit=20&feed=you,friend&type=CheckInTypeAll&ticker=all"
 #define kUrlPostCheckIn				@"http://209.114.35.245/checkin?type=%@&symbol=%@&symbolName=%@&symbolType=%@&exchange=%@"
 
 // Notifications

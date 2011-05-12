@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ASIHTTPRequest.h"
+#import "ASIDownloadCache.h"
 #import "Globals.h"
 #import "BaseViewController.h"
 #import "Utility.h"
@@ -19,11 +21,13 @@
 	GetWallRequest *_request;
 	NSMutableArray *_checkIns;
 	NSDictionary *_imageUrls;
+	NSOperationQueue *_queue;	// Used to retrieve user pictures
 }
 @property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, retain) GetWallRequest *request;
 @property (nonatomic, retain) NSMutableArray *checkIns;
 @property (nonatomic, retain) NSDictionary *imageUrls;
+@property (nonatomic, retain) NSOperationQueue *queue;
 
 - (IBAction)refreshButtonPressed:(id)sender;
 

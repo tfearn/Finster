@@ -18,6 +18,7 @@
 @synthesize request = _request;
 @synthesize checkIns = _checkIns;
 @synthesize imageUrls = _imageUrls;
+@synthesize queue = _queue;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -52,6 +53,7 @@
 	[_request release];
 	[_checkIns release];
 	[_imageUrls release];
+	[_queue release];
     [super dealloc];
 }
 
@@ -71,14 +73,26 @@
 -(void)requestComplete:(NSObject *)data {
 	self.checkIns = (NSMutableArray *)data;
 	
-	// Create dictionary of the images to retrieve
-	self.imageUrls = nil;
-	_imageUrls = [[NSDictionary alloc] init];
-	for (CheckIn* checkIn in self.checkIns) {
-		// TODO: Finish this...
-	
+	// Initialize the network operation queue
+	if (self.queue == nil) {
+		_queue = [[NSOperationQueue alloc] init];
 	}
 	
+	// Now start the image retrieval process
+	for(CheckIn *checkIn in self.checkIns) {
+		
+		NSURL *imageUrl = checkIn.user.imageUrl;
+		
+		// Add the url to the request queue
+		ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:imageUrl];
+		[request setUserInfo:[NSDictionary dictionaryWithObject:imageUrl forKey:@"imageUrl"]];
+		[request setDownloadCache:[ASIDownloadCache sharedCache]];
+		[request setDelegate:self];
+		[request setDidFinishSelector:@selector(imageRequestComplete:)];
+		[request setDidFailSelector:@selector(imageRequestFailure:)];
+		[self.queue addOperation:request];	
+	}
+
 	// Reload the table
 	[self.tableView reloadData];
 	
@@ -93,6 +107,20 @@
 	// Release the request
 	self.request = nil;
 }
+
+- (void)imageRequestComplete:(ASIHTTPRequest *)request {
+	NSData *data = [request responseData];
+	
+	NSURL *url = [request.userInfo objectForKey:@"imageUrl"];
+	
+	// Search through the CheckIn list to find the matching using image url
+	
+}
+
+- (void)imageRequestFailure:(ASIHTTPRequest *)request {
+	// We don't care if it fails
+}
+
 
 #pragma mark -
 #pragma mark UITableViewDataSource Methods
