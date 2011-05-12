@@ -222,7 +222,7 @@
 	int row = [indexPath row];
 	Ticker *ticker = [self.tickers objectAtIndex:row];
 
-	CheckInDetailViewController *controller = [[CheckInDetailViewController alloc] init];
+	CheckInReviewViewController *controller = [[CheckInReviewViewController alloc] init];
 	controller.ticker = ticker;
 	controller.checkInType = self.checkInType;
 	[self.navigationController pushViewController:controller animated:YES];

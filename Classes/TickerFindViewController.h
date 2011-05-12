@@ -14,7 +14,7 @@
 #import "JSON.h"
 #import "Ticker.h"
 #import "TickerFindViewCell.h"
-#import "CheckInDetailViewController.h"
+#import "CheckInReviewViewController.h"
 #import "DbSearchedTickerGet.h"
 
 @interface TickerFindViewController : BaseViewController <UIScrollViewDelegate, ASIHTTPRequestDelegate, SBJsonStreamParserAdapterDelegate> {

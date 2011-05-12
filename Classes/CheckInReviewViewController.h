@@ -1,5 +1,5 @@
 //
-//  CheckInDetailViewController.h
+//  CheckInReviewViewController.h
 //  Money Mouth
 //
 //  Created by Todd Fearn on 4/14/11.
@@ -11,7 +11,7 @@
 #import "CheckInConfirmViewController.h"
 #import "DbSearchedTickerInsert.h"
 
-@interface CheckInDetailViewController : BaseCheckInViewController {
+@interface CheckInReviewViewController : BaseCheckInViewController {
 	IBOutlet UITableView *_tableView;
 }
 @property (nonatomic, retain) UITableView *tableView;

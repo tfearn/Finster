@@ -352,7 +352,7 @@
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<string>CheckInDetailViewController</string>
+					<string>CheckInReviewViewController</string>
 					<string>UIResponder</string>
 					<string>{{515, 91}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -463,7 +463,7 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">CheckInDetailViewController</string>
+					<string key="className">CheckInReviewViewController</string>
 					<string key="superclassName">BaseCheckInViewController</string>
 					<object class="NSMutableDictionary" key="actions">
 						<string key="NS.key.0">checkInButtonPressed:</string>
@@ -489,7 +489,7 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Classes/CheckInDetailViewController.h</string>
+						<string key="minorKey">Classes/CheckInReviewViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

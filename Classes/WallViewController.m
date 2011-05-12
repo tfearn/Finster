@@ -33,10 +33,6 @@
 	// Initialize the ImageManager to get user pictures
 	_imageManager = [[ImageManager alloc] init];
 	self.imageManager.delegate = self;
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-	[super viewDidAppear:animated];
 	
 	// Do a request for data
 	[self getData];
@@ -243,7 +239,14 @@
 #pragma mark UITableViewDelegate Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	//int row = [indexPath row];
+	int row = [indexPath row];
+	CheckIn *checkIn = [self.checkIns objectAtIndex:row];
+	
+	CheckInDetailsViewController *controller = [[CheckInDetailsViewController alloc] init];
+	controller.checkIn = checkIn;
+	[controller setHidesBottomBarWhenPushed:YES];
+	[self.navigationController pushViewController:controller animated:YES];
+	[controller release];
 }
 
 @end

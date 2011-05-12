@@ -14,6 +14,7 @@
 #import "WallViewCell.h"
 #import "GetWallRequest.h"
 #import "ImageManager.h"
+#import "CheckInDetailsViewController.h"
 
 @interface WallViewController : BaseViewController <RequestDelegate, ImageManagerDelegate> {
 	IBOutlet UITableView *_tableView;

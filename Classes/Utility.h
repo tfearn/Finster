@@ -14,5 +14,6 @@
 }
 
 + (NSString *)getCheckInString:(NSString *)string checkInType:(int)checkInType symbol:(NSString *)symbol;
++ (NSString *)getDateAsTimePassed:(NSDate *)date;
 
 @end

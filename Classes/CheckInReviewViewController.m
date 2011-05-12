@@ -1,14 +1,14 @@
     //
-//  CheckInDetailViewController.m
+//  CheckInReviewViewController.m
 //  Money Mouth
 //
 //  Created by Todd Fearn on 4/14/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "CheckInDetailViewController.h"
+#import "CheckInReviewViewController.h"
 
-@implementation CheckInDetailViewController
+@implementation CheckInReviewViewController
 @synthesize tableView = _tableView;
 
 - (void)viewDidLoad {
