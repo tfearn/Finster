@@ -17,7 +17,7 @@
 @synthesize tableView = _tableView;
 @synthesize request = _request;
 @synthesize checkIns = _checkIns;
-@synthesize queue = _queue;
+@synthesize imageManager = _imageManager;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -30,7 +30,15 @@
 	self.navigationItem.leftBarButtonItem = refreshButton; 
 	[refreshButton release];
 	
-	// Do the initial request for data
+	// Initialize the ImageManager to get user pictures
+	_imageManager = [[ImageManager alloc] init];
+	self.imageManager.delegate = self;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	
+	// Do a request for data
 	[self getData];
 }
 
@@ -51,7 +59,7 @@
 	[_tableView release];
 	[_request release];
 	[_checkIns release];
-	[_queue release];
+	[_imageManager release];
     [super dealloc];
 }
 
@@ -71,38 +79,15 @@
 -(void)requestComplete:(NSObject *)data {
 	self.checkIns = (NSMutableArray *)data;
 	
-	// Retrieve the pictures for each user
-	//
-
-	// Put the checkIn user urls in a dictionary to get rid of duplicates
-	NSMutableDictionary *checkInsDict = [[NSMutableDictionary alloc] init];
+	// Tell the ImageManager to get the pictures if it does not already have them
 	for(int i=0; i<[self.checkIns count]; i++) {
 		id object = [self.checkIns objectAtIndex:i];
 		CheckIn *checkIn = object;
-		[checkInsDict setObject:checkIn.user.imageUrl forKey:checkIn.user.userID];
-	}
-	
-	// Initialize the network operation queue
-	if (self.queue == nil) {
-		_queue = [[NSOperationQueue alloc] init];
-	}
-	
-	// Now start the image retrieval process
-	NSArray *checkInsArray = [checkInsDict allValues];
-	for(int i=0; i<[checkInsArray count]; i++) {
-		id object = [checkInsArray objectAtIndex:i];
-		NSString *imageUrl = object;
 		
-		// Add the url to the request queue
-		ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:imageUrl]];
-		[request setUserInfo:[NSDictionary dictionaryWithObject:imageUrl forKey:@"imageUrl"]];
-		[request setDownloadCache:[ASIDownloadCache sharedCache]];
-		[request setDelegate:self];
-		[request setDidFinishSelector:@selector(imageRequestComplete:)];
-		[request setDidFailSelector:@selector(imageRequestFailure:)];
-		[self.queue addOperation:request];	
+		Image *image = [self.imageManager getImage:checkIn.user.imageUrl];
+		if(image != nil)
+			checkIn.user.image = image.image;
 	}
-	[checkInsDict release];
 
 	// Reload the table
 	[self.tableView reloadData];
@@ -119,28 +104,27 @@
 	self.request = nil;
 }
 
-- (void)imageRequestComplete:(ASIHTTPRequest *)request {
-	NSData *data = [request responseData];
-	UIImage *image = [[UIImage alloc] initWithData:data];
-	
+
+#pragma mark -
+#pragma mark ImageManagerDelegate Methods
+
+- (void)imageRequestComplete:(Image *)image {
+
 	// Search through the CheckIn list to find the matching using image url
-	NSString *url = [request.userInfo objectForKey:@"imageUrl"];
 	for(int i=0; i<[self.checkIns count]; i++) {
 		id object = [self.checkIns objectAtIndex:i];
 		CheckIn *checkIn = object;
 		
-		if([checkIn.user.imageUrl isEqualToString:url]) {
-			checkIn.user.image = image;
+		if([checkIn.user.imageUrl isEqualToString:image.url]) {
+			checkIn.user.image = image.image;
 		}
 	}
 
-	[image release];
-	
 	// Reload the table
 	[self.tableView reloadData];
 }
 
-- (void)imageRequestFailure:(ASIHTTPRequest *)request {
+- (void)imageRequestFailure:(NSString *)url {
 	// We don't care if it fails
 }
 

@@ -20,7 +20,7 @@ static NSMutableDictionary *imagesCache;
 }
 
 - (id)init {
-    if (self = [self init]) {
+    if (self = [super init]) {
 		_queue = [[NSOperationQueue alloc] init];
     }
     return self;
@@ -70,7 +70,7 @@ static NSMutableDictionary *imagesCache;
 	NSString *url = [request.userInfo objectForKey:@"imageUrl"];
 
 	Image *image = [imagesCache objectForKey:url];
-	NSAssert(image == nil, @"Fatal Error: Image should not equal nil");
+	NSAssert(image != nil, @"Fatal Error: Image should not equal nil");
 	
 	image.requestOutstanding = NO;
 	UIImage *imageData = [[UIImage alloc] initWithData:data];
@@ -87,7 +87,7 @@ static NSMutableDictionary *imagesCache;
 	NSString *url = [request.userInfo objectForKey:@"imageUrl"];
 	
 	Image *image = [imagesCache objectForKey:url];
-	NSAssert(image == nil, @"Fatal Error: Image should not equal nil");
+	NSAssert(image != nil, @"Fatal Error: Image should not equal nil");
 	
 	image.requestOutstanding = NO;
 	

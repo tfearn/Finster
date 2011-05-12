@@ -7,25 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ASIHTTPRequest.h"
-#import "ASIDownloadCache.h"
 #import "Globals.h"
 #import "BaseViewController.h"
 #import "Utility.h"
 #import "CheckIn.h"
 #import "WallViewCell.h"
 #import "GetWallRequest.h"
+#import "ImageManager.h"
 
-@interface WallViewController : BaseViewController <RequestDelegate> {
+@interface WallViewController : BaseViewController <RequestDelegate, ImageManagerDelegate> {
 	IBOutlet UITableView *_tableView;
 	GetWallRequest *_request;
 	NSMutableArray *_checkIns;
-	NSOperationQueue *_queue;	// Used to retrieve user pictures
+	ImageManager *_imageManager;
 }
 @property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, retain) GetWallRequest *request;
 @property (nonatomic, retain) NSMutableArray *checkIns;
-@property (nonatomic, retain) NSOperationQueue *queue;
+@property (nonatomic, retain) ImageManager *imageManager;
 
 - (IBAction)refreshButtonPressed:(id)sender;
 
