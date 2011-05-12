@@ -11,7 +11,7 @@
 
 @interface User : NSObject {
 	NSString *_userID;
-	NSString *_groupType;	// You, Friend, Network
+	NSString *_groupType;	// you, friend, network
 	NSString *_userName;
 	NSString *_imageUrl;
 	UIImage *_image;
