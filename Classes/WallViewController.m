@@ -17,7 +17,6 @@
 @synthesize tableView = _tableView;
 @synthesize request = _request;
 @synthesize checkIns = _checkIns;
-@synthesize imageUrls = _imageUrls;
 @synthesize queue = _queue;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -52,7 +51,6 @@
 	[_tableView release];
 	[_request release];
 	[_checkIns release];
-	[_imageUrls release];
 	[_queue release];
     [super dealloc];
 }
@@ -73,18 +71,30 @@
 -(void)requestComplete:(NSObject *)data {
 	self.checkIns = (NSMutableArray *)data;
 	
+	// Retrieve the pictures for each user
+	//
+
+	// Put the checkIn user urls in a dictionary to get rid of duplicates
+	NSMutableDictionary *checkInsDict = [[NSMutableDictionary alloc] init];
+	for(int i=0; i<[self.checkIns count]; i++) {
+		id object = [self.checkIns objectAtIndex:i];
+		CheckIn *checkIn = object;
+		[checkInsDict setObject:checkIn.user.imageUrl forKey:checkIn.user.userID];
+	}
+	
 	// Initialize the network operation queue
 	if (self.queue == nil) {
 		_queue = [[NSOperationQueue alloc] init];
 	}
 	
 	// Now start the image retrieval process
-	for(CheckIn *checkIn in self.checkIns) {
-		
-		NSURL *imageUrl = checkIn.user.imageUrl;
+	NSArray *checkInsArray = [checkInsDict allValues];
+	for(int i=0; i<[checkInsArray count]; i++) {
+		id object = [checkInsArray objectAtIndex:i];
+		NSString *imageUrl = object;
 		
 		// Add the url to the request queue
-		ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:imageUrl];
+		ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:imageUrl]];
 		[request setUserInfo:[NSDictionary dictionaryWithObject:imageUrl forKey:@"imageUrl"]];
 		[request setDownloadCache:[ASIDownloadCache sharedCache]];
 		[request setDelegate:self];
@@ -92,6 +102,7 @@
 		[request setDidFailSelector:@selector(imageRequestFailure:)];
 		[self.queue addOperation:request];	
 	}
+	[checkInsDict release];
 
 	// Reload the table
 	[self.tableView reloadData];
@@ -110,11 +121,23 @@
 
 - (void)imageRequestComplete:(ASIHTTPRequest *)request {
 	NSData *data = [request responseData];
-	
-	NSURL *url = [request.userInfo objectForKey:@"imageUrl"];
+	UIImage *image = [[UIImage alloc] initWithData:data];
 	
 	// Search through the CheckIn list to find the matching using image url
+	NSString *url = [request.userInfo objectForKey:@"imageUrl"];
+	for(int i=0; i<[self.checkIns count]; i++) {
+		id object = [self.checkIns objectAtIndex:i];
+		CheckIn *checkIn = object;
+		
+		if([checkIn.user.imageUrl isEqualToString:url]) {
+			checkIn.user.image = image;
+		}
+	}
+
+	[image release];
 	
+	// Reload the table
+	[self.tableView reloadData];
 }
 
 - (void)imageRequestFailure:(ASIHTTPRequest *)request {
@@ -150,6 +173,10 @@
 	
 	int row = [indexPath row];
 	CheckIn *checkIn = [self.checkIns objectAtIndex:row];
+	
+	if(checkIn.user.image != nil)
+		cell.userImageView.image = checkIn.user.image;
+	
 	cell.username.text = checkIn.user.userName;
 	cell.ticker.text = checkIn.ticker.symbol;
 	NSString *title = [[[NSString alloc] init] autorelease];
