@@ -15,6 +15,7 @@
 #import "GetWallRequest.h"
 #import "ImageManager.h"
 #import "CheckInDetailsViewController.h"
+#import "TimePassedFormatter.h"
 
 @interface WallViewController : BaseViewController <RequestDelegate, ImageManagerDelegate> {
 	IBOutlet UITableView *_tableView;

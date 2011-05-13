@@ -165,46 +165,9 @@
 	cell.company.text = checkIn.ticker.symbolName;
 
 	// Determine the differnce between the check-in time and the current time
-	NSCalendar *sysCalendar = [NSCalendar currentCalendar];
-	NSDate *now = [[[NSDate alloc] init] autorelease];
+	TimePassedFormatter *timePassedFormatter = [[[TimePassedFormatter alloc] init] autorelease];
+	cell.timestamp.text = [timePassedFormatter format:checkIn.timestamp];
 		
-    // Determine months, days, etc.
-	unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit;
-	NSDateComponents *breakdownInfo = [sysCalendar components:unitFlags fromDate:checkIn.timestamp  toDate:now  options:0];
-	int months = [breakdownInfo month];
-	int days = [breakdownInfo day];
-	int hours = [breakdownInfo hour];
-	int minutes = [breakdownInfo minute];
-	
-	if(months > 0) {
-		if(months > 1)
-			cell.timestamp.text = [NSString stringWithFormat:@"%d months ago", months];
-		else
-			cell.timestamp.text = [NSString stringWithFormat:@"%d month ago", months];
-	}
-	else if(days > 0) {
-		if(days > 1)
-			cell.timestamp.text = [NSString stringWithFormat:@"%d days ago", days];
-		else
-			cell.timestamp.text = [NSString stringWithFormat:@"%d day ago", days];
-	}
-	else if(hours > 0) {
-		if(hours > 1)
-			cell.timestamp.text = [NSString stringWithFormat:@"%d hours ago", hours];
-		else
-			cell.timestamp.text = [NSString stringWithFormat:@"%d hour ago", hours];
-	}
-	else if(minutes > 0) {
-		if(minutes > 1)
-			cell.timestamp.text = [NSString stringWithFormat:@"%d minutes ago", minutes];
-		else
-			cell.timestamp.text = [NSString stringWithFormat:@"%d minute ago", minutes];
-	}
-	else {
-		cell.timestamp.text = @"just a moment ago";
-	}
-	
-	
 	switch (checkIn.checkinType) {
 		case kCheckInTypeIBought:
 			cell.checkInImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dollars-icon" ofType:@"png"]];

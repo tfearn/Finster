@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CheckIn.h"
 #import "Utility.h"
+#import "TimePassedFormatter.h"
 
 @interface CheckInDetailsViewController : UIViewController {
 	IBOutlet UIImageView *_userImageView;

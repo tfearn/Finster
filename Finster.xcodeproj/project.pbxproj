@@ -101,6 +101,7 @@
 		A8ED1F55135CC2760003115F /* check-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8ED1F54135CC2760003115F /* check-icon.png */; };
 		A8ED1F5B135CD3790003115F /* CheckInResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ED1F5A135CD3790003115F /* CheckInResultViewController.m */; };
 		A8ED1F5D135CD38D0003115F /* CheckInResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8ED1F5C135CD38D0003115F /* CheckInResultView.xib */; };
+		A8F98930137D7901005A82FA /* TimePassedFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F9892F137D7901005A82FA /* TimePassedFormatter.m */; };
 		A8FD2628136719690099E7FC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FD2627136719690099E7FC /* LoginViewController.m */; };
 		A8FD262A136719D10099E7FC /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8FD2629136719D10099E7FC /* LoginView.xib */; };
 		A8FD262F13671BD40099E7FC /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FD262E13671BD40099E7FC /* banner.png */; };
@@ -265,6 +266,8 @@
 		A8ED1F59135CD3790003115F /* CheckInResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInResultViewController.h; sourceTree = "<group>"; };
 		A8ED1F5A135CD3790003115F /* CheckInResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInResultViewController.m; sourceTree = "<group>"; };
 		A8ED1F5C135CD38D0003115F /* CheckInResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInResultView.xib; sourceTree = "<group>"; };
+		A8F9892E137D7901005A82FA /* TimePassedFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePassedFormatter.h; sourceTree = "<group>"; };
+		A8F9892F137D7901005A82FA /* TimePassedFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePassedFormatter.m; sourceTree = "<group>"; };
 		A8FD2626136719690099E7FC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		A8FD2627136719690099E7FC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		A8FD2629136719D10099E7FC /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
@@ -459,6 +462,8 @@
 				824D9DB81360AF5400631120 /* Utility.m */,
 				8240E408137C36D40042CA9B /* ImageManager.h */,
 				8240E409137C36D40042CA9B /* ImageManager.m */,
+				A8F9892E137D7901005A82FA /* TimePassedFormatter.h */,
+				A8F9892F137D7901005A82FA /* TimePassedFormatter.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -891,6 +896,7 @@
 				8240E40A137C36D40042CA9B /* ImageManager.m in Sources */,
 				8240E40D137C38210042CA9B /* Image.m in Sources */,
 				8240E4BB137C73060042CA9B /* CheckInDetailsViewController.m in Sources */,
+				A8F98930137D7901005A82FA /* TimePassedFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

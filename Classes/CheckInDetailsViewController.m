@@ -30,11 +30,8 @@
 	
 	self.username.text = self.checkIn.user.userName;
 	
-	NSString *timestamp = [Utility getDateAsTimePassed:self.checkIn.timestamp];
-	self.timestamp.text = [timestamp retain];
-	[timestamp release];
-	
-	
+	TimePassedFormatter *timePassedFormatter = [[[TimePassedFormatter alloc] init] autorelease];
+	self.timestamp.text = [timePassedFormatter format:self.checkIn.timestamp];
 	
 }
 

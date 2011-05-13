@@ -229,8 +229,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -254,7 +252,7 @@
 						<dict>
 							<key>PBXSmartGroupTreeModuleColumnWidthsKey</key>
 							<array>
-								<real>203</real>
+								<real>310</real>
 							</array>
 							<key>PBXSmartGroupTreeModuleColumnsKey_v4</key>
 							<array>
@@ -267,9 +265,10 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
-								<string>82C1042C1357373700302082</string>
 								<string>82C1042B1357372E00302082</string>
+								<string>82C1042A1357372200302082</string>
 								<string>82C104291357370D00302082</string>
+								<string>82C10428135736D200302082</string>
 								<string>822435A5135F7DC100C6258F</string>
 								<string>82C107A3135797C800302082</string>
 								<string>1C37FABC05509CD000000102</string>
@@ -277,14 +276,15 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>27</integer>
-									<integer>22</integer>
+									<integer>38</integer>
+									<integer>37</integer>
+									<integer>20</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {203, 610}}</string>
+							<string>{{0, 344}, {310, 610}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -296,11 +296,11 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {220, 628}}</string>
+						<string>{{0, 0}, {327, 628}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
-							<real>203</real>
+							<real>310</real>
 						</array>
 						<key>RubberWindowFrame</key>
 						<string>0 109 1280 669 0 0 1280 778 </string>
@@ -308,18 +308,20 @@
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
 					<key>Proportion</key>
-					<string>220pt</string>
+					<string>327pt</string>
 				</dict>
 				<dict>
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>WallViewController.m</string>
+								<string>WallViewController.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,11 +329,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>WallViewController.m</string>
+										<string>WallViewController.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>A8F9891C137D7037005A82FA</string>
+										<string>A8F9895A137D857D005A82FA</string>
 										<key>history</key>
 										<array>
 											<string>A87744431356918400DD721B</string>
@@ -357,10 +359,7 @@
 											<string>A8FD28D41367774D0099E7FC</string>
 											<string>A8FD28D51367774D0099E7FC</string>
 											<string>A8FD28D61367774D0099E7FC</string>
-											<string>A8FD28DA1367774D0099E7FC</string>
-											<string>A8FD28DB1367774D0099E7FC</string>
 											<string>A8341910136783D000DA62D1</string>
-											<string>A8341911136783D000DA62D1</string>
 											<string>A8341934136786EB00DA62D1</string>
 											<string>A8341935136786EB00DA62D1</string>
 											<string>A8341936136786EB00DA62D1</string>
@@ -383,7 +382,6 @@
 											<string>A854DAE91370CC3200CB1B30</string>
 											<string>A8E824D41372228500B3983B</string>
 											<string>A8E824D51372228500B3983B</string>
-											<string>A8E824ED137223D400B3983B</string>
 											<string>A88D5388137849FA00431AC2</string>
 											<string>A80A54C5137A01CB00BA5F5D</string>
 											<string>A80A54E3137A04A800BA5F5D</string>
@@ -398,8 +396,17 @@
 											<string>A8F98893137B6525005A82FA</string>
 											<string>A8F988DB137B73CA005A82FA</string>
 											<string>A8F988DC137B73CA005A82FA</string>
-											<string>A8F988EC137D6F9D005A82FA</string>
-											<string>A8F9890D137D701D005A82FA</string>
+											<string>A8F98943137D7B94005A82FA</string>
+											<string>A8F98944137D7B94005A82FA</string>
+											<string>A8F98945137D7B94005A82FA</string>
+											<string>A8F98946137D7B94005A82FA</string>
+											<string>A8F98947137D7B94005A82FA</string>
+											<string>A8F98948137D7B94005A82FA</string>
+											<string>A8F98949137D7B94005A82FA</string>
+											<string>A8F9894A137D7B94005A82FA</string>
+											<string>A8F9894B137D7B94005A82FA</string>
+											<string>A8F9894C137D7B94005A82FA</string>
+											<string>A8F9894D137D7B94005A82FA</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -411,7 +418,7 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1055, 562}}</string>
+								<string>{{0, 0}, {948, 562}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 109 1280 669 0 0 1280 778 </string>
 							</dict>
@@ -431,7 +438,7 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 567}, {1055, 61}}</string>
+								<string>{{0, 567}, {948, 61}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 109 1280 669 0 0 1280 778 </string>
 							</dict>
@@ -442,7 +449,7 @@
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>1055pt</string>
+					<string>948pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -597,7 +604,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>A8F98926137D7037005A82FA</string>
+		<string>A8F98950137D7B94005A82FA</string>
 		<string>A8F98927137D7037005A82FA</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
