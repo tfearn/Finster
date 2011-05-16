@@ -10,6 +10,7 @@
 #import "Globals.h"
 #import "BaseViewController.h"
 #import "Ticker.h"
+#import "CheckInTypeFormatter.h"
 
 @interface CheckInResultViewController : BaseViewController {
 	IBOutlet UILabel *_description;

@@ -21,31 +21,9 @@
 	
 	[self.navigationController setNavigationBarHidden:YES animated:NO]; 
 	
-	switch (self.checkInType) {
-		case kCheckInTypeIBought:
-			self.description.text = [NSString stringWithFormat:@"Ok! You Bought %@", self.ticker.symbol];
-			break;
-		case kCheckInTypeISold:
-			self.description.text = [NSString stringWithFormat:@"Ok! You Sold %@", self.ticker.symbol];
-			break;
-		case kCheckinTypeShouldIBuy:
-			self.description.text = [NSString stringWithFormat:@"Ok! We've got your status as 'Should I Buy %@?'", self.ticker.symbol];
-			break;
-		case kCheckInTypeShouldISell:
-			self.description.text = [NSString stringWithFormat:@"Ok! We've got your status as 'Should I Sell %@?'", self.ticker.symbol];
-			break;
-		case kCheckInTypeImBullish:
-			self.description.text = [NSString stringWithFormat:@"Ok! We've got your status as 'I am Bullish on %@'", self.ticker.symbol];
-			break;
-		case kCheckInTypeImBearish:
-			self.description.text = [NSString stringWithFormat:@"Ok! We've got your status as 'I am Bearish on %@'", self.ticker.symbol];
-			break;
-		case kCheckInTypeImThinking:
-			self.description.text = [NSString stringWithFormat:@"Ok! We submitted your 'Thoughts on %@'", self.ticker.symbol];
-			break;
-		default:
-			break;
-	}
+	CheckInTypeFormatter *formatter = [[[CheckInTypeFormatter alloc] init] autorelease];
+	NSString *checkInString = [formatter format:self.checkInType symbol:self.ticker.symbol];
+	self.description.text = [NSString stringWithFormat:@"Ok!  We have you as '%@'", checkInString];
 }
 
 - (void)didReceiveMemoryWarning {

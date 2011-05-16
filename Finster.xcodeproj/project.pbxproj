@@ -26,7 +26,6 @@
 		8240E40D137C38210042CA9B /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 8240E40C137C38210042CA9B /* Image.m */; };
 		8240E4BB137C73060042CA9B /* CheckInDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8240E4BA137C73060042CA9B /* CheckInDetailsViewController.m */; };
 		8240E4BD137C731D0042CA9B /* CheckInDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8240E4BC137C731D0042CA9B /* CheckInDetailsView.xib */; };
-		824D9DB91360AF5400631120 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 824D9DB81360AF5400631120 /* Utility.m */; };
 		82C10431135737F000302082 /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C10430135737F000302082 /* Globals.m */; };
 		82C1048E135741E500302082 /* Ticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C1048D135741E500302082 /* Ticker.m */; };
 		82C1058813574E6C00302082 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C1058713574E6C00302082 /* CFNetwork.framework */; };
@@ -67,6 +66,7 @@
 		A87EE7971362248E000A91B6 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A87EE7961362248E000A91B6 /* BaseViewController.m */; };
 		A89279DD13570AFE006BD022 /* bearish-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A89279DB13570AFE006BD022 /* bearish-icon.png */; };
 		A89279DE13570AFE006BD022 /* bullish-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A89279DC13570AFE006BD022 /* bullish-icon.png */; };
+		A8CFEF6D137D978C00D14F53 /* CheckInTypeFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CFEF6C137D978C00D14F53 /* CheckInTypeFormatter.m */; };
 		A8E6E13B13679389009DE488 /* finster.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A8E6E13A13679389009DE488 /* finster.sqlite */; };
 		A8ED1CDF1358A38D0003115F /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ED1CC41358A38D0003115F /* ASIAuthenticationDialog.m */; };
 		A8ED1CE01358A38D0003115F /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ED1CC71358A38D0003115F /* ASIDataCompressor.m */; };
@@ -144,8 +144,6 @@
 		8240E4B9137C73060042CA9B /* CheckInDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInDetailsViewController.h; sourceTree = "<group>"; };
 		8240E4BA137C73060042CA9B /* CheckInDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInDetailsViewController.m; sourceTree = "<group>"; };
 		8240E4BC137C731D0042CA9B /* CheckInDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInDetailsView.xib; sourceTree = "<group>"; };
-		824D9DB71360AF5400631120 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
-		824D9DB81360AF5400631120 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		82C1042F135737F000302082 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		82C10430135737F000302082 /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
 		82C1048C135741E500302082 /* Ticker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ticker.h; sourceTree = "<group>"; };
@@ -201,6 +199,8 @@
 		A87EE7961362248E000A91B6 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		A89279DB13570AFE006BD022 /* bearish-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bearish-icon.png"; path = "images/bearish-icon.png"; sourceTree = "<group>"; };
 		A89279DC13570AFE006BD022 /* bullish-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bullish-icon.png"; path = "images/bullish-icon.png"; sourceTree = "<group>"; };
+		A8CFEF6B137D978C00D14F53 /* CheckInTypeFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInTypeFormatter.h; sourceTree = "<group>"; };
+		A8CFEF6C137D978C00D14F53 /* CheckInTypeFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInTypeFormatter.m; sourceTree = "<group>"; };
 		A8E6E13A13679389009DE488 /* finster.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = finster.sqlite; sourceTree = "<group>"; };
 		A8ED1CC31358A38D0003115F /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		A8ED1CC41358A38D0003115F /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
@@ -458,12 +458,12 @@
 			children = (
 				A87EE79213622479000A91B6 /* WaitView.h */,
 				A87EE79313622479000A91B6 /* WaitView.m */,
-				824D9DB71360AF5400631120 /* Utility.h */,
-				824D9DB81360AF5400631120 /* Utility.m */,
 				8240E408137C36D40042CA9B /* ImageManager.h */,
 				8240E409137C36D40042CA9B /* ImageManager.m */,
 				A8F9892E137D7901005A82FA /* TimePassedFormatter.h */,
 				A8F9892F137D7901005A82FA /* TimePassedFormatter.m */,
+				A8CFEF6B137D978C00D14F53 /* CheckInTypeFormatter.h */,
+				A8CFEF6C137D978C00D14F53 /* CheckInTypeFormatter.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -880,7 +880,6 @@
 				822435A8135F7DE000C6258F /* WallViewController.m in Sources */,
 				822435D9135F81D300C6258F /* WallViewCell.m in Sources */,
 				822435E6135F829000C6258F /* GetWallRequest.m in Sources */,
-				824D9DB91360AF5400631120 /* Utility.m in Sources */,
 				A8485BD31360DD3D0044EB0F /* Request.m in Sources */,
 				A87EE79413622479000A91B6 /* WaitView.m in Sources */,
 				A87EE7971362248E000A91B6 /* BaseViewController.m in Sources */,
@@ -897,6 +896,7 @@
 				8240E40D137C38210042CA9B /* Image.m in Sources */,
 				8240E4BB137C73060042CA9B /* CheckInDetailsViewController.m in Sources */,
 				A8F98930137D7901005A82FA /* TimePassedFormatter.m in Sources */,
+				A8CFEF6D137D978C00D14F53 /* CheckInTypeFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

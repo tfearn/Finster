@@ -22,32 +22,8 @@
     [super viewDidLoad];
 	
 	self.navigationItem.title = @"Check In";
-	
-	switch (self.checkInType) {
-		case kCheckInTypeIBought:
-			self.description.text = [NSString stringWithFormat:@"I Bought %@", self.ticker.symbol];
-			break;
-		case kCheckInTypeISold:
-			self.description.text = [NSString stringWithFormat:@"I Sold %@", self.ticker.symbol];
-			break;
-		case kCheckinTypeShouldIBuy:
-			self.description.text = [NSString stringWithFormat:@"Should I Buy %@?", self.ticker.symbol];
-			break;
-		case kCheckInTypeShouldISell:
-			self.description.text = [NSString stringWithFormat:@"Should I Sell %@?", self.ticker.symbol];
-			break;
-		case kCheckInTypeImBullish:
-			self.description.text = [NSString stringWithFormat:@"I'm Bullish on %@", self.ticker.symbol];
-			break;
-		case kCheckInTypeImBearish:
-			self.description.text = [NSString stringWithFormat:@"I'm Bearish on %@", self.ticker.symbol];
-			break;
-		case kCheckInTypeImThinking:
-			self.description.text = [NSString stringWithFormat:@"My Thoughts on %@", self.ticker.symbol];
-			break;
-		default:
-			break;
-	}
+	CheckInTypeFormatter *formatter = [[[CheckInTypeFormatter alloc] init] autorelease];
+	self.description.text = [formatter format:self.checkInType symbol:self.ticker.symbol];
 	
 	self.symbolName.text = self.ticker.symbolName;
 	self.symbolType.text = self.ticker.typeName;

@@ -158,10 +158,12 @@
 		cell.userImageView.image = checkIn.user.image;
 	
 	cell.username.text = checkIn.user.userName;
+	
 	cell.ticker.text = checkIn.ticker.symbol;
-	NSString *title = [[[NSString alloc] init] autorelease];
-	title = [Utility getCheckInString:title checkInType:checkIn.checkinType symbol:checkIn.ticker.symbol];
-	cell.title.text = title;
+	
+	CheckInTypeFormatter *formatter = [[[CheckInTypeFormatter alloc] init] autorelease];
+	cell.title.text = [formatter format:checkIn.checkinType symbol:checkIn.ticker.symbol];
+	
 	cell.company.text = checkIn.ticker.symbolName;
 
 	// Determine the differnce between the check-in time and the current time

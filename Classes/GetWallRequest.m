@@ -34,6 +34,8 @@
 }
 
 - (void)parser:(SBJsonStreamParser *)parser foundObject:(NSDictionary *)dict {
+	
+	MyLog(@"%@", dict);
 
 	// Get the checkInList which is another dictionary
 	NSArray *checkInList = [dict objectForKey:@"checkInList"];
