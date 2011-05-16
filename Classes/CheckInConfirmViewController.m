@@ -91,35 +91,7 @@
 
 	// Do the check in request
 	//
-	
-	NSString *type = @"";
-	switch (self.checkInType) {
-		case kCheckInTypeIBought:
-			type = @"CheckInTypeIBought";
-			break;
-		case kCheckInTypeISold:
-			type = @"CheckInTypeISold";
-			break;
-		case kCheckinTypeShouldIBuy:
-			type = @"CheckinTypeShouldIBuy";
-			break;
-		case kCheckInTypeShouldISell:
-			type = @"CheckInTypeShouldISell";
-			break;
-		case kCheckInTypeImBullish:
-			type = @"CheckInTypeImBullish";
-			break;
-		case kCheckInTypeImBearish:
-			type = @"CheckInTypeImBearish";
-			break;
-		case kCheckInTypeImThinking:
-			type = @"CheckInTypeImThinking";
-			break;
-		default:
-			break;
-	}
-
-	NSString *urlString = [NSString stringWithFormat:kUrlPostCheckIn, type, self.ticker.symbol, self.ticker.symbolName, self.ticker.typeName, self.ticker.exchangeName];
+	NSString *urlString = [NSString stringWithFormat:kUrlPostCheckIn, self.checkInType, self.ticker.symbol, self.ticker.symbolName, self.ticker.typeName, self.ticker.exchangeName];
 	if([[self.textView text] length]) {
 		if([[self.textView text] isEqualToString:kTextViewDefaultMessage] == NO)
 			urlString = [urlString stringByAppendingFormat:@"&comment=%@", [self.textView text]];

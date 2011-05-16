@@ -53,21 +53,7 @@
 		checkIn.checkinID = [[checkInDict objectForKey:@"id"] longValue];
 		NSString *timestamp = [checkInDict objectForKey:@"timestamp"];
 		checkIn.timestamp = [dateFormatter dateFromString:timestamp];
-		NSString *checkInType = [checkInDict objectForKey:@"type"];
-		if([checkInType isEqualToString:@"CheckInTypeIBought"])
-			checkIn.checkinType = kCheckInTypeIBought;
-		else if([checkInType isEqualToString:@"CheckInTypeISold"])
-			checkIn.checkinType = kCheckInTypeISold;
-		else if([checkInType isEqualToString:@"CheckInTypeImBullish"])
-			checkIn.checkinType = kCheckInTypeImBullish;
-		else if([checkInType isEqualToString:@"CheckInTypeImBearish"])
-			checkIn.checkinType = kCheckInTypeImBearish;
-		else if([checkInType isEqualToString:@"CheckinTypeShouldIBuy"])
-			checkIn.checkinType = kCheckinTypeShouldIBuy;
-		else if([checkInType isEqualToString:@"CheckInTypeShouldISell"])
-			checkIn.checkinType = kCheckInTypeShouldISell;
-		else if([checkInType isEqualToString:@"CheckInTypeImThinking"])
-			checkIn.checkinType = kCheckInTypeImThinking;
+		checkIn.checkinType = [[checkInDict objectForKey:@"type"] intValue];
 		checkIn.comment = [checkInDict objectForKey:@"comment"];
 		
 		NSDictionary *user = [checkInDict objectForKey:@"user"];
