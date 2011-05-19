@@ -13,11 +13,7 @@
 @synthesize userImageView = _userImageView;
 @synthesize username = _username;
 @synthesize checkInImageView = _checkInImageView;
-@synthesize description = _description;
 @synthesize timestamp = _timestamp;
-@synthesize symbolName = _symbolName;
-@synthesize symbolType = _symbolType;
-@synthesize exchangeName = _exchangeName;
 @synthesize comments = _comments;
 @synthesize checkIn = _checkIn;
 
@@ -33,6 +29,19 @@
 	TimePassedFormatter *timePassedFormatter = [[[TimePassedFormatter alloc] init] autorelease];
 	self.timestamp.text = [timePassedFormatter format:self.checkIn.timestamp];
 	
+	CheckInTypeFormatter *formatter = [[[CheckInTypeFormatter alloc] init] autorelease];
+	self.description.text = [formatter format:self.checkIn.checkinType symbol:self.checkIn.ticker.symbol];
+	
+	self.symbolName.text = self.checkIn.ticker.symbolName;
+	
+	self.symbolType.text = self.checkIn.ticker.typeName;
+	
+	self.exchangeName.text = self.checkIn.ticker.exchangeName;
+	
+	if([self.checkIn.comment length]) {
+		NSString *comment = [NSString stringWithFormat:@"\"%@\"", self.checkIn.comment];
+		self.comments.text = comment;
+	}
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,15 +62,16 @@
 	[_userImageView release];
 	[_username release];
 	[_checkInImageView release];
-	[_description release];
 	[_timestamp release];
-	[_symbolName release];
-	[_symbolType release];
-	[_exchangeName release];
 	[_comments release];
 	[_checkIn release];
     [super dealloc];
 }
+
+- (IBAction)usernamePressed:(id)sender {
+	
+}
+
 
 
 @end

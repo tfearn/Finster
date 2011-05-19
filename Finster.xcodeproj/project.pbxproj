@@ -26,6 +26,8 @@
 		8240E40D137C38210042CA9B /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 8240E40C137C38210042CA9B /* Image.m */; };
 		8240E4BB137C73060042CA9B /* CheckInDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8240E4BA137C73060042CA9B /* CheckInDetailsViewController.m */; };
 		8240E4BD137C731D0042CA9B /* CheckInDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8240E4BC137C731D0042CA9B /* CheckInDetailsView.xib */; };
+		82765E0D1384568800C3FBC5 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82765E0C1384568800C3FBC5 /* UserViewController.m */; };
+		82765E0F138456A400C3FBC5 /* UserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82765E0E138456A400C3FBC5 /* UserView.xib */; };
 		82C10431135737F000302082 /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C10430135737F000302082 /* Globals.m */; };
 		82C1048E135741E500302082 /* Ticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C1048D135741E500302082 /* Ticker.m */; };
 		82C1058813574E6C00302082 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C1058713574E6C00302082 /* CFNetwork.framework */; };
@@ -144,6 +146,9 @@
 		8240E4B9137C73060042CA9B /* CheckInDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInDetailsViewController.h; sourceTree = "<group>"; };
 		8240E4BA137C73060042CA9B /* CheckInDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInDetailsViewController.m; sourceTree = "<group>"; };
 		8240E4BC137C731D0042CA9B /* CheckInDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInDetailsView.xib; sourceTree = "<group>"; };
+		82765E0B1384568800C3FBC5 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		82765E0C1384568800C3FBC5 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		82765E0E138456A400C3FBC5 /* UserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserView.xib; sourceTree = "<group>"; };
 		82C1042F135737F000302082 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		82C10430135737F000302082 /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
 		82C1048C135741E500302082 /* Ticker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ticker.h; sourceTree = "<group>"; };
@@ -371,6 +376,7 @@
 				822435CD135F813E00C6258F /* WallViewCell.xib */,
 				A87743AE1356646500DD721B /* BadgesView.xib */,
 				A83CF30E13586075002D4F43 /* SettingsView.xib */,
+				82765E0E138456A400C3FBC5 /* UserView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -449,6 +455,8 @@
 				822435A4135F7D9000C6258F /* Settings */,
 				82C107A3135797C800302082 /* TickerFind */,
 				82C10426135736AE00302082 /* BadgesView */,
+				82765E0B1384568800C3FBC5 /* UserViewController.h */,
+				82765E0C1384568800C3FBC5 /* UserViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -830,6 +838,7 @@
 				8240E4BD137C731D0042CA9B /* CheckInDetailsView.xib in Resources */,
 				4D539B2F1381DE9200307811 /* FacebookLoginView.xib in Resources */,
 				4D539B321381DEA700307811 /* login-with-facebook.jpg in Resources */,
+				82765E0F138456A400C3FBC5 /* UserView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -897,6 +906,7 @@
 				A8F98930137D7901005A82FA /* TimePassedFormatter.m in Sources */,
 				A8CFEF6D137D978C00D14F53 /* CheckInTypeFormatter.m in Sources */,
 				4D539B351381DECE00307811 /* FacebookLoginViewController.m in Sources */,
+				82765E0D1384568800C3FBC5 /* UserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
