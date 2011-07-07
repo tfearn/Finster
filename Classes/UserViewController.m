@@ -10,14 +10,11 @@
 
 
 @implementation UserViewController
-@synthesize request = _request;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	// Do a request for data
-	[self getData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,24 +31,9 @@
 }
 
 - (void)dealloc {
-	[_request release];
     [super dealloc];
 }
 
-- (void)getData {
-	_request = [[GetWallRequest alloc] init];
-	self.request.delegate = self;
-	[self.request get];
-}
-
-#pragma mark -
-#pragma mark RequestDelegate Methods
-
--(void)requestComplete:(NSObject *)data {
-}
-
--(void)requestFailure:(NSString *)error {
-}
 
 
 @end

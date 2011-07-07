@@ -15,6 +15,10 @@
 @synthesize userName = _userName;
 @synthesize imageUrl = _imageUrl;
 @synthesize image = _image;
+@synthesize followers = _followers;
+@synthesize following = _following;
+@synthesize checkins = _checkins;
+@synthesize badges = _badges;
 
 - (void)dealloc {
 	[_userID release];
