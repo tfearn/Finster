@@ -30,6 +30,7 @@
 #define kUrlTickerLookup			@"http://d.yimg.com/autoc.finance.yahoo.com/autoc?query=%@&callback=YAHOO.Finance.SymbolSuggest.ssCallback"
 #define kUrlGetWall					@"http://209.114.35.245/getcheckins?start=0&limit=20"
 #define kUrlPostCheckIn				@"http://209.114.35.245/checkin?type=%d&symbol=%@&symbolName=%@&symbolType=%@&exchange=%@"
+#define kUrlGetUser					@"http://209.114.35.245/getuser?user=%@"
 
 // Notifications
 #define kNotificationCheckInComplete	@"NotificationCheckInComplete"
