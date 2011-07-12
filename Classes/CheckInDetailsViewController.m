@@ -69,7 +69,8 @@
 }
 
 - (IBAction)usernamePressed:(id)sender {
-	CheckInResultViewController *controller = [[CheckInResultViewController alloc] init];
+	UserViewController *controller = [[UserViewController alloc] init];
+	controller.user = self.checkIn.user;
 	[self.navigationController pushViewController:controller animated:YES];
 	[controller release];	
 }

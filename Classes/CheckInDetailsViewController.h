@@ -10,7 +10,7 @@
 #import "BaseCheckInViewController.h"
 #import "CheckIn.h"
 #import "TimePassedFormatter.h"
-#import "CheckInResultViewController.h"
+#import "UserViewController.h"
 
 @interface CheckInDetailsViewController : BaseCheckInViewController {
 	IBOutlet UIImageView *_userImageView;

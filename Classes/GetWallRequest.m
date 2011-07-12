@@ -62,6 +62,10 @@
 		checkIn.user.groupType = [user objectForKey:@"group"];
 		checkIn.user.userName = [user objectForKey:@"name"];
 		checkIn.user.imageUrl = [user objectForKey:@"image"];
+		checkIn.user.followers = [[user objectForKey:@"followers"] intValue];
+		checkIn.user.following = [[user objectForKey:@"following"] intValue];
+		checkIn.user.checkins = [[user objectForKey:@"checkins"] intValue];
+		checkIn.user.badges = [[user objectForKey:@"badges"] intValue];
 		
 		NSDictionary *ticker = [checkInDict objectForKey:@"ticker"];
 		checkIn.ticker = [[Ticker alloc] init];
