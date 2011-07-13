@@ -11,6 +11,7 @@
 
 @implementation UserViewController
 @synthesize user = _user;
+@synthesize request = _request;
 @synthesize userImageView = _userImageView;
 @synthesize username = _username;
 @synthesize followButton = _followButton;
@@ -48,6 +49,7 @@
 
 - (void)dealloc {
 	[_user release];
+	[_request release];
 	[_userImageView release];
 	[_username release];
 	[_followButton release];
@@ -56,6 +58,35 @@
     [super dealloc];
 }
 
+- (IBAction)followButtonPressed:(id)sender {
+	[self showWaitView:@"Following..."];
+	
+	[_request release];
+	_request = [[Request alloc] init];
+	NSString *url = [NSString stringWithFormat:kUrlFollowUser, self.user.userID];
+	
+	self.request.delegate = self;
+	[self.request get:[NSURL URLWithString:url]];
+}
+
+#pragma mark -
+#pragma mark RequestDelegate Methods
+
+-(void)requestComplete:(NSObject *)data {
+	[self dismissWaitView];
+	
+	NSString *message = [NSString stringWithFormat:@"You are now following %@", self.user.userName];
+	
+	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Follow User" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+	[alert show];
+}
+
+-(void)requestFailure:(NSString *)error {
+	[self dismissWaitView];
+	
+	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:error delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+	[alert show];
+}
 
 
 @end
