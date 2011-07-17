@@ -1,23 +1,23 @@
 //
-//  GetWallRequest.m
+//  GetCheckInRequest.m
 //  Finster
 //
 //  Created by Todd Fearn on 4/20/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "GetWallRequest.h"
+#import "GetCheckInRequest.h"
 
-@implementation GetWallRequest
+@implementation GetCheckInRequest
 @synthesize checkIns = _checkIns;
 
-- (void)get {
+- (void)get:(NSString *)url {
 	[_checkIns release];
 	_checkIns = [[NSMutableArray alloc] init];
 
-	NSURL *url = [NSURL URLWithString:kUrlGetWall];
+	NSURL *nsurl = [NSURL URLWithString:url];
 	[self setParseResponse:YES];	// Let's parse the JSON response
-	[super get:url];
+	[super get:nsurl];
 }
 
 - (NSObject *)getParsedDataObject {

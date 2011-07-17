@@ -1,15 +1,14 @@
 //
-//  WallViewCell.m
+//  BaseCheckInsViewCell.m
 //  Finster
 //
-//  Created by Todd Fearn on 4/20/11.
+//  Created by Todd Fearn on 7/15/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "WallViewCell.h"
+#import "BaseCheckInsViewCell.h"
 
-
-@implementation WallViewCell
+@implementation BaseCheckInsViewCell
 @synthesize userImageView = _userImageView;
 @synthesize checkInImageView = _checkInImageView;
 @synthesize username = _username;

@@ -1,5 +1,5 @@
 //
-//  GetWallRequest.h
+//  GetCheckInRequest.h
 //  Finster
 //
 //  Created by Todd Fearn on 4/20/11.
@@ -10,11 +10,11 @@
 #import "Request.h"
 #import "CheckIn.h"
 
-@interface GetWallRequest : Request {
+@interface GetCheckInRequest : Request {
 	NSMutableArray *_checkIns;
 }
 @property (nonatomic, retain) NSMutableArray *checkIns;
 
-- (void)get;
+- (void)get:(NSString *)url;
 
 @end

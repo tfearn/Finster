@@ -1,15 +1,15 @@
     //
-//  WallViewController.m
+//  ActivityViewController.m
 //  Finster
 //
-//  Created by Todd Fearn on 4/20/11.
+//  Created by Todd Fearn on 7/15/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "WallViewController.h"
+#import "ActivityViewController.h"
 
 
-@implementation WallViewController
+@implementation ActivityViewController
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -34,7 +34,7 @@
 }
 
 - (NSString *)getRequestUrl {
-	return kUrlGetWall;
+	return kUrlGetActivity;
 }
 
 @end

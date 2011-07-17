@@ -28,20 +28,17 @@
 		case kCheckInTypeISold:
 			self.formattedValue = [NSString stringWithFormat:@"I Sold %@", symbol];
 			break;
-		case kCheckinTypeShouldIBuy:
-			self.formattedValue = [NSString stringWithFormat:@"Should I Buy %@?", symbol];
+		case kCheckinTypeGoodRumour:
+			self.formattedValue = [NSString stringWithFormat:@"Good Rumour About %@?", symbol];
 			break;
-		case kCheckInTypeShouldISell:
-			self.formattedValue = [NSString stringWithFormat:@"Should I Sell %@?", symbol];
+		case kCheckinTypeBadRumour:
+			self.formattedValue = [NSString stringWithFormat:@"Bad Rumour About %@?", symbol];
 			break;
 		case kCheckInTypeImBullish:
 			self.formattedValue = [NSString stringWithFormat:@"I am Bullish on %@", symbol];
 			break;
 		case kCheckInTypeImBearish:
 			self.formattedValue = [NSString stringWithFormat:@"I am Bearish on %@", symbol];
-			break;
-		case kCheckInTypeImThinking:
-			self.formattedValue = [NSString stringWithFormat:@"My Thoughts on %@", symbol];
 			break;
 		default:
 			break;

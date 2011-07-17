@@ -19,9 +19,8 @@
 		4D73A27F1363984300688230 /* default-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D73A27E1363984300688230 /* default-user.png */; };
 		822435A8135F7DE000C6258F /* WallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 822435A7135F7DE000C6258F /* WallViewController.m */; };
 		822435AA135F7DF100C6258F /* WallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 822435A9135F7DF100C6258F /* WallView.xib */; };
-		822435CE135F813E00C6258F /* WallViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 822435CD135F813E00C6258F /* WallViewCell.xib */; };
-		822435D9135F81D300C6258F /* WallViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 822435D8135F81D300C6258F /* WallViewCell.m */; };
-		822435E6135F829000C6258F /* GetWallRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 822435E5135F829000C6258F /* GetWallRequest.m */; };
+		822435CE135F813E00C6258F /* BaseCheckInsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 822435CD135F813E00C6258F /* BaseCheckInsViewCell.xib */; };
+		822435E6135F829000C6258F /* GetCheckInRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 822435E5135F829000C6258F /* GetCheckInRequest.m */; };
 		8240E40A137C36D40042CA9B /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8240E409137C36D40042CA9B /* ImageManager.m */; };
 		8240E40D137C38210042CA9B /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 8240E40C137C38210042CA9B /* Image.m */; };
 		8240E4BB137C73060042CA9B /* CheckInDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8240E4BA137C73060042CA9B /* CheckInDetailsViewController.m */; };
@@ -39,6 +38,10 @@
 		82C107F51357A09C00302082 /* CheckInReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C107F41357A09C00302082 /* CheckInReviewViewController.m */; };
 		82C107F71357A0AB00302082 /* CheckInReviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82C107F61357A0AB00302082 /* CheckInReviewView.xib */; };
 		A83419241367845C00DA62D1 /* DbSearchedTickerGet.m in Sources */ = {isa = PBXBuildFile; fileRef = A83419231367845C00DA62D1 /* DbSearchedTickerGet.m */; };
+		A83AE1AC13D0AC5400D1C045 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83AE1AB13D0AC5400D1C045 /* ActivityViewController.m */; };
+		A83AE1B913D0B0D100D1C045 /* BaseCheckInsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83AE1B813D0B0D100D1C045 /* BaseCheckInsViewController.m */; };
+		A83AE1BC13D0B68200D1C045 /* BaseCheckInsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A83AE1BB13D0B68200D1C045 /* BaseCheckInsViewCell.m */; };
+		A83AE1E113D0BC9E00D1C045 /* ActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83AE1E013D0BC9E00D1C045 /* ActivityView.xib */; };
 		A83CF2FA13585BFF002D4F43 /* app-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A83CF2F913585BFF002D4F43 /* app-icon.png */; };
 		A83CF30313585DE6002D4F43 /* tabbar-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = A83CF30213585DE6002D4F43 /* tabbar-redo.png */; };
 		A83CF30613585F43002D4F43 /* tabbar-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = A83CF30513585F43002D4F43 /* tabbar-gear.png */; };
@@ -134,11 +137,9 @@
 		822435A6135F7DE000C6258F /* WallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallViewController.h; sourceTree = "<group>"; };
 		822435A7135F7DE000C6258F /* WallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallViewController.m; sourceTree = "<group>"; };
 		822435A9135F7DF100C6258F /* WallView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WallView.xib; sourceTree = "<group>"; };
-		822435CD135F813E00C6258F /* WallViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WallViewCell.xib; sourceTree = "<group>"; };
-		822435D7135F81D300C6258F /* WallViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallViewCell.h; sourceTree = "<group>"; };
-		822435D8135F81D300C6258F /* WallViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallViewCell.m; sourceTree = "<group>"; };
-		822435E4135F829000C6258F /* GetWallRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetWallRequest.h; sourceTree = "<group>"; };
-		822435E5135F829000C6258F /* GetWallRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetWallRequest.m; sourceTree = "<group>"; };
+		822435CD135F813E00C6258F /* BaseCheckInsViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCheckInsViewCell.xib; sourceTree = "<group>"; };
+		822435E4135F829000C6258F /* GetCheckInRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetCheckInRequest.h; sourceTree = "<group>"; };
+		822435E5135F829000C6258F /* GetCheckInRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetCheckInRequest.m; sourceTree = "<group>"; };
 		8240E408137C36D40042CA9B /* ImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManager.h; sourceTree = "<group>"; };
 		8240E409137C36D40042CA9B /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
 		8240E40B137C38210042CA9B /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -166,6 +167,13 @@
 		8D1107310486CEB800E47090 /* Finster-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Finster-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		A83419221367845C00DA62D1 /* DbSearchedTickerGet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbSearchedTickerGet.h; sourceTree = "<group>"; };
 		A83419231367845C00DA62D1 /* DbSearchedTickerGet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbSearchedTickerGet.m; sourceTree = "<group>"; };
+		A83AE1AA13D0AC5400D1C045 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
+		A83AE1AB13D0AC5400D1C045 /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
+		A83AE1B713D0B0D100D1C045 /* BaseCheckInsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCheckInsViewController.h; sourceTree = "<group>"; };
+		A83AE1B813D0B0D100D1C045 /* BaseCheckInsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCheckInsViewController.m; sourceTree = "<group>"; };
+		A83AE1BA13D0B68200D1C045 /* BaseCheckInsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCheckInsViewCell.h; sourceTree = "<group>"; };
+		A83AE1BB13D0B68200D1C045 /* BaseCheckInsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCheckInsViewCell.m; sourceTree = "<group>"; };
+		A83AE1E013D0BC9E00D1C045 /* ActivityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityView.xib; sourceTree = "<group>"; };
 		A83CF2F913585BFF002D4F43 /* app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon.png"; path = "images/app-icon.png"; sourceTree = "<group>"; };
 		A83CF30213585DE6002D4F43 /* tabbar-redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar-redo.png"; path = "images/tabbar-redo.png"; sourceTree = "<group>"; };
 		A83CF30513585F43002D4F43 /* tabbar-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar-gear.png"; path = "images/tabbar-gear.png"; sourceTree = "<group>"; };
@@ -373,7 +381,8 @@
 				A877442E1356881D00DD721B /* TickerFindView.xib */,
 				82C107A61357984B00302082 /* TickerFindViewCell.xib */,
 				822435A9135F7DF100C6258F /* WallView.xib */,
-				822435CD135F813E00C6258F /* WallViewCell.xib */,
+				A83AE1E013D0BC9E00D1C045 /* ActivityView.xib */,
+				822435CD135F813E00C6258F /* BaseCheckInsViewCell.xib */,
 				A87743AE1356646500DD721B /* BadgesView.xib */,
 				A83CF30E13586075002D4F43 /* SettingsView.xib */,
 				82765E0E138456A400C3FBC5 /* UserView.xib */,
@@ -410,8 +419,6 @@
 			children = (
 				822435A6135F7DE000C6258F /* WallViewController.h */,
 				822435A7135F7DE000C6258F /* WallViewController.m */,
-				822435D7135F81D300C6258F /* WallViewCell.h */,
-				822435D8135F81D300C6258F /* WallViewCell.m */,
 			);
 			name = Wall;
 			sourceTree = "<group>";
@@ -447,16 +454,21 @@
 		82C104291357370D00302082 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A87EE7951362248E000A91B6 /* BaseViewController.h */,
-				A87EE7961362248E000A91B6 /* BaseViewController.m */,
 				A8FD260B1367190E0099E7FC /* Login */,
 				82C10428135736D200302082 /* CheckIn */,
 				822435A5135F7DC100C6258F /* Wall */,
+				A83AE1A913D0AB5A00D1C045 /* Activity */,
+				82C10426135736AE00302082 /* BadgesView */,
 				822435A4135F7D9000C6258F /* Settings */,
 				82C107A3135797C800302082 /* TickerFind */,
-				82C10426135736AE00302082 /* BadgesView */,
 				82765E0B1384568800C3FBC5 /* UserViewController.h */,
 				82765E0C1384568800C3FBC5 /* UserViewController.m */,
+				A87EE7951362248E000A91B6 /* BaseViewController.h */,
+				A87EE7961362248E000A91B6 /* BaseViewController.m */,
+				A83AE1B713D0B0D100D1C045 /* BaseCheckInsViewController.h */,
+				A83AE1B813D0B0D100D1C045 /* BaseCheckInsViewController.m */,
+				A83AE1BA13D0B68200D1C045 /* BaseCheckInsViewCell.h */,
+				A83AE1BB13D0B68200D1C045 /* BaseCheckInsViewCell.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -481,8 +493,8 @@
 			children = (
 				A8485BD11360DD3D0044EB0F /* Request.h */,
 				A8485BD21360DD3D0044EB0F /* Request.m */,
-				822435E4135F829000C6258F /* GetWallRequest.h */,
-				822435E5135F829000C6258F /* GetWallRequest.m */,
+				822435E4135F829000C6258F /* GetCheckInRequest.h */,
+				822435E5135F829000C6258F /* GetCheckInRequest.m */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -524,6 +536,15 @@
 				82C1079F1357970700302082 /* TickerFindViewCell.m */,
 			);
 			name = TickerFind;
+			sourceTree = "<group>";
+		};
+		A83AE1A913D0AB5A00D1C045 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				A83AE1AA13D0AC5400D1C045 /* ActivityViewController.h */,
+				A83AE1AB13D0AC5400D1C045 /* ActivityViewController.m */,
+			);
+			name = Activity;
 			sourceTree = "<group>";
 		};
 		A87743BA1356669500DD721B /* images */ = {
@@ -830,7 +851,7 @@
 				A8ED1F55135CC2760003115F /* check-icon.png in Resources */,
 				A8ED1F5D135CD38D0003115F /* CheckInResultView.xib in Resources */,
 				822435AA135F7DF100C6258F /* WallView.xib in Resources */,
-				822435CE135F813E00C6258F /* WallViewCell.xib in Resources */,
+				822435CE135F813E00C6258F /* BaseCheckInsViewCell.xib in Resources */,
 				4D73A27F1363984300688230 /* default-user.png in Resources */,
 				A8FD262A136719D10099E7FC /* LoginView.xib in Resources */,
 				A8FD262F13671BD40099E7FC /* banner.png in Resources */,
@@ -839,6 +860,7 @@
 				4D539B2F1381DE9200307811 /* FacebookLoginView.xib in Resources */,
 				4D539B321381DEA700307811 /* login-with-facebook.jpg in Resources */,
 				82765E0F138456A400C3FBC5 /* UserView.xib in Resources */,
+				A83AE1E113D0BC9E00D1C045 /* ActivityView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -887,8 +909,7 @@
 				A86C2F8D135D1ADE00535BBB /* CheckIn.m in Sources */,
 				A86C2F90135D1D1800535BBB /* User.m in Sources */,
 				822435A8135F7DE000C6258F /* WallViewController.m in Sources */,
-				822435D9135F81D300C6258F /* WallViewCell.m in Sources */,
-				822435E6135F829000C6258F /* GetWallRequest.m in Sources */,
+				822435E6135F829000C6258F /* GetCheckInRequest.m in Sources */,
 				A8485BD31360DD3D0044EB0F /* Request.m in Sources */,
 				A87EE79413622479000A91B6 /* WaitView.m in Sources */,
 				A87EE7971362248E000A91B6 /* BaseViewController.m in Sources */,
@@ -907,6 +928,9 @@
 				A8CFEF6D137D978C00D14F53 /* CheckInTypeFormatter.m in Sources */,
 				4D539B351381DECE00307811 /* FacebookLoginViewController.m in Sources */,
 				82765E0D1384568800C3FBC5 /* UserViewController.m in Sources */,
+				A83AE1AC13D0AC5400D1C045 /* ActivityViewController.m in Sources */,
+				A83AE1B913D0B0D100D1C045 /* BaseCheckInsViewController.m in Sources */,
+				A83AE1BC13D0B68200D1C045 /* BaseCheckInsViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

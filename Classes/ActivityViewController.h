@@ -1,15 +1,15 @@
 //
-//  WallViewController.h
+//  ActivityViewController.h
 //  Finster
 //
-//  Created by Todd Fearn on 4/20/11.
+//  Created by Todd Fearn on 7/15/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "BaseCheckInsViewController.h"
 
-@interface WallViewController : BaseCheckInsViewController {
+@interface ActivityViewController : BaseCheckInsViewController {
 }
 
 @end

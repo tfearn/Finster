@@ -57,12 +57,12 @@
 	[self loadTickerFindViewController:kCheckInTypeISold];
 }
 
-- (IBAction)shouldIBuyPressed:(id)sender {
-	[self loadTickerFindViewController:kCheckinTypeShouldIBuy];
+- (IBAction)goodRumourPressed:(id)sender {
+	[self loadTickerFindViewController:kCheckinTypeGoodRumour];
 }
 
-- (IBAction)shouldISellPressed:(id)sender {
-	[self loadTickerFindViewController:kCheckInTypeShouldISell];
+- (IBAction)badRumourPressed:(id)sender {
+	[self loadTickerFindViewController:kCheckinTypeBadRumour];
 }
 
 - (IBAction)imBullishPressed:(id)sender {
@@ -71,10 +71,6 @@
 
 - (IBAction)imBearishPressed:(id)sender {
 	[self loadTickerFindViewController:kCheckInTypeImBearish];
-}
-
-- (IBAction)imThinkingPressed:(id)sender {
-	[self loadTickerFindViewController:kCheckInTypeImThinking];
 }
 
 	 

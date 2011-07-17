@@ -18,10 +18,9 @@
 
 - (IBAction)iBoughtPressed:(id)sender;
 - (IBAction)iSoldPressed:(id)sender;
-- (IBAction)shouldIBuyPressed:(id)sender;
-- (IBAction)shouldISellPressed:(id)sender;
+- (IBAction)goodRumourPressed:(id)sender;
+- (IBAction)badRumourPressed:(id)sender;
 - (IBAction)imBullishPressed:(id)sender;
 - (IBAction)imBearishPressed:(id)sender;
-- (IBAction)imThinkingPressed:(id)sender;
 
 @end
