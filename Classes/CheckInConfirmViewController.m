@@ -106,9 +106,9 @@
 	[self showWaitView:@"Checking in..."];
 
 	[_request release];
-	_request = [[Request alloc] init];
+	_request = [[CheckInRequest alloc] init];
 	self.request.delegate = self;
-	[self.request post:[NSURL URLWithString:escapedUrlString] postData:nil];
+	[self.request get:escapedUrlString];
 }
 
 #pragma mark -

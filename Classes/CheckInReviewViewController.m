@@ -42,7 +42,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return 2;
+	return 1;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -63,12 +63,12 @@
 		cell.textLabel.text = @"Recent Check Ins";
 		cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-clock" ofType:@"png"]];
 	}
+	// TODO - add these features later
 	else if(row == 1) {
 		cell.textLabel.text = @"Gurus";
 		cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
 	}
 	else {
-		// TODO - add this feature later
 		cell.textLabel.text = @"Ticker Details";
 		cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-line-chart" ofType:@"png"]];
 	}
@@ -85,6 +85,13 @@
 #pragma mark UITableViewDelegate Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	int row = [indexPath row];
+	if(row == 0) {
+		CheckInsByTickerViewController *controller = [[CheckInsByTickerViewController alloc] init];
+		[controller setSymbol:self.ticker.symbol];
+		[self.navigationController pushViewController:controller animated:YES];
+		[controller release];
+	}
 }
 
 

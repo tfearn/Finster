@@ -79,6 +79,9 @@
 	
 	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Follow User" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
 	[alert show];
+	
+	[self.navigationController setNavigationBarHidden:NO animated:NO]; 
+	[self.navigationController popToRootViewControllerAnimated:YES];;
 }
 
 -(void)requestFailure:(NSString *)error {

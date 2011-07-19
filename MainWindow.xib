@@ -67,12 +67,13 @@
 				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<bool key="IBUIHorizontal">NO</bool>
-				<object class="IBUINavigationController" key="IBUISelectedViewController" id="687618506">
-					<object class="IBUITabBarItem" key="IBUITabBarItem" id="186741527">
-						<string key="IBUITitle">Wall</string>
+				<object class="IBUINavigationController" key="IBUISelectedViewController" id="658788974">
+					<string key="IBUITitle">Activity</string>
+					<object class="IBUITabBarItem" key="IBUITabBarItem" id="879684647">
+						<string key="IBUITitle">Activity</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">tabbar-user.png</string>
+							<string key="NSResourceName">tabbar-group.png</string>
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<reference key="IBUITabBar"/>
@@ -84,7 +85,7 @@
 					</object>
 					<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					<bool key="IBUIHorizontal">NO</bool>
-					<object class="IBUINavigationBar" key="IBUINavigationBar" id="807896695">
+					<object class="IBUINavigationBar" key="IBUINavigationBar" id="358691823">
 						<nil key="NSNextResponder"/>
 						<int key="NSvFlags">256</int>
 						<string key="NSFrameSize">{320, 44}</string>
@@ -95,15 +96,16 @@
 					</object>
 					<object class="NSMutableArray" key="IBUIViewControllers">
 						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="IBUIViewController" id="96798787">
+						<object class="IBUIViewController" id="296901806">
+							<string key="IBUITitle">Activity</string>
 							<reference key="IBUIToolbarItems" ref="0"/>
-							<object class="IBUINavigationItem" key="IBUINavigationItem" id="398849625">
+							<object class="IBUINavigationItem" key="IBUINavigationItem" id="546698743">
 								<reference key="IBUINavigationBar"/>
-								<string key="IBUITitle">Wall</string>
+								<string key="IBUITitle">Activity</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
-							<reference key="IBUIParentViewController" ref="687618506"/>
-							<string key="IBUINibName">WallView</string>
+							<reference key="IBUIParentViewController" ref="658788974"/>
+							<string key="IBUINibName">ActivityView</string>
 							<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 								<int key="interfaceOrientation">1</int>
 							</object>
@@ -158,13 +160,12 @@
 							</object>
 						</object>
 					</object>
-					<reference ref="687618506"/>
-					<object class="IBUINavigationController" id="658788974">
-						<object class="IBUITabBarItem" key="IBUITabBarItem" id="879684647">
-							<string key="IBUITitle">Activity</string>
+					<object class="IBUINavigationController" id="687618506">
+						<object class="IBUITabBarItem" key="IBUITabBarItem" id="186741527">
+							<string key="IBUITitle">Wall</string>
 							<object class="NSCustomResource" key="IBUIImage">
 								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">tabbar-group.png</string>
+								<string key="NSResourceName">tabbar-user.png</string>
 							</object>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							<reference key="IBUITabBar"/>
@@ -176,7 +177,7 @@
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<bool key="IBUIHorizontal">NO</bool>
-						<object class="IBUINavigationBar" key="IBUINavigationBar" id="358691823">
+						<object class="IBUINavigationBar" key="IBUINavigationBar" id="807896695">
 							<nil key="NSNextResponder"/>
 							<int key="NSvFlags">256</int>
 							<string key="NSFrameSize">{320, 44}</string>
@@ -185,17 +186,16 @@
 							<bool key="IBUIMultipleTouchEnabled">YES</bool>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
-						<object class="NSArray" key="IBUIViewControllers">
+						<object class="NSMutableArray" key="IBUIViewControllers">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUIViewController" id="296901806">
-								<string key="IBUITitle">Activity</string>
+							<object class="IBUIViewController" id="96798787">
 								<reference key="IBUIToolbarItems" ref="0"/>
-								<object class="IBUINavigationItem" key="IBUINavigationItem" id="546698743">
-									<string key="IBUITitle">Item</string>
+								<object class="IBUINavigationItem" key="IBUINavigationItem" id="398849625">
+									<string key="IBUITitle">Wall</string>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<reference key="IBUIParentViewController" ref="658788974"/>
-								<string key="IBUINibName">ActivityView</string>
+								<reference key="IBUIParentViewController" ref="687618506"/>
+								<string key="IBUINibName">WallView</string>
 								<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 									<int key="interfaceOrientation">1</int>
 								</object>
@@ -204,6 +204,7 @@
 							</object>
 						</object>
 					</object>
+					<reference ref="658788974"/>
 					<object class="IBUIViewController" id="230128905">
 						<string key="IBUITitle">Settings</string>
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="1065288535">
@@ -461,7 +462,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>UIApplication</string>
 					<string>UIResponder</string>
-					<string>{{364, 212}, {320, 480}}</string>
+					<string>{{357, 229}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>SettingsViewController</string>
@@ -555,17 +556,15 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>badRumourPressed:</string>
+							<string>goodRumourPressed:</string>
 							<string>iBoughtPressed:</string>
 							<string>iSoldPressed:</string>
 							<string>imBearishPressed:</string>
 							<string>imBullishPressed:</string>
-							<string>imThinkingPressed:</string>
-							<string>shouldIBuyPressed:</string>
-							<string>shouldISellPressed:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -578,16 +577,23 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>badRumourPressed:</string>
+							<string>goodRumourPressed:</string>
 							<string>iBoughtPressed:</string>
 							<string>iSoldPressed:</string>
 							<string>imBearishPressed:</string>
 							<string>imBullishPressed:</string>
-							<string>imThinkingPressed:</string>
-							<string>shouldIBuyPressed:</string>
-							<string>shouldISellPressed:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">badRumourPressed:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">goodRumourPressed:</string>
+								<string key="candidateClassName">id</string>
+							</object>
 							<object class="IBActionInfo">
 								<string key="name">iBoughtPressed:</string>
 								<string key="candidateClassName">id</string>
@@ -602,18 +608,6 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">imBullishPressed:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">imThinkingPressed:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">shouldIBuyPressed:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">shouldISellPressed:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 						</object>

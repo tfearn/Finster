@@ -10,6 +10,7 @@
 #import "BaseCheckInViewController.h"
 #import "CheckInConfirmViewController.h"
 #import "DbSearchedTickerInsert.h"
+#import "CheckInsByTickerViewController.h"
 
 @interface CheckInReviewViewController : BaseCheckInViewController {
 	IBOutlet UITableView *_tableView;

@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.scrollView.contentSize = CGSizeMake(320, 560);
+	self.scrollView.contentSize = CGSizeMake(320, 420);
 }
 
 - (void)didReceiveMemoryWarning {

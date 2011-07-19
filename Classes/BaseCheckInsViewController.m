@@ -28,7 +28,7 @@
 	
 	// Add the refresh button and the title button
 	UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshButtonPressed:)];
-	self.navigationItem.leftBarButtonItem = refreshButton; 
+	self.navigationItem.rightBarButtonItem = refreshButton; 
 	[refreshButton release];
 	
 	// Initialize the ImageManager to get user pictures
