@@ -10,8 +10,19 @@
 #import "Request.h"
 
 @interface CheckInRequest : Request {
-
+	int _badgeID;
+	int _checkInsForTicker;
+	int _otherCheckInsForTicker;
+	int _otherTickerInterest;
+	int _pointsEarned;
+	int _totalPoints;
 }
+@property int badgeID;
+@property int checkInsForTicker;
+@property int otherCheckInsForTicker;
+@property int otherTickerInterest;
+@property int pointsEarned;
+@property int totalPoints;
 
 - (void)get:(NSString *)url;
 

@@ -27,7 +27,7 @@
 #define kUrlLogin					@"http://173.203.238.148/cgi-bin/login.cgi"			// No longer used
 #define kUrlLoginUsingFacebook		@"http://209.114.35.245/loginUsingFacebook?facebookuserid=%@&accesstoken=%@"
 #define kUrlTickerLookup			@"http://d.yimg.com/autoc.finance.yahoo.com/autoc?query=%@&callback=YAHOO.Finance.SymbolSuggest.ssCallback"
-#define kUrlGetWall					@"http://209.114.35.245/getcheckins?feed=you&start=0&limit=20"
+#define kUrlGetWall					@"http://209.114.35.245/getcheckins?feed=you,friends&start=0&limit=20"
 #define kUrlGetActivity				@"http://209.114.35.245/getcheckins?feed=network&start=0&limit=20"
 #define kUrlPostCheckIn				@"http://209.114.35.245/checkin?type=%d&symbol=%@&symbolName=%@&symbolType=%@&exchange=%@"
 #define kUrlGetUser					@"http://209.114.35.245/getuser?user=%@"

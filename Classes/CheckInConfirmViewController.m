@@ -117,9 +117,12 @@
 -(void)requestComplete:(NSObject *)data {
 	[self dismissWaitView];
 	
+	CheckInRequest *checkInRequest = (CheckInRequest *)data;
+	
 	CheckInResultViewController *controller = [[CheckInResultViewController alloc] init];
 	controller.ticker = self.ticker;
 	controller.checkInType = self.checkInType;
+	controller.checkInRequest = checkInRequest;
 	[self.navigationController pushViewController:controller animated:YES];
 	[controller release];
 }
