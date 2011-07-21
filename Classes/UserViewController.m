@@ -11,6 +11,7 @@
 
 @implementation UserViewController
 @synthesize user = _user;
+@synthesize getUserFollowersRequest = _getUserFollowersRequest;
 @synthesize request = _request;
 @synthesize userImageView = _userImageView;
 @synthesize username = _username;
@@ -32,6 +33,15 @@
 	if([self.user.groupType isEqualToString:@"you"]) {
 		self.followButton.hidden = YES;
 	}
+	else {
+		// Get your followers to determine if you are already following this user
+		[self showWaitView:@"Retrieving User..."];
+
+		_getUserFollowersRequest = [[GetUserFollowersRequest alloc] init];
+		self.getUserFollowersRequest.delegate = self;
+		NSString *url = [NSString stringWithFormat:kUrlGetUserFollowers, 100];
+		[self.getUserFollowersRequest get:url];
+	}
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,6 +59,7 @@
 
 - (void)dealloc {
 	[_user release];
+	[_getUserFollowersRequest release];
 	[_request release];
 	[_userImageView release];
 	[_username release];
@@ -74,6 +85,13 @@
 
 -(void)requestComplete:(NSObject *)data {
 	[self dismissWaitView];
+	
+	// Is this a GetUserFolowersRequest response?
+	if([data isKindOfClass:[GetUserFollowersRequest class]]) {
+		
+	}
+	else {
+	}
 	
 	NSString *message = [NSString stringWithFormat:@"You are now following %@", self.user.userName];
 	

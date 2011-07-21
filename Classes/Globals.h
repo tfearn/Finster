@@ -33,6 +33,7 @@
 #define kUrlGetUser					@"http://209.114.35.245/getuser?user=%@"
 #define kUrlFollowUser				@"http://209.114.35.245/followuser?userid=%@"
 #define kUrlGetCheckInsByTicker		@"http://209.114.35.245/getcheckins?feed=network&start=0&limit=20&ticker=%@"
+#define kUrlGetUserFollowers		@"http://209.114.35.245/getuserfollowers?user=%d"
 
 // Notifications
 #define kNotificationCheckInComplete	@"NotificationCheckInComplete"

@@ -10,9 +10,11 @@
 #import "BaseViewController.h"
 #import "User.h"
 #import "Request.h"
+#import "GetUserFollowersRequest.h"
 
 @interface UserViewController : BaseViewController <RequestDelegate> {
 	User *_user;
+	GetUserFollowersRequest *_getUserFollowersRequest;
 	Request *_request;
 	IBOutlet UIImageView *_userImageView;
 	IBOutlet UILabel *_username;
@@ -21,6 +23,7 @@
 	IBOutlet UILabel *_following;
 }
 @property (nonatomic, retain) User *user;
+@property (nonatomic, retain) GetUserFollowersRequest *getUserFollowersRequest;
 @property (nonatomic, retain) Request *request;
 @property (nonatomic, retain) UIImageView *userImageView;
 @property (nonatomic, retain) UILabel *username;
