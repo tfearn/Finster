@@ -124,6 +124,31 @@
 			A886303713D7A21B00C9AEB8 /* PBXTextBookmark */ = A886303713D7A21B00C9AEB8 /* PBXTextBookmark */;
 			A886303813D7A21B00C9AEB8 /* PBXTextBookmark */ = A886303813D7A21B00C9AEB8 /* PBXTextBookmark */;
 			A886303913D7A21B00C9AEB8 /* PBXTextBookmark */ = A886303913D7A21B00C9AEB8 /* PBXTextBookmark */;
+			A886304213D872E700C9AEB8 /* PBXTextBookmark */ = A886304213D872E700C9AEB8 /* PBXTextBookmark */;
+			A886304313D872E700C9AEB8 /* PBXBookmark */ = A886304313D872E700C9AEB8 /* PBXBookmark */;
+			A886304413D872E700C9AEB8 /* PBXBookmark */ = A886304413D872E700C9AEB8 /* PBXBookmark */;
+			A886304513D872E700C9AEB8 /* PBXBookmark */ = A886304513D872E700C9AEB8 /* PBXBookmark */;
+			A886304613D872E700C9AEB8 /* PBXBookmark */ = A886304613D872E700C9AEB8 /* PBXBookmark */;
+			A886304713D872E700C9AEB8 /* PBXBookmark */ = A886304713D872E700C9AEB8 /* PBXBookmark */;
+			A886304813D872E700C9AEB8 /* PBXBookmark */ = A886304813D872E700C9AEB8 /* PBXBookmark */;
+			A886304913D872E700C9AEB8 /* PBXBookmark */ = A886304913D872E700C9AEB8 /* PBXBookmark */;
+			A886304A13D872E700C9AEB8 /* PBXBookmark */ = A886304A13D872E700C9AEB8 /* PBXBookmark */;
+			A886304B13D872E700C9AEB8 /* PBXBookmark */ = A886304B13D872E700C9AEB8 /* PBXBookmark */;
+			A886304C13D872E700C9AEB8 /* PBXBookmark */ = A886304C13D872E700C9AEB8 /* PBXBookmark */;
+			A886304D13D872E700C9AEB8 /* PBXBookmark */ = A886304D13D872E700C9AEB8 /* PBXBookmark */;
+			A886304E13D872E700C9AEB8 /* PBXBookmark */ = A886304E13D872E700C9AEB8 /* PBXBookmark */;
+			A886304F13D872E700C9AEB8 /* PBXBookmark */ = A886304F13D872E700C9AEB8 /* PBXBookmark */;
+			A886305013D872E700C9AEB8 /* PBXBookmark */ = A886305013D872E700C9AEB8 /* PBXBookmark */;
+			A886305113D872E700C9AEB8 /* PBXBookmark */ = A886305113D872E700C9AEB8 /* PBXBookmark */;
+			A886305213D872E700C9AEB8 /* PBXBookmark */ = A886305213D872E700C9AEB8 /* PBXBookmark */;
+			A886305313D872E700C9AEB8 /* PBXBookmark */ = A886305313D872E700C9AEB8 /* PBXBookmark */;
+			A886305413D872E700C9AEB8 /* PBXBookmark */ = A886305413D872E700C9AEB8 /* PBXBookmark */;
+			A886305513D872E700C9AEB8 /* PBXBookmark */ = A886305513D872E700C9AEB8 /* PBXBookmark */;
+			A886305613D872E700C9AEB8 /* PBXBookmark */ = A886305613D872E700C9AEB8 /* PBXBookmark */;
+			A886305713D872E700C9AEB8 /* PBXBookmark */ = A886305713D872E700C9AEB8 /* PBXBookmark */;
+			A886305813D872E700C9AEB8 /* PBXTextBookmark */ = A886305813D872E700C9AEB8 /* PBXTextBookmark */;
+			A886305913D872E700C9AEB8 /* PBXTextBookmark */ = A886305913D872E700C9AEB8 /* PBXTextBookmark */;
+			A886305F13D873C300C9AEB8 /* PBXTextBookmark */ = A886305F13D873C300C9AEB8 /* PBXTextBookmark */;
 			A895288313D2F61F00A54A38 = A895288313D2F61F00A54A38 /* PBXTextBookmark */;
 			A895288413D2F61F00A54A38 = A895288413D2F61F00A54A38 /* PBXTextBookmark */;
 			A895288813D2F61F00A54A38 = A895288813D2F61F00A54A38 /* PBXTextBookmark */;
@@ -236,9 +261,9 @@
 	};
 	8240E4BA137C73060042CA9B /* CheckInDetailsViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {898, 1053}}";
+			sepNavIntBoundsRect = "{{0, 0}, {901, 1053}}";
 			sepNavSelRange = "{2140, 0}";
-			sepNavVisRange = "{593, 1397}";
+			sepNavVisRange = "{246, 1558}";
 		};
 	};
 	82765E0B1384568800C3FBC5 /* UserViewController.h */ = {
@@ -892,6 +917,130 @@
 		vrLen = 1302;
 		vrLoc = 77;
 	};
+	A886304213D872E700C9AEB8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A89528DD13D31C1900A54A38 /* CheckInRequest.m */;
+		name = "CheckInRequest.m: 14";
+		rLen = 0;
+		rLoc = 274;
+		rType = 0;
+		vrLen = 1337;
+		vrLoc = 36;
+	};
+	A886304313D872E700C9AEB8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = A8ED1EA5135C9FCB0003115F /* facebook-icon.png */;
+	};
+	A886304413D872E700C9AEB8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = A8FD262E13671BD40099E7FC /* banner.png */;
+	};
+	A886304513D872E700C9AEB8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = A83CF2F913585BFF002D4F43 /* app-icon.png */;
+	};
+	A886304613D872E700C9AEB8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = A8718C2F1357C1A50054D85C /* thumbs-down-icon.png */;
+	};
+	A886304713D872E700C9AEB8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = A8718C311357C1A50054D85C /* dollars-icon.png */;
+	};
+	A886304813D872E700C9AEB8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = A89279DB13570AFE006BD022 /* bearish-icon.png */;
+	};
+	A886304913D872E700C9AEB8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = A87743BB135666A900DD721B /* tabbar-clock.png */;
+	};
+	A886304A13D872E700C9AEB8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = A8718C321357C1A50054D85C /* piechart-icon.png */;
+	};
+	A886304B13D872E700C9AEB8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = A87743DE135676F500DD721B /* news-on-a-stock-icon.png */;
+	};
+	A886304C13D872E700C9AEB8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = A89279DC13570AFE006BD022 /* bullish-icon.png */;
+	};
+	A886304D13D872E700C9AEB8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = A87743E1135676F500DD721B /* thinking-icon.png */;
+	};
+	A886304E13D872E700C9AEB8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 4D73A27E1363984300688230 /* default-user.png */;
+	};
+	A886304F13D872E700C9AEB8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = A83CF30213585DE6002D4F43 /* tabbar-redo.png */;
+	};
+	A886305013D872E700C9AEB8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = A83CF30513585F43002D4F43 /* tabbar-gear.png */;
+	};
+	A886305113D872E700C9AEB8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = A8ED1EAA135CA2570003115F /* twitter-grey-icon.png */;
+	};
+	A886305213D872E700C9AEB8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = A8ED1EA9135CA2570003115F /* facebook-grey-icon.png */;
+	};
+	A886305313D872E700C9AEB8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = A8ED1F54135CC2760003115F /* check-icon.png */;
+	};
+	A886305413D872E700C9AEB8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = A87744261356873E00DD721B /* tabbar-group.png */;
+	};
+	A886305513D872E700C9AEB8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = A87743BD135667DE00DD721B /* tabbar-user.png */;
+	};
+	A886305613D872E700C9AEB8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = A87743C0135668DF00DD721B /* tabbar-line-chart.png */;
+	};
+	A886305713D872E700C9AEB8 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = A87743BF135668DF00DD721B /* tabbar-tags.png */;
+	};
+	A886305813D872E700C9AEB8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8240E4BA137C73060042CA9B /* CheckInDetailsViewController.m */;
+		name = "CheckInDetailsViewController.m: 73";
+		rLen = 0;
+		rLoc = 2140;
+		rType = 0;
+		vrLen = 1558;
+		vrLoc = 246;
+	};
+	A886305913D872E700C9AEB8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A8ED1F5A135CD3790003115F /* CheckInResultViewController.m */;
+		name = "CheckInResultViewController.m: 84";
+		rLen = 0;
+		rLoc = 2659;
+		rType = 0;
+		vrLen = 2054;
+		vrLoc = 1735;
+	};
+	A886305F13D873C300C9AEB8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A8ED1F5A135CD3790003115F /* CheckInResultViewController.m */;
+		name = "CheckInResultViewController.m: 80";
+		rLen = 0;
+		rLoc = 2388;
+		rType = 0;
+		vrLen = 2100;
+		vrLoc = 1735;
+	};
 	A895288313D2F61F00A54A38 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = A8CFEF6C137D978C00D14F53 /* CheckInTypeFormatter.m */;
@@ -1046,8 +1195,8 @@
 	A89528DD13D31C1900A54A38 /* CheckInRequest.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {901, 650}}";
-			sepNavSelRange = "{1349, 0}";
-			sepNavVisRange = "{77, 1302}";
+			sepNavSelRange = "{274, 0}";
+			sepNavVisRange = "{36, 1337}";
 		};
 	};
 	A89528F113D329F000A54A38 /* PBXTextBookmark */ = {
@@ -1538,9 +1687,9 @@
 	};
 	A8ED1F5A135CD3790003115F /* CheckInResultViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1020, 1404}}";
-			sepNavSelRange = "{1835, 0}";
-			sepNavVisRange = "{1522, 2083}";
+			sepNavIntBoundsRect = "{{0, 0}, {1055, 1430}}";
+			sepNavSelRange = "{2388, 0}";
+			sepNavVisRange = "{1735, 2100}";
 		};
 	};
 	A8F1195E135E5CDB00CEA235 /* PBXTextBookmark */ = {

@@ -77,21 +77,21 @@
     // Configure the cell...
 	int row = [indexPath row];
 	if(row == 0) {
-		cell.textLabel.text = [NSString stringWithFormat:@"%d Points Earned", self.checkInRequest.pointsEarned];
+		cell.textLabel.text = [NSString stringWithFormat:@"You earned %d points for this check-in", self.checkInRequest.pointsEarned];
 		cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-clock" ofType:@"png"]];
 	}
 	else if(row == 1) {
-		cell.textLabel.text = [NSString stringWithFormat:@"%d Total Points", self.checkInRequest.totalPoints];
+		cell.textLabel.text = [NSString stringWithFormat:@"You now have %d total points", self.checkInRequest.totalPoints];
 		cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-clock" ofType:@"png"]];
 	}
 	else if(row == 2) {
-		cell.textLabel.text = [NSString stringWithFormat:@"%d Your CheckIns for %@", self.checkInRequest.checkInsForTicker, self.ticker.symbol];
-		cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-clock" ofType:@"png"]];
+		cell.textLabel.text = [NSString stringWithFormat:@"You have %d check-ins for %@", self.checkInRequest.checkInsForTicker, self.ticker.symbol];
+		cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-user" ofType:@"png"]];
 	}
 	else if(row == 3) {
 		int total = self.checkInRequest.otherCheckInsForTicker + self.checkInRequest.otherTickerInterest;
-		cell.textLabel.text = [NSString stringWithFormat:@"%d CheckIns Related to %@", total, self.ticker.symbol];
-		cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-clock" ofType:@"png"]];
+		cell.textLabel.text = [NSString stringWithFormat:@"Others checked into %@ %d times", self.ticker.symbol, total];
+		cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
 	}
 	cell.textLabel.textColor = [UIColor darkGrayColor];
 	cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15.0];
