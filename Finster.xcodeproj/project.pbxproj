@@ -69,7 +69,7 @@
 		A877442F1356881D00DD721B /* TickerFindView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A877442E1356881D00DD721B /* TickerFindView.xib */; };
 		A87EE79413622479000A91B6 /* WaitView.m in Sources */ = {isa = PBXBuildFile; fileRef = A87EE79313622479000A91B6 /* WaitView.m */; };
 		A87EE7971362248E000A91B6 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A87EE7961362248E000A91B6 /* BaseViewController.m */; };
-		A886306713D8775E00C9AEB8 /* GetUserFollowersRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A886306613D8775E00C9AEB8 /* GetUserFollowersRequest.m */; };
+		A886306713D8775E00C9AEB8 /* GetUserFollowingRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A886306613D8775E00C9AEB8 /* GetUserFollowingRequest.m */; };
 		A89279DD13570AFE006BD022 /* bearish-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A89279DB13570AFE006BD022 /* bearish-icon.png */; };
 		A89279DE13570AFE006BD022 /* bullish-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A89279DC13570AFE006BD022 /* bullish-icon.png */; };
 		A89528C613D313C000A54A38 /* CheckInsByTickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89528C513D313C000A54A38 /* CheckInsByTickerViewController.m */; };
@@ -214,8 +214,8 @@
 		A87EE79313622479000A91B6 /* WaitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitView.m; sourceTree = "<group>"; };
 		A87EE7951362248E000A91B6 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		A87EE7961362248E000A91B6 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		A886306513D8775E00C9AEB8 /* GetUserFollowersRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUserFollowersRequest.h; sourceTree = "<group>"; };
-		A886306613D8775E00C9AEB8 /* GetUserFollowersRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetUserFollowersRequest.m; sourceTree = "<group>"; };
+		A886306513D8775E00C9AEB8 /* GetUserFollowingRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUserFollowingRequest.h; sourceTree = "<group>"; };
+		A886306613D8775E00C9AEB8 /* GetUserFollowingRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetUserFollowingRequest.m; sourceTree = "<group>"; };
 		A89279DB13570AFE006BD022 /* bearish-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bearish-icon.png"; path = "images/bearish-icon.png"; sourceTree = "<group>"; };
 		A89279DC13570AFE006BD022 /* bullish-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bullish-icon.png"; path = "images/bullish-icon.png"; sourceTree = "<group>"; };
 		A89528C413D313C000A54A38 /* CheckInsByTickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInsByTickerViewController.h; sourceTree = "<group>"; };
@@ -511,8 +511,8 @@
 				A89528DD13D31C1900A54A38 /* CheckInRequest.m */,
 				822435E4135F829000C6258F /* GetCheckInRequest.h */,
 				822435E5135F829000C6258F /* GetCheckInRequest.m */,
-				A886306513D8775E00C9AEB8 /* GetUserFollowersRequest.h */,
-				A886306613D8775E00C9AEB8 /* GetUserFollowersRequest.m */,
+				A886306513D8775E00C9AEB8 /* GetUserFollowingRequest.h */,
+				A886306613D8775E00C9AEB8 /* GetUserFollowingRequest.m */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -952,7 +952,7 @@
 				A83AE1BC13D0B68200D1C045 /* BaseCheckInsViewCell.m in Sources */,
 				A89528C613D313C000A54A38 /* CheckInsByTickerViewController.m in Sources */,
 				A89528DE13D31C1900A54A38 /* CheckInRequest.m in Sources */,
-				A886306713D8775E00C9AEB8 /* GetUserFollowersRequest.m in Sources */,
+				A886306713D8775E00C9AEB8 /* GetUserFollowingRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

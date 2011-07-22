@@ -32,8 +32,9 @@
 #define kUrlPostCheckIn				@"http://209.114.35.245/checkin?type=%d&symbol=%@&symbolName=%@&symbolType=%@&exchange=%@"
 #define kUrlGetUser					@"http://209.114.35.245/getuser?user=%@"
 #define kUrlFollowUser				@"http://209.114.35.245/followuser?userid=%@"
+#define kUrlUnFollowUser			@"http://209.114.35.245/unfollowuser?userid=%@"
 #define kUrlGetCheckInsByTicker		@"http://209.114.35.245/getcheckins?feed=network&start=0&limit=20&ticker=%@"
-#define kUrlGetUserFollowers		@"http://209.114.35.245/getuserfollowers?user=%d"
+#define kUrlGetUserFollowing		@"http://209.114.35.245/getuserfollowing?user=%d"
 
 // Notifications
 #define kNotificationCheckInComplete	@"NotificationCheckInComplete"

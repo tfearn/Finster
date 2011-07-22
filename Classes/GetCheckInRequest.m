@@ -58,7 +58,7 @@
 		
 		NSDictionary *user = [checkInDict objectForKey:@"user"];
 		checkIn.user = [[User alloc] init];
-		checkIn.user.userID = [user objectForKey:@"id"];
+		checkIn.user.userID = [[user objectForKey:@"id"] stringValue];
 		checkIn.user.groupType = [user objectForKey:@"group"];
 		checkIn.user.userName = [user objectForKey:@"name"];
 		checkIn.user.imageUrl = [user objectForKey:@"image"];

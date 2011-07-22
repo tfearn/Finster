@@ -1,5 +1,5 @@
 //
-//  GetUserFollowersRequest.h
+//  GetUserFollowingRequest.h
 //  Finster
 //
 //  Created by Todd Fearn on 7/21/11.
@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "Request.h"
+#import "User.h"
 
-@interface GetUserFollowersRequest : Request {
+@interface GetUserFollowingRequest : Request {
 	NSMutableArray *_users;
 }
 @property (nonatomic, retain) NSMutableArray *users;

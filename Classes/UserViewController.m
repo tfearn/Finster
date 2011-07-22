@@ -11,7 +11,7 @@
 
 @implementation UserViewController
 @synthesize user = _user;
-@synthesize getUserFollowersRequest = _getUserFollowersRequest;
+@synthesize getUserFollowingRequest = _getUserFollowingRequest;
 @synthesize request = _request;
 @synthesize userImageView = _userImageView;
 @synthesize username = _username;
@@ -37,10 +37,10 @@
 		// Get your followers to determine if you are already following this user
 		[self showWaitView:@"Retrieving User..."];
 
-		_getUserFollowersRequest = [[GetUserFollowersRequest alloc] init];
-		self.getUserFollowersRequest.delegate = self;
-		NSString *url = [NSString stringWithFormat:kUrlGetUserFollowers, 100];
-		[self.getUserFollowersRequest get:url];
+		_getUserFollowingRequest = [[GetUserFollowingRequest alloc] init];
+		self.getUserFollowingRequest.delegate = self;
+		NSString *url = [NSString stringWithFormat:kUrlGetUserFollowing, 2];	// TODO: Change this later when Mark adds feature
+		[self.getUserFollowingRequest get:url];
 	}
 }
 
@@ -59,7 +59,7 @@
 
 - (void)dealloc {
 	[_user release];
-	[_getUserFollowersRequest release];
+	[_getUserFollowingRequest release];
 	[_request release];
 	[_userImageView release];
 	[_username release];
@@ -70,11 +70,14 @@
 }
 
 - (IBAction)followButtonPressed:(id)sender {
-	[self showWaitView:@"Following..."];
+	[self showWaitView:@"Please Wait..."];
 	
 	[_request release];
 	_request = [[Request alloc] init];
-	NSString *url = [NSString stringWithFormat:kUrlFollowUser, self.user.userID];
+	NSString *url = [NSString stringWithFormat:kUrlUnFollowUser, self.user.userID];
+	if([self.followButton.currentTitle isEqualToString:@"Follow"]) {
+		url = [NSString stringWithFormat:kUrlFollowUser, self.user.userID];
+	}
 	
 	self.request.delegate = self;
 	[self.request get:[NSURL URLWithString:url]];
@@ -87,19 +90,31 @@
 	[self dismissWaitView];
 	
 	// Is this a GetUserFolowersRequest response?
-	if([data isKindOfClass:[GetUserFollowersRequest class]]) {
+	if([data isKindOfClass:[NSMutableArray class]]) {
 		
+		// Are we already following this user?
+		NSMutableArray *users = (NSMutableArray *)data;
+
+		for(int i=0; i<[users count]; i++) {
+			User *user = [users objectAtIndex:i];
+			if([self.user.userID isEqualToString:user.userID]) {
+				[self.followButton setTitle:@"Unfollow" forState:UIControlStateNormal];
+				break;
+			}
+		}
 	}
 	else {
+		NSString *message = [NSString stringWithFormat:@"You are no longer following %@", self.user.userName];
+		if([self.followButton.currentTitle isEqualToString:@"Follow"]) {
+			message = [NSString stringWithFormat:@"You are now following %@", self.user.userName];
+		}
+		
+		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Follow User" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+		[alert show];
+		
+		[self.navigationController setNavigationBarHidden:NO animated:NO]; 
+		[self.navigationController popToRootViewControllerAnimated:YES];;
 	}
-	
-	NSString *message = [NSString stringWithFormat:@"You are now following %@", self.user.userName];
-	
-	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Follow User" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
-	[alert show];
-	
-	[self.navigationController setNavigationBarHidden:NO animated:NO]; 
-	[self.navigationController popToRootViewControllerAnimated:YES];;
 }
 
 -(void)requestFailure:(NSString *)error {
