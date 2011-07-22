@@ -17,20 +17,18 @@
 #import "CheckInReviewViewController.h"
 #import "DbSearchedTickerGet.h"
 
-@interface TickerFindViewController : BaseViewController <UIScrollViewDelegate, ASIHTTPRequestDelegate, SBJsonStreamParserAdapterDelegate> {
+@interface TickerFindViewController : BaseViewController <UIScrollViewDelegate, ASIHTTPRequestDelegate> {
 	IBOutlet UISearchBar *_searchBar;
 	IBOutlet UITableView *_tableView;
 	int _checkInType;
 	NSMutableArray *_tickers;
 	NSOperationQueue *_queue;
-	SBJsonStreamParser *_jsonParser;
-	SBJsonStreamParserAdapter *_jsonAdapter;
+	SBJSON *_jsonParser;
 }
 @property (nonatomic, retain) UISearchBar *searchBar;
 @property (nonatomic, retain) UITableView *tableView;
 @property int checkInType;
 @property (nonatomic, retain) NSMutableArray *tickers;
 @property (nonatomic, retain) NSOperationQueue *queue;
-@property (nonatomic, retain) SBJsonStreamParser *jsonParser;
-@property (nonatomic, retain) SBJsonStreamParserAdapter *jsonAdapter;
+@property (nonatomic, retain) SBJSON *jsonParser;
 @end

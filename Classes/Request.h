@@ -18,7 +18,7 @@
 -(void)requestFailure:(NSString *)error;
 @end
 
-@interface Request : NSObject <SBJsonStreamParserAdapterDelegate> {
+@interface Request : NSObject {
 	id<RequestDelegate> delegate;
 	ASIHTTPRequest *_request;
 	NSError *_error;
@@ -26,15 +26,13 @@
 	
 	// JSON Parsing of the response
 	BOOL _parseResponse;
-	SBJsonStreamParser *_jsonParser;
-	SBJsonStreamParserAdapter *_jsonAdapter;
+	SBJSON *_jsonParser;
 }
 @property (assign) id<RequestDelegate> delegate;
 @property (nonatomic, assign) ASIHTTPRequest *request;	// ASIHttpRequest is autoreleased
 @property (nonatomic, retain) NSError *error;
 @property BOOL parseResponse;
-@property (nonatomic, retain) SBJsonStreamParser *jsonParser;
-@property (nonatomic, retain) SBJsonStreamParserAdapter *jsonAdapter;
+@property (nonatomic, retain) SBJSON *jsonParser;
 
 - (void)get:(NSURL *)url;
 - (void)post:(NSURL *)url postData:(NSString *)postData;

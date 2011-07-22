@@ -31,11 +31,7 @@
 	[super dealloc];
 }
 
-- (void)parser:(SBJsonStreamParser *)parser foundArray:(NSArray *)array {
-	// empty
-}
-
-- (void)parser:(SBJsonStreamParser *)parser foundObject:(NSDictionary *)dict {
+- (void)foundObject:(NSDictionary *)dict {
 	MyLog(@"%@", dict);
 	
 	self.badgeID = [[dict objectForKey:@"badgeID"] intValue];

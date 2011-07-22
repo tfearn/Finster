@@ -19,18 +19,12 @@
 @synthesize error = _error;
 @synthesize parseResponse = _parseResponse;
 @synthesize jsonParser = _jsonParser;
-@synthesize jsonAdapter = _jsonAdapter;
 
 -(id)init {
     if ( self = [super init] ) {
 
-		// Setup the JSON Adapter & Parser
-		_jsonAdapter = [SBJsonStreamParserAdapter new];
-		self.jsonAdapter.delegate = self;
-		
-		_jsonParser = [SBJsonStreamParser new];
-		self.jsonParser.delegate = self.jsonAdapter;
-		self.jsonParser.multi = YES;
+		// Setup the JSON Parser
+		_jsonParser = [[SBJSON alloc] init];
     }
     return self;
 }
@@ -54,7 +48,6 @@
 	
 	[_error release];
 	[_jsonParser release];
-	[_jsonAdapter release];
 	[super dealloc];
 }
 
@@ -72,25 +65,32 @@
 	return nil;
 }
 
+- (void)foundObject:(NSDictionary *)dict {
+	// empty
+}
+
 - (void)requestFinished:(ASIHTTPRequest *)request {
 	active = NO;
 	
-	NSData *data = [request responseData];
+	NSString *responseString = [request responseString];
 	
 	NSObject *parsedData = nil;
-	if(self.parseResponse && [data length]) {
-		MyLog(@"%@", [[[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding] autorelease]);
+	if(self.parseResponse && [responseString length]) {
+		MyLog(@"%@", responseString);
 		
 		// Parse the data
-		SBJsonStreamParserStatus status = [self.jsonParser parse:data];
-		if (status == SBJsonStreamParserError) {
-			MyLog(@"JSON Parser Error: %@", self.jsonParser.error);
-
+		NSError *error = nil;
+		NSDictionary *object = [self.jsonParser objectWithString:responseString error:&error];
+		if(error != nil) {
+			MyLog(@"JSON Parser Error: %@", [error description]);
+			
 			if(self.delegate != NULL && [self.delegate respondsToSelector:@selector(requestFailure:)]) {
-				[self.delegate requestFailure:self.jsonParser.error];
+				[self.delegate requestFailure:[error description]];
 			}
 			return;
 		}
+		
+		[self foundObject:object];
 		
 		// Grab the data object from the subclass
 		parsedData = [self getParsedDataObject];
@@ -111,17 +111,6 @@
 	if(self.delegate != NULL && [self.delegate respondsToSelector:@selector(requestFailure:)]) {
 		[self.delegate requestFailure:[self.error description]];
 	}
-}
-
-#pragma mark -
-#pragma mark SBJsonStreamParserAdapterDelegate Methods
-
-- (void)parser:(SBJsonStreamParser *)parser foundArray:(NSArray *)array {
-	// empty
-}
-
-- (void)parser:(SBJsonStreamParser *)parser foundObject:(NSDictionary *)dict {
-	// empty
 }
 
 @end

@@ -20,8 +20,8 @@
 // Keys
 #define kUsernameKey				@"username"
 #define kPasswordKey				@"password"
-#define kFacebookAccessTokenKey		@"facebook_access_token"
-#define kFacebookExpirationDateKey	@"facebook_expiration_date"
+#define kFacebookAccessTokenKey		@"FBAccessTokenKey"
+#define kFacebookExpirationDateKey	@"FBExpirationDateKey"
 
 // URLs
 #define kUrlLogin					@"http://173.203.238.148/cgi-bin/login.cgi"			// No longer used

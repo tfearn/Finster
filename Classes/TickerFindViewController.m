@@ -20,7 +20,6 @@
 @synthesize tickers = _tickers;
 @synthesize queue = _queue;
 @synthesize jsonParser = _jsonParser;
-@synthesize jsonAdapter = _jsonAdapter;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -31,13 +30,8 @@
 	// Set the table row height
 	self.tableView.rowHeight = 50;
 	
-	// Setup the JSON Adapter & Parser
-	_jsonAdapter = [SBJsonStreamParserAdapter new];
-	self.jsonAdapter.delegate = self;
-	
-	_jsonParser = [SBJsonStreamParser new];
-	self.jsonParser.delegate = self.jsonAdapter;
-	self.jsonParser.multi = YES;
+	// Setup the JSON Parser
+	_jsonParser = [[SBJSON alloc] init];
 
 	// If there was a ticker entered previously, use it
 	NSString *lastTicker = [Globals getLastTickerSearch];
@@ -80,7 +74,6 @@
 	[_tableView release];
 	[_queue release];
 	[_jsonParser release];
-	[_jsonAdapter release];
     [super dealloc];
 }
 
@@ -117,31 +110,13 @@
 	_tickers = [[NSMutableArray alloc] init];
 
 	// Parse the data
-	SBJsonStreamParserStatus status = [self.jsonParser parse:[response dataUsingEncoding:NSUTF8StringEncoding]];
-	if (status == SBJsonStreamParserError) {
-		NSLog(@"Parser Error: %@", self.jsonParser.error);
+	NSError *error = nil;
+	NSDictionary *dict = [self.jsonParser objectWithString:response error:&error];
+	if(error != nil) {
+		NSLog(@"Parser Error: %@", [error description]);
+		return;
 	}
 	
-	// Refresh the table and move to top
-	[self.tableView reloadData];
-	[self.tableView setContentOffset:CGPointMake(0, 0) animated:NO];
-}
-
-- (void)requestFailed:(ASIHTTPRequest *)request {
-	NSError *error = [request error];
-	
-	// TO DO: Just log the error for now
-	NSLog(@"%@", [error description]);
-}
-
-#pragma mark -
-#pragma mark SBJsonStreamParserAdapterDelegate Methods
-
-- (void)parser:(SBJsonStreamParser *)parser foundArray:(NSArray *)array {
-	NSLog(@"TickerFindViewController parsing error, we are not expecting arrays");	
-}
-
-- (void)parser:(SBJsonStreamParser *)parser foundObject:(NSDictionary *)dict {
 	// Get the ResultSet which is another dictionary
 	NSDictionary *resultSetDict = [dict objectForKey:@"ResultSet"];
 	if(resultSetDict == nil)
@@ -167,6 +142,17 @@
 		[self.tickers addObject:ticker];
 		[ticker release];
 	}
+	
+	// Refresh the table and move to top
+	[self.tableView reloadData];
+	[self.tableView setContentOffset:CGPointMake(0, 0) animated:NO];
+}
+
+- (void)requestFailed:(ASIHTTPRequest *)request {
+	NSError *error = [request error];
+	
+	// TO DO: Just log the error for now
+	NSLog(@"%@", [error description]);
 }
 
 #pragma mark -
