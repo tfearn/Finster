@@ -283,7 +283,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 480}, {296, 610}}</string>
+							<string>{{0, 394}, {296, 610}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -332,7 +332,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>A886314D13D9C59000C9AEB8</string>
+										<string>A886316313D9C6D900C9AEB8</string>
 										<key>history</key>
 										<array>
 											<string>A87744431356918400DD721B</string>
@@ -435,10 +435,10 @@
 											<string>A886311413D8F48A00C9AEB8</string>
 											<string>A886311513D8F48A00C9AEB8</string>
 											<string>A886312713D9B18300C9AEB8</string>
-											<string>A886312813D9B18300C9AEB8</string>
-											<string>A886312913D9B18300C9AEB8</string>
-											<string>A886314B13D9C59000C9AEB8</string>
-											<string>A886314C13D9C59000C9AEB8</string>
+											<string>A886316013D9C6D900C9AEB8</string>
+											<string>A886316113D9C6D900C9AEB8</string>
+											<string>A886316213D9C6D900C9AEB8</string>
+											<string>A886315513D9C68E00C9AEB8</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -636,13 +636,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>A886314E13D9C59000C9AEB8</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>A886303B13D7A21B00C9AEB8</string>
 		<string>A886301013D72EC500C9AEB8</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>A8774399135660B600DD721B</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/tfearn/Project/Finster/Finster.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -1019,7 +1018,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

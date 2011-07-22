@@ -39,8 +39,7 @@
 
 		_getUserFollowingRequest = [[GetUserFollowingRequest alloc] init];
 		self.getUserFollowingRequest.delegate = self;
-		NSString *url = [NSString stringWithFormat:kUrlGetUserFollowing, 2];	// TODO: Change this later when Mark adds feature
-		[self.getUserFollowingRequest get:url];
+		[self.getUserFollowingRequest get:kUrlGetUserFollowing];
 	}
 }
 
