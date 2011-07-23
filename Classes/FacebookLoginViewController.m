@@ -12,7 +12,7 @@
 @implementation FacebookLoginViewController
 @synthesize loginFacebookButton = _loginFacebookButton;
 @synthesize facebook = _facebook;
-@synthesize loginUsingFacebookRequest = _loginUsingFacebookRequest;
+@synthesize request = _request;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -41,7 +41,7 @@
 - (void)dealloc {
 	[_loginFacebookButton release];
 	[_facebook release];
-	[_loginUsingFacebookRequest release];
+	[_request release];
     [super dealloc];
 }
 
@@ -74,6 +74,7 @@
 }
 
 - (void)fbDidLogout {
+	// TODO: Handle this later
 }
 
 
@@ -89,12 +90,12 @@
 	// Get the Facebook user ID
 	NSString *facebookUserID = [dict objectForKey:@"id"];
 	
-	// Call the server to get the session ID
+	// Tell the server session to login using Facebook
 	NSString *url = [NSString stringWithFormat:kUrlLoginUsingFacebook, facebookUserID, self.facebook.accessToken];
-	[_loginUsingFacebookRequest release];
-	_loginUsingFacebookRequest = [[Request alloc] init];
-	self.loginUsingFacebookRequest.delegate = self;
-	[self.loginUsingFacebookRequest get:[NSURL URLWithString:url]];	
+	
+	_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
+	[self.request setDelegate:self];
+	[self.request startAsynchronous];
 };
 
 - (void)request:(FBRequest *)request didFailWithError:(NSError *)error {
@@ -103,20 +104,18 @@
 
 
 #pragma mark -
-#pragma mark RequestDelegate Methods
+#pragma mark ASIHTTPRequestDelegate Methods
 
--(void)requestComplete:(NSObject *)data {
+- (void)requestFinished:(ASIHTTPRequest *)request {
 	[self dismissWaitView];
 	[self dismissModalViewControllerAnimated:YES];
 }
 
--(void)requestFailure:(NSString *)error {
+- (void)requestFailed:(ASIHTTPRequest *)request {
 	[self dismissWaitView];
 	
-	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:error delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:[[request error] description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
 	[alert show];
 }
-
-
 
 @end

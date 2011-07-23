@@ -7,24 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ASIHTTPRequest.h"
 #import "Globals.h"
 #import "BaseViewController.h"
 #import "CheckIn.h"
 #import "BaseCheckInsViewCell.h"
-#import "GetCheckInRequest.h"
 #import "ImageManager.h"
 #import "CheckInDetailsViewController.h"
 #import "TimePassedFormatter.h"
 #import "CheckInTypeFormatter.h"
 
-@interface BaseCheckInsViewController : BaseViewController <RequestDelegate, ImageManagerDelegate> {
+@interface BaseCheckInsViewController : BaseViewController <ASIHTTPRequestDelegate, ImageManagerDelegate> {
 	IBOutlet UITableView *_tableView;
-	GetCheckInRequest *_request;
+	ASIHTTPRequest *_request;
+	SBJSON *_jsonParser;
 	NSMutableArray *_checkIns;
 	ImageManager *_imageManager;
 }
 @property (nonatomic, retain) UITableView *tableView;
-@property (nonatomic, retain) GetCheckInRequest *request;
+@property (nonatomic, retain) ASIHTTPRequest *request;
+@property (nonatomic, retain) SBJSON *jsonParser;
 @property (nonatomic, retain) NSMutableArray *checkIns;
 @property (nonatomic, retain) ImageManager *imageManager;
 

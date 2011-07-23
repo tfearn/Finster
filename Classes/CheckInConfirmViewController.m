@@ -17,12 +17,16 @@
 @synthesize facebookButton = _facebookButton;
 @synthesize twitterButton = _twitterButton;
 @synthesize request = _request;
+@synthesize jsonParser = _jsonParser;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
 	[self.textView setFont:[UIFont fontWithName:@"Helvetica" size:15.0]];
+
+	// Initialize the JSON parser
+	self.jsonParser = [[SBJSON alloc] init];
 	
 	// Add a notification observer for check-in complete
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(viewFilterChanged) name:kNotificationCheckInComplete object:nil];
@@ -50,6 +54,7 @@
 	[_facebookButton release];
 	[_twitterButton release];
 	[_request release];
+	[_jsonParser release];
     [super dealloc];
 }
 
@@ -105,32 +110,53 @@
 	
 	[self showWaitView:@"Checking in..."];
 
-	[_request release];
-	_request = [[CheckInRequest alloc] init];
-	self.request.delegate = self;
-	[self.request get:escapedUrlString];
+	_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:escapedUrlString]];
+	[self.request setDelegate:self];
+	[self.request startAsynchronous];
 }
 
 #pragma mark -
-#pragma mark RequestDelegate Methods
+#pragma mark ASIHttpRequestDelegate Methods
 
--(void)requestComplete:(NSObject *)data {
+- (void)requestFinished:(ASIHTTPRequest *)request {
 	[self dismissWaitView];
+
+	NSString *response = [request responseString];
 	
-	CheckInRequest *checkInRequest = (CheckInRequest *)data;
+	// Parse the data
+	NSError *error = nil;
+	NSDictionary *dict = [self.jsonParser objectWithString:response error:&error];
+	if(error != nil) {
+		NSLog(@"Parser Error: %@", [error description]);
+		
+		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"JSON Error" message:[error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+		[alert show];
+		return;
+	}
 	
+	CheckInResult *checkInResult = [[CheckInResult alloc] init];
+	checkInResult.badgeID = [[dict objectForKey:@"badgeID"] intValue];
+	checkInResult.checkInsForTicker = [[dict objectForKey:@"checkInsForTicker"] intValue];
+	checkInResult.otherCheckInsForTicker = [[dict objectForKey:@"otherCheckInsForTicker"] intValue];
+	checkInResult.otherTickerInterest = [[dict objectForKey:@"otherTickerInterest"] intValue];
+	checkInResult.pointsEarned = [[dict objectForKey:@"pointsEarned"] intValue];
+	checkInResult.totalPoints = [[dict objectForKey:@"totalPoints"] intValue];
+
+	// Launch the CheckInResultView
 	CheckInResultViewController *controller = [[CheckInResultViewController alloc] init];
 	controller.ticker = self.ticker;
 	controller.checkInType = self.checkInType;
-	controller.checkInRequest = checkInRequest;
+	controller.checkInResult = checkInResult;
 	[self.navigationController pushViewController:controller animated:YES];
 	[controller release];
+	
+	[checkInResult release];
 }
 
--(void)requestFailure:(NSString *)error {
+- (void)requestFailed:(ASIHTTPRequest *)request {
 	[self dismissWaitView];
 
-	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:error delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:[[request error] description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
 	[alert show];
 }
 

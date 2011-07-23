@@ -14,7 +14,7 @@
 @synthesize tableView = _tableView;
 @synthesize checkInType = _checkInType;
 @synthesize ticker = _ticker;
-@synthesize checkInRequest = _checkInRequest;
+@synthesize checkInResult = _checkInResult;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -45,7 +45,7 @@
 	[_description release];
 	[_tableView release];
 	[_ticker release];
-	[_checkInRequest release];
+	[_checkInResult release];
     [super dealloc];
 }
 
@@ -77,19 +77,19 @@
     // Configure the cell...
 	int row = [indexPath row];
 	if(row == 0) {
-		cell.textLabel.text = [NSString stringWithFormat:@"You earned %d points for this check-in", self.checkInRequest.pointsEarned];
+		cell.textLabel.text = [NSString stringWithFormat:@"You earned %d points for this check-in", self.checkInResult.pointsEarned];
 		cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-clock" ofType:@"png"]];
 	}
 	else if(row == 1) {
-		cell.textLabel.text = [NSString stringWithFormat:@"You now have %d total points", self.checkInRequest.totalPoints];
+		cell.textLabel.text = [NSString stringWithFormat:@"You now have %d total points", self.checkInResult.totalPoints];
 		cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-clock" ofType:@"png"]];
 	}
 	else if(row == 2) {
-		cell.textLabel.text = [NSString stringWithFormat:@"You have %d check-ins for %@", self.checkInRequest.checkInsForTicker, self.ticker.symbol];
+		cell.textLabel.text = [NSString stringWithFormat:@"You have %d check-ins for %@", self.checkInResult.checkInsForTicker, self.ticker.symbol];
 		cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-user" ofType:@"png"]];
 	}
 	else if(row == 3) {
-		int total = self.checkInRequest.otherCheckInsForTicker + self.checkInRequest.otherTickerInterest;
+		int total = self.checkInResult.otherCheckInsForTicker + self.checkInResult.otherTickerInterest;
 		cell.textLabel.text = [NSString stringWithFormat:@"Others checked into %@ %d times", self.ticker.symbol, total];
 		cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
 	}

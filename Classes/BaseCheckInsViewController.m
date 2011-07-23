@@ -17,6 +17,7 @@
 @implementation BaseCheckInsViewController
 @synthesize tableView = _tableView;
 @synthesize request = _request;
+@synthesize jsonParser = _jsonParser;
 @synthesize checkIns = _checkIns;
 @synthesize imageManager = _imageManager;
 
@@ -34,6 +35,9 @@
 	// Initialize the ImageManager to get user pictures
 	_imageManager = [[ImageManager alloc] init];
 	self.imageManager.delegate = self;
+	
+	// Initialize the JSON parser
+	_jsonParser = [[SBJSON alloc] init];
 	
 	// Do a request for data
 	[self getData];
@@ -55,6 +59,7 @@
 - (void)dealloc {
 	[_tableView release];
 	[_request release];
+	[_jsonParser release];
 	[_checkIns release];
 	[_imageManager release];
     [super dealloc];
@@ -65,10 +70,9 @@
 }
 
 - (void)getData {
-	[_request release];
-	_request = [[GetCheckInRequest alloc] init];
-	self.request.delegate = self;
-	[self.request get:[self getRequestUrl]];
+	_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[self getRequestUrl]]];
+	[self.request setDelegate:self];
+	[self.request startAsynchronous];
 }
 
 - (NSString *)getRequestUrl {
@@ -77,9 +81,66 @@
 
 #pragma mark -
 #pragma mark RequestDelegate Methods
-
--(void)requestComplete:(NSObject *)data {
-	self.checkIns = (NSMutableArray *)data;
+				
+- (void)requestFinished:(ASIHTTPRequest *)request {
+	NSString *response = [request responseString];
+	
+	// Parse the data
+	NSError *error = nil;
+	NSDictionary *dict = [self.jsonParser objectWithString:response error:&error];
+	if(error != nil) {
+		NSLog(@"Parser Error: %@", [error description]);
+		
+		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"JSON Error" message:[error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+		[alert show];
+		return;
+	}
+	
+	[_checkIns release];
+	self.checkIns = [[NSMutableArray alloc] init];
+	
+	// Get the checkInList which is another dictionary
+	NSArray *checkInList = [dict objectForKey:@"checkInList"];
+	if(checkInList == nil)
+		return;
+	
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss Z"];
+	
+	// Walk through the array and parse the dictionaries
+	for(int i=0; i<[checkInList count]; i++) {
+		NSDictionary *checkInDict = [checkInList objectAtIndex:i];
+		
+		CheckIn *checkIn = [[CheckIn alloc] init];
+		checkIn.checkinID = [[checkInDict objectForKey:@"id"] longValue];
+		NSString *timestamp = [checkInDict objectForKey:@"timestamp"];
+		checkIn.timestamp = [dateFormatter dateFromString:timestamp];
+		checkIn.checkinType = [[checkInDict objectForKey:@"type"] intValue];
+		checkIn.comment = [checkInDict objectForKey:@"comment"];
+		
+		NSDictionary *user = [checkInDict objectForKey:@"user"];
+		checkIn.user = [[User alloc] init];
+		checkIn.user.userID = [[user objectForKey:@"id"] stringValue];
+		checkIn.user.groupType = [user objectForKey:@"group"];
+		checkIn.user.userName = [user objectForKey:@"name"];
+		checkIn.user.imageUrl = [user objectForKey:@"image"];
+		checkIn.user.followers = [[user objectForKey:@"followers"] intValue];
+		checkIn.user.following = [[user objectForKey:@"following"] intValue];
+		checkIn.user.checkins = [[user objectForKey:@"checkins"] intValue];
+		checkIn.user.badges = [[user objectForKey:@"badges"] intValue];
+		
+		NSDictionary *ticker = [checkInDict objectForKey:@"ticker"];
+		checkIn.ticker = [[Ticker alloc] init];
+		checkIn.ticker.symbol = [ticker objectForKey:@"symbol"];
+		checkIn.ticker.symbolName = [ticker objectForKey:@"symbolName"];
+		checkIn.ticker.exchangeName = [ticker objectForKey:@"exchange"];
+		checkIn.ticker.typeName = [ticker objectForKey:@"type"];
+		
+		[self.checkIns addObject:checkIn];
+		[checkIn release];
+	}
+	
+	[dateFormatter release];
 	
 	// Tell the ImageManager to get the pictures if it does not already have them
 	for(int i=0; i<[self.checkIns count]; i++) {
@@ -99,11 +160,10 @@
 }
 
 -(void)requestFailure:(NSString *)error {
-	// TO DO: Just push the error to the console for now
-	MyLog(@"GetWallRequest error: %@", error);
+	[self dismissWaitView];
 	
-	// Release the request
-	self.request = nil;
+	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:error delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+	[alert show];
 }
 
 

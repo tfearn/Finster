@@ -1,5 +1,5 @@
 //
-//  CheckInRequest.h
+//  CheckInResult.h
 //  Finster
 //
 //  Created by Todd Fearn on 7/17/11.
@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Request.h"
 
-@interface CheckInRequest : Request {
+@interface CheckInResult : NSObject {
 	int _badgeID;
 	int _checkInsForTicker;
 	int _otherCheckInsForTicker;
@@ -23,7 +22,5 @@
 @property int otherTickerInterest;
 @property int pointsEarned;
 @property int totalPoints;
-
-- (void)get:(NSString *)url;
 
 @end

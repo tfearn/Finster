@@ -11,20 +11,20 @@
 #import "BaseViewController.h"
 #import "Ticker.h"
 #import "CheckInTypeFormatter.h"
-#import "CheckInRequest.h"
+#import "CheckInResult.h"
 
 @interface CheckInResultViewController : BaseViewController {
 	IBOutlet UILabel *_description;
 	IBOutlet UITableView *_tableView;
 	int _checkInType;
 	Ticker *_ticker;
-	CheckInRequest *_checkInRequest;
+	CheckInResult *_checkInResult;
 }
 @property (nonatomic, retain) UILabel *description;
 @property (nonatomic, retain) UITableView *tableView;
 @property int checkInType;
 @property (nonatomic, retain) Ticker *ticker;
-@property (nonatomic, retain) CheckInRequest *checkInRequest;
+@property (nonatomic, retain) CheckInResult *checkInResult;
 
 - (IBAction)closeButtonPressed:(id)sender;
 

@@ -10,16 +10,16 @@
 #import "FBConnect.h"
 #import "Globals.h"
 #import "BaseViewController.h"
-#import "Request.h"
+#import "ASIHTTPRequest.h"
 
-@interface FacebookLoginViewController : BaseViewController <FBSessionDelegate, FBRequestDelegate, RequestDelegate> {
+@interface FacebookLoginViewController : BaseViewController <FBSessionDelegate, FBRequestDelegate, ASIHTTPRequestDelegate> {
 	IBOutlet UIButton *_loginFacebookButton;
 	Facebook *_facebook;
-	Request *_loginUsingFacebookRequest;
+	ASIHTTPRequest *_request;
 }
 @property (nonatomic, retain) UIButton *loginFacebookButton;
 @property (nonatomic, retain) Facebook *facebook;
-@property (nonatomic, retain) Request *loginUsingFacebookRequest;
+@property (nonatomic, retain) ASIHTTPRequest *request;
 
 - (IBAction)loginWithFacebookButtonPressed:(id)sender;
 

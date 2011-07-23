@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "FBConnect.h"
 #import "Globals.h"
-#import "LoginViewController.h"
 #import "FacebookLoginViewController.h"
 
 @interface MoneyMouthAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {

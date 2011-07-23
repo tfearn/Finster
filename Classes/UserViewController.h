@@ -9,13 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 #import "User.h"
-#import "Request.h"
-#import "GetUserFollowingRequest.h"
+#import "ASIHTTPRequest.h"
+#import "SBJSON.h"
 
-@interface UserViewController : BaseViewController <RequestDelegate> {
+@interface UserViewController : BaseViewController <ASIHTTPRequestDelegate> {
 	User *_user;
-	GetUserFollowingRequest *_getUserFollowingRequest;
-	Request *_request;
+	ASIHTTPRequest *_request;
 	IBOutlet UIImageView *_userImageView;
 	IBOutlet UILabel *_username;
 	IBOutlet UIButton *_followButton;
@@ -23,8 +22,7 @@
 	IBOutlet UILabel *_following;
 }
 @property (nonatomic, retain) User *user;
-@property (nonatomic, retain) GetUserFollowingRequest *getUserFollowingRequest;
-@property (nonatomic, retain) Request *request;
+@property (nonatomic, retain) ASIHTTPRequest *request;
 @property (nonatomic, retain) UIImageView *userImageView;
 @property (nonatomic, retain) UILabel *username;
 @property (nonatomic, retain) UIButton *followButton;
