@@ -44,8 +44,6 @@
 		A83CF2FA13585BFF002D4F43 /* app-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A83CF2F913585BFF002D4F43 /* app-icon.png */; };
 		A83CF30313585DE6002D4F43 /* tabbar-redo.png in Resources */ = {isa = PBXBuildFile; fileRef = A83CF30213585DE6002D4F43 /* tabbar-redo.png */; };
 		A83CF30613585F43002D4F43 /* tabbar-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = A83CF30513585F43002D4F43 /* tabbar-gear.png */; };
-		A83CF30913586029002D4F43 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83CF30813586029002D4F43 /* SettingsViewController.m */; };
-		A83CF30F13586075002D4F43 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83CF30E13586075002D4F43 /* SettingsView.xib */; };
 		A86C2F8D135D1ADE00535BBB /* CheckIn.m in Sources */ = {isa = PBXBuildFile; fileRef = A86C2F8C135D1ADE00535BBB /* CheckIn.m */; };
 		A86C2F90135D1D1800535BBB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A86C2F8F135D1D1800535BBB /* User.m */; };
 		A8718C331357C1A50054D85C /* thumbs-down-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8718C2F1357C1A50054D85C /* thumbs-down-icon.png */; };
@@ -66,6 +64,9 @@
 		A877C6DA13DDCED300ABACE6 /* CheckInsByUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A877C6D913DDCED300ABACE6 /* CheckInsByUserViewController.m */; };
 		A877C6E813DDCFB900ABACE6 /* CheckInsByUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A877C6E713DDCFB900ABACE6 /* CheckInsByUserView.xib */; };
 		A877C75313DDE38200ABACE6 /* TrendingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A877C75213DDE38200ABACE6 /* TrendingViewController.m */; };
+		A877C75713DDF4EE00ABACE6 /* TrendingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A877C75613DDF4EE00ABACE6 /* TrendingView.xib */; };
+		A877C7B213DE064E00ABACE6 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A877C7B113DE064E00ABACE6 /* ProfileViewController.xib */; };
+		A877C7B613DE066700ABACE6 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A877C7B513DE066700ABACE6 /* ProfileViewController.m */; };
 		A87EE79413622479000A91B6 /* WaitView.m in Sources */ = {isa = PBXBuildFile; fileRef = A87EE79313622479000A91B6 /* WaitView.m */; };
 		A87EE7971362248E000A91B6 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A87EE7961362248E000A91B6 /* BaseViewController.m */; };
 		A886326113DA01FD00C9AEB8 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = A886323213DA01FD00C9AEB8 /* Facebook.m */; };
@@ -182,9 +183,6 @@
 		A83CF2F913585BFF002D4F43 /* app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon.png"; path = "images/app-icon.png"; sourceTree = "<group>"; };
 		A83CF30213585DE6002D4F43 /* tabbar-redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar-redo.png"; path = "images/tabbar-redo.png"; sourceTree = "<group>"; };
 		A83CF30513585F43002D4F43 /* tabbar-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar-gear.png"; path = "images/tabbar-gear.png"; sourceTree = "<group>"; };
-		A83CF30713586029002D4F43 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		A83CF30813586029002D4F43 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		A83CF30E13586075002D4F43 /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 		A86C2F8B135D1ADE00535BBB /* CheckIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckIn.h; sourceTree = "<group>"; };
 		A86C2F8C135D1ADE00535BBB /* CheckIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckIn.m; sourceTree = "<group>"; };
 		A86C2F8E135D1D1800535BBB /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -211,6 +209,10 @@
 		A877C6E713DDCFB900ABACE6 /* CheckInsByUserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInsByUserView.xib; sourceTree = "<group>"; };
 		A877C75113DDE38200ABACE6 /* TrendingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrendingViewController.h; sourceTree = "<group>"; };
 		A877C75213DDE38200ABACE6 /* TrendingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrendingViewController.m; sourceTree = "<group>"; };
+		A877C75613DDF4EE00ABACE6 /* TrendingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendingView.xib; sourceTree = "<group>"; };
+		A877C7B113DE064E00ABACE6 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileViewController.xib; path = Classes/ProfileViewController.xib; sourceTree = "<group>"; };
+		A877C7B413DE066700ABACE6 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		A877C7B513DE066700ABACE6 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		A87EE79213622479000A91B6 /* WaitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitView.h; sourceTree = "<group>"; };
 		A87EE79313622479000A91B6 /* WaitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitView.m; sourceTree = "<group>"; };
 		A87EE7951362248E000A91B6 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -384,10 +386,11 @@
 				822435A9135F7DF100C6258F /* WallView.xib */,
 				A83AE1E013D0BC9E00D1C045 /* ActivityView.xib */,
 				822435CD135F813E00C6258F /* BaseCheckInsViewCell.xib */,
-				A83CF30E13586075002D4F43 /* SettingsView.xib */,
 				82765E0E138456A400C3FBC5 /* UserView.xib */,
 				A89528CB13D315F000A54A38 /* CheckInsByTickerView.xib */,
 				A877C6E713DDCFB900ABACE6 /* CheckInsByUserView.xib */,
+				A877C75613DDF4EE00ABACE6 /* TrendingView.xib */,
+				A877C7B113DE064E00ABACE6 /* ProfileViewController.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -405,15 +408,6 @@
 				A8FD286E1367674C0099E7FC /* libsqlite3.0.dylib */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		822435A4135F7D9000C6258F /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				A83CF30713586029002D4F43 /* SettingsViewController.h */,
-				A83CF30813586029002D4F43 /* SettingsViewController.m */,
-			);
-			name = Settings;
 			sourceTree = "<group>";
 		};
 		822435A5135F7DC100C6258F /* Wall */ = {
@@ -447,13 +441,13 @@
 		82C104291357370D00302082 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A877C7B313DE065A00ABACE6 /* Profile */,
 				A877C75413DDE38700ABACE6 /* Trending */,
 				A8FD260B1367190E0099E7FC /* Login */,
 				82C10428135736D200302082 /* CheckIn */,
 				82C107A3135797C800302082 /* TickerFind */,
 				822435A5135F7DC100C6258F /* Wall */,
 				A83AE1A913D0AB5A00D1C045 /* Activity */,
-				822435A4135F7D9000C6258F /* Settings */,
 				A83089EF13DB73660024090A /* GetCheckIns */,
 				82765E0B1384568800C3FBC5 /* UserViewController.h */,
 				82765E0C1384568800C3FBC5 /* UserViewController.m */,
@@ -580,6 +574,15 @@
 				A877C75213DDE38200ABACE6 /* TrendingViewController.m */,
 			);
 			name = Trending;
+			sourceTree = "<group>";
+		};
+		A877C7B313DE065A00ABACE6 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A877C7B413DE066700ABACE6 /* ProfileViewController.h */,
+				A877C7B513DE066700ABACE6 /* ProfileViewController.m */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		A886320613DA01FD00C9AEB8 /* facebook-ios-sdk */ = {
@@ -855,7 +858,6 @@
 				A83CF2FA13585BFF002D4F43 /* app-icon.png in Resources */,
 				A83CF30313585DE6002D4F43 /* tabbar-redo.png in Resources */,
 				A83CF30613585F43002D4F43 /* tabbar-gear.png in Resources */,
-				A83CF30F13586075002D4F43 /* SettingsView.xib in Resources */,
 				A8ED1E9A135C99830003115F /* CheckInConfirmView.xib in Resources */,
 				A8ED1EA7135C9FCB0003115F /* facebook-icon.png in Resources */,
 				A8ED1EA8135C9FCB0003115F /* twitter-icon.png in Resources */,
@@ -876,6 +878,8 @@
 				A89528CC13D315F000A54A38 /* CheckInsByTickerView.xib in Resources */,
 				A886326213DA01FD00C9AEB8 /* FBDialog.bundle in Resources */,
 				A877C6E813DDCFB900ABACE6 /* CheckInsByUserView.xib in Resources */,
+				A877C75713DDF4EE00ABACE6 /* TrendingView.xib in Resources */,
+				A877C7B213DE064E00ABACE6 /* ProfileViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -894,7 +898,6 @@
 				82C1048E135741E500302082 /* Ticker.m in Sources */,
 				82C107A01357970700302082 /* TickerFindViewCell.m in Sources */,
 				82C107F51357A09C00302082 /* CheckInReviewViewController.m in Sources */,
-				A83CF30913586029002D4F43 /* SettingsViewController.m in Sources */,
 				A8ED1CDF1358A38D0003115F /* ASIAuthenticationDialog.m in Sources */,
 				A8ED1CE01358A38D0003115F /* ASIDataCompressor.m in Sources */,
 				A8ED1CE11358A38D0003115F /* ASIDataDecompressor.m in Sources */,
@@ -943,6 +946,7 @@
 				A886326B13DA01FD00C9AEB8 /* SBJsonWriter.m in Sources */,
 				A877C6DA13DDCED300ABACE6 /* CheckInsByUserViewController.m in Sources */,
 				A877C75313DDE38200ABACE6 /* TrendingViewController.m in Sources */,
+				A877C7B613DE066700ABACE6 /* ProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

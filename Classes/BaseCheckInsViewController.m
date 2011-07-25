@@ -158,10 +158,10 @@
 	self.request = nil;
 }
 
--(void)requestFailure:(NSString *)error {
+- (void)requestFailed:(ASIHTTPRequest *)request {
 	[self dismissWaitView];
 	
-	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:error delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:[request.error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
 	[alert show];
 }
 
