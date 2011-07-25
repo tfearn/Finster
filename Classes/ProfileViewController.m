@@ -9,6 +9,10 @@
 #import "ProfileViewController.h"
 
 
+@interface ProfileViewController (Private)
+- (void)getData;
+@end
+
 @implementation ProfileViewController
 @synthesize tableView = _tableView;
 @synthesize request = _request;
@@ -24,11 +28,12 @@
 	// Initialize the ImageManager to get user pictures
 	_imageManager = [[ImageManager alloc] init];
 	self.imageManager.delegate = self;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
 	
-	// Retrieve the users we are following
-	_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:kUrlGetUserFollowing]];
-	[self.request setDelegate:self];
-	[self.request startAsynchronous];
+	[self getData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,6 +54,12 @@
 	[_imageManager release];
 	[_users release];
     [super dealloc];
+}
+
+- (void)getData {
+	_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:kUrlGetUserFollowing]];
+	[self.request setDelegate:self];
+	[self.request startAsynchronous];
 }
 
 #pragma mark -
@@ -142,15 +153,21 @@
 #pragma mark UITableViewDataSource Methods
 
 - (NSInteger)numberOfSectionsInTableView: (UITableView *)tableView {
-	return 1;
+	return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return [self.users count];
+	if(section == 0)
+		return 2;
+	else
+		return [self.users count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	return @"Following";
+	if(section == 0)
+		return @"My Statistics";
+	else
+		return @"Following";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -160,23 +177,39 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    
-    // Configure the cell...
+	
+	int section = [indexPath section];
 	int row = [indexPath row];
-	User *user = [self.users objectAtIndex:row];
 	
-	cell.textLabel.text = user.userName;
-	
-	if(user.image == nil)
-		cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"default-user" ofType:@"png"]];
-	else
-		cell.imageView.image = user.image;
+	if(section == 0) {
+		switch (row) {
+			case 0:
+				cell.textLabel.text = @"Check-Ins";
+				cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-clock" ofType:@"png"]];
+				break;
+			case 1:
+				cell.textLabel.text = @"Points";
+				cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-clock" ofType:@"png"]];
+				break;
+			default:
+				break;
+		}
+	}
+	else {
+		User *user = [self.users objectAtIndex:row];
+		
+		cell.textLabel.text = user.userName;
+		
+		if(user.image == nil)
+			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"default-user" ofType:@"png"]];
+		else
+			cell.imageView.image = user.image;
+		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	}
 	
 	cell.textLabel.textColor = [UIColor darkGrayColor];
 	cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15.0];
     
-	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-	
     return cell;
 }
 
@@ -185,13 +218,16 @@
 #pragma mark UITableViewDelegate Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	int section = [indexPath section];
 	int row = [indexPath row];
-	User *user = [self.users objectAtIndex:row];
 	
-	UserViewController *controller = [[UserViewController alloc] init];
-	controller.user = user;
-	[self.navigationController pushViewController:controller animated:YES];
-	[controller release];	
+	if(section == 1) {
+		User *user = [self.users objectAtIndex:row];
+		UserViewController *controller = [[UserViewController alloc] init];
+		controller.user = user;
+		[self.navigationController pushViewController:controller animated:YES];
+		[controller release];	
+	}
 }
 
 @end

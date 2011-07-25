@@ -190,13 +190,13 @@
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">10</int>
-						<reference key="object" ref="974246277"/>
+						<int key="objectID">12</int>
+						<reference key="object" ref="242939118"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">12</int>
-						<reference key="object" ref="242939118"/>
+						<int key="objectID">10</int>
+						<reference key="object" ref="974246277"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</object>
@@ -220,7 +220,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>ProfileViewController</string>
 					<string>UIResponder</string>
-					<string>{{393, 137}, {320, 480}}</string>
+					<string>{{350, 166}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
