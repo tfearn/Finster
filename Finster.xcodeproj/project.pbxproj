@@ -63,6 +63,9 @@
 		A87744271356873E00DD721B /* tabbar-group.png in Resources */ = {isa = PBXBuildFile; fileRef = A87744261356873E00DD721B /* tabbar-group.png */; };
 		A877442D1356880B00DD721B /* TickerFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A877442C1356880B00DD721B /* TickerFindViewController.m */; };
 		A877442F1356881D00DD721B /* TickerFindView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A877442E1356881D00DD721B /* TickerFindView.xib */; };
+		A877C6DA13DDCED300ABACE6 /* CheckInsByUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A877C6D913DDCED300ABACE6 /* CheckInsByUserViewController.m */; };
+		A877C6E813DDCFB900ABACE6 /* CheckInsByUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A877C6E713DDCFB900ABACE6 /* CheckInsByUserView.xib */; };
+		A877C75313DDE38200ABACE6 /* TrendingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A877C75213DDE38200ABACE6 /* TrendingViewController.m */; };
 		A87EE79413622479000A91B6 /* WaitView.m in Sources */ = {isa = PBXBuildFile; fileRef = A87EE79313622479000A91B6 /* WaitView.m */; };
 		A87EE7971362248E000A91B6 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A87EE7961362248E000A91B6 /* BaseViewController.m */; };
 		A886326113DA01FD00C9AEB8 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = A886323213DA01FD00C9AEB8 /* Facebook.m */; };
@@ -203,6 +206,11 @@
 		A877442B1356880B00DD721B /* TickerFindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TickerFindViewController.h; sourceTree = "<group>"; };
 		A877442C1356880B00DD721B /* TickerFindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TickerFindViewController.m; sourceTree = "<group>"; };
 		A877442E1356881D00DD721B /* TickerFindView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TickerFindView.xib; sourceTree = "<group>"; };
+		A877C6D813DDCED300ABACE6 /* CheckInsByUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInsByUserViewController.h; sourceTree = "<group>"; };
+		A877C6D913DDCED300ABACE6 /* CheckInsByUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInsByUserViewController.m; sourceTree = "<group>"; };
+		A877C6E713DDCFB900ABACE6 /* CheckInsByUserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInsByUserView.xib; sourceTree = "<group>"; };
+		A877C75113DDE38200ABACE6 /* TrendingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrendingViewController.h; sourceTree = "<group>"; };
+		A877C75213DDE38200ABACE6 /* TrendingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrendingViewController.m; sourceTree = "<group>"; };
 		A87EE79213622479000A91B6 /* WaitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitView.h; sourceTree = "<group>"; };
 		A87EE79313622479000A91B6 /* WaitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitView.m; sourceTree = "<group>"; };
 		A87EE7951362248E000A91B6 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -379,6 +387,7 @@
 				A83CF30E13586075002D4F43 /* SettingsView.xib */,
 				82765E0E138456A400C3FBC5 /* UserView.xib */,
 				A89528CB13D315F000A54A38 /* CheckInsByTickerView.xib */,
+				A877C6E713DDCFB900ABACE6 /* CheckInsByUserView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -438,22 +447,18 @@
 		82C104291357370D00302082 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A877C75413DDE38700ABACE6 /* Trending */,
 				A8FD260B1367190E0099E7FC /* Login */,
 				82C10428135736D200302082 /* CheckIn */,
+				82C107A3135797C800302082 /* TickerFind */,
 				822435A5135F7DC100C6258F /* Wall */,
 				A83AE1A913D0AB5A00D1C045 /* Activity */,
 				822435A4135F7D9000C6258F /* Settings */,
-				82C107A3135797C800302082 /* TickerFind */,
+				A83089EF13DB73660024090A /* GetCheckIns */,
 				82765E0B1384568800C3FBC5 /* UserViewController.h */,
 				82765E0C1384568800C3FBC5 /* UserViewController.m */,
-				A89528C413D313C000A54A38 /* CheckInsByTickerViewController.h */,
-				A89528C513D313C000A54A38 /* CheckInsByTickerViewController.m */,
 				A87EE7951362248E000A91B6 /* BaseViewController.h */,
 				A87EE7961362248E000A91B6 /* BaseViewController.m */,
-				A83AE1B713D0B0D100D1C045 /* BaseCheckInsViewController.h */,
-				A83AE1B813D0B0D100D1C045 /* BaseCheckInsViewController.m */,
-				A83AE1BA13D0B68200D1C045 /* BaseCheckInsViewCell.h */,
-				A83AE1BB13D0B68200D1C045 /* BaseCheckInsViewCell.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -513,6 +518,21 @@
 			name = TickerFind;
 			sourceTree = "<group>";
 		};
+		A83089EF13DB73660024090A /* GetCheckIns */ = {
+			isa = PBXGroup;
+			children = (
+				A83AE1B713D0B0D100D1C045 /* BaseCheckInsViewController.h */,
+				A83AE1B813D0B0D100D1C045 /* BaseCheckInsViewController.m */,
+				A83AE1BA13D0B68200D1C045 /* BaseCheckInsViewCell.h */,
+				A83AE1BB13D0B68200D1C045 /* BaseCheckInsViewCell.m */,
+				A89528C413D313C000A54A38 /* CheckInsByTickerViewController.h */,
+				A89528C513D313C000A54A38 /* CheckInsByTickerViewController.m */,
+				A877C6D813DDCED300ABACE6 /* CheckInsByUserViewController.h */,
+				A877C6D913DDCED300ABACE6 /* CheckInsByUserViewController.m */,
+			);
+			name = GetCheckIns;
+			sourceTree = "<group>";
+		};
 		A83AE1A913D0AB5A00D1C045 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,6 +571,15 @@
 				A87743BB135666A900DD721B /* tabbar-clock.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		A877C75413DDE38700ABACE6 /* Trending */ = {
+			isa = PBXGroup;
+			children = (
+				A877C75113DDE38200ABACE6 /* TrendingViewController.h */,
+				A877C75213DDE38200ABACE6 /* TrendingViewController.m */,
+			);
+			name = Trending;
 			sourceTree = "<group>";
 		};
 		A886320613DA01FD00C9AEB8 /* facebook-ios-sdk */ = {
@@ -846,6 +875,7 @@
 				A83AE1E113D0BC9E00D1C045 /* ActivityView.xib in Resources */,
 				A89528CC13D315F000A54A38 /* CheckInsByTickerView.xib in Resources */,
 				A886326213DA01FD00C9AEB8 /* FBDialog.bundle in Resources */,
+				A877C6E813DDCFB900ABACE6 /* CheckInsByUserView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -911,6 +941,8 @@
 				A886326913DA01FD00C9AEB8 /* SBJsonBase.m in Sources */,
 				A886326A13DA01FD00C9AEB8 /* SBJsonParser.m in Sources */,
 				A886326B13DA01FD00C9AEB8 /* SBJsonWriter.m in Sources */,
+				A877C6DA13DDCED300ABACE6 /* CheckInsByUserViewController.m in Sources */,
+				A877C75313DDE38200ABACE6 /* TrendingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

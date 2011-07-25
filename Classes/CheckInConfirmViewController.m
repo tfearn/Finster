@@ -53,7 +53,6 @@
 	[_twitterImageView release];
 	[_facebookButton release];
 	[_twitterButton release];
-	[_request release];
 	[_jsonParser release];
     [super dealloc];
 }

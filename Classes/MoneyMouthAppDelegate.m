@@ -85,7 +85,7 @@
 
 - (void)doFacebookLogin {
 	// initialize FBConnect
-	facebook = [[Facebook alloc] initWithAppId:@"215815565097885"];
+	facebook = [[Facebook alloc] initWithAppId:kFacebookAppID];
 	facebook.accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:kFacebookAccessTokenKey];
     facebook.expirationDate = [[NSUserDefaults standardUserDefaults] objectForKey:kFacebookExpirationDateKey];
 	

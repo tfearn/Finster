@@ -19,6 +19,7 @@
 @synthesize following = _following;
 @synthesize checkins = _checkins;
 @synthesize badges = _badges;
+@synthesize points = _points;
 
 - (void)dealloc {
 	[_userID release];

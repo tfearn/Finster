@@ -19,6 +19,7 @@
 	int _following;
 	int _checkins;
 	int _badges;
+	int _points;
 }
 @property (nonatomic, retain) NSString *userID;
 @property (nonatomic, retain) NSString *groupType;
@@ -29,5 +30,6 @@
 @property int following;
 @property int checkins;
 @property int badges;
+@property int points;
 
 @end

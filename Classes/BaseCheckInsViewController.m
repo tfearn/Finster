@@ -58,7 +58,6 @@
 
 - (void)dealloc {
 	[_tableView release];
-	[_request release];
 	[_jsonParser release];
 	[_checkIns release];
 	[_imageManager release];

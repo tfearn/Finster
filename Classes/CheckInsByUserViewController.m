@@ -1,22 +1,22 @@
     //
-//  CheckInsByTickerViewController.m
+//  CheckInsByUserViewController.m
 //  Finster
 //
-//  Created by Todd Fearn on 7/17/11.
+//  Created by Todd Fearn on 7/25/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "CheckInsByTickerViewController.h"
+#import "CheckInsByUserViewController.h"
 
 
-@implementation CheckInsByTickerViewController
-@synthesize symbol = _symbol;
+@implementation CheckInsByUserViewController
+@synthesize userID = _userID;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	NSString *title = [NSString stringWithFormat:@"CheckIns %@", self.symbol];
+	NSString *title = [NSString stringWithFormat:@"CheckIns for %@", self.userID];
 	
 	[self.navigationItem setTitle:title];
 }
@@ -35,12 +35,12 @@
 }
 
 - (void)dealloc {
-	[_symbol release];
+	[_userID release];
     [super dealloc];
 }
 
 - (NSString *)getRequestUrl {
-	NSString *url = [NSString stringWithFormat:kUrlGetCheckInsByTicker, self.symbol];
+	NSString *url = [NSString stringWithFormat:kUrlGetCheckInsByUser, self.userID];
 	
 	return url;
 }

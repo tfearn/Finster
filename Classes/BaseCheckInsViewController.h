@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "ASIHTTPRequest.h"
 #import "Globals.h"
-#import "BaseViewController.h"
 #import "CheckIn.h"
-#import "BaseCheckInsViewCell.h"
-#import "ImageManager.h"
-#import "CheckInDetailsViewController.h"
 #import "TimePassedFormatter.h"
 #import "CheckInTypeFormatter.h"
+#import "ImageManager.h"
+#import "BaseViewController.h"
+#import "BaseCheckInsViewCell.h"
+#import "CheckInDetailsViewController.h"
 
 @interface BaseCheckInsViewController : BaseViewController <ASIHTTPRequestDelegate, ImageManagerDelegate> {
 	IBOutlet UITableView *_tableView;

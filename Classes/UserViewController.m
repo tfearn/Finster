@@ -17,10 +17,14 @@
 @synthesize followButton = _followButton;
 @synthesize followers = _followers;
 @synthesize following = _following;
+@synthesize checkIns = _checkIns;
+@synthesize points = _points;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	self.navigationItem.title = self.user.userName;
 	
 	if(self.user.image != nil)
 		self.userImageView.image = self.user.image;
@@ -28,6 +32,8 @@
 	self.username.text = self.user.userName;
 	self.followers.text = [NSString stringWithFormat:@"%d", self.user.followers];
 	self.following.text = [NSString stringWithFormat:@"%d", self.user.following];
+	self.checkIns.text = [NSString stringWithFormat:@"%d", self.user.checkins];
+	self.points.text = [NSString stringWithFormat:@"%d", self.user.points];
 	
 	if([self.user.groupType isEqualToString:@"you"]) {
 		self.followButton.hidden = YES;
@@ -59,12 +65,13 @@
 
 - (void)dealloc {
 	[_user release];
-	[_request release];
 	[_userImageView release];
 	[_username release];
 	[_followButton release];
 	[_followers release];
 	[_following release];
+	[_checkIns release];
+	[_points release];
     [super dealloc];
 }
 
@@ -78,8 +85,20 @@
 	
 	_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
 	[self.request setDelegate:self];
+	[self.request setDidFinishSelector:@selector(requestComplete:)];
+	[self.request setDidFailSelector:@selector(requestFailure:)];
 	[self.request startAsynchronous];
 }
+
+- (IBAction)followersButtonPressed:(id)sender {
+}
+
+- (IBAction)followingButtonPressed:(id)sender {
+}
+
+- (IBAction)checkInsButtonPressed:(id)sender {
+}
+
 
 #pragma mark -
 #pragma mark RequestDelegate Methods

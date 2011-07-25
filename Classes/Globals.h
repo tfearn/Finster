@@ -20,6 +20,7 @@
 // Keys
 #define kUsernameKey				@"username"
 #define kPasswordKey				@"password"
+#define kFacebookAppID				@"215815565097885"
 #define kFacebookAccessTokenKey		@"FBAccessTokenKey"
 #define kFacebookExpirationDateKey	@"FBExpirationDateKey"
 
@@ -35,6 +36,7 @@
 #define kUrlUnFollowUser			@"http://209.114.35.245/unfollowuser?userid=%@"
 #define kUrlGetUserFollowing		@"http://209.114.35.245/getuserfollowing"
 #define kUrlGetCheckInsByTicker		@"http://209.114.35.245/getcheckins?feed=network&start=0&limit=20&ticker=%@"
+#define kUrlGetCheckInsByUser		@"http://209.114.35.245/getcheckins?feed=user&userid=%@&start=0&limit=20"
 
 // Notifications
 #define kNotificationCheckInComplete	@"NotificationCheckInComplete"

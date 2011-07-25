@@ -41,7 +41,6 @@
 - (void)dealloc {
 	[_loginFacebookButton release];
 	[_facebook release];
-	[_request release];
     [super dealloc];
 }
 
