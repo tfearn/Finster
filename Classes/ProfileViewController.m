@@ -15,6 +15,8 @@
 
 @implementation ProfileViewController
 @synthesize tableView = _tableView;
+@synthesize buttonShareApp = _buttonShareApp;
+@synthesize buttonFindFriends = _buttonFindFriends;
 @synthesize request = _request;
 @synthesize imageManager = _imageManager;
 @synthesize users = _users;
@@ -24,6 +26,10 @@
     [super viewDidLoad];
 	
 	[self.tableView setRowHeight:44.0];
+
+	UIBarButtonItem *feedbackButton = [[UIBarButtonItem alloc] initWithTitle:@"Feedback" style:UIBarButtonItemStyleBordered target:self action:@selector(feedbackButtonPressed:)];
+	self.navigationItem.rightBarButtonItem = feedbackButton; 
+	[feedbackButton release];
 
 	// Initialize the ImageManager to get user pictures
 	_imageManager = [[ImageManager alloc] init];
@@ -51,9 +57,24 @@
 
 - (void)dealloc {
 	[_tableView release];
+	[_buttonShareApp release];
+	[_buttonFindFriends release];
 	[_imageManager release];
 	[_users release];
     [super dealloc];
+}
+
+- (IBAction)feedbackButtonPressed:(id)sender {
+}
+
+- (IBAction)shareAppButtonPressed:(id)sender {
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Share via E-Mail", @"Share via Facebook", nil];
+	actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+	[actionSheet showInView:self.view];
+	[actionSheet release];
+}
+
+- (IBAction)findFriendsButtonPressed:(id)sender {
 }
 
 - (void)getData {
@@ -61,6 +82,13 @@
 	[self.request setDelegate:self];
 	[self.request startAsynchronous];
 }
+
+#pragma mark -
+#pragma mark UIActionSheetDelegate Methods
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+}
+
 
 #pragma mark -
 #pragma mark RequestDelegate Methods
