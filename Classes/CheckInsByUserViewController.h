@@ -10,8 +10,8 @@
 #import "BaseCheckInsViewController.h"
 
 @interface CheckInsByUserViewController : BaseCheckInsViewController {
-	NSString *_userID;
+	User *_user;
 }
-@property (nonatomic, retain) NSString *userID;
+@property (nonatomic, retain) User *user;
 
 @end

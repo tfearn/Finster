@@ -26,6 +26,13 @@
 		8240E4BD137C731D0042CA9B /* CheckInDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8240E4BC137C731D0042CA9B /* CheckInDetailsView.xib */; };
 		82765E0D1384568800C3FBC5 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82765E0C1384568800C3FBC5 /* UserViewController.m */; };
 		82765E0F138456A400C3FBC5 /* UserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82765E0E138456A400C3FBC5 /* UserView.xib */; };
+		828A78F513E058840082D968 /* BaseFollowingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 828A78F413E058840082D968 /* BaseFollowingViewController.m */; };
+		828A798A13E09DA40082D968 /* tabbar-piggy-bank.png in Resources */ = {isa = PBXBuildFile; fileRef = 828A798913E09DA40082D968 /* tabbar-piggy-bank.png */; };
+		828A79BD13E0A1550082D968 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 828A79BC13E0A1550082D968 /* MessageUI.framework */; };
+		828A7AA013E0BA450082D968 /* FollowingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 828A7A9F13E0BA450082D968 /* FollowingViewController.m */; };
+		828A7AAC13E0BBB00082D968 /* FollowersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 828A7AAB13E0BBB00082D968 /* FollowersViewController.m */; };
+		828A7AF113E0BEB40082D968 /* FollowingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 828A7AF013E0BEB40082D968 /* FollowingView.xib */; };
+		828A7AF413E0BF020082D968 /* FollowersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 828A7AF313E0BF020082D968 /* FollowersView.xib */; };
 		82C10431135737F000302082 /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C10430135737F000302082 /* Globals.m */; };
 		82C1048E135741E500302082 /* Ticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C1048D135741E500302082 /* Ticker.m */; };
 		82C1058813574E6C00302082 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C1058713574E6C00302082 /* CFNetwork.framework */; };
@@ -156,6 +163,16 @@
 		82765E0B1384568800C3FBC5 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		82765E0C1384568800C3FBC5 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 		82765E0E138456A400C3FBC5 /* UserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserView.xib; sourceTree = "<group>"; };
+		828A78F313E058840082D968 /* BaseFollowingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseFollowingViewController.h; sourceTree = "<group>"; };
+		828A78F413E058840082D968 /* BaseFollowingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseFollowingViewController.m; sourceTree = "<group>"; };
+		828A798913E09DA40082D968 /* tabbar-piggy-bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar-piggy-bank.png"; path = "images/tabbar-piggy-bank.png"; sourceTree = "<group>"; };
+		828A79BC13E0A1550082D968 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		828A7A9E13E0BA450082D968 /* FollowingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowingViewController.h; sourceTree = "<group>"; };
+		828A7A9F13E0BA450082D968 /* FollowingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowingViewController.m; sourceTree = "<group>"; };
+		828A7AAA13E0BBB00082D968 /* FollowersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowersViewController.h; sourceTree = "<group>"; };
+		828A7AAB13E0BBB00082D968 /* FollowersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowersViewController.m; sourceTree = "<group>"; };
+		828A7AF013E0BEB40082D968 /* FollowingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowingView.xib; sourceTree = "<group>"; };
+		828A7AF313E0BF020082D968 /* FollowersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowersView.xib; sourceTree = "<group>"; };
 		82C1042F135737F000302082 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		82C10430135737F000302082 /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
 		82C1048C135741E500302082 /* Ticker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ticker.h; sourceTree = "<group>"; };
@@ -319,6 +336,7 @@
 				82C1058C13574E9A00302082 /* MobileCoreServices.framework in Frameworks */,
 				82C105D013574EDD00302082 /* libz.1.2.3.dylib in Frameworks */,
 				A8FD286F1367674C0099E7FC /* libsqlite3.0.dylib in Frameworks */,
+				828A79BD13E0A1550082D968 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +409,8 @@
 				A877C6E713DDCFB900ABACE6 /* CheckInsByUserView.xib */,
 				A877C75613DDF4EE00ABACE6 /* TrendingView.xib */,
 				A877C7B113DE064E00ABACE6 /* ProfileViewController.xib */,
+				828A7AF013E0BEB40082D968 /* FollowingView.xib */,
+				828A7AF313E0BF020082D968 /* FollowersView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -406,6 +426,7 @@
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
 				82C105CF13574EDD00302082 /* libz.1.2.3.dylib */,
 				A8FD286E1367674C0099E7FC /* libsqlite3.0.dylib */,
+				828A79BC13E0A1550082D968 /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -557,6 +578,7 @@
 				A87743E1135676F500DD721B /* thinking-icon.png */,
 				A87743DE135676F500DD721B /* news-on-a-stock-icon.png */,
 				A83CF30513585F43002D4F43 /* tabbar-gear.png */,
+				828A798913E09DA40082D968 /* tabbar-piggy-bank.png */,
 				A83CF30213585DE6002D4F43 /* tabbar-redo.png */,
 				A87743BF135668DF00DD721B /* tabbar-tags.png */,
 				A87743C0135668DF00DD721B /* tabbar-line-chart.png */,
@@ -581,6 +603,12 @@
 			children = (
 				A877C7B413DE066700ABACE6 /* ProfileViewController.h */,
 				A877C7B513DE066700ABACE6 /* ProfileViewController.m */,
+				828A7A9E13E0BA450082D968 /* FollowingViewController.h */,
+				828A7A9F13E0BA450082D968 /* FollowingViewController.m */,
+				828A7AAA13E0BBB00082D968 /* FollowersViewController.h */,
+				828A7AAB13E0BBB00082D968 /* FollowersViewController.m */,
+				828A78F313E058840082D968 /* BaseFollowingViewController.h */,
+				828A78F413E058840082D968 /* BaseFollowingViewController.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -880,6 +908,9 @@
 				A877C6E813DDCFB900ABACE6 /* CheckInsByUserView.xib in Resources */,
 				A877C75713DDF4EE00ABACE6 /* TrendingView.xib in Resources */,
 				A877C7B213DE064E00ABACE6 /* ProfileViewController.xib in Resources */,
+				828A798A13E09DA40082D968 /* tabbar-piggy-bank.png in Resources */,
+				828A7AF113E0BEB40082D968 /* FollowingView.xib in Resources */,
+				828A7AF413E0BF020082D968 /* FollowersView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -947,6 +978,9 @@
 				A877C6DA13DDCED300ABACE6 /* CheckInsByUserViewController.m in Sources */,
 				A877C75313DDE38200ABACE6 /* TrendingViewController.m in Sources */,
 				A877C7B613DE066700ABACE6 /* ProfileViewController.m in Sources */,
+				828A78F513E058840082D968 /* BaseFollowingViewController.m in Sources */,
+				828A7AA013E0BA450082D968 /* FollowingViewController.m in Sources */,
+				828A7AAC13E0BBB00082D968 /* FollowersViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

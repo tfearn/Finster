@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MFMailComposeViewController.h>
 #import "ASIHTTPRequest.h"
 #import "SBJSON.h"
 #import "Globals.h"
@@ -14,24 +15,26 @@
 #import "BaseViewController.h"
 #import "User.h"
 #import "UserViewController.h"
+#import "CheckInsByUserViewController.h"
+#import "FollowingViewController.h"
+#import "FollowersViewController.h"
 
-@interface ProfileViewController : BaseViewController <ASIHTTPRequestDelegate, ImageManagerDelegate, UIActionSheetDelegate> {
+@interface ProfileViewController : BaseViewController <ASIHTTPRequestDelegate, ImageManagerDelegate, MFMailComposeViewControllerDelegate> {
 	IBOutlet UITableView *_tableView;
-	IBOutlet UIButton *_buttonShareApp;
-	IBOutlet UIButton *_buttonFindFriends;
+	IBOutlet UIImageView *_userImageView;
+	IBOutlet UILabel *_username;
 	ASIHTTPRequest *_request;
 	ImageManager *_imageManager;
-	NSMutableArray *_users;
+	User *_user;
 }
 @property (nonatomic, retain) UITableView *tableView;
-@property (nonatomic, retain) UIButton *buttonShareApp;
-@property (nonatomic, retain) UIButton *buttonFindFriends;
+@property (nonatomic, retain) UIImageView *userImageView;
+@property (nonatomic, retain) UILabel *username;
 @property (nonatomic, retain) ASIHTTPRequest *request;
 @property (nonatomic, retain) ImageManager *imageManager;
-@property (nonatomic, retain) NSMutableArray *users;
+@property (nonatomic, retain) User *user;
 
 - (IBAction)feedbackButtonPressed:(id)sender;
 - (IBAction)shareAppButtonPressed:(id)sender;
-- (IBAction)findFriendsButtonPressed:(id)sender;
 
 @end

@@ -15,14 +15,15 @@
 
 @implementation ProfileViewController
 @synthesize tableView = _tableView;
-@synthesize buttonShareApp = _buttonShareApp;
-@synthesize buttonFindFriends = _buttonFindFriends;
+@synthesize userImageView = _userImageView;
+@synthesize username = _username;
 @synthesize request = _request;
 @synthesize imageManager = _imageManager;
-@synthesize users = _users;
+@synthesize user = _user;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	self.showShareAppButton = YES;
     [super viewDidLoad];
 	
 	[self.tableView setRowHeight:44.0];
@@ -38,7 +39,8 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-	
+
+	// Retrieve the data
 	[self getData];
 }
 
@@ -57,36 +59,32 @@
 
 - (void)dealloc {
 	[_tableView release];
-	[_buttonShareApp release];
-	[_buttonFindFriends release];
+	[_userImageView release];
+	[_username release];
 	[_imageManager release];
-	[_users release];
+	[_user release];
     [super dealloc];
 }
 
-- (IBAction)feedbackButtonPressed:(id)sender {
-}
-
 - (IBAction)shareAppButtonPressed:(id)sender {
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Share via E-Mail", @"Share via Facebook", nil];
-	actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
-	[actionSheet showInView:self.view];
-	[actionSheet release];
+	[super shareAppButtonPressed:sender];
 }
 
-- (IBAction)findFriendsButtonPressed:(id)sender {
+- (IBAction)feedbackButtonPressed:(id)sender {
+	MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+	controller.mailComposeDelegate = self;
+	NSArray *toList = [[[NSArray alloc] initWithObjects:kEmailFinsterFeedback, nil] autorelease];
+	[controller setToRecipients:toList]; 
+	[controller setSubject:@"Finster Feedback"];
+	[controller setMessageBody:@"My thoughts/recommendations regarding Finster:" isHTML:NO]; 
+	[self presentModalViewController:controller animated:YES];
+	[controller release];
 }
 
 - (void)getData {
-	_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:kUrlGetUserFollowing]];
+	_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:kUrlGetUser]];
 	[self.request setDelegate:self];
 	[self.request startAsynchronous];
-}
-
-#pragma mark -
-#pragma mark UIActionSheetDelegate Methods
-
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 }
 
 
@@ -94,6 +92,8 @@
 #pragma mark RequestDelegate Methods
 
 - (void)requestFinished:(ASIHTTPRequest *)request {
+	[self dismissWaitView];
+	
 	NSString *response = [request responseString];
 	
 	SBJSON *jsonParser = [[[SBJSON alloc] init] autorelease];
@@ -109,38 +109,27 @@
 		return;
 	}
 	
-	[_users release];
-	_users = [[NSMutableArray alloc] init];
+	[_user release];
+	_user = [[User alloc] init];
+	self.user.userID = [[dict objectForKey:@"id"] stringValue];
+	self.user.groupType = [dict objectForKey:@"group"];
+	self.user.userName = [dict objectForKey:@"name"];
+	self.user.imageUrl = [dict objectForKey:@"image"];
+	self.user.followers = [[dict objectForKey:@"followers"] intValue];
+	self.user.following = [[dict objectForKey:@"following"] intValue];
+	self.user.checkins = [[dict objectForKey:@"checkins"] intValue];
+	self.user.badges = [[dict objectForKey:@"badges"] intValue];
 	
-	NSArray *following = [dict objectForKey:@"following"];
-	for(int i=0; i<[following count]; i++) {
-		NSDictionary *userParentDict = [following objectAtIndex:i];
-		NSDictionary *userDict = [userParentDict objectForKey:@"user"];
-		
-		User *user = [[User alloc] init];
-		user.userID = [[userDict objectForKey:@"id"] stringValue];
-		user.groupType = [userDict objectForKey:@"group"];
-		user.userName = [userDict objectForKey:@"name"];
-		user.imageUrl = [userDict objectForKey:@"image"];
-		user.followers = [[userDict objectForKey:@"followers"] intValue];
-		user.following = [[userDict objectForKey:@"following"] intValue];
-		user.checkins = [[userDict objectForKey:@"checkins"] intValue];
-		user.badges = [[userDict objectForKey:@"badges"] intValue];
-		
-		[self.users addObject:user];
-		[user release];
-	}
-	
+	// Set the username label
+	self.username.text = self.user.userName;
+
 	// Tell the ImageManager to get the pictures if it does not already have them
-	for(int i=0; i<[self.users count]; i++) {
-		id object = [self.users objectAtIndex:i];
-		User *user = object;
-		
-		Image *image = [self.imageManager getImage:user.imageUrl];
-		if(image != nil)
-			user.image = image.image;
+	Image *image = [self.imageManager getImage:self.user.imageUrl];
+	if(image != nil) {
+		self.user.image = image.image;
+		[self.userImageView setImage:self.user.image];
 	}
-	
+		
 	// Reload the table
 	[self.tableView reloadData];
 }
@@ -157,19 +146,7 @@
 #pragma mark ImageManagerDelegate Methods
 
 - (void)imageRequestComplete:(Image *)image {
-	
-	// Search through the User list to find the matching using image url
-	for(int i=0; i<[self.users count]; i++) {
-		id object = [self.users objectAtIndex:i];
-		User *user = object;
-		
-		if([user.imageUrl isEqualToString:image.url]) {
-			user.image = image.image;
-		}
-	}
-	
-	// Reload the table
-	[self.tableView reloadData];
+	[self.userImageView setImage:image.image];
 }
 
 - (void)imageRequestFailure:(NSString *)url {
@@ -181,21 +158,15 @@
 #pragma mark UITableViewDataSource Methods
 
 - (NSInteger)numberOfSectionsInTableView: (UITableView *)tableView {
-	return 2;
+	return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	if(section == 0)
-		return 2;
-	else
-		return [self.users count];
+	return 4;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	if(section == 0)
-		return @"My Statistics";
-	else
-		return @"Following";
+	return @"My Statistics";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -206,35 +177,34 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
 	
-	int section = [indexPath section];
 	int row = [indexPath row];
-	
-	if(section == 0) {
-		switch (row) {
-			case 0:
-				cell.textLabel.text = @"Check-Ins";
-				cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-clock" ofType:@"png"]];
-				break;
-			case 1:
-				cell.textLabel.text = @"Points";
-				cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-clock" ofType:@"png"]];
-				break;
-			default:
-				break;
-		}
+	switch (row) {
+		case 0:
+			cell.textLabel.text = [NSString stringWithFormat:@"%d Check-Ins", self.user.checkins];
+			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-clock" ofType:@"png"]];
+			if(self.user.checkins > 0)
+				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+			break;
+		case 1:
+			cell.textLabel.text = [NSString stringWithFormat:@"%d Points", self.user.points];
+			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-piggy-bank" ofType:@"png"]];
+			break;
+		case 2:
+			cell.textLabel.text = [NSString stringWithFormat:@"Following %d", self.user.following];
+			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
+			if(self.user.following > 0)
+				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+			break;
+		case 3:
+			cell.textLabel.text = [NSString stringWithFormat:@"Followers %d", self.user.followers];
+			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
+			if(self.user.followers > 0)
+				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+			break;
+		default:
+			break;
 	}
-	else {
-		User *user = [self.users objectAtIndex:row];
 		
-		cell.textLabel.text = user.userName;
-		
-		if(user.image == nil)
-			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"default-user" ofType:@"png"]];
-		else
-			cell.imageView.image = user.image;
-		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-	}
-	
 	cell.textLabel.textColor = [UIColor darkGrayColor];
 	cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15.0];
     
@@ -246,13 +216,21 @@
 #pragma mark UITableViewDelegate Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	int section = [indexPath section];
 	int row = [indexPath row];
 	
-	if(section == 1) {
-		User *user = [self.users objectAtIndex:row];
-		UserViewController *controller = [[UserViewController alloc] init];
-		controller.user = user;
+	if(row == 0 & self.user.checkins > 0) {
+		CheckInsByUserViewController *controller = [[CheckInsByUserViewController alloc] init];
+		controller.user = self.user;
+		[self.navigationController pushViewController:controller animated:YES];
+		[controller release];	
+	}
+	else if(row == 2 && self.user.following > 0) {
+		FollowingViewController *controller = [[FollowingViewController alloc] init];
+		[self.navigationController pushViewController:controller animated:YES];
+		[controller release];	
+	}
+	else if(row == 3 && self.user.followers > 0) {
+		FollowersViewController *controller = [[FollowersViewController alloc] init];
 		[self.navigationController pushViewController:controller animated:YES];
 		[controller release];	
 	}
