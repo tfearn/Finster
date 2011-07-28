@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseCheckInsViewController.h"
+#import "User.h"
 
 @interface CheckInsByUserViewController : BaseCheckInsViewController {
 	User *_user;

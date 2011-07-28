@@ -8,31 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MFMailComposeViewController.h>
-#import "ASIHTTPRequest.h"
-#import "SBJSON.h"
-#import "Globals.h"
-#import "ImageManager.h"
-#import "BaseViewController.h"
-#import "User.h"
-#import "UserViewController.h"
-#import "CheckInsByUserViewController.h"
-#import "FollowingViewController.h"
-#import "FollowersViewController.h"
+#import "BaseUserViewController.h"
 
-@interface ProfileViewController : BaseViewController <ASIHTTPRequestDelegate, ImageManagerDelegate, MFMailComposeViewControllerDelegate> {
-	IBOutlet UITableView *_tableView;
-	IBOutlet UIImageView *_userImageView;
-	IBOutlet UILabel *_username;
-	ASIHTTPRequest *_request;
-	ImageManager *_imageManager;
-	User *_user;
+@interface ProfileViewController : BaseUserViewController <UIActionSheetDelegate, MFMailComposeViewControllerDelegate> {
 }
-@property (nonatomic, retain) UITableView *tableView;
-@property (nonatomic, retain) UIImageView *userImageView;
-@property (nonatomic, retain) UILabel *username;
-@property (nonatomic, retain) ASIHTTPRequest *request;
-@property (nonatomic, retain) ImageManager *imageManager;
-@property (nonatomic, retain) User *user;
 
 - (IBAction)feedbackButtonPressed:(id)sender;
 - (IBAction)shareAppButtonPressed:(id)sender;

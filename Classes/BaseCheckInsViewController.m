@@ -8,7 +8,6 @@
 
 #import "BaseCheckInsViewController.h"
 
-
 @interface BaseCheckInsViewController (Private)
 - (void)getData;
 @end

@@ -6,7 +6,12 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "BaseUserViewController.h"
+#import "UserViewController.h"
+
+// Avoid circular references
+#import "CheckInsByUserViewController.h"
+#import "FollowingViewController.h"
+#import "FollowersViewController.h"
 
 
 @interface BaseUserViewController (Private)
@@ -17,20 +22,34 @@
 @synthesize tableView = _tableView;
 @synthesize userImageView = _userImageView;
 @synthesize username = _username;
-@synthesize request = _request;
+@synthesize queue = _queue;
 @synthesize imageManager = _imageManager;
 @synthesize user = _user;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	self.showShareAppButton = YES;
     [super viewDidLoad];
 	
 	[self.tableView setRowHeight:44.0];
 	
+	// Initialize the network queue
+	_queue = [[NSOperationQueue alloc] init];
+
 	// Initialize the ImageManager to get user pictures
 	_imageManager = [[ImageManager alloc] init];
 	self.imageManager.delegate = self;
+	
+	// Set the username label
+	self.username.text = self.user.userName;
+	
+	// Tell the ImageManager to get the pictures if it does not already have them
+	if(self.user != nil) {
+		Image *image = [self.imageManager getImage:self.user.imageUrl];
+		if(image != nil) {
+			self.user.image = image.image;
+			[self.userImageView setImage:self.user.image];
+		}
+	}
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -57,24 +76,29 @@
 	[_tableView release];
 	[_userImageView release];
 	[_username release];
+	[_queue release];
 	[_imageManager release];
 	[_user release];
     [super dealloc];
 }
 
 - (void)getData {
-	_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:kUrlGetUser]];
-	[self.request setDelegate:self];
-	[self.request startAsynchronous];
+	NSString *url = kUrlGetUser;
+	if(self.user != nil && self.user.userID != nil)
+		url = [url stringByAppendingFormat:@"?user=%@", self.user.userID];
+	
+	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
+	[request setDelegate:self];
+	[request setDidFinishSelector:@selector(getUserRequestComplete:)];
+	[request setDidFailSelector:@selector(getUserRequestFailure:)];
+	[self.queue addOperation:request];	
 }
 
 
 #pragma mark -
 #pragma mark RequestDelegate Methods
 
-- (void)requestFinished:(ASIHTTPRequest *)request {
-	[self dismissWaitView];
-	
+- (void)getUserRequestComplete:(ASIHTTPRequest *)request {
 	NSString *response = [request responseString];
 	
 	SBJSON *jsonParser = [[[SBJSON alloc] init] autorelease];
@@ -104,20 +128,18 @@
 	// Set the username label
 	self.username.text = self.user.userName;
 	
-	// Tell the ImageManager to get the pictures if it does not already have them
+	// If we don't have the image already, get it
 	Image *image = [self.imageManager getImage:self.user.imageUrl];
 	if(image != nil) {
 		self.user.image = image.image;
 		[self.userImageView setImage:self.user.image];
 	}
-	
+
 	// Reload the table
 	[self.tableView reloadData];
 }
 
-- (void)requestFailed:(ASIHTTPRequest *)request {
-	[self dismissWaitView];
-	
+- (void)getUserRequestFailure:(ASIHTTPRequest *)request {
 	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:[request.error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
 	[alert show];
 }

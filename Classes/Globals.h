@@ -37,6 +37,7 @@
 #define kUrlGetUser					@"http://209.114.35.245/getuser"
 #define kUrlFollowUser				@"http://209.114.35.245/followuser?userid=%@"
 #define kUrlUnFollowUser			@"http://209.114.35.245/unfollowuser?userid=%@"
+#define kUrlIsFollowingUser			@"http://209.114.35.245/isfollowinguser?userid=%@"
 #define kUrlGetUserFollowing		@"http://209.114.35.245/getuserfollowing"
 #define kUrlGetUserFollowers		@"http://209.114.35.245/getuserfollowers"
 #define kUrlGetCheckInsByTicker		@"http://209.114.35.245/getcheckins?feed=network&start=0&limit=20&ticker=%@"

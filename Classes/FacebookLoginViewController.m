@@ -47,7 +47,7 @@
 - (IBAction)loginWithFacebookButtonPressed:(id)sender {
 	// Do the authorization
 	// TODO: Don't retain this object
-	NSArray* permissions =  [[NSArray arrayWithObjects:@"email", @"read_stream", @"offline_access", nil] retain];
+	NSArray* permissions =  [[NSArray arrayWithObjects:@"email", @"publish_stream", @"offline_access", nil] retain];
 	[self.facebook authorize:permissions delegate:self];
 }
 

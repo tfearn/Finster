@@ -2,7 +2,7 @@
 //  UserViewController.m
 //  Finster
 //
-//  Created by Todd Fearn on 5/18/11.
+//  Created by Todd Fearn on 7/28/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
@@ -10,15 +10,8 @@
 
 
 @implementation UserViewController
-@synthesize user = _user;
-@synthesize request = _request;
-@synthesize userImageView = _userImageView;
-@synthesize username = _username;
 @synthesize followButton = _followButton;
-@synthesize followers = _followers;
-@synthesize following = _following;
-@synthesize checkIns = _checkIns;
-@synthesize points = _points;
+@synthesize isFollowingUserRequest = _isFollowingUserRequest;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -26,28 +19,20 @@
 	
 	self.navigationItem.title = self.user.userName;
 	
-	if(self.user.image != nil)
-		self.userImageView.image = self.user.image;
+	// Are we following this user?
+	NSString *url = [NSString stringWithFormat:kUrlIsFollowingUser, self.user.userID];
 	
-	self.username.text = self.user.userName;
-	self.followers.text = [NSString stringWithFormat:@"%d", self.user.followers];
-	self.following.text = [NSString stringWithFormat:@"%d", self.user.following];
-	self.checkIns.text = [NSString stringWithFormat:@"%d", self.user.checkins];
-	self.points.text = [NSString stringWithFormat:@"%d", self.user.points];
+	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
+	[request setDelegate:self];
+	[request setDidFinishSelector:@selector(isFollowingUserRequestComplete:)];
+	[request setDidFailSelector:@selector(isFollowingUserRequestFailure:)];
+	[self.queue addOperation:request];
 	
-	if([self.user.groupType isEqualToString:@"you"]) {
-		self.followButton.hidden = YES;
-	}
-	else {
-		// Get your followers to determine if you are already following this user
-		[self showWaitView:@"Retrieving User..."];
+	[self showWaitView:@"Retrieving user..."];
+}
 
-		_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:kUrlGetUserFollowing]];
-		[self.request setDelegate:self];
-		[self.request setDidFinishSelector:@selector(getUserFollowingRequestFinished:)];
-		[self.request setDidFailSelector:@selector(getUserFollowingRequestFailed:)];
-		[self.request startAsynchronous];
-	}
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,54 +49,39 @@
 }
 
 - (void)dealloc {
-	[_user release];
-	[_userImageView release];
-	[_username release];
 	[_followButton release];
-	[_followers release];
-	[_following release];
-	[_checkIns release];
-	[_points release];
     [super dealloc];
 }
 
 - (IBAction)followButtonPressed:(id)sender {
-	[self showWaitView:@"Please Wait..."];
-	
 	NSString *url = [NSString stringWithFormat:kUrlUnFollowUser, self.user.userID];
 	if([self.followButton.currentTitle isEqualToString:@"Follow"]) {
 		url = [NSString stringWithFormat:kUrlFollowUser, self.user.userID];
 	}
 	
-	_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
-	[self.request setDelegate:self];
-	[self.request setDidFinishSelector:@selector(requestComplete:)];
-	[self.request setDidFailSelector:@selector(requestFailure:)];
-	[self.request startAsynchronous];
-}
+	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
+	[request setDelegate:self];
+	[request setDidFinishSelector:@selector(followUnFollowUserRequestComplete:)];
+	[request setDidFailSelector:@selector(followUnFollowUserRequestFailure:)];
+	[self.queue addOperation:request];
 
-- (IBAction)followersButtonPressed:(id)sender {
+	[self showWaitView:@"Please Wait..."];
 }
-
-- (IBAction)followingButtonPressed:(id)sender {
-}
-
-- (IBAction)checkInsButtonPressed:(id)sender {
-}
-
 
 #pragma mark -
 #pragma mark RequestDelegate Methods
 
-- (void)getUserFollowingRequestFinished:(ASIHTTPRequest *)request {
+- (void)isFollowingUserRequestComplete:(ASIHTTPRequest *)request {
 	[self dismissWaitView];
 	
 	NSString *response = [request responseString];
 	
-	// Parse the data
 	SBJSON *jsonParser = [[[SBJSON alloc] init] autorelease];
+	
+	// Parse the data
 	NSError *error = nil;
 	NSDictionary *dict = [jsonParser objectWithString:response error:&error];
+	MyLog(@"%@", dict);
 	if(error != nil) {
 		NSLog(@"Parser Error: %@", [error description]);
 		
@@ -119,32 +89,22 @@
 		[alert show];
 		return;
 	}
-
-	NSArray *following = [dict objectForKey:@"following"];
 	
-	// Are we already following this user?
-	for(int i=0; i<[following count]; i++) {
-		NSDictionary *userParentDict = [following objectAtIndex:i];
-		NSDictionary *userDict = [userParentDict objectForKey:@"user"];
-		
-		NSString *userID = [[userDict objectForKey:@"id"] stringValue];
-		if([self.user.userID isEqualToString:userID]) {
-			[self.followButton setTitle:@"Unfollow" forState:UIControlStateNormal];
-			break;
-		}
-	}
+	int isFollowingUser = [[dict objectForKey:@"isFollowingUser"] intValue];
+	if(! isFollowingUser)
+		[self.followButton setTitle:@"Unfollow" forState:UIControlStateNormal];
+	else
+		[self.followButton setTitle:@"Follow" forState:UIControlStateNormal];
 }
 
-- (void)getUserFollowingRequestFailed:(ASIHTTPRequest *)request {
+- (void)isFollowingUserRequestFailure:(ASIHTTPRequest *)request {
 	[self dismissWaitView];
 	
-	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:[[request error] description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:[request.error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
 	[alert show];
 }
 
--(void)requestComplete:(NSObject *)data {
-	[self dismissWaitView];
-	
+- (void)followUnFollowUserRequestComplete:(ASIHTTPRequest *)request {
 	NSString *message = [NSString stringWithFormat:@"You are no longer following %@", self.user.userName];
 	if([self.followButton.currentTitle isEqualToString:@"Follow"]) {
 		message = [NSString stringWithFormat:@"You are now following %@", self.user.userName];
@@ -154,13 +114,13 @@
 	[alert show];
 	
 	[self.navigationController setNavigationBarHidden:NO animated:NO]; 
-	[self.navigationController popToRootViewControllerAnimated:YES];;
+	[self.navigationController popToRootViewControllerAnimated:YES];
 }
 
--(void)requestFailure:(NSString *)error {
+- (void)followUnFollowUserRequestFailure:(ASIHTTPRequest *)request {
 	[self dismissWaitView];
 	
-	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:error delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:[request.error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
 	[alert show];
 }
 

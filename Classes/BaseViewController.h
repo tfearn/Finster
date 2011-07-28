@@ -7,20 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MessageUI/MFMailComposeViewController.h>
 #import "Globals.h"
 #import "WaitView.h"
 
-@interface BaseViewController : UIViewController <UIActionSheetDelegate, MFMailComposeViewControllerDelegate> {
+@interface BaseViewController : UIViewController {
     WaitView *_waitView;
-	BOOL _showShareAppButton;
 }
 @property (nonatomic, readonly) WaitView *waitView;
-@property BOOL showShareAppButton;
 
 - (void)showWaitView:(NSString *)message;
 - (void)dismissWaitView;
-
-- (IBAction)shareAppButtonPressed:(id)sender;
 
 @end

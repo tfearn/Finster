@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ASIHTTPRequest.h"
+#import "SBJSON.h"
 #import "Globals.h"
 #import "CheckIn.h"
 #import "TimePassedFormatter.h"

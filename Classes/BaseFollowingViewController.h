@@ -10,7 +10,7 @@
 #import "ASIHTTPRequest.h"
 #import "SBJSON.h"
 #import "BaseViewController.h"
-#import "BaseUserViewController.h"
+#import "UserViewController.h"
 #import "ImageManager.h"
 #import "User.h"
 

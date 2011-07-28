@@ -9,39 +9,23 @@
 #import "ProfileViewController.h"
 
 
-@interface ProfileViewController (Private)
-- (void)getData;
-@end
-
 @implementation ProfileViewController
-@synthesize tableView = _tableView;
-@synthesize userImageView = _userImageView;
-@synthesize username = _username;
-@synthesize request = _request;
-@synthesize imageManager = _imageManager;
-@synthesize user = _user;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	self.showShareAppButton = YES;
     [super viewDidLoad];
-	
-	[self.tableView setRowHeight:44.0];
+
+	UIBarButtonItem *shareAppButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareAppButtonPressed:)];
+	self.navigationItem.leftBarButtonItem = shareAppButton; 
+	[shareAppButton release];
 
 	UIBarButtonItem *feedbackButton = [[UIBarButtonItem alloc] initWithTitle:@"Feedback" style:UIBarButtonItemStyleBordered target:self action:@selector(feedbackButtonPressed:)];
 	self.navigationItem.rightBarButtonItem = feedbackButton; 
 	[feedbackButton release];
-
-	// Initialize the ImageManager to get user pictures
-	_imageManager = [[ImageManager alloc] init];
-	self.imageManager.delegate = self;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-
-	// Retrieve the data
-	[self getData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,16 +42,14 @@
 }
 
 - (void)dealloc {
-	[_tableView release];
-	[_userImageView release];
-	[_username release];
-	[_imageManager release];
-	[_user release];
     [super dealloc];
 }
 
 - (IBAction)shareAppButtonPressed:(id)sender {
-	[super shareAppButtonPressed:sender];
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Share App with Friends", nil];
+	actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+	[actionSheet showFromTabBar:self.tabBarController.tabBar];
+	[actionSheet release];
 }
 
 - (IBAction)feedbackButtonPressed:(id)sender {
@@ -81,159 +63,37 @@
 	[controller release];
 }
 
-- (void)getData {
-	_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:kUrlGetUser]];
-	[self.request setDelegate:self];
-	[self.request startAsynchronous];
+#pragma mark -
+#pragma mark UIActionSheetDelegate Methods
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+	if(buttonIndex == 0) {
+		// Share app via e-mail
+		MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+		controller.mailComposeDelegate = self;
+		[controller setSubject:@"Finster iPhone App"];
+		[controller setMessageBody:@"I found this cool check-in app called Finster! It's basically a check-in app for stocks and very simple to use.  Just type in Finster in the App Store to find it." isHTML:NO]; 
+		[self presentModalViewController:controller animated:YES];
+		[controller release];
+	}
 }
 
-
 #pragma mark -
-#pragma mark RequestDelegate Methods
+#pragma mark MFMailComposeViewControllerDelegate Methods
 
-- (void)requestFinished:(ASIHTTPRequest *)request {
-	[self dismissWaitView];
-	
-	NSString *response = [request responseString];
-	
-	SBJSON *jsonParser = [[[SBJSON alloc] init] autorelease];
-	
-	// Parse the data
-	NSError *error = nil;
-	NSDictionary *dict = [jsonParser objectWithString:response error:&error];
-	if(error != nil) {
-		NSLog(@"Parser Error: %@", [error description]);
-		
-		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"JSON Error" message:[error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error;
+{
+	if (result == MFMailComposeResultSent) {
+		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Success" message:@"Your e-mail message has been sent" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
 		[alert show];
-		return;
 	}
 	
-	[_user release];
-	_user = [[User alloc] init];
-	self.user.userID = [[dict objectForKey:@"id"] stringValue];
-	self.user.groupType = [dict objectForKey:@"group"];
-	self.user.userName = [dict objectForKey:@"name"];
-	self.user.imageUrl = [dict objectForKey:@"image"];
-	self.user.followers = [[dict objectForKey:@"followers"] intValue];
-	self.user.following = [[dict objectForKey:@"following"] intValue];
-	self.user.checkins = [[dict objectForKey:@"checkins"] intValue];
-	self.user.badges = [[dict objectForKey:@"badges"] intValue];
+	if(error != nil) {
+		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"E-Mail Error" message:[error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+		[alert show];
+	}
 	
-	// Set the username label
-	self.username.text = self.user.userName;
-
-	// Tell the ImageManager to get the pictures if it does not already have them
-	Image *image = [self.imageManager getImage:self.user.imageUrl];
-	if(image != nil) {
-		self.user.image = image.image;
-		[self.userImageView setImage:self.user.image];
-	}
-		
-	// Reload the table
-	[self.tableView reloadData];
-}
-
-- (void)requestFailed:(ASIHTTPRequest *)request {
-	[self dismissWaitView];
-	
-	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:[request.error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
-	[alert show];
-}
-
-
-#pragma mark -
-#pragma mark ImageManagerDelegate Methods
-
-- (void)imageRequestComplete:(Image *)image {
-	[self.userImageView setImage:image.image];
-}
-
-- (void)imageRequestFailure:(NSString *)url {
-	// We don't care if it fails
-}
-
-
-#pragma mark -
-#pragma mark UITableViewDataSource Methods
-
-- (NSInteger)numberOfSectionsInTableView: (UITableView *)tableView {
-	return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return 4;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	return @"My Statistics";
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
-	
-	int row = [indexPath row];
-	switch (row) {
-		case 0:
-			cell.textLabel.text = [NSString stringWithFormat:@"%d Check-Ins", self.user.checkins];
-			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-clock" ofType:@"png"]];
-			if(self.user.checkins > 0)
-				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-			break;
-		case 1:
-			cell.textLabel.text = [NSString stringWithFormat:@"%d Points", self.user.points];
-			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-piggy-bank" ofType:@"png"]];
-			break;
-		case 2:
-			cell.textLabel.text = [NSString stringWithFormat:@"Following %d", self.user.following];
-			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
-			if(self.user.following > 0)
-				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-			break;
-		case 3:
-			cell.textLabel.text = [NSString stringWithFormat:@"Followers %d", self.user.followers];
-			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
-			if(self.user.followers > 0)
-				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-			break;
-		default:
-			break;
-	}
-		
-	cell.textLabel.textColor = [UIColor darkGrayColor];
-	cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15.0];
-    
-    return cell;
-}
-
-
-#pragma mark -
-#pragma mark UITableViewDelegate Methods
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	int row = [indexPath row];
-	
-	if(row == 0 & self.user.checkins > 0) {
-		CheckInsByUserViewController *controller = [[CheckInsByUserViewController alloc] init];
-		controller.user = self.user;
-		[self.navigationController pushViewController:controller animated:YES];
-		[controller release];	
-	}
-	else if(row == 2 && self.user.following > 0) {
-		FollowingViewController *controller = [[FollowingViewController alloc] init];
-		[self.navigationController pushViewController:controller animated:YES];
-		[controller release];	
-	}
-	else if(row == 3 && self.user.followers > 0) {
-		FollowersViewController *controller = [[FollowersViewController alloc] init];
-		[self.navigationController pushViewController:controller animated:YES];
-		[controller release];	
-	}
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 @end
