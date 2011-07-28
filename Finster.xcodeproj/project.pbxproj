@@ -92,6 +92,7 @@
 		A89528C613D313C000A54A38 /* CheckInsByTickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89528C513D313C000A54A38 /* CheckInsByTickerViewController.m */; };
 		A89528CC13D315F000A54A38 /* CheckInsByTickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89528CB13D315F000A54A38 /* CheckInsByTickerView.xib */; };
 		A89528DE13D31C1900A54A38 /* CheckInResult.m in Sources */ = {isa = PBXBuildFile; fileRef = A89528DD13D31C1900A54A38 /* CheckInResult.m */; };
+		A8B12EC613E0EF0100A54B74 /* BaseUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B12EC513E0EF0100A54B74 /* BaseUserViewController.m */; };
 		A8CFEF6D137D978C00D14F53 /* CheckInTypeFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CFEF6C137D978C00D14F53 /* CheckInTypeFormatter.m */; };
 		A8E6E13B13679389009DE488 /* finster.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A8E6E13A13679389009DE488 /* finster.sqlite */; };
 		A8ED1CDF1358A38D0003115F /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ED1CC41358A38D0003115F /* ASIAuthenticationDialog.m */; };
@@ -266,6 +267,8 @@
 		A89528CB13D315F000A54A38 /* CheckInsByTickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInsByTickerView.xib; sourceTree = "<group>"; };
 		A89528DC13D31C1900A54A38 /* CheckInResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInResult.h; sourceTree = "<group>"; };
 		A89528DD13D31C1900A54A38 /* CheckInResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInResult.m; sourceTree = "<group>"; };
+		A8B12EC413E0EF0100A54B74 /* BaseUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUserViewController.h; sourceTree = "<group>"; };
+		A8B12EC513E0EF0100A54B74 /* BaseUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUserViewController.m; sourceTree = "<group>"; };
 		A8CFEF6B137D978C00D14F53 /* CheckInTypeFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInTypeFormatter.h; sourceTree = "<group>"; };
 		A8CFEF6C137D978C00D14F53 /* CheckInTypeFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInTypeFormatter.m; sourceTree = "<group>"; };
 		A8E6E13A13679389009DE488 /* finster.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = finster.sqlite; sourceTree = "<group>"; };
@@ -474,6 +477,8 @@
 				82765E0C1384568800C3FBC5 /* UserViewController.m */,
 				A87EE7951362248E000A91B6 /* BaseViewController.h */,
 				A87EE7961362248E000A91B6 /* BaseViewController.m */,
+				A8B12EC413E0EF0100A54B74 /* BaseUserViewController.h */,
+				A8B12EC513E0EF0100A54B74 /* BaseUserViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -981,6 +986,7 @@
 				828A78F513E058840082D968 /* BaseFollowingViewController.m in Sources */,
 				828A7AA013E0BA450082D968 /* FollowingViewController.m in Sources */,
 				828A7AAC13E0BBB00082D968 /* FollowersViewController.m in Sources */,
+				A8B12EC613E0EF0100A54B74 /* BaseUserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -204,7 +204,7 @@
 	int row = [indexPath row];
 	
 	User *user = [self.users objectAtIndex:row];
-	UserViewController *controller = [[UserViewController alloc] init];
+	BaseUserViewController *controller = [[BaseUserViewController alloc] init];
 	controller.user = user;
 	[self.navigationController pushViewController:controller animated:YES];
 	[controller release];	
