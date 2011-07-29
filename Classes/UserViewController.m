@@ -19,16 +19,21 @@
 	
 	self.navigationItem.title = self.user.userName;
 	
-	// Are we following this user?
-	NSString *url = [NSString stringWithFormat:kUrlIsFollowingUser, self.user.userID];
-	
-	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
-	[request setDelegate:self];
-	[request setDidFinishSelector:@selector(isFollowingUserRequestComplete:)];
-	[request setDidFailSelector:@selector(isFollowingUserRequestFailure:)];
-	[self.queue addOperation:request];
-	
-	[self showWaitView:@"Retrieving user..."];
+	if([self.user.groupType isEqualToString:@"you"]) {
+		self.followButton.hidden = YES;
+	}
+	else {
+		// Are we following this user?
+		NSString *url = [NSString stringWithFormat:kUrlIsFollowingUser, self.user.userID];
+		
+		ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
+		[request setDelegate:self];
+		[request setDidFinishSelector:@selector(isFollowingUserRequestComplete:)];
+		[request setDidFailSelector:@selector(isFollowingUserRequestFailure:)];
+		[self.queue addOperation:request];
+		
+		[self showWaitView:@"Retrieving user..."];
+	}
 }
 
 - (void)viewDidAppear:(BOOL)animated {

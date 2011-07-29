@@ -8,20 +8,34 @@
 
 #import "ProfileViewController.h"
 
+@class UINavigationButton;
 
 @implementation ProfileViewController
+@synthesize findFriendsButton = _findFriendsButton;
+@synthesize shareAppActionSheet = _shareAppActionSheet;
+@synthesize findFriendsActionSheet = _findFriendsActionSheet;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-	UIBarButtonItem *shareAppButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareAppButtonPressed:)];
+	UIBarButtonItem *shareAppButton = [[UIBarButtonItem alloc] initWithTitle:@"Share App" style:UIBarButtonItemStyleBordered target:self action:@selector(shareAppButtonPressed:)];
 	self.navigationItem.leftBarButtonItem = shareAppButton; 
 	[shareAppButton release];
 
 	UIBarButtonItem *feedbackButton = [[UIBarButtonItem alloc] initWithTitle:@"Feedback" style:UIBarButtonItemStyleBordered target:self action:@selector(feedbackButtonPressed:)];
 	self.navigationItem.rightBarButtonItem = feedbackButton; 
 	[feedbackButton release];
+
+/*
+	// Set the nav bar buttons to green
+	for (UIView *view in self.navigationController.navigationBar.subviews) {
+		NSLog(@"%@", [[view class] description]);
+		if ([[[view class] description] isEqualToString:@"UINavigationButton"]) {
+			[(UINavigationButton *)view setTintColor:[UIColor greenColor]];
+		}
+	} 
+*/
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -42,14 +56,18 @@
 }
 
 - (void)dealloc {
+	[_findFriendsButton release];
+	[_shareAppActionSheet release];
+	[_findFriendsActionSheet release];
     [super dealloc];
 }
 
 - (IBAction)shareAppButtonPressed:(id)sender {
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Share App with Friends", nil];
-	actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
-	[actionSheet showFromTabBar:self.tabBarController.tabBar];
-	[actionSheet release];
+	[_shareAppActionSheet release];
+	_shareAppActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Share App with Friends", nil];
+	self.shareAppActionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+	[self.shareAppActionSheet showFromTabBar:self.tabBarController.tabBar];
+	[self.shareAppActionSheet release];
 }
 
 - (IBAction)feedbackButtonPressed:(id)sender {
@@ -63,18 +81,26 @@
 	[controller release];
 }
 
+- (IBAction)findFriendsButtonPressed:(id)sender {
+	FindFriendsOnAppViewController *controller = [[FindFriendsOnAppViewController alloc] init];
+	[self.navigationController pushViewController:controller animated:YES];
+	[controller release];	
+}
+
 #pragma mark -
 #pragma mark UIActionSheetDelegate Methods
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-	if(buttonIndex == 0) {
-		// Share app via e-mail
-		MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
-		controller.mailComposeDelegate = self;
-		[controller setSubject:@"Finster iPhone App"];
-		[controller setMessageBody:@"I found this cool check-in app called Finster! It's basically a check-in app for stocks and very simple to use.  Just type in Finster in the App Store to find it." isHTML:NO]; 
-		[self presentModalViewController:controller animated:YES];
-		[controller release];
+	if(actionSheet == _shareAppActionSheet) {
+		if(buttonIndex == 0) {
+			// Share app via e-mail
+			MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+			controller.mailComposeDelegate = self;
+			[controller setSubject:@"Finster iPhone App"];
+			[controller setMessageBody:@"I found this cool check-in app called Finster! It's basically a check-in app for stocks and very simple to use.  Just type in Finster in the App Store to find it." isHTML:NO]; 
+			[self presentModalViewController:controller animated:YES];
+			[controller release];
+		}
 	}
 }
 

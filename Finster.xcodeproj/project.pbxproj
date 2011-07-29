@@ -43,6 +43,9 @@
 		82C107F51357A09C00302082 /* CheckInReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C107F41357A09C00302082 /* CheckInReviewViewController.m */; };
 		82C107F71357A0AB00302082 /* CheckInReviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82C107F61357A0AB00302082 /* CheckInReviewView.xib */; };
 		82E7411913E1E487002B88EB /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E7411813E1E487002B88EB /* UserViewController.m */; };
+		A81EE05213E2F85D0073368E /* FindFriendsOnAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A81EE05113E2F85D0073368E /* FindFriendsOnAppViewController.m */; };
+		A81EE05413E2F8840073368E /* FindFriendsOnAppView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A81EE05313E2F8840073368E /* FindFriendsOnAppView.xib */; };
+		A81EE05813E2F9E30073368E /* BaseUserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A81EE05713E2F9E30073368E /* BaseUserListViewController.m */; };
 		A83419241367845C00DA62D1 /* DbSearchedTickerGet.m in Sources */ = {isa = PBXBuildFile; fileRef = A83419231367845C00DA62D1 /* DbSearchedTickerGet.m */; };
 		A83AE1AC13D0AC5400D1C045 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83AE1AB13D0AC5400D1C045 /* ActivityViewController.m */; };
 		A83AE1B913D0B0D100D1C045 /* BaseCheckInsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83AE1B813D0B0D100D1C045 /* BaseCheckInsViewController.m */; };
@@ -189,6 +192,11 @@
 		82E7411713E1E487002B88EB /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		82E7411813E1E487002B88EB /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Finster-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Finster-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		A81EE05013E2F85D0073368E /* FindFriendsOnAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindFriendsOnAppViewController.h; sourceTree = "<group>"; };
+		A81EE05113E2F85D0073368E /* FindFriendsOnAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindFriendsOnAppViewController.m; sourceTree = "<group>"; };
+		A81EE05313E2F8840073368E /* FindFriendsOnAppView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindFriendsOnAppView.xib; sourceTree = "<group>"; };
+		A81EE05613E2F9E30073368E /* BaseUserListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUserListViewController.h; sourceTree = "<group>"; };
+		A81EE05713E2F9E30073368E /* BaseUserListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUserListViewController.m; sourceTree = "<group>"; };
 		A83419221367845C00DA62D1 /* DbSearchedTickerGet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbSearchedTickerGet.h; sourceTree = "<group>"; };
 		A83419231367845C00DA62D1 /* DbSearchedTickerGet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbSearchedTickerGet.m; sourceTree = "<group>"; };
 		A83AE1AA13D0AC5400D1C045 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
@@ -414,6 +422,7 @@
 				A877C7B113DE064E00ABACE6 /* ProfileViewController.xib */,
 				828A7AF013E0BEB40082D968 /* FollowingView.xib */,
 				828A7AF313E0BF020082D968 /* FollowersView.xib */,
+				A81EE05313E2F8840073368E /* FindFriendsOnAppView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -474,8 +483,12 @@
 				82E7411C13E1E4FF002B88EB /* User */,
 				A877C75413DDE38700ABACE6 /* Trending */,
 				A877C7B313DE065A00ABACE6 /* Profile */,
+				A81EE05013E2F85D0073368E /* FindFriendsOnAppViewController.h */,
+				A81EE05113E2F85D0073368E /* FindFriendsOnAppViewController.m */,
 				A87EE7951362248E000A91B6 /* BaseViewController.h */,
 				A87EE7961362248E000A91B6 /* BaseViewController.m */,
+				A81EE05613E2F9E30073368E /* BaseUserListViewController.h */,
+				A81EE05713E2F9E30073368E /* BaseUserListViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -840,7 +853,6 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Finster" */;
 			compatibilityVersion = "Xcode 3.1";
-			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -924,6 +936,7 @@
 				828A798A13E09DA40082D968 /* tabbar-piggy-bank.png in Resources */,
 				828A7AF113E0BEB40082D968 /* FollowingView.xib in Resources */,
 				828A7AF413E0BF020082D968 /* FollowersView.xib in Resources */,
+				A81EE05413E2F8840073368E /* FindFriendsOnAppView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -995,6 +1008,8 @@
 				828A7AAC13E0BBB00082D968 /* FollowersViewController.m in Sources */,
 				A8B12EC613E0EF0100A54B74 /* BaseUserViewController.m in Sources */,
 				82E7411913E1E487002B88EB /* UserViewController.m in Sources */,
+				A81EE05213E2F85D0073368E /* FindFriendsOnAppViewController.m in Sources */,
+				A81EE05813E2F9E30073368E /* BaseUserListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1005,6 +1020,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Todd Fearn (3TVVZ6J6JA)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1012,6 +1028,8 @@
 				GCC_PREFIX_HEADER = Finster_Prefix.pch;
 				INFOPLIST_FILE = "Finster-Info.plist";
 				PRODUCT_NAME = Finster;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "530CC6D1-23E3-4B2D-82DD-67150E449507";
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
@@ -1025,7 +1043,8 @@
 				GCC_PREFIX_HEADER = Finster_Prefix.pch;
 				INFOPLIST_FILE = "Finster-Info.plist";
 				PRODUCT_NAME = Finster;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1E3A6CB7-BB07-410E-9BC4-73E9B52EFC86";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "530CC6D1-23E3-4B2D-82DD-67150E449507";
+				SDKROOT = iphoneos4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
