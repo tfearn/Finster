@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseFollowingViewController.h"
+#import "BaseUserListViewController.h"
 
-@interface FollowingViewController : BaseFollowingViewController {
+@interface FollowingViewController : BaseUserListViewController {
 
 }
 

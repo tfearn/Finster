@@ -15,7 +15,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-	self.navigationItem.title = @"Following";	
+	self.navigationItem.title = @"Following";
+	
+	[self getUrl:kUrlGetUserFollowing];
 }
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
@@ -34,11 +36,7 @@
     [super dealloc];
 }
 
-- (NSURL *)getUrl {
-	return [NSURL URLWithString:kUrlGetUserFollowing];
-}
-
-- (NSString *)getReturnedDataRootKey {
+- (NSString *)getReturnedDataJSONRoot {
 	return @"following";
 }
 

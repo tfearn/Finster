@@ -18,7 +18,7 @@
 #import "BaseCheckInsViewCell.h"
 #import "CheckInDetailsViewController.h"
 
-@interface BaseCheckInsViewController : BaseViewController <ASIHTTPRequestDelegate, ImageManagerDelegate> {
+@interface BaseCheckInsViewController : BaseViewController <ASIHTTPRequestDelegate, ImageManagerDelegate, UIScrollViewDelegate> {
 	IBOutlet UITableView *_tableView;
 	ASIHTTPRequest *_request;
 	SBJSON *_jsonParser;

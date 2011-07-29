@@ -25,7 +25,6 @@
 		8240E4BB137C73060042CA9B /* CheckInDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8240E4BA137C73060042CA9B /* CheckInDetailsViewController.m */; };
 		8240E4BD137C731D0042CA9B /* CheckInDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8240E4BC137C731D0042CA9B /* CheckInDetailsView.xib */; };
 		82765E0F138456A400C3FBC5 /* UserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82765E0E138456A400C3FBC5 /* UserView.xib */; };
-		828A78F513E058840082D968 /* BaseFollowingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 828A78F413E058840082D968 /* BaseFollowingViewController.m */; };
 		828A798A13E09DA40082D968 /* tabbar-piggy-bank.png in Resources */ = {isa = PBXBuildFile; fileRef = 828A798913E09DA40082D968 /* tabbar-piggy-bank.png */; };
 		828A79BD13E0A1550082D968 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 828A79BC13E0A1550082D968 /* MessageUI.framework */; };
 		828A7AA013E0BA450082D968 /* FollowingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 828A7A9F13E0BA450082D968 /* FollowingViewController.m */; };
@@ -165,8 +164,6 @@
 		8240E4BA137C73060042CA9B /* CheckInDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInDetailsViewController.m; sourceTree = "<group>"; };
 		8240E4BC137C731D0042CA9B /* CheckInDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInDetailsView.xib; sourceTree = "<group>"; };
 		82765E0E138456A400C3FBC5 /* UserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserView.xib; sourceTree = "<group>"; };
-		828A78F313E058840082D968 /* BaseFollowingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseFollowingViewController.h; sourceTree = "<group>"; };
-		828A78F413E058840082D968 /* BaseFollowingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseFollowingViewController.m; sourceTree = "<group>"; };
 		828A798913E09DA40082D968 /* tabbar-piggy-bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar-piggy-bank.png"; path = "images/tabbar-piggy-bank.png"; sourceTree = "<group>"; };
 		828A79BC13E0A1550082D968 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		828A7A9E13E0BA450082D968 /* FollowingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowingViewController.h; sourceTree = "<group>"; };
@@ -633,8 +630,6 @@
 				828A7A9F13E0BA450082D968 /* FollowingViewController.m */,
 				828A7AAA13E0BBB00082D968 /* FollowersViewController.h */,
 				828A7AAB13E0BBB00082D968 /* FollowersViewController.m */,
-				828A78F313E058840082D968 /* BaseFollowingViewController.h */,
-				828A78F413E058840082D968 /* BaseFollowingViewController.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -1003,7 +998,6 @@
 				A877C6DA13DDCED300ABACE6 /* CheckInsByUserViewController.m in Sources */,
 				A877C75313DDE38200ABACE6 /* TrendingViewController.m in Sources */,
 				A877C7B613DE066700ABACE6 /* ProfileViewController.m in Sources */,
-				828A78F513E058840082D968 /* BaseFollowingViewController.m in Sources */,
 				828A7AA013E0BA450082D968 /* FollowingViewController.m in Sources */,
 				828A7AAC13E0BBB00082D968 /* FollowersViewController.m in Sources */,
 				A8B12EC613E0EF0100A54B74 /* BaseUserViewController.m in Sources */,

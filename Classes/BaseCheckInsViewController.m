@@ -275,4 +275,17 @@
 	[controller release];
 }
 
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate Methods
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+	if(self.tableView.contentOffset.y == 0) {
+		int i = 0;
+	}
+}
+
 @end
