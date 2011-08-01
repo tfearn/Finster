@@ -14,7 +14,6 @@
 
 
 @implementation BaseCheckInsViewController
-@synthesize tableView = _tableView;
 @synthesize request = _request;
 @synthesize jsonParser = _jsonParser;
 @synthesize checkIns = _checkIns;
@@ -25,11 +24,6 @@
     [super viewDidLoad];
 	
 	[self.tableView setRowHeight:100.0];
-	
-	// Add the refresh button and the title button
-	UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshButtonPressed:)];
-	self.navigationItem.rightBarButtonItem = refreshButton; 
-	[refreshButton release];
 	
 	// Initialize the ImageManager to get user pictures
 	_imageManager = [[ImageManager alloc] init];
@@ -56,14 +50,13 @@
 }
 
 - (void)dealloc {
-	[_tableView release];
 	[_jsonParser release];
 	[_checkIns release];
 	[_imageManager release];
     [super dealloc];
 }
 
-- (IBAction)refreshButtonPressed:(id)sender {
+- (void)refresh {
 	[self getData];
 }
 
@@ -81,6 +74,10 @@
 #pragma mark RequestDelegate Methods
 				
 - (void)requestFinished:(ASIHTTPRequest *)request {
+    [self performSelector:@selector(stopLoading) withObject:nil afterDelay:2.0];
+
+	[self dismissWaitView];
+	
 	NSString *response = [request responseString];
 	
 	// Parse the data
@@ -192,28 +189,28 @@
 #pragma mark -
 #pragma mark UITableViewDataSource Methods
 
-- (NSInteger)numberOfSectionsInTableView: (UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView: (UITableView *)tableview {
 	return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableview numberOfRowsInSection:(NSInteger)section {
 	return [self.checkIns count];
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+- (NSString *)tableView:(UITableView *)tableview titleForHeaderInSection:(NSInteger)section {
 	return nil;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CustomCellIdentifier = @"BaseCheckInsViewCellIdentifier ";
-    
-    BaseCheckInsViewCell *cell = (BaseCheckInsViewCell *)[tableView dequeueReusableCellWithIdentifier: CustomCellIdentifier];
-    if (cell == nil)  {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BaseCheckInsViewCell" owner:self options:nil];
-        for (id oneObject in nib)
-            if ([oneObject isKindOfClass:[BaseCheckInsViewCell class]])
-                cell = (BaseCheckInsViewCell *)oneObject;
-    }
+- (UITableViewCell *)tableView:(UITableView *)tableview cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	static NSString *CustomCellIdentifier = @"BaseCheckInsViewCellIdentifier ";
+	
+	BaseCheckInsViewCell *cell = (BaseCheckInsViewCell *)[tableview dequeueReusableCellWithIdentifier: CustomCellIdentifier];
+	if (cell == nil)  {
+		NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BaseCheckInsViewCell" owner:self options:nil];
+		for (id oneObject in nib)
+			if ([oneObject isKindOfClass:[BaseCheckInsViewCell class]])
+				cell = (BaseCheckInsViewCell *)oneObject;
+	}
 	
 	int row = [indexPath row];
 	CheckIn *checkIn = [self.checkIns objectAtIndex:row];
@@ -257,7 +254,7 @@
 			break;
 	}
 	
-    return cell;
+	return cell;
 }
 
 
@@ -273,19 +270,6 @@
 	[controller setHidesBottomBarWhenPushed:YES];
 	[self.navigationController pushViewController:controller animated:YES];
 	[controller release];
-}
-
-
-#pragma mark -
-#pragma mark UIScrollViewDelegate Methods
-
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-	if(self.tableView.contentOffset.y == 0) {
-		int i = 0;
-	}
 }
 
 @end

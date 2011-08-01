@@ -55,6 +55,9 @@
 		A83CF30613585F43002D4F43 /* tabbar-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = A83CF30513585F43002D4F43 /* tabbar-gear.png */; };
 		A86C2F8D135D1ADE00535BBB /* CheckIn.m in Sources */ = {isa = PBXBuildFile; fileRef = A86C2F8C135D1ADE00535BBB /* CheckIn.m */; };
 		A86C2F90135D1D1800535BBB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A86C2F8F135D1D1800535BBB /* User.m */; };
+		A86C8FCB13E6F4C9001529AE /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A86C8FCA13E6F4C9001529AE /* arrow.png */; };
+		A86C8FCE13E6F4F3001529AE /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A86C8FCD13E6F4F3001529AE /* PullRefreshTableViewController.m */; };
+		A86C8FE213E6F51E001529AE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A86C8FE113E6F51E001529AE /* QuartzCore.framework */; };
 		A8718C331357C1A50054D85C /* thumbs-down-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8718C2F1357C1A50054D85C /* thumbs-down-icon.png */; };
 		A8718C341357C1A50054D85C /* thumbs-up-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8718C301357C1A50054D85C /* thumbs-up-icon.png */; };
 		A8718C351357C1A50054D85C /* dollars-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8718C311357C1A50054D85C /* dollars-icon.png */; };
@@ -210,6 +213,10 @@
 		A86C2F8C135D1ADE00535BBB /* CheckIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckIn.m; sourceTree = "<group>"; };
 		A86C2F8E135D1D1800535BBB /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		A86C2F8F135D1D1800535BBB /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		A86C8FCA13E6F4C9001529AE /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow.png; path = images/arrow.png; sourceTree = "<group>"; };
+		A86C8FCC13E6F4F3001529AE /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableViewController.h; sourceTree = "<group>"; };
+		A86C8FCD13E6F4F3001529AE /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableViewController.m; sourceTree = "<group>"; };
+		A86C8FE113E6F51E001529AE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
 		A8718C2F1357C1A50054D85C /* thumbs-down-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "thumbs-down-icon.png"; path = "images/thumbs-down-icon.png"; sourceTree = "<group>"; };
 		A8718C301357C1A50054D85C /* thumbs-up-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "thumbs-up-icon.png"; path = "images/thumbs-up-icon.png"; sourceTree = "<group>"; };
 		A8718C311357C1A50054D85C /* dollars-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dollars-icon.png"; path = "images/dollars-icon.png"; sourceTree = "<group>"; };
@@ -345,6 +352,7 @@
 				82C105D013574EDD00302082 /* libz.1.2.3.dylib in Frameworks */,
 				A8FD286F1367674C0099E7FC /* libsqlite3.0.dylib in Frameworks */,
 				828A79BD13E0A1550082D968 /* MessageUI.framework in Frameworks */,
+				A86C8FE213E6F51E001529AE /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +444,7 @@
 				82C105CF13574EDD00302082 /* libz.1.2.3.dylib */,
 				A8FD286E1367674C0099E7FC /* libsqlite3.0.dylib */,
 				828A79BC13E0A1550082D968 /* MessageUI.framework */,
+				A86C8FE113E6F51E001529AE /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -486,6 +495,8 @@
 				A87EE7961362248E000A91B6 /* BaseViewController.m */,
 				A81EE05613E2F9E30073368E /* BaseUserListViewController.h */,
 				A81EE05713E2F9E30073368E /* BaseUserListViewController.m */,
+				A86C8FCC13E6F4F3001529AE /* PullRefreshTableViewController.h */,
+				A86C8FCD13E6F4F3001529AE /* PullRefreshTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -583,6 +594,7 @@
 		A87743BA1356669500DD721B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				A86C8FCA13E6F4C9001529AE /* arrow.png */,
 				4D539B311381DEA700307811 /* login-with-facebook.jpg */,
 				A8FD262E13671BD40099E7FC /* banner.png */,
 				4D73A27E1363984300688230 /* default-user.png */,
@@ -848,6 +860,7 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Finster" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -932,6 +945,7 @@
 				828A7AF113E0BEB40082D968 /* FollowingView.xib in Resources */,
 				828A7AF413E0BF020082D968 /* FollowersView.xib in Resources */,
 				A81EE05413E2F8840073368E /* FindFriendsOnAppView.xib in Resources */,
+				A86C8FCB13E6F4C9001529AE /* arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1004,6 +1018,7 @@
 				82E7411913E1E487002B88EB /* UserViewController.m in Sources */,
 				A81EE05213E2F85D0073368E /* FindFriendsOnAppViewController.m in Sources */,
 				A81EE05813E2F9E30073368E /* BaseUserListViewController.m in Sources */,
+				A86C8FCE13E6F4F3001529AE /* PullRefreshTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
