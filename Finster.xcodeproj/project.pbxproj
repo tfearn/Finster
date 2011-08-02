@@ -1038,7 +1038,7 @@
 				INFOPLIST_FILE = "Finster-Info.plist";
 				PRODUCT_NAME = Finster;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "530CC6D1-23E3-4B2D-82DD-67150E449507";
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -1053,7 +1053,7 @@
 				INFOPLIST_FILE = "Finster-Info.plist";
 				PRODUCT_NAME = Finster;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "530CC6D1-23E3-4B2D-82DD-67150E449507";
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
