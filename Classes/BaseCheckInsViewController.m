@@ -57,11 +57,16 @@
 }
 
 - (void)refresh {
+	// This is called when the user pulls down the table to refresh.  Reset the startRow to zero in this case
+	startRow = 0;
+	
 	[self getData];
 }
 
 - (void)getData {
-	_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[self getRequestUrl]]];
+	NSString *url = [NSString stringWithFormat:@"%@&start=%d&limit=%d", [self getRequestUrl], startRow, kMaxRowsForGetCheckIns];
+	
+	_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
 	[self.request setDelegate:self];
 	[self.request startAsynchronous];
 }
@@ -91,8 +96,10 @@
 		return;
 	}
 	
-	[_checkIns release];
-	self.checkIns = [[NSMutableArray alloc] init];
+	if(startRow == 0) {
+		[_checkIns release];
+		self.checkIns = [[NSMutableArray alloc] init];
+	}
 	
 	// Get the checkInList which is another dictionary
 	NSArray *checkInList = [dict objectForKey:@"checkInList"];
@@ -152,6 +159,9 @@
 	
 	// Release the request
 	self.request = nil;
+	
+	// Increment the startRow for the next call
+	startRow += kMaxRowsForGetCheckIns;
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request {
@@ -271,5 +281,25 @@
 	[self.navigationController pushViewController:controller animated:YES];
 	[controller release];
 }
+
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate Methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)aScrollView {
+	
+    CGPoint offset = aScrollView.contentOffset;
+    CGRect bounds = aScrollView.bounds;
+    CGSize size = aScrollView.contentSize;
+    UIEdgeInsets inset = aScrollView.contentInset;
+    float y = offset.y + bounds.size.height - inset.bottom;
+    float height = size.height;
+	
+    float reloadDistance = 10;
+    if(y > height + reloadDistance) {
+        NSLog(@"load more rows");
+    }
+}
+
 
 @end

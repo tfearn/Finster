@@ -31,8 +31,10 @@
 #define kUrlLogin					@"http://173.203.238.148/cgi-bin/login.cgi"			// No longer used
 #define kUrlLoginUsingFacebook		@"http://209.114.35.245/loginUsingFacebook?facebookuserid=%@&accesstoken=%@"
 #define kUrlTickerLookup			@"http://d.yimg.com/autoc.finance.yahoo.com/autoc?query=%@&callback=YAHOO.Finance.SymbolSuggest.ssCallback"
-#define kUrlGetWall					@"http://209.114.35.245/getcheckins?feed=you,friends&start=0&limit=20"
-#define kUrlGetActivity				@"http://209.114.35.245/getcheckins?feed=network&start=0&limit=20"
+#define kUrlGetWall					@"http://209.114.35.245/getcheckins?feed=you,friends"
+#define kUrlGetActivity				@"http://209.114.35.245/getcheckins?feed=network"
+#define kUrlGetCheckInsByTicker		@"http://209.114.35.245/getcheckins?feed=network&ticker=%@"
+#define kUrlGetCheckInsByUser		@"http://209.114.35.245/getcheckins?feed=user&userid=%@"
 #define kUrlPostCheckIn				@"http://209.114.35.245/checkin?type=%d&symbol=%@&symbolName=%@&symbolType=%@&exchange=%@"
 #define kUrlGetUser					@"http://209.114.35.245/getuser"
 #define kUrlFollowUser				@"http://209.114.35.245/followuser?userid=%@"
@@ -40,8 +42,9 @@
 #define kUrlIsFollowingUser			@"http://209.114.35.245/isfollowinguser?userid=%@"
 #define kUrlGetUserFollowing		@"http://209.114.35.245/getuserfollowing"
 #define kUrlGetUserFollowers		@"http://209.114.35.245/getuserfollowers"
-#define kUrlGetCheckInsByTicker		@"http://209.114.35.245/getcheckins?feed=network&start=0&limit=20&ticker=%@"
-#define kUrlGetCheckInsByUser		@"http://209.114.35.245/getcheckins?feed=user&userid=%@&start=0&limit=20"
+
+// Maximum rows retrieved for all getcheckins REST calls
+#define kMaxRowsForGetCheckIns		20
 
 // Notifications
 #define kNotificationCheckInComplete	@"NotificationCheckInComplete"

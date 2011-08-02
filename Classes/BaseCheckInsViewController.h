@@ -19,11 +19,13 @@
 #import "CheckInDetailsViewController.h"
 #import "PullRefreshTableViewController.h"
 
-@interface BaseCheckInsViewController : PullRefreshTableViewController <ASIHTTPRequestDelegate, ImageManagerDelegate, UITableViewDataSource, UITableViewDelegate> {
+@interface BaseCheckInsViewController : PullRefreshTableViewController <ASIHTTPRequestDelegate, ImageManagerDelegate, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate> {
 	ASIHTTPRequest *_request;
 	SBJSON *_jsonParser;
 	NSMutableArray *_checkIns;
 	ImageManager *_imageManager;
+	
+	int startRow;
 }
 @property (nonatomic, retain) ASIHTTPRequest *request;
 @property (nonatomic, retain) SBJSON *jsonParser;
