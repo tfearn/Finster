@@ -8,40 +8,24 @@
 
 #import "TrendingViewController.h"
 
+@interface TrendingViewController (Private)
+- (void)getData;
+@end
+
 
 @implementation TrendingViewController
+@synthesize tableView = _tableView;
+@synthesize request = _request;
+@synthesize trends = _trends;
 
-// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-/*
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization.
-    }
-    return self;
-}
-*/
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
-
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	self.tableView.rowHeight = 50.0;
+	
+	[self getData];
 }
-*/
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
@@ -56,10 +40,124 @@
     // e.g. self.myOutlet = nil;
 }
 
-
 - (void)dealloc {
+	[_tableView release];
+	[_trends release];
     [super dealloc];
 }
 
+- (void)getData {
+	_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:kUrlGetTrending]];
+	[self.request setDelegate:self];
+	[self.request startAsynchronous];
+}
+
+
+#pragma mark -
+#pragma mark RequestDelegate Methods
+
+- (void)requestFinished:(ASIHTTPRequest *)request {
+	NSString *response = [request responseString];
+	
+	SBJSON *jsonParser = [[[SBJSON alloc] init] autorelease];
+	
+	// Parse the data
+	NSError *error = nil;
+	NSDictionary *dict = [jsonParser objectWithString:response error:&error];
+	MyLog(@"%@", dict);
+	if(error != nil) {
+		NSLog(@"Parser Error: %@", [error description]);
+		
+		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"JSON Error" message:[error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+		[alert show];
+		return;
+	}
+	
+	[_trends release];
+	_trends = [[NSMutableArray alloc] init];
+	
+	NSArray *trendingList = [dict objectForKey:@"trendingList"];
+	for(int i=0; i<[trendingList count]; i++) {
+		NSDictionary *trendParentDict = [trendingList objectAtIndex:i];
+		NSDictionary *trendDict = [trendParentDict objectForKey:@"trend"];
+		
+		Trend *trend = [[Trend alloc] init];
+		trend.checkins = [[trendDict objectForKey:@"checkins"] longValue];
+		trend.positive = [[trendDict objectForKey:@"positive"] longValue];
+		trend.negative = [[trendDict objectForKey:@"negative"] longValue];
+
+		NSDictionary *tickerDict = [trendDict objectForKey:@"ticker"];
+		trend.ticker = [[Ticker alloc] init];
+		trend.ticker.symbol = [tickerDict objectForKey:@"symbol"];
+		trend.ticker.symbolName = [tickerDict objectForKey:@"symbolName"];
+		trend.ticker.type = [tickerDict objectForKey:@"type"];
+		trend.ticker.exchange = [tickerDict objectForKey:@"exchange"];
+		
+		[self.trends addObject:trend];
+		[trend release];
+	}
+	
+	// Reload the table
+	[self.tableView reloadData];
+}
+
+- (void)requestFailed:(ASIHTTPRequest *)request {
+	[self dismissWaitView];
+	
+	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:[request.error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+	[alert show];
+}
+
+
+#pragma mark -
+#pragma mark UITableViewDataSource Methods
+
+- (NSInteger)numberOfSectionsInTableView: (UITableView *)tableView {
+	return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	return [self.trends count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	static NSString *CustomCellIdentifier = @"TrendingViewCellIdentifier ";
+	
+	TrendingViewCell *cell = (TrendingViewCell *)[tableView dequeueReusableCellWithIdentifier: CustomCellIdentifier];
+	if (cell == nil)  {
+		NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TrendingViewCell" owner:self options:nil];
+		for (id oneObject in nib)
+			if ([oneObject isKindOfClass:[TrendingViewCell class]])
+				cell = (TrendingViewCell *)oneObject;
+	}
+	int row = [indexPath row];
+	
+	Trend *trend = [self.trends objectAtIndex:row];
+	
+	cell.symbol.text = trend.ticker.symbol;
+	cell.symbolName.text = trend.ticker.symbolName;
+	cell.checkins.text = [NSString stringWithFormat:@"%d", trend.checkins];
+	
+	
+	//cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"default-user" ofType:@"png"]];
+    
+    return cell;
+}
+
+
+#pragma mark -
+#pragma mark UITableViewDelegate Methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+/*
+	int row = [indexPath row];
+	
+	User *user = [self.users objectAtIndex:row];
+	UserViewController *controller = [[UserViewController alloc] init];
+	controller.user = user;
+	[self.navigationController pushViewController:controller animated:YES];
+	[controller release];
+ */
+}
 
 @end

@@ -31,6 +31,9 @@
 		828A7AAC13E0BBB00082D968 /* FollowersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 828A7AAB13E0BBB00082D968 /* FollowersViewController.m */; };
 		828A7AF113E0BEB40082D968 /* FollowingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 828A7AF013E0BEB40082D968 /* FollowingView.xib */; };
 		828A7AF413E0BF020082D968 /* FollowersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 828A7AF313E0BF020082D968 /* FollowersView.xib */; };
+		82A4C26513E9EF96005AA353 /* Trend.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A4C26413E9EF96005AA353 /* Trend.m */; };
+		82A4C29813E9F7E6005AA353 /* TrendingViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82A4C29713E9F7E6005AA353 /* TrendingViewCell.xib */; };
+		82A4C29F13E9F81C005AA353 /* TrendingViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A4C29E13E9F81C005AA353 /* TrendingViewCell.m */; };
 		82C10431135737F000302082 /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C10430135737F000302082 /* Globals.m */; };
 		82C1048E135741E500302082 /* Ticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C1048D135741E500302082 /* Ticker.m */; };
 		82C1058813574E6C00302082 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C1058713574E6C00302082 /* CFNetwork.framework */; };
@@ -175,6 +178,11 @@
 		828A7AAB13E0BBB00082D968 /* FollowersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowersViewController.m; sourceTree = "<group>"; };
 		828A7AF013E0BEB40082D968 /* FollowingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowingView.xib; sourceTree = "<group>"; };
 		828A7AF313E0BF020082D968 /* FollowersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowersView.xib; sourceTree = "<group>"; };
+		82A4C26313E9EF96005AA353 /* Trend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trend.h; sourceTree = "<group>"; };
+		82A4C26413E9EF96005AA353 /* Trend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trend.m; sourceTree = "<group>"; };
+		82A4C29713E9F7E6005AA353 /* TrendingViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendingViewCell.xib; sourceTree = "<group>"; };
+		82A4C29D13E9F81C005AA353 /* TrendingViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrendingViewCell.h; sourceTree = "<group>"; };
+		82A4C29E13E9F81C005AA353 /* TrendingViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrendingViewCell.m; sourceTree = "<group>"; };
 		82C1042F135737F000302082 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		82C10430135737F000302082 /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
 		82C1048C135741E500302082 /* Ticker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ticker.h; sourceTree = "<group>"; };
@@ -424,6 +432,7 @@
 				A89528CB13D315F000A54A38 /* CheckInsByTickerView.xib */,
 				A877C6E713DDCFB900ABACE6 /* CheckInsByUserView.xib */,
 				A877C75613DDF4EE00ABACE6 /* TrendingView.xib */,
+				82A4C29713E9F7E6005AA353 /* TrendingViewCell.xib */,
 				A877C7B113DE064E00ABACE6 /* ProfileViewController.xib */,
 				828A7AF013E0BEB40082D968 /* FollowingView.xib */,
 				828A7AF313E0BF020082D968 /* FollowersView.xib */,
@@ -531,6 +540,8 @@
 				8240E40C137C38210042CA9B /* Image.m */,
 				A89528DC13D31C1900A54A38 /* CheckInResult.h */,
 				A89528DD13D31C1900A54A38 /* CheckInResult.m */,
+				82A4C26313E9EF96005AA353 /* Trend.h */,
+				82A4C26413E9EF96005AA353 /* Trend.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -629,6 +640,8 @@
 			children = (
 				A877C75113DDE38200ABACE6 /* TrendingViewController.h */,
 				A877C75213DDE38200ABACE6 /* TrendingViewController.m */,
+				82A4C29D13E9F81C005AA353 /* TrendingViewCell.h */,
+				82A4C29E13E9F81C005AA353 /* TrendingViewCell.m */,
 			);
 			name = Trending;
 			sourceTree = "<group>";
@@ -946,6 +959,7 @@
 				828A7AF413E0BF020082D968 /* FollowersView.xib in Resources */,
 				A81EE05413E2F8840073368E /* FindFriendsOnAppView.xib in Resources */,
 				A86C8FCB13E6F4C9001529AE /* arrow.png in Resources */,
+				82A4C29813E9F7E6005AA353 /* TrendingViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1019,6 +1033,8 @@
 				A81EE05213E2F85D0073368E /* FindFriendsOnAppViewController.m in Sources */,
 				A81EE05813E2F9E30073368E /* BaseUserListViewController.m in Sources */,
 				A86C8FCE13E6F4F3001529AE /* PullRefreshTableViewController.m in Sources */,
+				82A4C26513E9EF96005AA353 /* Trend.m in Sources */,
+				82A4C29F13E9F81C005AA353 /* TrendingViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

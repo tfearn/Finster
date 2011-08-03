@@ -282,7 +282,7 @@
 	[controller release];
 }
 
-
+/*
 #pragma mark -
 #pragma mark UIScrollViewDelegate Methods
 
@@ -297,9 +297,10 @@
 	
     float reloadDistance = 10;
     if(y > height + reloadDistance) {
-        NSLog(@"load more rows");
+		// TODO: Load more rows
     }
 }
+*/
 
 
 @end

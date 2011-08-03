@@ -42,9 +42,10 @@
 #define kUrlIsFollowingUser			@"http://209.114.35.245/isfollowinguser?userid=%@"
 #define kUrlGetUserFollowing		@"http://209.114.35.245/getuserfollowing"
 #define kUrlGetUserFollowers		@"http://209.114.35.245/getuserfollowers"
+#define kUrlGetTrending				@"http://209.114.35.245/gettrending?start=0&limit=20"
 
 // Maximum rows retrieved for all getcheckins REST calls
-#define kMaxRowsForGetCheckIns		20
+#define kMaxRowsForGetCheckIns		50
 
 // Notifications
 #define kNotificationCheckInComplete	@"NotificationCheckInComplete"
