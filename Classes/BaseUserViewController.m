@@ -124,6 +124,7 @@
 	self.user.following = [[dict objectForKey:@"following"] intValue];
 	self.user.checkins = [[dict objectForKey:@"checkins"] intValue];
 	self.user.badges = [[dict objectForKey:@"badges"] intValue];
+	self.user.points = [[dict objectForKey:@"points"] intValue];
 	
 	// Set the username label
 	self.username.text = self.user.userName;
@@ -229,6 +230,7 @@
 	}
 	else if(row == 2 && self.user.following > 0) {
 		FollowingViewController *controller = [[FollowingViewController alloc] init];
+		controller.user = self.user;
 		[self.navigationController pushViewController:controller animated:YES];
 		[controller release];	
 	}

@@ -28,6 +28,9 @@
 	// Initialize the JSON parser
 	self.jsonParser = [[SBJSON alloc] init];
 	
+	// Default Facebook share on
+	facebookOn = YES;
+	
 	// Add a notification observer for check-in complete
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(viewFilterChanged) name:kNotificationCheckInComplete object:nil];
 }

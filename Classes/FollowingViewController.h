@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseUserListViewController.h"
+#import "User.h"
 
 @interface FollowingViewController : BaseUserListViewController {
-
+	User *_user;
 }
+@property (nonatomic, retain) User *user;
 
 @end
