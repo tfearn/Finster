@@ -83,6 +83,7 @@
 	[self dismissWaitView];
 	
 	NSString *response = [request responseString];
+	MyLog(@"%@", response);
 	
 	// Parse the data
 	NSError *error = nil;

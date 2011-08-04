@@ -85,6 +85,8 @@
 
 - (void)request:(FBRequest *)request didLoad:(id)result {
 	NSDictionary *dict = result;
+	MyLog(@"%@", dict);
+	MyLog(@"%@", self.facebook.accessToken);
 	
 	// Get the Facebook user ID
 	NSString *facebookUserID = [dict objectForKey:@"id"];
