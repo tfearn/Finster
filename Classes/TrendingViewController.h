@@ -12,6 +12,7 @@
 #import "PullRefreshTableViewController.h"
 #import "Trend.h"
 #import "TrendingViewCell.h"
+#import "CheckInsByTickerViewController.h"
 
 @interface TrendingViewController : PullRefreshTableViewController <ASIHTTPRequestDelegate> {
 	ASIHTTPRequest *_request;

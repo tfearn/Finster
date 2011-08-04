@@ -31,7 +31,7 @@
 		
         _messageLabel = [[UILabel alloc] init];
 		_messageLabel.textAlignment = UITextAlignmentCenter;
-		_messageLabel.text = @"Please wait...";
+		_messageLabel.text = @"";
 		_messageLabel.opaque = NO;
 		_messageLabel.backgroundColor = [UIColor clearColor];
 		_messageLabel.textColor = [UIColor whiteColor];

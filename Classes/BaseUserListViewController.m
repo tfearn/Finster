@@ -52,6 +52,8 @@
 	_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
 	[self.request setDelegate:self];
 	[self.request startAsynchronous];
+	
+	[self showSpinnerView];
 }
 
 - (NSString *)getReturnedDataJSONRoot {
@@ -64,6 +66,8 @@
 #pragma mark RequestDelegate Methods
 
 - (void)requestFinished:(ASIHTTPRequest *)request {
+	[self dismissSpinnerView];
+	
 	NSString *response = [request responseString];
 	
 	SBJSON *jsonParser = [[[SBJSON alloc] init] autorelease];
@@ -110,7 +114,7 @@
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request {
-	[self dismissWaitView];
+	[self dismissSpinnerView];
 	
 	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:[request.error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
 	[alert show];

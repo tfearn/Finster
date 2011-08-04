@@ -152,7 +152,7 @@
 	NSError *error = [request error];
 	
 	// TO DO: Just log the error for now
-	NSLog(@"%@", [error description]);
+	MyLog(@"%@", [error description]);
 }
 
 #pragma mark -

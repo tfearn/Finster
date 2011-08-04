@@ -91,7 +91,9 @@
 	[request setDelegate:self];
 	[request setDidFinishSelector:@selector(getUserRequestComplete:)];
 	[request setDidFailSelector:@selector(getUserRequestFailure:)];
-	[self.queue addOperation:request];	
+	[self.queue addOperation:request];
+	
+	[self showSpinnerView];
 }
 
 
@@ -99,6 +101,8 @@
 #pragma mark RequestDelegate Methods
 
 - (void)getUserRequestComplete:(ASIHTTPRequest *)request {
+	[self dismissSpinnerView];
+	
 	NSString *response = [request responseString];
 	
 	SBJSON *jsonParser = [[[SBJSON alloc] init] autorelease];
@@ -133,6 +137,7 @@
 }
 
 - (void)getUserRequestFailure:(ASIHTTPRequest *)request {
+	[self dismissSpinnerView];
 	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:[request.error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
 	[alert show];
 }

@@ -41,6 +41,19 @@
 	}
 }
 
+- (void)showSpinnerView {
+    _spinnerView = [[SpinnerView alloc] init];
+    [self.view addSubview: _spinnerView];
+}
+
+- (void)dismissSpinnerView {
+	if (_spinnerView) {
+		[_spinnerView removeFromSuperview];
+		[_spinnerView release];
+		_spinnerView = nil;
+	}
+}
+
 - (void)dealloc {
     [super dealloc];
 }

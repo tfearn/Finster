@@ -61,7 +61,6 @@
 
 - (void)requestFinished:(ASIHTTPRequest *)request {
     [self performSelector:@selector(stopLoading) withObject:nil afterDelay:2.0];
-	[self dismissWaitView];
 	
 	NSString *response = [request responseString];
 	
@@ -106,7 +105,6 @@
 
 - (void)requestFailed:(ASIHTTPRequest *)request {
     [self performSelector:@selector(stopLoading) withObject:nil afterDelay:2.0];
-	[self dismissWaitView];
 	
 	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:[request.error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
 	[alert show];
@@ -155,15 +153,13 @@
 #pragma mark UITableViewDelegate Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-/*
 	int row = [indexPath row];
-	
-	User *user = [self.users objectAtIndex:row];
-	UserViewController *controller = [[UserViewController alloc] init];
-	controller.user = user;
+	Trend *trend = [self.trends objectAtIndex:row];
+
+	CheckInsByTickerViewController *controller = [[CheckInsByTickerViewController alloc] init];
+	[controller setSymbol:trend.ticker.symbol];
 	[self.navigationController pushViewController:controller animated:YES];
 	[controller release];
- */
 }
 
 @end

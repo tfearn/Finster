@@ -24,6 +24,7 @@
 		8240E40D137C38210042CA9B /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 8240E40C137C38210042CA9B /* Image.m */; };
 		8240E4BB137C73060042CA9B /* CheckInDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8240E4BA137C73060042CA9B /* CheckInDetailsViewController.m */; };
 		8240E4BD137C731D0042CA9B /* CheckInDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8240E4BC137C731D0042CA9B /* CheckInDetailsView.xib */; };
+		8266AB1813EB32D5007C3B3B /* SpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8266AB1713EB32D5007C3B3B /* SpinnerView.m */; };
 		82765E0F138456A400C3FBC5 /* UserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82765E0E138456A400C3FBC5 /* UserView.xib */; };
 		828A798A13E09DA40082D968 /* tabbar-piggy-bank.png in Resources */ = {isa = PBXBuildFile; fileRef = 828A798913E09DA40082D968 /* tabbar-piggy-bank.png */; };
 		828A79BD13E0A1550082D968 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 828A79BC13E0A1550082D968 /* MessageUI.framework */; };
@@ -171,6 +172,8 @@
 		8240E4B9137C73060042CA9B /* CheckInDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInDetailsViewController.h; sourceTree = "<group>"; };
 		8240E4BA137C73060042CA9B /* CheckInDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInDetailsViewController.m; sourceTree = "<group>"; };
 		8240E4BC137C731D0042CA9B /* CheckInDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInDetailsView.xib; sourceTree = "<group>"; };
+		8266AB1613EB32D5007C3B3B /* SpinnerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinnerView.h; sourceTree = "<group>"; };
+		8266AB1713EB32D5007C3B3B /* SpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpinnerView.m; sourceTree = "<group>"; };
 		82765E0E138456A400C3FBC5 /* UserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserView.xib; sourceTree = "<group>"; };
 		828A798913E09DA40082D968 /* tabbar-piggy-bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar-piggy-bank.png"; path = "images/tabbar-piggy-bank.png"; sourceTree = "<group>"; };
 		828A79BC13E0A1550082D968 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -519,6 +522,8 @@
 			children = (
 				A87EE79213622479000A91B6 /* WaitView.h */,
 				A87EE79313622479000A91B6 /* WaitView.m */,
+				8266AB1613EB32D5007C3B3B /* SpinnerView.h */,
+				8266AB1713EB32D5007C3B3B /* SpinnerView.m */,
 				8240E408137C36D40042CA9B /* ImageManager.h */,
 				8240E409137C36D40042CA9B /* ImageManager.m */,
 				A8F9892E137D7901005A82FA /* TimePassedFormatter.h */,
@@ -1043,6 +1048,7 @@
 				A86C8FCE13E6F4F3001529AE /* PullRefreshTableViewController.m in Sources */,
 				82A4C26513E9EF96005AA353 /* Trend.m in Sources */,
 				82A4C29F13E9F81C005AA353 /* TrendingViewCell.m in Sources */,
+				8266AB1813EB32D5007C3B3B /* SpinnerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
