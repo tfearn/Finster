@@ -16,7 +16,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	NSString *title = [NSString stringWithFormat:@"CheckIns for %@", self.user.userName];
+	NSString *title = [NSString stringWithFormat:@"Check-Ins for %@", self.user.userName];
 	
 	[self.navigationItem setTitle:title];
 }

@@ -98,7 +98,9 @@
 
 	// Do the check in request
 	//
-	NSString *urlString = [NSString stringWithFormat:kUrlPostCheckIn, self.checkInType, self.ticker.symbol, self.ticker.symbolName, self.ticker.typeName, self.ticker.exchangeName];
+	NSString *urlString = [NSString stringWithFormat:kUrlPostCheckIn, self.checkInType, self.ticker.symbol, self.ticker.symbolName, self.ticker.typeName];
+	if(self.ticker.exchangeName != nil)
+		urlString = [urlString stringByAppendingFormat:@"&exchange=%@", self.ticker.exchangeName];
 	if([[self.textView text] length]) {
 		if([[self.textView text] isEqualToString:kTextViewDefaultMessage] == NO)
 			urlString = [urlString stringByAppendingFormat:@"&comment=%@", [self.textView text]];

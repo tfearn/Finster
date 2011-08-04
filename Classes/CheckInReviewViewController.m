@@ -60,7 +60,7 @@
     // Configure the cell...
 	int row = [indexPath row];
 	if(row == 0) {
-		cell.textLabel.text = @"Recent Check Ins";
+		cell.textLabel.text = @"Recent check-ins";
 		cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-clock" ofType:@"png"]];
 	}
 	// TODO - add these features later

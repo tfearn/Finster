@@ -236,6 +236,7 @@
 	}
 	else if(row == 3 && self.user.followers > 0) {
 		FollowersViewController *controller = [[FollowersViewController alloc] init];
+		controller.user = self.user;
 		[self.navigationController pushViewController:controller animated:YES];
 		[controller release];	
 	}

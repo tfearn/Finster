@@ -578,6 +578,10 @@
 				82E7411813E1E487002B88EB /* UserViewController.m */,
 				A8B12EC413E0EF0100A54B74 /* BaseUserViewController.h */,
 				A8B12EC513E0EF0100A54B74 /* BaseUserViewController.m */,
+				828A7A9E13E0BA450082D968 /* FollowingViewController.h */,
+				828A7A9F13E0BA450082D968 /* FollowingViewController.m */,
+				828A7AAA13E0BBB00082D968 /* FollowersViewController.h */,
+				828A7AAB13E0BBB00082D968 /* FollowersViewController.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -657,10 +661,6 @@
 			children = (
 				A877C7B413DE066700ABACE6 /* ProfileViewController.h */,
 				A877C7B513DE066700ABACE6 /* ProfileViewController.m */,
-				828A7A9E13E0BA450082D968 /* FollowingViewController.h */,
-				828A7A9F13E0BA450082D968 /* FollowingViewController.m */,
-				828A7AAA13E0BBB00082D968 /* FollowersViewController.h */,
-				828A7AAB13E0BBB00082D968 /* FollowersViewController.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";

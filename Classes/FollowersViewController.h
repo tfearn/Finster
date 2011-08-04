@@ -10,7 +10,8 @@
 #import "BaseUserListViewController.h"
 
 @interface FollowersViewController : BaseUserListViewController {
-
+	User *_user;
 }
+@property (nonatomic, retain) User *user;
 
 @end

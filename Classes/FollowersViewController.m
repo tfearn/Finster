@@ -10,6 +10,7 @@
 
 
 @implementation FollowersViewController
+@synthesize user = _user;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -17,7 +18,11 @@
 	
 	self.navigationItem.title = @"Followers";
 	
-	[self getUrl:kUrlGetUserFollowers];
+	NSString *url = kUrlGetUserFollowers;
+	if(self.user != nil && self.user.userID != nil)
+		url = [url stringByAppendingFormat:@"?user=%@", self.user.userID];
+	
+	[self getUrl:url];
 }
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
@@ -33,6 +38,7 @@
 }
 
 - (void)dealloc {
+	[_user release];
     [super dealloc];
 }
 
