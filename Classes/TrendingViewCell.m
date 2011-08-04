@@ -13,6 +13,7 @@
 @synthesize symbol = _symbol;
 @synthesize symbolName = _symbolName;
 @synthesize checkins = _checkins;
+@synthesize arrowImageView = _arrowImageView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     
@@ -36,6 +37,7 @@
 	[_symbol release];
 	[_symbolName release];
 	[_checkins release];
+	[_arrowImageView release];
     [super dealloc];
 }
 

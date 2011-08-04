@@ -13,9 +13,11 @@
 	IBOutlet UILabel *_symbol;
 	IBOutlet UILabel *_symbolName;
 	IBOutlet UILabel *_checkins;
+	IBOutlet UIImageView *_arrowImageView;
 }
 @property (nonatomic, retain) UILabel *symbol;
 @property (nonatomic, retain) UILabel *symbolName;
 @property (nonatomic, retain) UILabel *checkins;
+@property (nonatomic, retain) UIImageView *arrowImageView;
 
 @end

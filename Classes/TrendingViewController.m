@@ -14,7 +14,6 @@
 
 
 @implementation TrendingViewController
-@synthesize tableView = _tableView;
 @synthesize request = _request;
 @synthesize trends = _trends;
 
@@ -41,9 +40,13 @@
 }
 
 - (void)dealloc {
-	[_tableView release];
 	[_trends release];
     [super dealloc];
+}
+
+// This is called when the user pulls down the table to refresh.
+- (void)refresh {
+	[self getData];
 }
 
 - (void)getData {
@@ -57,6 +60,9 @@
 #pragma mark RequestDelegate Methods
 
 - (void)requestFinished:(ASIHTTPRequest *)request {
+    [self performSelector:@selector(stopLoading) withObject:nil afterDelay:2.0];
+	[self dismissWaitView];
+	
 	NSString *response = [request responseString];
 	
 	SBJSON *jsonParser = [[[SBJSON alloc] init] autorelease];
@@ -102,6 +108,7 @@
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request {
+    [self performSelector:@selector(stopLoading) withObject:nil afterDelay:2.0];
 	[self dismissWaitView];
 	
 	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:[request.error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
@@ -138,8 +145,10 @@
 	cell.symbolName.text = trend.ticker.symbolName;
 	cell.checkins.text = [NSString stringWithFormat:@"%d", trend.checkins];
 	
-	
-	//cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"default-user" ofType:@"png"]];
+	if(trend.positive >= trend.negative)
+		cell.arrowImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"up-arrow" ofType:@"png"]];
+	else
+		cell.arrowImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"down-arrow" ofType:@"png"]];
     
     return cell;
 }

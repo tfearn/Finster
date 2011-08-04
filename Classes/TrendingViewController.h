@@ -9,16 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "ASIHTTPRequest.h"
 #import "SBJSON.h"
-#import "BaseViewController.h"
+#import "PullRefreshTableViewController.h"
 #import "Trend.h"
 #import "TrendingViewCell.h"
 
-@interface TrendingViewController : BaseViewController <ASIHTTPRequestDelegate> {
-	IBOutlet UITableView *_tableView;
+@interface TrendingViewController : PullRefreshTableViewController <ASIHTTPRequestDelegate> {
 	ASIHTTPRequest *_request;
 	NSMutableArray *_trends;
 }
-@property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, retain) ASIHTTPRequest *request;
 @property (nonatomic, retain) NSMutableArray *trends;
 
