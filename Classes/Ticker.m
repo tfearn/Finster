@@ -17,6 +17,12 @@
 @synthesize exchange = _exchange;
 @synthesize exchangeName = _exchangeName;
 
+- (void)assignValuesFromDictionary:(NSDictionary *)dict {
+	self.symbol = [dict objectForKey:@"symbol"];
+	self.symbolName = [dict objectForKey:@"symbolName"];
+	self.exchangeName = [dict objectForKey:@"exchange"];
+	self.typeName = [dict objectForKey:@"type"];
+}
 
 - (void)dealloc {
 	[_symbol release];

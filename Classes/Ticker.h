@@ -24,4 +24,6 @@
 @property (nonatomic, retain) NSString *exchange;
 @property (nonatomic, retain) NSString *exchangeName;
 
+- (void)assignValuesFromDictionary:(NSDictionary *)dict;
+
 @end

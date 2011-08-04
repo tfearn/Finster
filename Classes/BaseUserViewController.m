@@ -116,15 +116,7 @@
 	
 	[_user release];
 	_user = [[User alloc] init];
-	self.user.userID = [[dict objectForKey:@"id"] stringValue];
-	self.user.groupType = [dict objectForKey:@"group"];
-	self.user.userName = [dict objectForKey:@"name"];
-	self.user.imageUrl = [dict objectForKey:@"image"];
-	self.user.followers = [[dict objectForKey:@"followers"] intValue];
-	self.user.following = [[dict objectForKey:@"following"] intValue];
-	self.user.checkins = [[dict objectForKey:@"checkins"] intValue];
-	self.user.badges = [[dict objectForKey:@"badges"] intValue];
-	self.user.points = [[dict objectForKey:@"points"] intValue];
+	[self.user assignValuesFromDictionary:dict];
 	
 	// Set the username label
 	self.username.text = self.user.userName;

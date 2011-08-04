@@ -32,4 +32,6 @@
 @property int badges;
 @property int points;
 
+- (void)assignValuesFromDictionary:(NSDictionary *)dict;
+
 @end

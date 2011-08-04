@@ -94,10 +94,7 @@
 
 		NSDictionary *tickerDict = [trendDict objectForKey:@"ticker"];
 		trend.ticker = [[Ticker alloc] init];
-		trend.ticker.symbol = [tickerDict objectForKey:@"symbol"];
-		trend.ticker.symbolName = [tickerDict objectForKey:@"symbolName"];
-		trend.ticker.type = [tickerDict objectForKey:@"type"];
-		trend.ticker.exchange = [tickerDict objectForKey:@"exchange"];
+		[trend.ticker assignValuesFromDictionary:tickerDict];
 		
 		[self.trends addObject:trend];
 		[trend release];

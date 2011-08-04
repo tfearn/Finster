@@ -21,6 +21,18 @@
 @synthesize badges = _badges;
 @synthesize points = _points;
 
+- (void)assignValuesFromDictionary:(NSDictionary *)dict {
+	self.userID = [[dict objectForKey:@"id"] stringValue];
+	self.groupType = [dict objectForKey:@"group"];
+	self.userName = [dict objectForKey:@"name"];
+	self.imageUrl = [dict objectForKey:@"image"];
+	self.followers = [[dict objectForKey:@"followers"] intValue];
+	self.following = [[dict objectForKey:@"following"] intValue];
+	self.checkins = [[dict objectForKey:@"checkins"] intValue];
+	self.badges = [[dict objectForKey:@"badges"] intValue];
+	self.points = [[dict objectForKey:@"points"] intValue];
+}
+
 - (void)dealloc {
 	[_userID release];
 	[_groupType release];

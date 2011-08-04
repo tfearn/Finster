@@ -10,7 +10,8 @@
 #import "BaseUserListViewController.h"
 
 @interface FindFriendsOnAppViewController : BaseUserListViewController {
-	
+	IBOutlet UISearchBar *_searchBar;
 }
+@property (nonatomic, retain) UISearchBar *searchBar;
 
 @end

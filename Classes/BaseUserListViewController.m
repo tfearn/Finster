@@ -89,14 +89,7 @@
 		NSDictionary *userDict = [userParentDict objectForKey:@"user"];
 		
 		User *user = [[User alloc] init];
-		user.userID = [[userDict objectForKey:@"id"] stringValue];
-		user.groupType = [userDict objectForKey:@"group"];
-		user.userName = [userDict objectForKey:@"name"];
-		user.imageUrl = [userDict objectForKey:@"image"];
-		user.followers = [[userDict objectForKey:@"followers"] intValue];
-		user.following = [[userDict objectForKey:@"following"] intValue];
-		user.checkins = [[userDict objectForKey:@"checkins"] intValue];
-		user.badges = [[userDict objectForKey:@"badges"] intValue];
+		[user assignValuesFromDictionary:userDict];
 		
 		[self.users addObject:user];
 		[user release];

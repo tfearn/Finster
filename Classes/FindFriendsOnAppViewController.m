@@ -10,6 +10,7 @@
 
 
 @implementation FindFriendsOnAppViewController
+@synthesize searchBar = _searchBar;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -32,11 +33,33 @@
 }
 
 - (void)dealloc {
+	[_searchBar release];
     [super dealloc];
 }
 
-- (NSString *)getReturnedDataRootKey {
-	return @"user";
+- (NSString *)getReturnedDataJSONRoot {
+	return @"searchresults";
+}
+
+#pragma mark -
+#pragma mark UISearchBarDelegate Methods
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+	NSString *search = searchBar.text;
+	
+	if([search length]) {
+		[searchBar resignFirstResponder];
+		
+		NSString *url = [NSString stringWithFormat:kUrlFindUser, search];
+		NSString* escapedUrl =[url stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+		[self getUrl:escapedUrl];
+	}
 }
 
 

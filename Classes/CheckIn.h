@@ -25,4 +25,6 @@
 @property (nonatomic, retain) Ticker *ticker;
 @property (nonatomic, retain) NSString *comment;
 
+- (void)assignValuesFromDictionary:(NSDictionary *)dict;
+
 @end

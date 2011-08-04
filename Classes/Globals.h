@@ -28,7 +28,6 @@
 #define kEmailFinsterFeedback		@"tfearn@gmail.com"
 
 // URLs
-#define kUrlLogin					@"http://173.203.238.148/cgi-bin/login.cgi"			// No longer used
 #define kUrlLoginUsingFacebook		@"http://209.114.35.245/loginUsingFacebook?facebookuserid=%@&accesstoken=%@"
 #define kUrlTickerLookup			@"http://d.yimg.com/autoc.finance.yahoo.com/autoc?query=%@&callback=YAHOO.Finance.SymbolSuggest.ssCallback"
 #define kUrlGetWall					@"http://209.114.35.245/getcheckins?feed=you,friends"
@@ -43,6 +42,7 @@
 #define kUrlGetUserFollowing		@"http://209.114.35.245/getuserfollowing"
 #define kUrlGetUserFollowers		@"http://209.114.35.245/getuserfollowers"
 #define kUrlGetTrending				@"http://209.114.35.245/gettrending?start=0&limit=20"
+#define kUrlFindUser				@"http://209.114.35.245/finduser?search=%@"
 
 // Maximum rows retrieved for all getcheckins REST calls
 #define kMaxRowsForGetCheckIns		50
