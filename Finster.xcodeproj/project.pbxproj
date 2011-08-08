@@ -107,6 +107,7 @@
 		A8CFEF6D137D978C00D14F53 /* CheckInTypeFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CFEF6C137D978C00D14F53 /* CheckInTypeFormatter.m */; };
 		A8E6E13B13679389009DE488 /* finster.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A8E6E13A13679389009DE488 /* finster.sqlite */; };
 		A8EB4AD113F066EB0046836F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A8EB4AD013F066EB0046836F /* Default.png */; };
+		A8EB4AE813F06F950046836F /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8EB4AE713F06F950046836F /* libFlurry.a */; };
 		A8ED1CDF1358A38D0003115F /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ED1CC41358A38D0003115F /* ASIAuthenticationDialog.m */; };
 		A8ED1CE01358A38D0003115F /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ED1CC71358A38D0003115F /* ASIDataCompressor.m */; };
 		A8ED1CE11358A38D0003115F /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ED1CC91358A38D0003115F /* ASIDataDecompressor.m */; };
@@ -301,6 +302,8 @@
 		A8CFEF6C137D978C00D14F53 /* CheckInTypeFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInTypeFormatter.m; sourceTree = "<group>"; };
 		A8E6E13A13679389009DE488 /* finster.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = finster.sqlite; sourceTree = "<group>"; };
 		A8EB4AD013F066EB0046836F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = images/Default.png; sourceTree = "<group>"; };
+		A8EB4AE613F06F950046836F /* FlurryAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAPI.h; sourceTree = "<group>"; };
+		A8EB4AE713F06F950046836F /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		A8ED1CC31358A38D0003115F /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		A8ED1CC41358A38D0003115F /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		A8ED1CC51358A38D0003115F /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -370,6 +373,7 @@
 				A8FD286F1367674C0099E7FC /* libsqlite3.0.dylib in Frameworks */,
 				828A79BD13E0A1550082D968 /* MessageUI.framework in Frameworks */,
 				A86C8FE213E6F51E001529AE /* QuartzCore.framework in Frameworks */,
+				A8EB4AE813F06F950046836F /* libFlurry.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,6 +564,7 @@
 		82C1064413575F4100302082 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				A8EB4AE513F06F950046836F /* FlurryLib */,
 				A886320613DA01FD00C9AEB8 /* facebook-ios-sdk */,
 				A8FD2763136766390099E7FC /* TouchSQL */,
 				A8ED1CC11358A38D0003115F /* ASIHTTPRequest */,
@@ -727,6 +732,16 @@
 				A886324913DA01FD00C9AEB8 /* SBJsonWriter.m */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		A8EB4AE513F06F950046836F /* FlurryLib */ = {
+			isa = PBXGroup;
+			children = (
+				A8EB4AE613F06F950046836F /* FlurryAPI.h */,
+				A8EB4AE713F06F950046836F /* libFlurry.a */,
+			);
+			name = FlurryLib;
+			path = "Flurry SDK/FlurryLib";
 			sourceTree = "<group>";
 		};
 		A8ED1CC11358A38D0003115F /* ASIHTTPRequest */ = {
@@ -1070,6 +1085,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Finster_Prefix.pch;
 				INFOPLIST_FILE = "Finster-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Flurry SDK/FlurryLib\"",
+				);
 				PRODUCT_NAME = Finster;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "530CC6D1-23E3-4B2D-82DD-67150E449507";
 				SDKROOT = iphoneos;
@@ -1085,6 +1104,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Finster_Prefix.pch;
 				INFOPLIST_FILE = "Finster-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Flurry SDK/FlurryLib\"",
+				);
 				PRODUCT_NAME = Finster;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "530CC6D1-23E3-4B2D-82DD-67150E449507";
 				SDKROOT = iphoneos;

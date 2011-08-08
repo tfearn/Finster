@@ -29,10 +29,14 @@
     
     // Override point for customization after application launch.
 
+	// Start Flurry
+	[FlurryAPI startSession:@"MHXFBN6F4EUFT6BSXB9Z"];
+	[FlurryAPI logAllPageViews:tabBarController];
+	
     // Add the tab bar controller's view to the window and display.
     [self.window addSubview:tabBarController.view];
     [self.window makeKeyAndVisible];
-	
+
 	// Login via Facebook
 	[self doFacebookLogin];
 	

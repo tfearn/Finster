@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FBConnect.h"
+#import "FlurryAPI.h"
 #import "Globals.h"
 #import "FacebookLoginViewController.h"
 

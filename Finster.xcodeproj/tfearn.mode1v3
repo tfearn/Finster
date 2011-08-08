@@ -265,15 +265,17 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
-								<string>82C1042C1357373700302082</string>
+								<string>82C104291357370D00302082</string>
+								<string>A8FD260B1367190E0099E7FC</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>5</integer>
-									<integer>4</integer>
+									<integer>10</integer>
+									<integer>8</integer>
+									<integer>7</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
@@ -316,7 +318,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Globals.h</string>
+								<string>FacebookLoginViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -324,11 +326,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Globals.h</string>
+										<string>FacebookLoginViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>A8EB4AE113F068560046836F</string>
+										<string>A8EB4B0313F0708E0046836F</string>
 										<key>history</key>
 										<array>
 											<string>A87744431356918400DD721B</string>
@@ -386,8 +388,6 @@
 											<string>A877C7E413DE1DD300ABACE6</string>
 											<string>A877C7E513DE1DD300ABACE6</string>
 											<string>A877C7E613DE1DD300ABACE6</string>
-											<string>A877C7E913DE1DD300ABACE6</string>
-											<string>A877C7EA13DE1DD300ABACE6</string>
 											<string>A877C7EC13DE1DD300ABACE6</string>
 											<string>A877C7ED13DE1DD300ABACE6</string>
 											<string>A877C7F413DE1DD300ABACE6</string>
@@ -406,8 +406,6 @@
 											<string>A860C09B13EA262F00E5A9E5</string>
 											<string>A860C09C13EA262F00E5A9E5</string>
 											<string>A860C09D13EA262F00E5A9E5</string>
-											<string>A8C2DDFF13EA37F500121064</string>
-											<string>A8C2DE1A13EA3E4400121064</string>
 											<string>A88766AD13EAD2720030AF5C</string>
 											<string>A8E7C2FA13EAD5550028A5E8</string>
 											<string>A8E7C34C13EAD81F0028A5E8</string>
@@ -445,7 +443,11 @@
 											<string>A8EB4ACB13F064080046836F</string>
 											<string>A8EB4ACC13F064080046836F</string>
 											<string>A8EB4ADD13F0684B0046836F</string>
-											<string>A8EB4AA413F060360046836F</string>
+											<string>A8EB4AFE13F0708E0046836F</string>
+											<string>A8EB4AFF13F0708E0046836F</string>
+											<string>A8EB4B0013F0708E0046836F</string>
+											<string>A8EB4B0113F0708E0046836F</string>
+											<string>A8EB4B0213F0708E0046836F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -643,7 +645,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>A8EB4AE213F068560046836F</string>
+		<string>A8EB4B0413F0708E0046836F</string>
 		<string>A8EB4A5713F05BE40046836F</string>
 		<string>A8EB4A4413F059F90046836F</string>
 		<string>1CD10A99069EF8BA00B06720</string>
