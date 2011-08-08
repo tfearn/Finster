@@ -40,19 +40,19 @@
 		[self doTickerRequest:lastTicker];
 	}
 	else {
-		DbSearchedTickerGet *get = [[[DbSearchedTickerGet alloc] init] autorelease];
+		DbSearchedTickerGet *get = [[DbSearchedTickerGet alloc] init];
 		NSError *error = [get doSelect];
 		if(error != nil)
 			MyLog(@"Local Database Error: %@", [error description]);
 		else {
 			// Setup the ticker array
 			[_tickers release];
-			_tickers = [[NSMutableArray alloc] init];
-			self.tickers = get.tickers;
+			_tickers = get.tickers;
 			
 			// Refresh the table
 			[self.tableView reloadData];
 		}
+		[get release];
 	}
 }
 
@@ -79,6 +79,7 @@
 
 	[_searchBar release];
 	[_tableView release];
+	[_tickers release];
 	[_queue release];
 	[_jsonParser release];
     [super dealloc];

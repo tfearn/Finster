@@ -26,7 +26,7 @@
 	[self.textView setFont:[UIFont fontWithName:@"Helvetica" size:15.0]];
 
 	// Initialize the JSON parser
-	self.jsonParser = [[SBJSON alloc] init];
+	_jsonParser = [[SBJSON alloc] init];
 	
 	// Default Facebook share on
 	facebookOn = YES;

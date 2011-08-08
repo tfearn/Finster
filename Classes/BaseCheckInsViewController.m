@@ -100,7 +100,7 @@
 	
 	if(startRow == 0) {
 		[_checkIns release];
-		self.checkIns = [[NSMutableArray alloc] init];
+		_checkIns = [[NSMutableArray alloc] init];
 	}
 	
 	// Get the checkInList which is another dictionary
@@ -116,11 +116,9 @@
 		[checkIn assignValuesFromDictionary:checkInDict];
 		
 		NSDictionary *user = [checkInDict objectForKey:@"user"];
-		checkIn.user = [[User alloc] init];
 		[checkIn.user assignValuesFromDictionary:user];
 		
 		NSDictionary *ticker = [checkInDict objectForKey:@"ticker"];
-		checkIn.ticker = [[Ticker alloc] init];
 		[checkIn.ticker assignValuesFromDictionary:ticker];
 		
 		[self.checkIns addObject:checkIn];

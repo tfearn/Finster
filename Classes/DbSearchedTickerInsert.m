@@ -14,8 +14,12 @@
 + (NSError *)doInsert:(Ticker *)ticker {
 	
 	CSqliteDatabase *dbHandle = [Globals getDatabaseHandle];
+	
+	NSString *exchangeName = @"";
+	if(ticker.exchangeName != nil)
+		exchangeName = ticker.exchangeName;
 
-	NSString *insert =  [NSString stringWithFormat:kSqlInsertSearchedTicker, ticker.symbol, ticker.symbolName, ticker.type, ticker.typeName, ticker.exchange, ticker.exchangeName];
+	NSString *insert =  [NSString stringWithFormat:kSqlInsertSearchedTicker, ticker.symbol, ticker.symbolName, ticker.type, ticker.typeName, ticker.exchange, exchangeName];
 	NSError *error = nil;
     if(! [dbHandle executeExpression:insert error:&error])
 		return error;

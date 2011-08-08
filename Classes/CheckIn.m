@@ -17,6 +17,14 @@
 @synthesize ticker = _ticker;
 @synthesize comment = _comment;
 
+- (id)init {
+    if (self = [super init]) {
+		_user = [User alloc] init;
+		_ticker = [Ticker alloc] init;
+    }
+    return self;
+}
+
 - (void)assignValuesFromDictionary:(NSDictionary *)dict {
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 	[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss Z"];
