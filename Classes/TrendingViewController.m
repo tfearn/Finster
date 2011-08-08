@@ -158,6 +158,7 @@
 
 	CheckInsByTickerViewController *controller = [[CheckInsByTickerViewController alloc] init];
 	[controller setSymbol:trend.ticker.symbol];
+	[controller setHidesBottomBarWhenPushed:YES];
 	[self.navigationController pushViewController:controller animated:YES];
 	[controller release];
 }

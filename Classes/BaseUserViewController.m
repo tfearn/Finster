@@ -229,18 +229,21 @@
 	if(row == 0 & self.user.checkins > 0) {
 		CheckInsByUserViewController *controller = [[CheckInsByUserViewController alloc] init];
 		controller.user = self.user;
+		[controller setHidesBottomBarWhenPushed:YES];
 		[self.navigationController pushViewController:controller animated:YES];
 		[controller release];	
 	}
 	else if(row == 2 && self.user.following > 0) {
 		FollowingViewController *controller = [[FollowingViewController alloc] init];
 		controller.user = self.user;
+		[controller setHidesBottomBarWhenPushed:YES];
 		[self.navigationController pushViewController:controller animated:YES];
 		[controller release];	
 	}
 	else if(row == 3 && self.user.followers > 0) {
 		FollowersViewController *controller = [[FollowersViewController alloc] init];
 		controller.user = self.user;
+		[controller setHidesBottomBarWhenPushed:YES];
 		[self.navigationController pushViewController:controller animated:YES];
 		[controller release];	
 	}
