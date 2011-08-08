@@ -19,8 +19,8 @@
 
 - (id)init {
     if (self = [super init]) {
-		_user = [User alloc] init;
-		_ticker = [Ticker alloc] init;
+		_user = [[User alloc] init];
+		_ticker = [[Ticker alloc] init];
     }
     return self;
 }
