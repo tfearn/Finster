@@ -54,6 +54,9 @@
 }
 
 - (void)dealloc {
+	if(self.isFollowingUserRequest != nil)
+		[self.isFollowingUserRequest clearDelegatesAndCancel];
+	
 	[_followButton release];
     [super dealloc];
 }
@@ -95,11 +98,13 @@
 		return;
 	}
 	
-	int isFollowingUser = [[dict objectForKey:@"isFollowingUser"] intValue];
-	if(! isFollowingUser)
+	int isFollowingUser = [[dict objectForKey:@"isfollowinguser"] intValue];
+	if(isFollowingUser == 1)
 		[self.followButton setTitle:@"Unfollow" forState:UIControlStateNormal];
 	else
 		[self.followButton setTitle:@"Follow" forState:UIControlStateNormal];
+	
+	self.isFollowingUserRequest = nil;
 }
 
 - (void)isFollowingUserRequestFailure:(ASIHTTPRequest *)request {
@@ -107,6 +112,8 @@
 	
 	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:[request.error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
 	[alert show];
+	
+	self.isFollowingUserRequest = nil;
 }
 
 - (void)followUnFollowUserRequestComplete:(ASIHTTPRequest *)request {

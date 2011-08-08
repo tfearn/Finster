@@ -42,6 +42,9 @@
 }
 
 - (void)dealloc {
+	if(self.request != nil)
+		[self.request clearDelegatesAndCancel];
+	
 	[_tableView release];
 	[_imageManager release];
 	[_users release];
@@ -111,6 +114,8 @@
 	
 	// Reload the table
 	[self.tableView reloadData];
+	
+	self.request = nil;
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request {
@@ -118,6 +123,8 @@
 	
 	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:[request.error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
 	[alert show];
+	
+	self.request = nil;
 }
 
 

@@ -50,6 +50,9 @@
 
 - (void)dealloc {
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:kNotificationCheckInComplete object:nil];
+	
+	if(self.request != nil)
+		[_request clearDelegatesAndCancel];
 
 	[_textView release];
 	[_facebookImageView release];
@@ -155,6 +158,8 @@
 	[controller release];
 	
 	[checkInResult release];
+	
+	self.request = nil;
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request {
@@ -162,6 +167,8 @@
 
 	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:[[request error] description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
 	[alert show];
+
+	self.request = nil;
 }
 
 @end

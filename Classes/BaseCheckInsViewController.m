@@ -50,6 +50,9 @@
 }
 
 - (void)dealloc {
+	if(self.request != nil)
+		[_request clearDelegatesAndCancel];
+
 	[_jsonParser release];
 	[_checkIns release];
 	[_imageManager release];
@@ -149,6 +152,8 @@
 	
 	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:[request.error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
 	[alert show];
+	
+	self.request = nil;
 }
 
 

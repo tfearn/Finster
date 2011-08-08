@@ -70,6 +70,13 @@
 }
 
 - (void)dealloc {
+	// Release all of the outstanding ASIHttpRequests
+	NSArray *requests = [self.queue operations];
+	for(int i=0; i<[requests count]; i++) {
+		ASIHTTPRequest *request = [requests objectAtIndex:i];
+		[request clearDelegatesAndCancel];
+	}
+
 	[_searchBar release];
 	[_tableView release];
 	[_queue release];
