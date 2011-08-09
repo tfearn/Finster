@@ -13,8 +13,10 @@
 
 @interface CheckInViewController : BaseViewController {
 	IBOutlet UIScrollView *_scrollView;
+	IBOutlet UILabel *_version;
 }
 @property (nonatomic, retain) UIScrollView *scrollView;
+@property (nonatomic, retain) UILabel *version;
 
 - (IBAction)iBoughtPressed:(id)sender;
 - (IBAction)iSoldPressed:(id)sender;

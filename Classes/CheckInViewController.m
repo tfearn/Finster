@@ -15,12 +15,16 @@
 
 @implementation CheckInViewController
 @synthesize scrollView = _scrollView;
+@synthesize version = _version;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.scrollView.contentSize = CGSizeMake(320, 420);
+	self.scrollView.contentSize = CGSizeMake(320, 440);
+
+	NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]; 
+	self.version.text = [NSString stringWithFormat:@"Version %@", version];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,6 +42,7 @@
 
 - (void)dealloc {
 	[_scrollView release];
+	[_version release];
     [super dealloc];
 }
 

@@ -40,13 +40,15 @@
 	// Login via Facebook
 	[self doFacebookLogin];
 	
-	
 	// Initialize the Db
 	if(! [self initializeDatabase]) {
 		// TODO:  We have problems here, fix
 		return NO;
 	}
 	
+    // Leave the splash view in place for a little while
+    [NSThread sleepForTimeInterval: kStartupDelay];
+
 	return YES;
 }
 

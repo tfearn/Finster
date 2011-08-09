@@ -63,7 +63,6 @@
 }
 
 - (IBAction)shareAppButtonPressed:(id)sender {
-	[_shareAppActionSheet release];
 	_shareAppActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Share App with Friends", nil];
 	self.shareAppActionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
 	[self.shareAppActionSheet showFromTabBar:self.tabBarController.tabBar];

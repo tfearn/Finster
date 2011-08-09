@@ -52,6 +52,7 @@
 
 // Other defines
 #define kDatabaseFilename			@"finster.sqlite"
+#define kStartupDelay				1.0
 
 // Macros
 #ifndef NDEBUG
