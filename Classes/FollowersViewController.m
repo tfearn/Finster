@@ -20,7 +20,7 @@
 	
 	NSString *url = kUrlGetUserFollowers;
 	if(self.user != nil && self.user.userID != nil)
-		url = [url stringByAppendingFormat:@"?user=%@", self.user.userID];
+		url = [url stringByAppendingFormat:@"?userid=%@", self.user.userID];
 	
 	[self getUrl:url];
 }

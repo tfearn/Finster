@@ -92,7 +92,7 @@
 - (void)getData {
 	NSString *url = kUrlGetUser;
 	if(self.user != nil && self.user.userID != nil)
-		url = [url stringByAppendingFormat:@"?user=%@", self.user.userID];
+		url = [url stringByAppendingFormat:@"?userid=%@", self.user.userID];
 	
 	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
 	[request setDelegate:self];

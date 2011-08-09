@@ -20,12 +20,12 @@
 // Keys
 #define kUsernameKey				@"username"
 #define kPasswordKey				@"password"
-#define kFacebookAppID				@"215815565097885"
+#define kFacebookAppID				@"155491054528323"
 #define kFacebookAccessTokenKey		@"FBAccessTokenKey"
 #define kFacebookExpirationDateKey	@"FBExpirationDateKey"
 
 // EMail addresses
-#define kEmailFinsterFeedback		@"tfearn@gmail.com"
+#define kEmailFinsterFeedback		@"admin@finster.mobi"
 
 // URLs
 #define kUrlTickerLookup			@"http://d.yimg.com/autoc.finance.yahoo.com/autoc?query=%@&callback=YAHOO.Finance.SymbolSuggest.ssCallback"
