@@ -30,7 +30,7 @@
 /*
 	// Set the nav bar buttons to green
 	for (UIView *view in self.navigationController.navigationBar.subviews) {
-		NSLog(@"%@", [[view class] description]);
+		MyLog(@"%@", [[view class] description]);
 		if ([[[view class] description] isEqualToString:@"UINavigationButton"]) {
 			[(UINavigationButton *)view setTintColor:[UIColor greenColor]];
 		}

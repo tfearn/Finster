@@ -91,10 +91,12 @@
 	NSError *error = nil;
 	NSDictionary *dict = [self.jsonParser objectWithString:response error:&error];
 	if(error != nil) {
-		NSLog(@"Parser Error: %@", [error description]);
+		MyLog(@"Parser Error: %@", [error description]);
 		
 		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"JSON Error" message:[error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
 		[alert show];
+		
+		self.request = nil;
 		return;
 	}
 	

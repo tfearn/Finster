@@ -28,6 +28,31 @@
 	
 	TimePassedFormatter *timePassedFormatter = [[[TimePassedFormatter alloc] init] autorelease];
 	self.timestamp.text = [timePassedFormatter format:self.checkIn.timestamp];
+
+	/*
+	switch (self.checkIn.checkinType) {
+		case kCheckInTypeIBought:
+			self.checkInImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"dollars-icon" ofType:@"png"]];
+			break;
+		case kCheckInTypeISold:
+			self.checkInImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"check-icon" ofType:@"png"]];
+			break;
+		case kCheckinTypeGoodRumour:
+			self.checkInImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"thumbs-up-icon" ofType:@"png"]];
+			break;
+		case kCheckinTypeBadRumour:
+			self.checkInImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"thumbs-down-icon" ofType:@"png"]];
+			break;
+		case kCheckInTypeImBullish:
+			self.checkInImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"bullish-icon" ofType:@"png"]];
+			break;
+		case kCheckInTypeImBearish:
+			self.checkInImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"bearish-icon" ofType:@"png"]];
+			break;
+		default:
+			break;
+	}
+	 */
 	
 	CheckInTypeFormatter *formatter = [[[CheckInTypeFormatter alloc] init] autorelease];
 	self.description.text = [formatter format:self.checkIn.checkinType symbol:self.checkIn.ticker.symbol];

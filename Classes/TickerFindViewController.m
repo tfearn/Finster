@@ -121,7 +121,7 @@
 	NSError *error = nil;
 	NSDictionary *dict = [self.jsonParser objectWithString:response error:&error];
 	if(error != nil) {
-		NSLog(@"Parser Error: %@", [error description]);
+		MyLog(@"Parser Error: %@", [error description]);
 		return;
 	}
 	
