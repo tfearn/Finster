@@ -265,21 +265,23 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>82C1042C1357373700302082</string>
 								<string>82C104291357370D00302082</string>
 								<string>A83089EF13DB73660024090A</string>
+								<string>A877C7B313DE065A00ABACE6</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>39</integer>
-									<integer>36</integer>
+									<integer>53</integer>
+									<integer>52</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {300, 1093}}</string>
+							<string>{{0, 369}, {300, 1093}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -298,7 +300,7 @@
 							<real>300</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>690 183 1682 1152 0 0 2560 1418 </string>
+						<string>69 189 1682 1152 0 0 2560 1418 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -326,7 +328,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>828B8A7E13F2D050003E1444</string>
+										<string>82D669B813F2E29C00C5E212</string>
 										<key>history</key>
 										<array>
 											<string>82C1044813573DF700302082</string>
@@ -377,7 +379,6 @@
 											<string>82E7418613E1EC95002B88EB</string>
 											<string>82E7419D13E1ED11002B88EB</string>
 											<string>82E7419E13E1ED11002B88EB</string>
-											<string>82E7425D13E1F8DC002B88EB</string>
 											<string>82A4C27813E9F317005AA353</string>
 											<string>82A4C27913E9F317005AA353</string>
 											<string>82A4C2A713E9FAA6005AA353</string>
@@ -426,8 +427,9 @@
 											<string>82DE8B1B13F1AF1E00D5A625</string>
 											<string>82DE8B1C13F1AF1E00D5A625</string>
 											<string>82DE8B3D13F1C7DA00D5A625</string>
-											<string>828B8A7C13F2D050003E1444</string>
-											<string>828B8A7D13F2D050003E1444</string>
+											<string>82D669B513F2E29C00C5E212</string>
+											<string>82D669B613F2E29C00C5E212</string>
+											<string>82D669B713F2E29C00C5E212</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -439,14 +441,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1360, 824}}</string>
+								<string>{{0, 0}, {1360, 819}}</string>
 								<key>RubberWindowFrame</key>
-								<string>690 183 1682 1152 0 0 2560 1418 </string>
+								<string>69 189 1682 1152 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>824pt</string>
+							<string>819pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -459,14 +461,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 829}, {1360, 282}}</string>
+								<string>{{0, 824}, {1360, 287}}</string>
 								<key>RubberWindowFrame</key>
-								<string>690 183 1682 1152 0 0 2560 1418 </string>
+								<string>69 189 1682 1152 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>282pt</string>
+							<string>287pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -485,9 +487,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>828B8A7413F2C842003E1444</string>
+				<string>82D669B913F2E29C00C5E212</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>828B8A7513F2C842003E1444</string>
+				<string>82D669BA13F2E29C00C5E212</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -625,11 +627,15 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>82D669C313F2E29C00C5E212</string>
+		<string>82D669C413F2E29C00C5E212</string>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>823615A5135731AE00935425</string>
 		<string>/Users/toddfearn/Project/Finster/Finster.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>690 183 1682 1152 0 0 2560 1418 </string>
+	<string>69 189 1682 1152 0 0 2560 1418 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -706,7 +712,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>823615A5135731AE00935425</string>
-				<string>828B8A7613F2C842003E1444</string>
+				<string>82D669BB13F2E29C00C5E212</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -828,13 +834,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>82DE8B2C13F1B57900D5A625</string>
+				<string>82D669BC13F2E29C00C5E212</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>82DE8B2D13F1B57900D5A625</string>
-				<string>82DE8B2E13F1B57900D5A625</string>
-				<string>82DE8B2F13F1B57900D5A625</string>
-				<string>82DE8B3013F1B57900D5A625</string>
-				<string>82DE8B3113F1B57900D5A625</string>
+				<string>82D669BD13F2E29C00C5E212</string>
+				<string>82D669BE13F2E29C00C5E212</string>
+				<string>82D669BF13F2E29C00C5E212</string>
+				<string>82D669C013F2E29C00C5E212</string>
+				<string>82D669C113F2E29C00C5E212</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -988,7 +994,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>82DE8B3213F1B57900D5A625</string>
+				<string>82D669C213F2E29C00C5E212</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
