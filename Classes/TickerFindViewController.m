@@ -227,15 +227,16 @@
 #pragma mark UISearchBarDelegate Methods
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-	[self doTickerRequest:searchText];
-	
-	[Globals setLastTickerSearch:searchText];
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+	NSString *searchText = searchBar.text;
+	[self doTickerRequest:searchText];
+	
+	[Globals setLastTickerSearch:searchText];
 }
 
 @end

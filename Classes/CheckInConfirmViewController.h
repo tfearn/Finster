@@ -16,9 +16,7 @@
 @interface CheckInConfirmViewController : BaseCheckInViewController <UITextViewDelegate, ASIHTTPRequestDelegate> {
 	IBOutlet UITextView *_textView;
 	IBOutlet UIImageView *_facebookImageView;
-	IBOutlet UIImageView *_twitterImageView;
-	IBOutlet UIButton *_facebookButton;
-	IBOutlet UIButton *_twitterButton;
+	IBOutlet UISwitch *_facebookSwitch;
 	ASIHTTPRequest *_request;
 	SBJSON *_jsonParser;
 	BOOL commentExists;
@@ -27,14 +25,11 @@
 }
 @property (nonatomic, retain) UITextView *textView;
 @property (nonatomic, retain) UIImageView *facebookImageView;
-@property (nonatomic, retain) UIImageView *twitterImageView;
-@property (nonatomic, retain) UIButton *facebookButton;
-@property (nonatomic, retain) UIButton *twitterButton;
+@property (nonatomic, retain) UISwitch *facebookSwitch;
 @property (nonatomic, retain) ASIHTTPRequest *request;
 @property (nonatomic, retain) SBJSON *jsonParser;
 
-- (IBAction)facebookButtonPressed:(id)sender;
-- (IBAction)twitterButtonPressed:(id)sender;
+- (IBAction)facebookSwitchPressed:(id)sender;
 - (IBAction)checkInButtonPressed:(id)sender;
 
 @end

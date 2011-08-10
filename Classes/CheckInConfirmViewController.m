@@ -13,9 +13,7 @@
 @implementation CheckInConfirmViewController
 @synthesize textView = _textView;
 @synthesize facebookImageView = _facebookImageView;
-@synthesize twitterImageView = _twitterImageView;
-@synthesize facebookButton = _facebookButton;
-@synthesize twitterButton = _twitterButton;
+@synthesize facebookSwitch = _facebookSwitch;
 @synthesize request = _request;
 @synthesize jsonParser = _jsonParser;
 
@@ -30,6 +28,7 @@
 	
 	// Default Facebook share on
 	facebookOn = YES;
+	[self.facebookSwitch setOn:YES];
 	
 	// Add a notification observer for check-in complete
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(viewFilterChanged) name:kNotificationCheckInComplete object:nil];
@@ -56,9 +55,7 @@
 
 	[_textView release];
 	[_facebookImageView release];
-	[_twitterImageView release];
-	[_facebookButton release];
-	[_twitterButton release];
+	[_facebookSwitch release];
 	[_jsonParser release];
     [super dealloc];
 }
@@ -81,20 +78,8 @@
     return TRUE;
 }
 
-- (IBAction)facebookButtonPressed:(id)sender {
-	facebookOn = ! facebookOn;
-	if(facebookOn)
-		self.facebookImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"facebook-icon" ofType:@"png"]];
-	else
-		self.facebookImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"facebook-grey-icon" ofType:@"png"]];
-}
-
-- (IBAction)twitterButtonPressed:(id)sender {
-	twitterOn = ! twitterOn;
-	if(twitterOn)
-		self.twitterImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"twitter-icon" ofType:@"png"]];
-	else
-		self.twitterImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"twitter-grey-icon" ofType:@"png"]];
+- (IBAction)facebookSwitchPressed:(id)sender {
+	facebookOn = self.facebookSwitch.on;
 }
 
 - (IBAction)checkInButtonPressed:(id)sender {
@@ -129,6 +114,7 @@
 	[self dismissWaitView];
 
 	NSString *response = [request responseString];
+	MyLog(@"%@", response);
 	
 	// Parse the data
 	NSError *error = nil;
