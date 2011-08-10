@@ -1099,17 +1099,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Todd Fearn (3TVVZ6J6JA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: iDATA Corporation";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Finster_Prefix.pch;
 				INFOPLIST_FILE = "Finster-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Flurry SDK/FlurryLib\"",
 				);
 				PRODUCT_NAME = Finster;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "530CC6D1-23E3-4B2D-82DD-67150E449507";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9AC9F9FF-9CC8-46D2-A8D6-BDD876356578";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
