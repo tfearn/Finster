@@ -99,8 +99,6 @@
 	[request setDidFinishSelector:@selector(getUserRequestComplete:)];
 	[request setDidFailSelector:@selector(getUserRequestFailure:)];
 	[self.queue addOperation:request];
-	
-	[self showSpinnerView];
 }
 
 
@@ -108,8 +106,6 @@
 #pragma mark RequestDelegate Methods
 
 - (void)getUserRequestComplete:(ASIHTTPRequest *)request {
-	[self dismissSpinnerView];
-	
 	NSString *response = [request responseString];
 	
 	SBJSON *jsonParser = [[[SBJSON alloc] init] autorelease];
@@ -144,7 +140,6 @@
 }
 
 - (void)getUserRequestFailure:(ASIHTTPRequest *)request {
-	[self dismissSpinnerView];
 	[Globals showNetworkError:request.error];
 }
 
