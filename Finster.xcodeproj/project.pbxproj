@@ -427,9 +427,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4D539B2E1381DE9200307811 /* FacebookLoginView.xib */,
 				A8E6E13A13679389009DE488 /* finster.sqlite */,
 				8D1107310486CEB800E47090 /* Finster-Info.plist */,
+				4D539B2E1381DE9200307811 /* FacebookLoginView.xib */,
 				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
 				A87743A41356638500DD721B /* CheckInView.xib */,
 				82C107F61357A0AB00302082 /* CheckInReviewView.xib */,

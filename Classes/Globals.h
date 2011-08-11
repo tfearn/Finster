@@ -68,8 +68,6 @@
 
 }
 
-+ (NSString *)getNetworkToken;
-+ (void)setNetworkToken:(NSString *)newNetworkToken;
 + (NSString *)getLastTickerSearch;
 + (void)setLastTickerSearch:(NSString *)newLastTickerSearch;
 + (NSError *)openDatabase:(NSString *)filename;

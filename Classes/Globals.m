@@ -8,7 +8,6 @@
 
 #import "Globals.h"
 
-static NSString *networkToken;
 static NSString *lastTickerSearch;
 static CSqliteDatabase *db;
 static NSDate *lastNetworkError;
@@ -17,18 +16,8 @@ static NSDate *lastNetworkError;
 @implementation Globals
 
 + (void)initialize {
-	networkToken = [[NSString alloc] init];
 	lastTickerSearch = [[NSString alloc] init];
 	lastNetworkError = [[NSDate alloc] init];
-}
-
-+ (NSString *)getNetworkToken {
-	return networkToken;
-}
-
-+ (void)setNetworkToken:(NSString *)newNetworkToken {
-	[networkToken release];
-	networkToken = [newNetworkToken retain];
 }
 
 + (NSString *)getLastTickerSearch {
