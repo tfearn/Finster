@@ -8,36 +8,27 @@
 
 #import "Globals.h"
 
-static NSString *username;
-static NSString *password;
+static NSString *networkToken;
 static NSString *lastTickerSearch;
 static CSqliteDatabase *db;
+static NSDate *lastNetworkError;
 
 
 @implementation Globals
 
 + (void)initialize {
-	username = [[NSString alloc] init];
-	password = [[NSString alloc] init];
+	networkToken = [[NSString alloc] init];
 	lastTickerSearch = [[NSString alloc] init];
+	lastNetworkError = [[NSDate alloc] init];
 }
 
-+ (NSString *)getUsername {
-	return username;
++ (NSString *)getNetworkToken {
+	return networkToken;
 }
 
-+ (void)setUsername:(NSString *)newUsername {
-	[username release];
-	username = [newUsername retain];
-}
-
-+ (NSString *)getPassword {
-	return password;
-}
-
-+ (void)setPassword:(NSString *)newPassword {
-	[password release];
-	password = [newPassword retain];
++ (void)setNetworkToken:(NSString *)newNetworkToken {
+	[networkToken release];
+	networkToken = [newNetworkToken retain];
 }
 
 + (NSString *)getLastTickerSearch {
@@ -73,6 +64,18 @@ static CSqliteDatabase *db;
 	return db;
 }
 
-
++ (void)showNetworkError:(NSError *)error {
+	MyLog(@"Network Error: %@", [error description]);
+	
+	// Determine how many seconds has passed since the last network error.  If greater than ? then display the network
+	// This reduces annoying network error popups for the user
+	NSTimeInterval seconds = [[NSDate date] timeIntervalSince1970] - [lastNetworkError timeIntervalSince1970];
+	if(seconds > kMaxSecondsBetweenNetworkErrorMessages) {
+		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:@"Cannot connect to the network" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+		[alert show];
+	}
+	
+	lastNetworkError = [NSDate date];
+}
 
 @end

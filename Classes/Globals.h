@@ -47,12 +47,15 @@
 // Maximum rows retrieved for all getcheckins REST calls
 #define kMaxRowsForGetCheckIns		50
 
+// The number of seconds the application will be delayed upon startup.  This is used to display the splash screen for a longer time.
+#define kStartupDelay				1.0
+
 // Notifications
 #define kNotificationCheckInComplete	@"NotificationCheckInComplete"
 
 // Other defines
-#define kDatabaseFilename			@"finster.sqlite"
-#define kStartupDelay				1.0
+#define kDatabaseFilename						@"finster.sqlite"
+#define kMaxSecondsBetweenNetworkErrorMessages	60.0
 
 // Macros
 #ifndef NDEBUG
@@ -65,13 +68,12 @@
 
 }
 
-+ (NSString *)getUsername;
-+ (void)setUsername:(NSString *)newUsername;
-+ (NSString *)getPassword;
-+ (void)setPassword:(NSString *)newPassword;
++ (NSString *)getNetworkToken;
++ (void)setNetworkToken:(NSString *)newNetworkToken;
 + (NSString *)getLastTickerSearch;
 + (void)setLastTickerSearch:(NSString *)newLastTickerSearch;
 + (NSError *)openDatabase:(NSString *)filename;
 + (CSqliteDatabase *)getDatabaseHandle;
++ (void)showNetworkError:(NSError *)error;
 
 @end

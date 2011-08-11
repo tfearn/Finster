@@ -106,8 +106,7 @@
 - (void)requestFailed:(ASIHTTPRequest *)request {
     [self performSelector:@selector(stopLoading) withObject:nil afterDelay:2.0];
 	
-	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:[request.error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
-	[alert show];
+	[Globals showNetworkError:request.error];
 }
 
 
