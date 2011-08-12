@@ -11,18 +11,16 @@
 #import "SBJSON.h"
 #import "Globals.h"
 #import "ImageManager.h"
-#import "BaseViewController.h"
 #import "User.h"
+#import "PullRefreshTableViewController.h"
 
-@interface BaseUserViewController : BaseViewController <ASIHTTPRequestDelegate, ImageManagerDelegate> {
-	IBOutlet UITableView *_tableView;
+@interface BaseUserViewController : PullRefreshTableViewController <ASIHTTPRequestDelegate, ImageManagerDelegate> {
 	IBOutlet UIImageView *_userImageView;
 	IBOutlet UILabel *_username;
 	NSOperationQueue *_queue;
 	ImageManager *_imageManager;
 	User *_user;
 }
-@property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, retain) UIImageView *userImageView;
 @property (nonatomic, retain) UILabel *username;
 @property (nonatomic, retain) NSOperationQueue *queue;

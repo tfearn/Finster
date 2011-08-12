@@ -19,7 +19,6 @@
 @end
 
 @implementation BaseUserViewController
-@synthesize tableView = _tableView;
 @synthesize userImageView = _userImageView;
 @synthesize username = _username;
 @synthesize queue = _queue;
@@ -50,13 +49,13 @@
 			[self.userImageView setImage:self.user.image];
 		}
 	}
+	
+	// Retrieve the user data
+	[self getData];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-	
-	// Retrieve the data
-	[self getData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -101,11 +100,17 @@
 	[self.queue addOperation:request];
 }
 
+- (void)refresh {
+	// This is called when the user pulls down the table to refresh.
+	[self getData];
+}
 
 #pragma mark -
 #pragma mark RequestDelegate Methods
 
 - (void)getUserRequestComplete:(ASIHTTPRequest *)request {
+    [self performSelector:@selector(stopLoading) withObject:nil afterDelay:2.0];
+
 	NSString *response = [request responseString];
 	
 	SBJSON *jsonParser = [[[SBJSON alloc] init] autorelease];
@@ -140,6 +145,7 @@
 }
 
 - (void)getUserRequestFailure:(ASIHTTPRequest *)request {
+    [self performSelector:@selector(stopLoading) withObject:nil afterDelay:2.0];
 	[Globals showNetworkError:request.error];
 }
 

@@ -59,19 +59,19 @@
     [super dealloc];
 }
 
-- (void)refresh {
-	// This is called when the user pulls down the table to refresh.  Reset the startRow to zero in this case
-	startRow = 0;
-	
-	[self getData];
-}
-
 - (void)getData {
 	NSString *url = [NSString stringWithFormat:@"%@&start=%d&limit=%d", [self getRequestUrl], startRow, kMaxRowsForGetCheckIns];
 	
 	_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
 	[self.request setDelegate:self];
 	[self.request startAsynchronous];
+}
+
+- (void)refresh {
+	// This is called when the user pulls down the table to refresh.  Reset the startRow to zero in this case
+	startRow = 0;
+	
+	[self getData];
 }
 
 - (NSString *)getRequestUrl {
