@@ -340,6 +340,13 @@
 			A824109513F5E796006D9C5B /* PBXTextBookmark */ = A824109513F5E796006D9C5B /* PBXTextBookmark */;
 			A824109813F5E807006D9C5B /* PBXTextBookmark */ = A824109813F5E807006D9C5B /* PBXTextBookmark */;
 			A824109913F5E807006D9C5B /* PBXTextBookmark */ = A824109913F5E807006D9C5B /* PBXTextBookmark */;
+			A82410A313F5E9D2006D9C5B /* PBXTextBookmark */ = A82410A313F5E9D2006D9C5B /* PBXTextBookmark */;
+			A82410A413F5E9D2006D9C5B /* XCBuildMessageTextBookmark */ = A82410A413F5E9D2006D9C5B /* XCBuildMessageTextBookmark */;
+			A82410A513F5E9D2006D9C5B /* PBXTextBookmark */ = A82410A513F5E9D2006D9C5B /* PBXTextBookmark */;
+			A82410A613F5E9D2006D9C5B /* PBXTextBookmark */ = A82410A613F5E9D2006D9C5B /* PBXTextBookmark */;
+			A82410A713F5E9D6006D9C5B /* PBXTextBookmark */ = A82410A713F5E9D6006D9C5B /* PBXTextBookmark */;
+			A82410A813F5E9D6006D9C5B /* XCBuildMessageTextBookmark */ = A82410A813F5E9D6006D9C5B /* XCBuildMessageTextBookmark */;
+			A82410A913F5E9D6006D9C5B /* PBXTextBookmark */ = A82410A913F5E9D6006D9C5B /* PBXTextBookmark */;
 			A830892013DB4BAC0024090A = A830892013DB4BAC0024090A /* PBXTextBookmark */;
 			A830893513DB501D0024090A = A830893513DB501D0024090A /* PBXTextBookmark */;
 			A830893613DB501D0024090A = A830893613DB501D0024090A /* PBXTextBookmark */;
@@ -516,8 +523,8 @@
 	8240E4B9137C73060042CA9B /* CheckInDetailsViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {898, 566}}";
-			sepNavSelRange = "{329, 0}";
-			sepNavVisRange = "{0, 963}";
+			sepNavSelRange = "{299, 0}";
+			sepNavVisRange = "{0, 932}";
 		};
 	};
 	8240E4BA137C73060042CA9B /* CheckInDetailsViewController.m */ = {
@@ -2720,7 +2727,7 @@
 		fRef = 8240E4B9137C73060042CA9B /* CheckInDetailsViewController.h */;
 		name = "CheckInDetailsViewController.h: 15";
 		rLen = 0;
-		rLoc = 366;
+		rLoc = 335;
 		rType = 0;
 		vrLen = 932;
 		vrLoc = 0;
@@ -2730,7 +2737,7 @@
 		fRef = 8240E4B9137C73060042CA9B /* CheckInDetailsViewController.h */;
 		name = "CheckInDetailsViewController.h: 14";
 		rLen = 0;
-		rLoc = 329;
+		rLoc = 299;
 		rType = 0;
 		vrLen = 963;
 		vrLoc = 0;
@@ -2740,7 +2747,7 @@
 		fRef = 8240E4B9137C73060042CA9B /* CheckInDetailsViewController.h */;
 		name = "CheckInDetailsViewController.h: 14";
 		rLen = 0;
-		rLoc = 329;
+		rLoc = 299;
 		rType = 0;
 		vrLen = 963;
 		vrLoc = 0;
@@ -3024,6 +3031,74 @@
 		rType = 0;
 		vrLen = 1125;
 		vrLoc = 372;
+	};
+	A82410A313F5E9D2006D9C5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8240E4BA137C73060042CA9B /* CheckInDetailsViewController.m */;
+		name = "CheckInDetailsViewController.m: 98";
+		rLen = 0;
+		rLoc = 3241;
+		rType = 0;
+		vrLen = 585;
+		vrLoc = 2801;
+	};
+	A82410A413F5E9D2006D9C5B /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "TempViewController.h: No such file or directory";
+		fRef = 8240E4B9137C73060042CA9B /* CheckInDetailsViewController.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 13;
+		rType = 1;
+	};
+	A82410A513F5E9D2006D9C5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8240E4B9137C73060042CA9B /* CheckInDetailsViewController.h */;
+		name = "CheckInDetailsViewController.h: 14";
+		rLen = 0;
+		rLoc = 299;
+		rType = 0;
+		vrLen = 885;
+		vrLoc = 0;
+	};
+	A82410A613F5E9D2006D9C5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A81EE05713E2F9E30073368E /* BaseUserListViewController.m */;
+		name = "BaseUserListViewController.m: 129";
+		rLen = 0;
+		rLoc = 3169;
+		rType = 0;
+		vrLen = 798;
+		vrLoc = 2661;
+	};
+	A82410A713F5E9D6006D9C5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A8B12EC513E0EF0100A54B74 /* BaseUserViewController.m */;
+		name = "BaseUserViewController.m: 52";
+		rLen = 0;
+		rLoc = 1328;
+		rType = 0;
+		vrLen = 1167;
+		vrLoc = 372;
+	};
+	A82410A813F5E9D6006D9C5B /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "TempViewController.h: No such file or directory";
+		fRef = 8240E4B9137C73060042CA9B /* CheckInDetailsViewController.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 13;
+		rType = 1;
+	};
+	A82410A913F5E9D6006D9C5B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8240E4B9137C73060042CA9B /* CheckInDetailsViewController.h */;
+		name = "CheckInDetailsViewController.h: 14";
+		rLen = 0;
+		rLoc = 299;
+		rType = 0;
+		vrLen = 932;
+		vrLoc = 0;
 	};
 	A830892013DB4BAC0024090A /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -3714,7 +3789,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {898, 3484}}";
 			sepNavSelRange = "{1328, 0}";
-			sepNavVisRange = "{372, 1125}";
+			sepNavVisRange = "{372, 1167}";
 		};
 	};
 	A8B12EEA13E0F46A00A54B74 /* PBXTextBookmark */ = {
@@ -3829,7 +3904,7 @@
 		fRef = 8240E4B9137C73060042CA9B /* CheckInDetailsViewController.h */;
 		name = "CheckInDetailsViewController.h: 15";
 		rLen = 0;
-		rLoc = 366;
+		rLoc = 335;
 		rType = 0;
 		vrLen = 932;
 		vrLoc = 0;

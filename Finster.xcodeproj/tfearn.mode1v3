@@ -318,7 +318,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>BaseUserViewController.m</string>
+								<string>CheckInDetailsViewController.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -326,11 +326,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>BaseUserViewController.m</string>
+										<string>CheckInDetailsViewController.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>A824109913F5E807006D9C5B</string>
+										<string>A82410A913F5E9D6006D9C5B</string>
 										<key>history</key>
 										<array>
 											<string>A87744431356918400DD721B</string>
@@ -448,12 +448,12 @@
 											<string>A8240FCC13F5DE23006D9C5B</string>
 											<string>A824101F13F5E11D006D9C5B</string>
 											<string>A824104313F5E43B006D9C5B</string>
-											<string>A824104F13F5E55B006D9C5B</string>
 											<string>A824106613F5E5B6006D9C5B</string>
 											<string>A824108B13F5E6CE006D9C5B</string>
 											<string>A824108C13F5E6CE006D9C5B</string>
 											<string>A824108D13F5E6CE006D9C5B</string>
-											<string>A824109813F5E807006D9C5B</string>
+											<string>A82410A713F5E9D6006D9C5B</string>
+											<string>A82410A813F5E9D6006D9C5B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -651,14 +651,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>A824109A13F5E807006D9C5B</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>A8240DF813F594A4006D9C5B</string>
 		<string>A8240DF113F59463006D9C5B</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>A8774399135660B600DD721B</string>
-		<string>/Users/tfearn/Project/Finster/Finster.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 109 1280 669 0 0 1280 778 </string>
@@ -677,12 +675,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CheckInDetailsViewController.m</string>
+								<string>CheckInDetailsViewController.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -699,8 +699,6 @@
 							<string>386pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
