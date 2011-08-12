@@ -21,7 +21,9 @@
 @synthesize tabBarController;
 @synthesize facebook;
 
+#pragma mark -
 #pragma mark Uncaught exception handler
+
 void uncaughtExceptionHandler(NSException *exception) {
 	[FlurryAPI logError:@"Uncaught Exception" message:[exception name] exception:exception];
 	

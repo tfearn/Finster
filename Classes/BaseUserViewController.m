@@ -21,26 +21,23 @@
 @implementation BaseUserViewController
 @synthesize userImageView = _userImageView;
 @synthesize username = _username;
-@synthesize queue = _queue;
+@synthesize request = _request;
 @synthesize imageManager = _imageManager;
 @synthesize user = _user;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
+
 	[self.tableView setRowHeight:44.0];
 	
-	// Initialize the network queue
-	_queue = [[NSOperationQueue alloc] init];
-
 	// Initialize the ImageManager to get user pictures
 	_imageManager = [[ImageManager alloc] init];
 	self.imageManager.delegate = self;
 	
 	// Set the username label
 	self.username.text = self.user.userName;
-	
+
 	// Tell the ImageManager to get the pictures if it does not already have them
 	if(self.user != nil) {
 		Image *image = [self.imageManager getImage:self.user.imageUrl];
@@ -72,17 +69,11 @@
 }
 
 - (void)dealloc {
-	// Release all of the outstanding ASIHttpRequests
-	NSArray *requests = [self.queue operations];
-	for(int i=0; i<[requests count]; i++) {
-		ASIHTTPRequest *request = [requests objectAtIndex:i];
-		[request clearDelegatesAndCancel];
-	}
-	
-	[_tableView release];
+	if(self.request != nil)
+		[self.request clearDelegatesAndCancel];
+
 	[_userImageView release];
 	[_username release];
-	[_queue release];
 	[_imageManager release];
 	[_user release];
     [super dealloc];
@@ -93,11 +84,11 @@
 	if(self.user != nil && self.user.userID != nil)
 		url = [url stringByAppendingFormat:@"?userid=%@", self.user.userID];
 	
-	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
-	[request setDelegate:self];
-	[request setDidFinishSelector:@selector(getUserRequestComplete:)];
-	[request setDidFailSelector:@selector(getUserRequestFailure:)];
-	[self.queue addOperation:request];
+	_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
+	[self.request setDelegate:self];
+	[self.request setDidFinishSelector:@selector(getUserRequestComplete:)];
+	[self.request setDidFailSelector:@selector(getUserRequestFailure:)];
+	[self.request startAsynchronous];
 }
 
 - (void)refresh {
@@ -142,11 +133,15 @@
 
 	// Reload the table
 	[self.tableView reloadData];
+	
+	_request = nil;
 }
 
 - (void)getUserRequestFailure:(ASIHTTPRequest *)request {
     [self performSelector:@selector(stopLoading) withObject:nil afterDelay:2.0];
 	[Globals showNetworkError:request.error];
+	
+	_request = nil;
 }
 
 

@@ -42,8 +42,9 @@
 }
 
 - (void)dealloc {
-	if(self.request != nil)
+	if(self.request != nil) {
 		[self.request clearDelegatesAndCancel];
+	}
 	
 	[_tableView release];
 	[_imageManager release];
@@ -85,7 +86,7 @@
 		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"JSON Error" message:[error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
 		[alert show];
 		
-		self.request = nil;
+		_request = nil;
 		return;
 	}
 	
@@ -117,7 +118,7 @@
 	// Reload the table
 	[self.tableView reloadData];
 	
-	self.request = nil;
+	_request = nil;
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request {
@@ -125,7 +126,7 @@
 	
 	[Globals showNetworkError:request.error];
 	
-	self.request = nil;
+	_request = nil;
 }
 
 

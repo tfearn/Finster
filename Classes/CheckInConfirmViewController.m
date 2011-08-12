@@ -125,7 +125,7 @@
 		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"JSON Error" message:[error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
 		[alert show];
 		
-		self.request = nil;
+		_request = nil;
 		return;
 	}
 	
@@ -147,7 +147,7 @@
 	
 	[checkInResult release];
 	
-	self.request = nil;
+	_request = nil;
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request {
@@ -155,7 +155,7 @@
 
 	[Globals showNetworkError:request.error];
 
-	self.request = nil;
+	_request = nil;
 }
 
 @end

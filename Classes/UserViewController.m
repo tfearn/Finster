@@ -12,6 +12,7 @@
 @implementation UserViewController
 @synthesize followButton = _followButton;
 @synthesize isFollowingUserRequest = _isFollowingUserRequest;
+@synthesize followUnfollowUserRequest = _followUnfollowUserRequest;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -25,12 +26,12 @@
 	else {
 		// Are we following this user?
 		NSString *url = [NSString stringWithFormat:kUrlIsFollowingUser, self.user.userID];
-		
-		ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
-		[request setDelegate:self];
-		[request setDidFinishSelector:@selector(isFollowingUserRequestComplete:)];
-		[request setDidFailSelector:@selector(isFollowingUserRequestFailure:)];
-		[self.queue addOperation:request];
+
+		_isFollowingUserRequest = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
+		[_isFollowingUserRequest setDelegate:self];
+		[_isFollowingUserRequest setDidFinishSelector:@selector(isFollowingUserRequestComplete:)];
+		[_isFollowingUserRequest setDidFailSelector:@selector(isFollowingUserRequestFailure:)];
+		[_isFollowingUserRequest startAsynchronous];
 		
 		[self showWaitView:@"Retrieving user..."];
 	}
@@ -56,6 +57,8 @@
 - (void)dealloc {
 	if(self.isFollowingUserRequest != nil)
 		[self.isFollowingUserRequest clearDelegatesAndCancel];
+	if(self.followUnfollowUserRequest != nil)
+		[self.followUnfollowUserRequest clearDelegatesAndCancel];
 	
 	[_followButton release];
     [super dealloc];
@@ -67,11 +70,11 @@
 		url = [NSString stringWithFormat:kUrlFollowUser, self.user.userID];
 	}
 	
-	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
-	[request setDelegate:self];
-	[request setDidFinishSelector:@selector(followUnFollowUserRequestComplete:)];
-	[request setDidFailSelector:@selector(followUnFollowUserRequestFailure:)];
-	[self.queue addOperation:request];
+	_followUnfollowUserRequest = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
+	[_followUnfollowUserRequest setDelegate:self];
+	[_followUnfollowUserRequest setDidFinishSelector:@selector(followUnFollowUserRequestComplete:)];
+	[_followUnfollowUserRequest setDidFailSelector:@selector(followUnFollowUserRequestFailure:)];
+	[_followUnfollowUserRequest startAsynchronous];
 
 	[self showWaitView:@"Please Wait..."];
 }
@@ -104,7 +107,7 @@
 	else
 		[self.followButton setTitle:@"Follow" forState:UIControlStateNormal];
 	
-	self.isFollowingUserRequest = nil;
+	_isFollowingUserRequest = nil;
 }
 
 - (void)isFollowingUserRequestFailure:(ASIHTTPRequest *)request {
@@ -112,7 +115,7 @@
 	
 	[Globals showNetworkError:request.error];
 	
-	self.isFollowingUserRequest = nil;
+	_isFollowingUserRequest = nil;
 }
 
 - (void)followUnFollowUserRequestComplete:(ASIHTTPRequest *)request {
@@ -126,12 +129,16 @@
 	
 	[self.navigationController setNavigationBarHidden:NO animated:NO]; 
 	[self.navigationController popToRootViewControllerAnimated:YES];
+	
+	_followUnfollowUserRequest = nil;
 }
 
 - (void)followUnFollowUserRequestFailure:(ASIHTTPRequest *)request {
 	[self dismissWaitView];
 	
 	[Globals showNetworkError:request.error];
+
+	_followUnfollowUserRequest = nil;
 }
 
 

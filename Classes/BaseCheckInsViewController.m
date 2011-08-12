@@ -96,7 +96,7 @@
 		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"JSON Error" message:[error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
 		[alert show];
 		
-		self.request = nil;
+		_request = nil;
 		return;
 	}
 	
@@ -141,7 +141,7 @@
 	[self.tableView reloadData];
 	
 	// Release the request
-	self.request = nil;
+	_request = nil;
 	
 	// Increment the startRow for the next call
 	startRow += kMaxRowsForGetCheckIns;
@@ -152,7 +152,7 @@
 	
 	[Globals showNetworkError:request.error];
 	
-	self.request = nil;
+	_request = nil;
 }
 
 

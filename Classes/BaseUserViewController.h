@@ -17,13 +17,13 @@
 @interface BaseUserViewController : PullRefreshTableViewController <ASIHTTPRequestDelegate, ImageManagerDelegate> {
 	IBOutlet UIImageView *_userImageView;
 	IBOutlet UILabel *_username;
-	NSOperationQueue *_queue;
+	ASIHTTPRequest *_request;
 	ImageManager *_imageManager;
 	User *_user;
 }
 @property (nonatomic, retain) UIImageView *userImageView;
 @property (nonatomic, retain) UILabel *username;
-@property (nonatomic, retain) NSOperationQueue *queue;
+@property (nonatomic, retain) ASIHTTPRequest *request;
 @property (nonatomic, retain) ImageManager *imageManager;
 @property (nonatomic, retain) User *user;
 

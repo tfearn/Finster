@@ -502,8 +502,8 @@
 		82C104291357370D00302082 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A8FD260B1367190E0099E7FC /* Login */,
 				82C10428135736D200302082 /* CheckIn */,
+				A8FD260B1367190E0099E7FC /* Login */,
 				82C107A3135797C800302082 /* TickerFind */,
 				822435A5135F7DC100C6258F /* Wall */,
 				A83AE1A913D0AB5A00D1C045 /* Activity */,
@@ -1090,7 +1090,7 @@
 					"\"$(SRCROOT)/Flurry SDK/FlurryLib\"",
 				);
 				PRODUCT_NAME = Finster;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "530CC6D1-23E3-4B2D-82DD-67150E449507";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "11E7029B-1D7C-4E8E-96E6-9B00BCF71E92";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
