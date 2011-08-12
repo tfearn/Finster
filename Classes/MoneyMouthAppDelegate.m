@@ -21,6 +21,17 @@
 @synthesize tabBarController;
 @synthesize facebook;
 
+#pragma mark Uncaught exception handler
+void uncaughtExceptionHandler(NSException *exception) {
+	[FlurryAPI logError:@"Uncaught Exception" message:[exception name] exception:exception];
+	
+	NSString *exceptionString = [NSString stringWithFormat:@"Uncaught Exception: %@ Reason: %@", [exception name], [exception reason]];
+	NSLog(@"%@", exceptionString);
+	if([exception.userInfo count]) {
+		NSLog(@"%@", exception.userInfo);
+	}
+}
+
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -28,6 +39,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     // Override point for customization after application launch.
+	NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
 
 	// Start Flurry
 	[FlurryAPI startSession:@"MHXFBN6F4EUFT6BSXB9Z"];
@@ -51,7 +63,6 @@
 
 	return YES;
 }
-
 
 - (BOOL)initializeDatabase {
 	

@@ -264,8 +264,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
-								<string>82C1064413575F4100302082</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>82C1042C1357373700302082</string>
 								<string>82C104291357370D00302082</string>
 								<string>82E7411C13E1E4FF002B88EB</string>
 								<string>A877C7B313DE065A00ABACE6</string>
@@ -276,13 +276,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>68</integer>
-									<integer>67</integer>
+									<integer>50</integer>
+									<integer>3</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 322}, {299, 966}}</string>
+							<string>{{0, 0}, {299, 966}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -312,12 +312,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Finster-Info.plist</string>
+								<string>MoneyMouthAppDelegate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +327,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Finster-Info.plist</string>
+										<string>MoneyMouthAppDelegate.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>A8B69D2813F48DF900E2F325</string>
+										<string>A8240DFD13F594E5006D9C5B</string>
 										<key>history</key>
 										<array>
 											<string>A87744431356918400DD721B</string>
@@ -443,8 +445,6 @@
 											<string>A8EB4BE713F09FD30046836F</string>
 											<string>A831ACD413F1EBDD00B3426C</string>
 											<string>A831ACD613F1EBDD00B3426C</string>
-											<string>A831ACD713F1EBDD00B3426C</string>
-											<string>A831ACD813F1EBDD00B3426C</string>
 											<string>A831AD0513F1F09F00B3426C</string>
 											<string>A831AD0613F1F09F00B3426C</string>
 											<string>A886E22713F48BC500F2A86F</string>
@@ -452,7 +452,9 @@
 											<string>A886E22913F48BC500F2A86F</string>
 											<string>A886E22A13F48BC500F2A86F</string>
 											<string>A886E23F13F48C1E00F2A86F</string>
-											<string>A886E24F13F48D0B00F2A86F</string>
+											<string>A81F714413F5903B000F42B2</string>
+											<string>A81F715C13F592ED000F42B2</string>
+											<string>A8240DE413F59463006D9C5B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -510,9 +512,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>A8B69D1F13F48DC900E2F325</string>
+				<string>A8240DE613F59463006D9C5B</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>A8B69D2013F48DC900E2F325</string>
+				<string>A8240DE713F59463006D9C5B</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -650,11 +652,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>A8B69D2A13F48DF900E2F325</string>
-		<string>A8B69D2B13F48DF900E2F325</string>
-		<string>1C78EAAD065D492600B07095</string>
+		<string>A8240DFE13F594E5006D9C5B</string>
+		<string>A8240DF813F594A4006D9C5B</string>
+		<string>A8240DF113F59463006D9C5B</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>A8774399135660B600DD721B</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/tfearn/Project/Finster/Finster.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -735,7 +738,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>A8774399135660B600DD721B</string>
-				<string>A8B69D2113F48DC900E2F325</string>
+				<string>A8240DE813F59463006D9C5B</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -857,13 +860,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>A8B69D2213F48DC900E2F325</string>
+				<string>A8240DE913F59463006D9C5B</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>A8B69D2313F48DC900E2F325</string>
-				<string>A8B69D2413F48DC900E2F325</string>
-				<string>A8B69D2513F48DC900E2F325</string>
-				<string>A8B69D2613F48DC900E2F325</string>
-				<string>A8B69D2713F48DC900E2F325</string>
+				<string>A8240DEA13F59463006D9C5B</string>
+				<string>A8240DEB13F59463006D9C5B</string>
+				<string>A8240DEC13F59463006D9C5B</string>
+				<string>A8240DED13F59463006D9C5B</string>
+				<string>A8240DEE13F59463006D9C5B</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -982,6 +985,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -1017,7 +1022,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>A8B69D2913F48DF900E2F325</string>
+				<string>A8240DEF13F59463006D9C5B</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -1027,7 +1032,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
