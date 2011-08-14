@@ -114,13 +114,12 @@
 	[self dismissWaitView];
 
 	NSString *response = [request responseString];
-	MyLog(@"%@", response);
 	
 	// Parse the data
 	NSError *error = nil;
 	NSDictionary *dict = [self.jsonParser objectWithString:response error:&error];
 	if(error != nil) {
-		MyLog(@"Parser Error: %@", [error description]);
+		[Globals logError:error name:@"JSON_Parser_Error" detail:response];
 		
 		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"JSON Error" message:[error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
 		[alert show];

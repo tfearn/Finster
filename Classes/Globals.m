@@ -67,4 +67,15 @@ static NSDate *lastNetworkError;
 	lastNetworkError = [NSDate date];
 }
 
++ (void)logError:(NSError *)error name:(NSString *)name detail:(NSString *)detail {
+	
+	MyLog(@"Error: %@", [error description]);
+	if(detail != nil) {
+		MyLog(@"%@", detail);
+		
+		NSDictionary *errorDict = [NSDictionary dictionaryWithObjectsAndKeys:detail, @"logError", nil];
+		[FlurryAPI logEvent:name withParameters:errorDict timed:NO];
+	}
+}
+
 @end

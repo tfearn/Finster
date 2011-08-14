@@ -110,7 +110,7 @@
 	NSError *error = nil;
 	NSDictionary *dict = [jsonParser objectWithString:response error:&error];
 	if(error != nil) {
-		MyLog(@"Parser Error: %@", [error description]);
+		[Globals logError:error name:@"JSON_Parser_Error" detail:response];
 		
 		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"JSON Error" message:[error description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
 		[alert show];

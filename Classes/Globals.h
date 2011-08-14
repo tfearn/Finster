@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CSqliteDatabase.h"
+#import "FlurryAPI.h"
 
 // Check In Types
 #define kCheckInTypeIBought			1
@@ -73,5 +74,6 @@
 + (NSError *)openDatabase:(NSString *)filename;
 + (CSqliteDatabase *)getDatabaseHandle;
 + (void)showNetworkError:(NSError *)error;
++ (void)logError:(NSError *)error name:(NSString *)name detail:(NSString *)detail;
 
 @end

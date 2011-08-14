@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FlurryAPI.h"
 #import "BaseCheckInViewController.h"
 #import "CheckInResultViewController.h"
 #import "ASIHTTPRequest.h"
