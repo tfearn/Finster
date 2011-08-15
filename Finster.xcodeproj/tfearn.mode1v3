@@ -229,6 +229,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -265,24 +267,19 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
-								<string>82C1042C1357373700302082</string>
-								<string>82C104291357370D00302082</string>
-								<string>82E7411C13E1E4FF002B88EB</string>
-								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>19C28FACFE9D520D11CA2CBB</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>5</integer>
-									<integer>4</integer>
-									<integer>3</integer>
+									<integer>14</integer>
+									<integer>13</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {296, 610}}</string>
+							<string>{{0, 0}, {296, 655}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -294,14 +291,14 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {313, 628}}</string>
+						<string>{{0, 0}, {313, 673}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
 							<real>296</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>-1596 90 1280 669 -1680 -250 1680 1050 </string>
+						<string>-1571 33 1303 714 -1680 -250 1680 1050 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -312,14 +309,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Globals.h</string>
+								<string>Finster-Info.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,11 +322,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Globals.h</string>
+										<string>Finster-Info.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>A8CF835213F96F6F007246E7</string>
+										<string>A8CF836813F97220007246E7</string>
 										<key>history</key>
 										<array>
 											<string>A87744431356918400DD721B</string>
@@ -443,7 +438,6 @@
 											<string>A8CF82BB13F8366B007246E7</string>
 											<string>A8CF82BC13F8366B007246E7</string>
 											<string>A8CF82EB13F83A70007246E7</string>
-											<string>A8CF82F713F967D9007246E7</string>
 											<string>A8CF830813F96856007246E7</string>
 											<string>A8CF831C13F96A50007246E7</string>
 											<string>A8CF833213F96C03007246E7</string>
@@ -452,7 +446,8 @@
 											<string>A8CF834813F96E5D007246E7</string>
 											<string>A8CF834913F96E5D007246E7</string>
 											<string>A8CF835013F96F6F007246E7</string>
-											<string>A8CF835113F96F6F007246E7</string>
+											<string>A8CF836013F970D4007246E7</string>
+											<string>A8CF836713F97220007246E7</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -464,14 +459,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {962, 623}}</string>
+								<string>{{0, 0}, {985, 668}}</string>
 								<key>RubberWindowFrame</key>
-								<string>-1596 90 1280 669 -1680 -250 1680 1050 </string>
+								<string>-1571 33 1303 714 -1680 -250 1680 1050 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>623pt</string>
+							<string>668pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -484,9 +479,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 628}, {962, 0}}</string>
+								<string>{{0, 673}, {985, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>-1596 90 1280 669 -1680 -250 1680 1050 </string>
+								<string>-1571 33 1303 714 -1680 -250 1680 1050 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -495,7 +490,7 @@
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>962pt</string>
+					<string>985pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -650,18 +645,17 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>A8CF835313F96F6F007246E7</string>
 		<string>A8CF830213F96851007246E7</string>
+		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>A8CF823513F6A09A007246E7</string>
 		<string>A8CF822813F6A00C007246E7</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>A8774399135660B600DD721B</string>
-		<string>1C530D57069F1CE1000CFCEE</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/tfearn/Project/Finster/Finster.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>-1596 90 1280 669 -1680 -250 1680 1050 </string>
+	<string>-1571 33 1303 714 -1680 -250 1680 1050 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -966,7 +960,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C530D57069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
@@ -1032,7 +1026,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

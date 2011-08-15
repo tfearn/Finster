@@ -21,9 +21,9 @@
 		);
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Release;
 		activeExecutable = A877438C135660B100DD721B /* Finster */;
-		activeSDKPreference = iphonesimulator4.3;
+		activeSDKPreference = iphoneos4.3;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Finster */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* Finster */,
@@ -64,7 +64,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					723,
+					746,
 					20,
 					48,
 					43,
@@ -290,6 +290,11 @@
 			A8CF835713F96FD8007246E7 /* PBXTextBookmark */ = A8CF835713F96FD8007246E7 /* PBXTextBookmark */;
 			A8CF835813F96FD8007246E7 /* PBXTextBookmark */ = A8CF835813F96FD8007246E7 /* PBXTextBookmark */;
 			A8CF835913F96FD9007246E7 /* PBXTextBookmark */ = A8CF835913F96FD9007246E7 /* PBXTextBookmark */;
+			A8CF836013F970D4007246E7 /* PBXTextBookmark */ = A8CF836013F970D4007246E7 /* PBXTextBookmark */;
+			A8CF836113F970D4007246E7 /* PlistBookmark */ = A8CF836113F970D4007246E7 /* PlistBookmark */;
+			A8CF836213F970D4007246E7 /* PlistBookmark */ = A8CF836213F970D4007246E7 /* PlistBookmark */;
+			A8CF836713F97220007246E7 /* PlistBookmark */ = A8CF836713F97220007246E7 /* PlistBookmark */;
+			A8CF836813F97220007246E7 /* PlistBookmark */ = A8CF836813F97220007246E7 /* PlistBookmark */;
 			A8CFEF9E137D9AB000D14F53 = A8CFEF9E137D9AB000D14F53 /* PBXTextBookmark */;
 			A8CFEF9F137D9AB000D14F53 = A8CFEF9F137D9AB000D14F53 /* PBXTextBookmark */;
 			A8E7C2FA13EAD5550028A5E8 = A8E7C2FA13EAD5550028A5E8 /* PBXTextBookmark */;
@@ -2553,6 +2558,61 @@
 		rType = 0;
 		vrLen = 1007;
 		vrLoc = 2664;
+	};
+	A8CF836013F970D4007246E7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 82C1042F135737F000302082 /* Globals.h */;
+		name = "Globals.h: 36";
+		rLen = 0;
+		rLoc = 1319;
+		rType = 0;
+		vrLen = 2439;
+		vrLoc = 516;
+	};
+	A8CF836113F970D4007246E7 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Finster-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleDevelopmentRegion,
+		);
+		name = "/Users/tfearn/Project/Finster/Finster-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	A8CF836213F970D4007246E7 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Finster-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/tfearn/Project/Finster/Finster-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	A8CF836713F97220007246E7 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Finster-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/tfearn/Project/Finster/Finster-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	A8CF836813F97220007246E7 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Finster-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/tfearn/Project/Finster/Finster-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
 	};
 	A8CFEF6B137D978C00D14F53 /* CheckInTypeFormatter.h */ = {
 		uiCtxt = {
