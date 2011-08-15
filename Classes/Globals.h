@@ -33,7 +33,7 @@
 #define kUrlLoginUsingFacebook		@"http://developer.finster.mobi/api/loginUsingFacebook?facebookuserid=%@&accesstoken=%@"
 #define kUrlGetCheckInsYouFriends	@"http://developer.finster.mobi/api/getcheckins?feed=you,friends&start=0&limit=20"
 #define kUrlGetCheckInsNetwork		@"http://developer.finster.mobi/api/getcheckins?feed=network&start=0&limit=20"
-#define kUrlGetCheckInsByTicker		@"http://developer.finster.mobi/api/getcheckins?feed=network&ticker=%@"
+#define kUrlGetCheckInsByTicker		@"http://developer.finster.mobi/api/getcheckins?ticker=%@"
 #define kUrlGetCheckInsByUser		@"http://developer.finster.mobi/api/getcheckins?feed=user&userid=%@"
 #define kUrlPostCheckIn				@"http://developer.finster.mobi/api/checkin?type=%d&symbol=%@&symbolName=%@&symbolType=%@"
 #define kUrlGetUser					@"http://developer.finster.mobi/api/getuser"

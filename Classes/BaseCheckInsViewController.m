@@ -61,8 +61,10 @@
 
 - (void)getData {
 	NSString *url = [NSString stringWithFormat:@"%@&start=%d&limit=%d", [self getRequestUrl], startRow, kMaxRowsForGetCheckIns];
+	NSString* escapedUrlString =[url stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+	MyLog(@"%@", escapedUrlString);
 	
-	_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
+	_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:escapedUrlString]];
 	[self.request setDelegate:self];
 	[self.request startAsynchronous];
 }

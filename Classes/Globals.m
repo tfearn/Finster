@@ -17,7 +17,10 @@ static NSDate *lastNetworkError;
 
 + (void)initialize {
 	lastTickerSearch = [[NSString alloc] init];
-	lastNetworkError = [[NSDate alloc] init];
+	
+	// Initialize the last network error date to now - 120 seconds so the initial
+	// network error will show if triggered at startup
+	lastNetworkError = [[NSDate alloc] initWithTimeIntervalSinceNow:-120];
 }
 
 + (NSString *)getLastTickerSearch {
