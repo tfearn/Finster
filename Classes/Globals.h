@@ -44,6 +44,7 @@
 #define kUrlGetUserFollowers		@"http://developer.finster.mobi/api/getuserfollowers"
 #define kUrlGetTrending				@"http://developer.finster.mobi/api/gettrending?start=0&limit=20"
 #define kUrlFindUser				@"http://developer.finster.mobi/api/finduser?search=%@"
+#define kUrlTwitterConnect			@"http://developer.finster.mobi/api/twitterconnect?username=%@&password=%@"
 
 // Maximum rows retrieved for all getcheckins REST calls
 #define kMaxRowsForGetCheckIns		50
@@ -57,6 +58,7 @@
 // Other defines
 #define kDatabaseFilename						@"finster.sqlite"
 #define kMaxSecondsBetweenNetworkErrorMessages	60.0
+#define kTwitterConfigured						@"TwitterConfigured"
 
 // Macros
 #ifndef NDEBUG

@@ -13,11 +13,14 @@
 #import "ASIHTTPRequest.h"
 #import "SBJSON.h"
 #import "CheckInResult.h"
+#import "ConfigureTwitterViewController.h"
 
 @interface CheckInConfirmViewController : BaseCheckInViewController <UITextViewDelegate, ASIHTTPRequestDelegate> {
 	IBOutlet UITextView *_textView;
 	IBOutlet UIImageView *_facebookImageView;
-	IBOutlet UISwitch *_facebookSwitch;
+	IBOutlet UIImageView *_twitterImageView;
+	IBOutlet UIButton *_facebookButton;
+	IBOutlet UIButton *_twitterButton;
 	ASIHTTPRequest *_request;
 	SBJSON *_jsonParser;
 	BOOL commentExists;
@@ -26,11 +29,14 @@
 }
 @property (nonatomic, retain) UITextView *textView;
 @property (nonatomic, retain) UIImageView *facebookImageView;
-@property (nonatomic, retain) UISwitch *facebookSwitch;
+@property (nonatomic, retain) UIImageView *twitterImageView;
+@property (nonatomic, retain) UIButton *facebookButton;
+@property (nonatomic, retain) UIButton *twitterButton;
 @property (nonatomic, retain) ASIHTTPRequest *request;
 @property (nonatomic, retain) SBJSON *jsonParser;
 
-- (IBAction)facebookSwitchPressed:(id)sender;
+- (IBAction)facebookButtonPressed:(id)sender;
+- (IBAction)twitterButtonPressed:(id)sender;
 - (IBAction)checkInButtonPressed:(id)sender;
 
 @end

@@ -104,6 +104,8 @@
 		A8B12EC613E0EF0100A54B74 /* BaseUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B12EC513E0EF0100A54B74 /* BaseUserViewController.m */; };
 		A8CFEF6D137D978C00D14F53 /* CheckInTypeFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CFEF6C137D978C00D14F53 /* CheckInTypeFormatter.m */; };
 		A8E6E13B13679389009DE488 /* finster.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A8E6E13A13679389009DE488 /* finster.sqlite */; };
+		A8EA1C8C13FAC4CD00654AE0 /* ConfigureTwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EA1C8B13FAC4CD00654AE0 /* ConfigureTwitterViewController.m */; };
+		A8EA1C8E13FAC4E800654AE0 /* ConfigureTwitterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8EA1C8D13FAC4E800654AE0 /* ConfigureTwitterView.xib */; };
 		A8EB4AD113F066EB0046836F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A8EB4AD013F066EB0046836F /* Default.png */; };
 		A8EB4AE813F06F950046836F /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8EB4AE713F06F950046836F /* libFlurry.a */; };
 		A8ED1CDF1358A38D0003115F /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ED1CC41358A38D0003115F /* ASIAuthenticationDialog.m */; };
@@ -296,6 +298,9 @@
 		A8CFEF6B137D978C00D14F53 /* CheckInTypeFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInTypeFormatter.h; sourceTree = "<group>"; };
 		A8CFEF6C137D978C00D14F53 /* CheckInTypeFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInTypeFormatter.m; sourceTree = "<group>"; };
 		A8E6E13A13679389009DE488 /* finster.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = finster.sqlite; sourceTree = "<group>"; };
+		A8EA1C8A13FAC4CD00654AE0 /* ConfigureTwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigureTwitterViewController.h; sourceTree = "<group>"; };
+		A8EA1C8B13FAC4CD00654AE0 /* ConfigureTwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigureTwitterViewController.m; sourceTree = "<group>"; };
+		A8EA1C8D13FAC4E800654AE0 /* ConfigureTwitterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigureTwitterView.xib; sourceTree = "<group>"; };
 		A8EB4AD013F066EB0046836F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = images/Default.png; sourceTree = "<group>"; };
 		A8EB4AE613F06F950046836F /* FlurryAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAPI.h; sourceTree = "<group>"; };
 		A8EB4AE713F06F950046836F /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
@@ -444,6 +449,7 @@
 				828A7AF013E0BEB40082D968 /* FollowingView.xib */,
 				828A7AF313E0BF020082D968 /* FollowersView.xib */,
 				A81EE05313E2F8840073368E /* FindFriendsOnAppView.xib */,
+				A8EA1C8D13FAC4E800654AE0 /* ConfigureTwitterView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -503,6 +509,8 @@
 				A81EE05713E2F9E30073368E /* BaseUserListViewController.m */,
 				A86C8FCC13E6F4F3001529AE /* PullRefreshTableViewController.h */,
 				A86C8FCD13E6F4F3001529AE /* PullRefreshTableViewController.m */,
+				A8EA1C8A13FAC4CD00654AE0 /* ConfigureTwitterViewController.h */,
+				A8EA1C8B13FAC4CD00654AE0 /* ConfigureTwitterViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -975,6 +983,7 @@
 				A860C06F13EA121800E5A9E5 /* up-arrow.png in Resources */,
 				A860C07B13EA15C000E5A9E5 /* down-arrow.png in Resources */,
 				A8EB4AD113F066EB0046836F /* Default.png in Resources */,
+				A8EA1C8E13FAC4E800654AE0 /* ConfigureTwitterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1050,6 +1059,7 @@
 				82A4C26513E9EF96005AA353 /* Trend.m in Sources */,
 				82A4C29F13E9F81C005AA353 /* TrendingViewCell.m in Sources */,
 				8266AB1813EB32D5007C3B3B /* SpinnerView.m in Sources */,
+				A8EA1C8C13FAC4CD00654AE0 /* ConfigureTwitterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

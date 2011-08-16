@@ -8,12 +8,18 @@
 
 #import "CheckInConfirmViewController.h"
 
+@interface CheckInConfirmViewController (Private)
+	- (BOOL)isTwitterConfigured;
+@end
+
 #define kTextViewDefaultMessage		@"Add a comment..."
 
 @implementation CheckInConfirmViewController
 @synthesize textView = _textView;
 @synthesize facebookImageView = _facebookImageView;
-@synthesize facebookSwitch = _facebookSwitch;
+@synthesize twitterImageView = _twitterImageView;
+@synthesize facebookButton = _facebookButton;
+@synthesize twitterButton = _twitterButton;
 @synthesize request = _request;
 @synthesize jsonParser = _jsonParser;
 
@@ -28,8 +34,13 @@
 	
 	// Default Facebook share on
 	facebookOn = YES;
-	[self.facebookSwitch setOn:YES];
-	
+
+	// Default Twitter share on?
+	if([self isTwitterConfigured]) {
+		twitterOn = YES;
+		self.twitterImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"twitter-icon" ofType:@"png"]];
+	}
+
 	// Add a notification observer for check-in complete
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(viewFilterChanged) name:kNotificationCheckInComplete object:nil];
 }
@@ -55,9 +66,15 @@
 
 	[_textView release];
 	[_facebookImageView release];
-	[_facebookSwitch release];
+	[_twitterImageView release];
+	[_facebookButton release];
+	[_twitterButton release];	
 	[_jsonParser release];
     [super dealloc];
+}
+
+- (BOOL)isTwitterConfigured {
+	return [[NSUserDefaults standardUserDefaults] boolForKey: kTwitterConfigured];
 }
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
@@ -78,9 +95,31 @@
     return TRUE;
 }
 
-- (IBAction)facebookSwitchPressed:(id)sender {
-	facebookOn = self.facebookSwitch.on;
+- (IBAction)facebookButtonPressed:(id)sender {
+	facebookOn = ! facebookOn;
+	if(facebookOn)
+		self.facebookImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"facebook-icon" ofType:@"png"]];
+	else
+		self.facebookImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"facebook-grey-icon" ofType:@"png"]];
 }
+
+- (IBAction)twitterButtonPressed:(id)sender {
+	
+	// If Twitter is not configured, and we're going to Twitter = YES, we 
+	// must configure Twitter before proceeding
+	if([self isTwitterConfigured] == NO && twitterOn == NO) {
+		ConfigureTwitterViewController *controller = [[ConfigureTwitterViewController alloc] init];
+		[self.navigationController presentModalViewController:controller animated:YES];
+		[controller release];
+	}
+	else {
+		twitterOn = ! twitterOn;
+		if(twitterOn)
+			self.twitterImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"twitter-icon" ofType:@"png"]];
+		else
+			self.twitterImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"twitter-grey-icon" ofType:@"png"]];
+	}
+}		
 
 - (IBAction)checkInButtonPressed:(id)sender {
 
