@@ -13,7 +13,7 @@
 #import "ASIHTTPRequest.h"
 #import "SBJSON.h"
 #import "CheckInResult.h"
-#import "ConfigureTwitterViewController.h"
+#import "TwitterConnectViewController.h"
 
 @interface CheckInConfirmViewController : BaseCheckInViewController <UITextViewDelegate, ASIHTTPRequestDelegate> {
 	IBOutlet UITextView *_textView;

@@ -108,7 +108,7 @@
 	// If Twitter is not configured, and we're going to Twitter = YES, we 
 	// must configure Twitter before proceeding
 	if([self isTwitterConfigured] == NO && twitterOn == NO) {
-		ConfigureTwitterViewController *controller = [[ConfigureTwitterViewController alloc] init];
+		TwitterConnectViewController *controller = [[TwitterConnectViewController alloc] init];
 		[self.navigationController presentModalViewController:controller animated:YES];
 		[controller release];
 	}

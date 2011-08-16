@@ -1,5 +1,5 @@
 //
-//  ConfigureTwitterViewController.h
+//  TwitterConnectViewController.h
 //  Finster
 //
 //  Created by Todd Fearn on 8/16/11.
@@ -11,7 +11,7 @@
 #import "SBJSON.h"
 #import "BaseViewController.h"
 
-@interface ConfigureTwitterViewController : BaseViewController <ASIHTTPRequestDelegate> {
+@interface TwitterConnectViewController : BaseViewController <ASIHTTPRequestDelegate> {
 	IBOutlet UITextField *_username;
 	IBOutlet UITextField *_password;
 	ASIHTTPRequest *_request;

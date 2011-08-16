@@ -267,6 +267,7 @@
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>82C1042C1357373700302082</string>
 								<string>82C104291357370D00302082</string>
+								<string>A8EA1CFD13FAD5D700654AE0</string>
 								<string>82C10428135736D200302082</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>19C28FACFE9D520D11CA2CBB</string>
@@ -275,15 +276,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>30</integer>
-									<integer>22</integer>
-									<integer>21</integer>
-									<integer>3</integer>
+									<integer>79</integer>
+									<integer>56</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 198}, {296, 936}}</string>
+							<string>{{0, 611}, {296, 936}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -320,7 +319,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CheckInConfirmViewController.m</string>
+								<string>CheckInConfirmViewController.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -328,11 +327,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CheckInConfirmViewController.m</string>
+										<string>CheckInConfirmViewController.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>A8EA1CFB13FAD52E00654AE0</string>
+										<string>A8EA1D1513FAD6B100654AE0</string>
 										<key>history</key>
 										<array>
 											<string>A87744431356918400DD721B</string>
@@ -450,12 +449,12 @@
 											<string>A8EA1C9B13FAC9FB00654AE0</string>
 											<string>A8EA1C9C13FAC9FB00654AE0</string>
 											<string>A8EA1CC913FAD0AC00654AE0</string>
-											<string>A8EA1CCA13FAD0AC00654AE0</string>
-											<string>A8EA1CCB13FAD0AC00654AE0</string>
 											<string>A8EA1CDC13FAD2F700654AE0</string>
 											<string>A8EA1CDD13FAD2F700654AE0</string>
-											<string>A8EA1CF313FAD4D400654AE0</string>
-											<string>A8EA1CF413FAD4D400654AE0</string>
+											<string>A8EA1D0113FAD66200654AE0</string>
+											<string>A8EA1D0213FAD66200654AE0</string>
+											<string>A8EA1D1313FAD6B100654AE0</string>
+											<string>A8EA1D1413FAD6B100654AE0</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -653,7 +652,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>A8EA1CFC13FAD52E00654AE0</string>
+		<string>A8EA1D1613FAD6B100654AE0</string>
 		<string>A8EA1C7B13FAC21E00654AE0</string>
 		<string>A8EA1C4713FABDEE00654AE0</string>
 		<string>1C78EAAD065D492600B07095</string>
@@ -678,6 +677,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -700,8 +701,6 @@
 							<string>386pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>

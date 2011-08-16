@@ -237,6 +237,17 @@
 			A8EA1CF413FAD4D400654AE0 /* PBXTextBookmark */ = A8EA1CF413FAD4D400654AE0 /* PBXTextBookmark */;
 			A8EA1CF513FAD4D400654AE0 /* PBXTextBookmark */ = A8EA1CF513FAD4D400654AE0 /* PBXTextBookmark */;
 			A8EA1CFB13FAD52E00654AE0 /* PBXTextBookmark */ = A8EA1CFB13FAD52E00654AE0 /* PBXTextBookmark */;
+			A8EA1D0113FAD66200654AE0 /* PBXTextBookmark */ = A8EA1D0113FAD66200654AE0 /* PBXTextBookmark */;
+			A8EA1D0213FAD66200654AE0 /* PBXTextBookmark */ = A8EA1D0213FAD66200654AE0 /* PBXTextBookmark */;
+			A8EA1D0313FAD66200654AE0 /* PBXTextBookmark */ = A8EA1D0313FAD66200654AE0 /* PBXTextBookmark */;
+			A8EA1D0413FAD66200654AE0 /* PBXTextBookmark */ = A8EA1D0413FAD66200654AE0 /* PBXTextBookmark */;
+			A8EA1D0513FAD67600654AE0 /* PBXTextBookmark */ = A8EA1D0513FAD67600654AE0 /* PBXTextBookmark */;
+			A8EA1D0E13FAD6AF00654AE0 /* PBXTextBookmark */ = A8EA1D0E13FAD6AF00654AE0 /* PBXTextBookmark */;
+			A8EA1D0F13FAD6AF00654AE0 /* XCBuildMessageTextBookmark */ = A8EA1D0F13FAD6AF00654AE0 /* XCBuildMessageTextBookmark */;
+			A8EA1D1013FAD6AF00654AE0 /* PBXTextBookmark */ = A8EA1D1013FAD6AF00654AE0 /* PBXTextBookmark */;
+			A8EA1D1313FAD6B100654AE0 /* PBXTextBookmark */ = A8EA1D1313FAD6B100654AE0 /* PBXTextBookmark */;
+			A8EA1D1413FAD6B100654AE0 /* XCBuildMessageTextBookmark */ = A8EA1D1413FAD6B100654AE0 /* XCBuildMessageTextBookmark */;
+			A8EA1D1513FAD6B100654AE0 /* PBXTextBookmark */ = A8EA1D1513FAD6B100654AE0 /* PBXTextBookmark */;
 			A8EB4A3013F059CE0046836F = A8EB4A3013F059CE0046836F /* PBXBookmark */;
 			A8EB4A5013F05BE40046836F = A8EB4A5013F05BE40046836F /* PBXTextBookmark */;
 			A8EB4A5113F05BE40046836F = A8EB4A5113F05BE40046836F /* PBXTextBookmark */;
@@ -1337,7 +1348,7 @@
 		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
 		name = "CheckInConfirmViewController.m: 103";
 		rLen = 0;
-		rLoc = 4772;
+		rLoc = 4768;
 		rType = 0;
 		vrLen = 1701;
 		vrLoc = 2266;
@@ -1554,7 +1565,7 @@
 		fRef = A8ED1E96135C99700003115F /* CheckInConfirmViewController.h */;
 		name = "CheckInConfirmViewController.h: 28";
 		rLen = 0;
-		rLoc = 806;
+		rLoc = 804;
 		rType = 0;
 		vrLen = 1298;
 		vrLoc = 0;
@@ -1564,7 +1575,7 @@
 		fRef = A8ED1E96135C99700003115F /* CheckInConfirmViewController.h */;
 		name = "CheckInConfirmViewController.h: 28";
 		rLen = 0;
-		rLoc = 806;
+		rLoc = 804;
 		rType = 0;
 		vrLen = 1298;
 		vrLoc = 0;
@@ -1574,7 +1585,7 @@
 		fRef = A8ED1E96135C99700003115F /* CheckInConfirmViewController.h */;
 		name = "CheckInConfirmViewController.h: 23";
 		rLen = 0;
-		rLoc = 724;
+		rLoc = 722;
 		rType = 0;
 		vrLen = 1298;
 		vrLoc = 0;
@@ -1629,19 +1640,19 @@
 		vrLen = 1669;
 		vrLoc = 200;
 	};
-	A8EA1C8A13FAC4CD00654AE0 /* ConfigureTwitterViewController.h */ = {
+	A8EA1C8A13FAC4CD00654AE0 /* TwitterConnectViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1301, 917}}";
-			sepNavSelRange = "{772, 0}";
-			sepNavVisRange = "{0, 772}";
+			sepNavSelRange = "{35, 0}";
+			sepNavVisRange = "{0, 768}";
 			sepNavWindowFrame = "{{-1665, 5}, {1085, 790}}";
 		};
 	};
-	A8EA1C8B13FAC4CD00654AE0 /* ConfigureTwitterViewController.m */ = {
+	A8EA1C8B13FAC4CD00654AE0 /* TwitterConnectViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1412, 1625}}";
-			sepNavSelRange = "{1252, 0}";
-			sepNavVisRange = "{0, 2203}";
+			sepNavIntBoundsRect = "{{0, 0}, {1412, 1560}}";
+			sepNavSelRange = "{799, 0}";
+			sepNavVisRange = "{0, 2197}";
 		};
 	};
 	A8EA1C9A13FAC9FB00654AE0 /* PBXTextBookmark */ = {
@@ -1676,20 +1687,20 @@
 	};
 	A8EA1C9D13FAC9FB00654AE0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = A8EA1C8A13FAC4CD00654AE0 /* ConfigureTwitterViewController.h */;
+		fRef = A8EA1C8A13FAC4CD00654AE0 /* TwitterConnectViewController.h */;
 		name = "ConfigureTwitterViewController.h: 17";
 		rLen = 0;
-		rLoc = 572;
+		rLoc = 568;
 		rType = 0;
 		vrLen = 459;
 		vrLoc = 0;
 	};
 	A8EA1C9E13FAC9FB00654AE0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = A8EA1C8B13FAC4CD00654AE0 /* ConfigureTwitterViewController.m */;
+		fRef = A8EA1C8B13FAC4CD00654AE0 /* TwitterConnectViewController.m */;
 		name = "ConfigureTwitterViewController.m: 39";
 		rLen = 0;
-		rLoc = 1103;
+		rLoc = 1097;
 		rType = 0;
 		vrLen = 944;
 		vrLoc = 0;
@@ -1699,7 +1710,7 @@
 		fRef = A8ED1E96135C99700003115F /* CheckInConfirmViewController.h */;
 		name = "CheckInConfirmViewController.h: 16";
 		rLen = 0;
-		rLoc = 392;
+		rLoc = 390;
 		rType = 0;
 		vrLen = 1341;
 		vrLoc = 0;
@@ -1709,7 +1720,7 @@
 		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
 		name = "CheckInConfirmViewController.m: 112";
 		rLen = 0;
-		rLoc = 3435;
+		rLoc = 3431;
 		rType = 0;
 		vrLen = 1881;
 		vrLoc = 2355;
@@ -1756,60 +1767,60 @@
 	};
 	A8EA1CB113FACE3800654AE0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = A8EA1C8A13FAC4CD00654AE0 /* ConfigureTwitterViewController.h */;
+		fRef = A8EA1C8A13FAC4CD00654AE0 /* TwitterConnectViewController.h */;
 		name = "ConfigureTwitterViewController.h: 21";
 		rLen = 0;
-		rLoc = 766;
+		rLoc = 762;
 		rType = 0;
 		vrLen = 547;
 		vrLoc = 0;
 	};
 	A8EA1CB213FACE3800654AE0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = A8EA1C8B13FAC4CD00654AE0 /* ConfigureTwitterViewController.m */;
+		fRef = A8EA1C8B13FAC4CD00654AE0 /* TwitterConnectViewController.m */;
 		name = "ConfigureTwitterViewController.m: 39";
 		rLen = 0;
-		rLoc = 1103;
+		rLoc = 1097;
 		rType = 0;
 		vrLen = 944;
 		vrLoc = 0;
 	};
 	A8EA1CB313FACE3800654AE0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = A8EA1C8B13FAC4CD00654AE0 /* ConfigureTwitterViewController.m */;
+		fRef = A8EA1C8B13FAC4CD00654AE0 /* TwitterConnectViewController.m */;
 		name = "ConfigureTwitterViewController.m: 42";
 		rLen = 0;
-		rLoc = 1155;
+		rLoc = 1149;
 		rType = 0;
 		vrLen = 1037;
 		vrLoc = 0;
 	};
 	A8EA1CB513FACE9E00654AE0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = A8EA1C8A13FAC4CD00654AE0 /* ConfigureTwitterViewController.h */;
+		fRef = A8EA1C8A13FAC4CD00654AE0 /* TwitterConnectViewController.h */;
 		name = "ConfigureTwitterViewController.h: 23";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 768;
 		rType = 0;
 		vrLen = 547;
 		vrLoc = 0;
 	};
 	A8EA1CB613FACE9E00654AE0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = A8EA1C8B13FAC4CD00654AE0 /* ConfigureTwitterViewController.m */;
+		fRef = A8EA1C8B13FAC4CD00654AE0 /* TwitterConnectViewController.m */;
 		name = "ConfigureTwitterViewController.m: 46";
 		rLen = 0;
-		rLoc = 2335;
+		rLoc = 2329;
 		rType = 0;
 		vrLen = 1037;
 		vrLoc = 0;
 	};
 	A8EA1CB713FACE9E00654AE0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = A8EA1C8B13FAC4CD00654AE0 /* ConfigureTwitterViewController.m */;
+		fRef = A8EA1C8B13FAC4CD00654AE0 /* TwitterConnectViewController.m */;
 		name = "ConfigureTwitterViewController.m: 46";
 		rLen = 0;
-		rLoc = 2335;
+		rLoc = 2329;
 		rType = 0;
 		vrLen = 1037;
 		vrLoc = 0;
@@ -1829,17 +1840,17 @@
 		fRef = A8ED1E96135C99700003115F /* CheckInConfirmViewController.h */;
 		name = "CheckInConfirmViewController.h: 37";
 		rLen = 0;
-		rLoc = 1198;
+		rLoc = 1196;
 		rType = 0;
 		vrLen = 1341;
 		vrLoc = 0;
 	};
 	A8EA1CCB13FAD0AC00654AE0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = A8EA1C8A13FAC4CD00654AE0 /* ConfigureTwitterViewController.h */;
+		fRef = A8EA1C8A13FAC4CD00654AE0 /* TwitterConnectViewController.h */;
 		name = "ConfigureTwitterViewController.h: 29";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 768;
 		rType = 0;
 		vrLen = 772;
 		vrLoc = 0;
@@ -1849,17 +1860,17 @@
 		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
 		name = "CheckInConfirmViewController.m: 147";
 		rLen = 0;
-		rLoc = 4947;
+		rLoc = 4943;
 		rType = 0;
 		vrLen = 2965;
 		vrLoc = 3563;
 	};
 	A8EA1CCD13FAD0AC00654AE0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = A8EA1C8B13FAC4CD00654AE0 /* ConfigureTwitterViewController.m */;
+		fRef = A8EA1C8B13FAC4CD00654AE0 /* TwitterConnectViewController.m */;
 		name = "ConfigureTwitterViewController.m: 58";
 		rLen = 0;
-		rLoc = 2197;
+		rLoc = 2191;
 		rType = 0;
 		vrLen = 1892;
 		vrLoc = 390;
@@ -1906,40 +1917,40 @@
 	};
 	A8EA1CDE13FAD2F700654AE0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = A8EA1C8B13FAC4CD00654AE0 /* ConfigureTwitterViewController.m */;
+		fRef = A8EA1C8B13FAC4CD00654AE0 /* TwitterConnectViewController.m */;
 		name = "ConfigureTwitterViewController.m: 112";
 		rLen = 0;
-		rLoc = 3519;
+		rLoc = 3513;
 		rType = 0;
 		vrLen = 2180;
 		vrLoc = 1125;
 	};
 	A8EA1CDF13FAD2F700654AE0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = A8EA1C8B13FAC4CD00654AE0 /* ConfigureTwitterViewController.m */;
+		fRef = A8EA1C8B13FAC4CD00654AE0 /* TwitterConnectViewController.m */;
 		name = "ConfigureTwitterViewController.m: 114";
 		rLen = 0;
-		rLoc = 3520;
+		rLoc = 3514;
 		rType = 0;
 		vrLen = 2191;
 		vrLoc = 967;
 	};
 	A8EA1CEB13FAD45A00654AE0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = A8EA1C8B13FAC4CD00654AE0 /* ConfigureTwitterViewController.m */;
+		fRef = A8EA1C8B13FAC4CD00654AE0 /* TwitterConnectViewController.m */;
 		name = "ConfigureTwitterViewController.m: 53";
 		rLen = 0;
-		rLoc = 1252;
+		rLoc = 1246;
 		rType = 0;
 		vrLen = 2196;
 		vrLoc = 804;
 	};
 	A8EA1CF313FAD4D400654AE0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = A8EA1C8B13FAC4CD00654AE0 /* ConfigureTwitterViewController.m */;
+		fRef = A8EA1C8B13FAC4CD00654AE0 /* TwitterConnectViewController.m */;
 		name = "ConfigureTwitterViewController.m: 53";
 		rLen = 0;
-		rLoc = 1252;
+		rLoc = 1246;
 		rType = 0;
 		vrLen = 2203;
 		vrLoc = 0;
@@ -1973,6 +1984,114 @@
 		rType = 0;
 		vrLen = 2554;
 		vrLoc = 1973;
+	};
+	A8EA1D0113FAD66200654AE0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
+		name = "CheckInConfirmViewController.m: 45";
+		rLen = 0;
+		rLoc = 1436;
+		rType = 0;
+		vrLen = 2112;
+		vrLoc = 0;
+	};
+	A8EA1D0213FAD66200654AE0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A8EA1C8A13FAC4CD00654AE0 /* TwitterConnectViewController.h */;
+		name = "TwitterConnectViewController.h: 2";
+		rLen = 0;
+		rLoc = 35;
+		rType = 0;
+		vrLen = 768;
+		vrLoc = 0;
+	};
+	A8EA1D0313FAD66200654AE0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A8EA1C8B13FAC4CD00654AE0 /* TwitterConnectViewController.m */;
+		name = "TwitterConnectViewController.m: 12";
+		rLen = 0;
+		rLoc = 245;
+		rType = 0;
+		vrLen = 2197;
+		vrLoc = 0;
+	};
+	A8EA1D0413FAD66200654AE0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A8EA1C8B13FAC4CD00654AE0 /* TwitterConnectViewController.m */;
+		name = "TwitterConnectViewController.m: 12";
+		rLen = 0;
+		rLoc = 245;
+		rType = 0;
+		vrLen = 2197;
+		vrLoc = 0;
+	};
+	A8EA1D0513FAD67600654AE0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
+		name = "CheckInConfirmViewController.m: 23";
+		rLen = 32;
+		rLoc = 611;
+		rType = 0;
+		vrLen = 860;
+		vrLoc = 158;
+	};
+	A8EA1D0E13FAD6AF00654AE0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A8ED1E96135C99700003115F /* CheckInConfirmViewController.h */;
+		name = "CheckInConfirmViewController.h: 16";
+		rLen = 0;
+		rLoc = 373;
+		rType = 0;
+		vrLen = 1015;
+		vrLoc = 324;
+	};
+	A8EA1D0F13FAD6AF00654AE0 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'ConfigureTwitterViewController' undeclared (first use in this function)";
+		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 110;
+		rType = 1;
+	};
+	A8EA1D1013FAD6AF00654AE0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
+		name = "CheckInConfirmViewController.m: 112";
+		rLen = 0;
+		rLoc = 3468;
+		rType = 0;
+		vrLen = 1330;
+		vrLoc = 2809;
+	};
+	A8EA1D1313FAD6B100654AE0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A8EA1C8B13FAC4CD00654AE0 /* TwitterConnectViewController.m */;
+		name = "TwitterConnectViewController.m: 31";
+		rLen = 0;
+		rLoc = 799;
+		rType = 0;
+		vrLen = 2197;
+		vrLoc = 0;
+	};
+	A8EA1D1413FAD6B100654AE0 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "ConfigureTwitterViewController.h: No such file or directory";
+		fRef = A8ED1E96135C99700003115F /* CheckInConfirmViewController.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 15;
+		rType = 1;
+	};
+	A8EA1D1513FAD6B100654AE0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A8ED1E96135C99700003115F /* CheckInConfirmViewController.h */;
+		name = "CheckInConfirmViewController.h: 31";
+		rLen = 0;
+		rLoc = 918;
+		rType = 0;
+		vrLen = 1339;
+		vrLoc = 0;
 	};
 	A8EB4A3013F059CE0046836F /* PBXBookmark */ = {
 		isa = PBXBookmark;
@@ -2383,16 +2502,16 @@
 	};
 	A8ED1E96135C99700003115F /* CheckInConfirmViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1301, 917}}";
-			sepNavSelRange = "{1198, 0}";
-			sepNavVisRange = "{0, 1341}";
+			sepNavIntBoundsRect = "{{0, 0}, {1301, 894}}";
+			sepNavSelRange = "{918, 0}";
+			sepNavVisRange = "{0, 1339}";
 		};
 	};
 	A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1301, 2626}}";
-			sepNavSelRange = "{1495, 0}";
-			sepNavVisRange = "{1973, 2554}";
+			sepNavIntBoundsRect = "{{0, 0}, {1219, 2613}}";
+			sepNavSelRange = "{3468, 0}";
+			sepNavVisRange = "{2809, 1330}";
 		};
 	};
 	A8ED1EB3135CA82C0003115F /* BaseCheckInViewController.h */ = {

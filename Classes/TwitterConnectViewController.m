@@ -1,15 +1,15 @@
     //
-//  ConfigureTwitterViewController.m
+//  TwitterConnectViewController.m
 //  Finster
 //
 //  Created by Todd Fearn on 8/16/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "ConfigureTwitterViewController.h"
+#import "TwitterConnectViewController.h"
 
 
-@implementation ConfigureTwitterViewController
+@implementation TwitterConnectViewController
 @synthesize username = _username;
 @synthesize password = _password;
 @synthesize request = _request;
