@@ -10,6 +10,7 @@
 
 
 @implementation TwitterConnectViewController
+@synthesize delegate = _delegate;
 @synthesize username = _username;
 @synthesize password = _password;
 @synthesize request = _request;
@@ -105,6 +106,11 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setBool:YES forKey: kTwitterConfigured];
     [userDefaults synchronize];
+	
+	// Call the delegate
+	if(self.delegate != NULL && [self.delegate respondsToSelector:@selector(twitterConnectComplete:)]) {
+		[self.delegate twitterConnectComplete];
+	}
 	
 	_request = nil;
 }

@@ -15,7 +15,7 @@
 #import "CheckInResult.h"
 #import "TwitterConnectViewController.h"
 
-@interface CheckInConfirmViewController : BaseCheckInViewController <UITextViewDelegate, ASIHTTPRequestDelegate> {
+@interface CheckInConfirmViewController : BaseCheckInViewController <UITextViewDelegate, ASIHTTPRequestDelegate, TwitterConnectViewControllerDelegate> {
 	IBOutlet UITextView *_textView;
 	IBOutlet UIImageView *_facebookImageView;
 	IBOutlet UIImageView *_twitterImageView;

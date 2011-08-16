@@ -11,12 +11,18 @@
 #import "SBJSON.h"
 #import "BaseViewController.h"
 
+@protocol TwitterConnectViewControllerDelegate <NSObject>
+	-(void)twitterConnectComplete;
+@end
+
 @interface TwitterConnectViewController : BaseViewController <ASIHTTPRequestDelegate> {
+	id<TwitterConnectViewControllerDelegate> _delegate;
 	IBOutlet UITextField *_username;
 	IBOutlet UITextField *_password;
 	ASIHTTPRequest *_request;
 	SBJSON *_jsonParser;
 }
+@property (assign) id<TwitterConnectViewControllerDelegate> delegate;
 @property (nonatomic, retain) UITextField *username;
 @property (nonatomic, retain) UITextField *password;
 @property (nonatomic, retain) ASIHTTPRequest *request;

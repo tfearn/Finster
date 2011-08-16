@@ -196,4 +196,16 @@
 	_request = nil;
 }
 
+#pragma mark -
+#pragma mark TwitterConnectViewControllerDelegate Methods
+
+- (void)twitterConnectComplete {
+	
+	if([self isTwitterConfigured]) {
+		twitterOn = YES;
+		self.twitterImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"twitter-icon" ofType:@"png"]];
+	}
+}
+
+
 @end
