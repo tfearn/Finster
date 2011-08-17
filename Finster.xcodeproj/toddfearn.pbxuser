@@ -178,6 +178,18 @@
 			826F8B1713FC41DD00D72727 /* PBXTextBookmark */ = 826F8B1713FC41DD00D72727 /* PBXTextBookmark */;
 			826F8B2A13FC43F500D72727 /* PBXTextBookmark */ = 826F8B2A13FC43F500D72727 /* PBXTextBookmark */;
 			826F8B3113FC447D00D72727 /* PBXTextBookmark */ = 826F8B3113FC447D00D72727 /* PBXTextBookmark */;
+			826F8BCB13FC576700D72727 /* XCBuildMessageTextBookmark */ = 826F8BCB13FC576700D72727 /* XCBuildMessageTextBookmark */;
+			826F8BCC13FC576700D72727 /* PBXTextBookmark */ = 826F8BCC13FC576700D72727 /* PBXTextBookmark */;
+			826F8BCD13FC576B00D72727 /* PBXTextBookmark */ = 826F8BCD13FC576B00D72727 /* PBXTextBookmark */;
+			826F8BCE13FC576B00D72727 /* PBXTextBookmark */ = 826F8BCE13FC576B00D72727 /* PBXTextBookmark */;
+			826F8BCF13FC576B00D72727 /* PBXTextBookmark */ = 826F8BCF13FC576B00D72727 /* PBXTextBookmark */;
+			826F8BD013FC576B00D72727 /* XCBuildMessageTextBookmark */ = 826F8BD013FC576B00D72727 /* XCBuildMessageTextBookmark */;
+			826F8BD113FC576B00D72727 /* PBXTextBookmark */ = 826F8BD113FC576B00D72727 /* PBXTextBookmark */;
+			826F8C5F13FC58FC00D72727 /* XCBuildMessageTextBookmark */ = 826F8C5F13FC58FC00D72727 /* XCBuildMessageTextBookmark */;
+			826F8C6013FC58FC00D72727 /* PBXTextBookmark */ = 826F8C6013FC58FC00D72727 /* PBXTextBookmark */;
+			826F8C6113FC58FD00D72727 /* PBXTextBookmark */ = 826F8C6113FC58FD00D72727 /* PBXTextBookmark */;
+			826F8C6213FC58FD00D72727 /* XCBuildMessageTextBookmark */ = 826F8C6213FC58FD00D72727 /* XCBuildMessageTextBookmark */;
+			826F8C6313FC58FD00D72727 /* PBXTextBookmark */ = 826F8C6313FC58FD00D72727 /* PBXTextBookmark */;
 			828A793E13E0624F0082D968 = 828A793E13E0624F0082D968 /* PBXTextBookmark */;
 			828A794A13E063370082D968 = 828A794A13E063370082D968 /* PBXTextBookmark */;
 			828A7A4113E0AE110082D968 = 828A7A4113E0AE110082D968 /* PBXTextBookmark */;
@@ -1061,6 +1073,148 @@
 		rLoc = 343;
 		rType = 0;
 		vrLen = 1414;
+		vrLoc = 0;
+	};
+	826F8B6513FC575B00D72727 /* MGTwitterEngine.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = MGTwitterEngine.h;
+		path = /Users/toddfearn/Project/Finster/MGTwitterEngine/MGTwitterEngine.h;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1265, 4144}}";
+			sepNavSelRange = "{246, 0}";
+			sepNavVisRange = "{0, 686}";
+		};
+	};
+	826F8BCB13FC576700D72727 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "OAToken.h: No such file or directory";
+		fRef = 826F8B6513FC575B00D72727 /* MGTwitterEngine.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 13;
+		rType = 1;
+	};
+	826F8BCC13FC576700D72727 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 826F8B6513FC575B00D72727 /* MGTwitterEngine.h */;
+		name = "MGTwitterEngine.h: 14";
+		rLen = 0;
+		rLoc = 246;
+		rType = 0;
+		vrLen = 679;
+		vrLoc = 0;
+	};
+	826F8BCD13FC576B00D72727 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* MoneyMouthAppDelegate.m */;
+		name = "MoneyMouthAppDelegate.m: 19";
+		rLen = 0;
+		rLoc = 343;
+		rType = 0;
+		vrLen = 1414;
+		vrLoc = 0;
+	};
+	826F8BCE13FC576B00D72727 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A8ED1F59135CD3790003115F /* CheckInResultViewController.h */;
+		name = "CheckInResultViewController.h: 31";
+		rLen = 0;
+		rLoc = 796;
+		rType = 0;
+		vrLen = 797;
+		vrLoc = 0;
+	};
+	826F8BCF13FC576B00D72727 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A8ED1F5A135CD3790003115F /* CheckInResultViewController.m */;
+		name = "CheckInResultViewController.m: 67";
+		rLen = 0;
+		rLoc = 1835;
+		rType = 0;
+		vrLen = 2189;
+		vrLoc = 1589;
+	};
+	826F8BD013FC576B00D72727 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "OAToken.h: No such file or directory";
+		fRef = 826F8B6513FC575B00D72727 /* MGTwitterEngine.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 13;
+		rType = 1;
+	};
+	826F8BD113FC576B00D72727 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 826F8B6513FC575B00D72727 /* MGTwitterEngine.h */;
+		name = "MGTwitterEngine.h: 14";
+		rLen = 0;
+		rLoc = 246;
+		rType = 0;
+		vrLen = 1398;
+		vrLoc = 0;
+	};
+	826F8BF913FC581500D72727 /* MGTwitterEngine.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = MGTwitterEngine.h;
+		path = /Users/toddfearn/Project/Finster/MGTwitterEngine/MGTwitterEngine.h;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1265, 4200}}";
+			sepNavSelRange = "{246, 0}";
+			sepNavVisRange = "{132, 768}";
+		};
+	};
+	826F8C5F13FC58FC00D72727 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "OAToken.h: No such file or directory";
+		fRef = 826F8BF913FC581500D72727 /* MGTwitterEngine.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 13;
+		rType = 1;
+	};
+	826F8C6013FC58FC00D72727 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 826F8BF913FC581500D72727 /* MGTwitterEngine.h */;
+		name = "MGTwitterEngine.h: 14";
+		rLen = 0;
+		rLoc = 246;
+		rType = 0;
+		vrLen = 740;
+		vrLoc = 132;
+	};
+	826F8C6113FC58FD00D72727 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A8ED1F5A135CD3790003115F /* CheckInResultViewController.m */;
+		name = "CheckInResultViewController.m: 67";
+		rLen = 0;
+		rLoc = 1835;
+		rType = 0;
+		vrLen = 2191;
+		vrLoc = 1587;
+	};
+	826F8C6213FC58FD00D72727 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "OAToken.h: No such file or directory";
+		fRef = 826F8BF913FC581500D72727 /* MGTwitterEngine.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 13;
+		rType = 1;
+	};
+	826F8C6313FC58FD00D72727 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 826F8BF913FC581500D72727 /* MGTwitterEngine.h */;
+		name = "MGTwitterEngine.h: 14";
+		rLen = 0;
+		rLoc = 246;
+		rType = 0;
+		vrLen = 1398;
 		vrLoc = 0;
 	};
 	828A793E13E0624F0082D968 /* PBXTextBookmark */ = {
@@ -1964,11 +2118,18 @@
 			sepNavVisRange = "{0, 1486}";
 		};
 	};
+	A8ED1F59135CD3790003115F /* CheckInResultViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1299, 752}}";
+			sepNavSelRange = "{796, 0}";
+			sepNavVisRange = "{0, 797}";
+		};
+	};
 	A8ED1F5A135CD3790003115F /* CheckInResultViewController.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1299, 1540}}";
-			sepNavSelRange = "{921, 0}";
-			sepNavVisRange = "{649, 1929}";
+			sepNavSelRange = "{1835, 0}";
+			sepNavVisRange = "{1587, 2191}";
 		};
 	};
 	A8FD28D0136776E00099E7FC /* DbSearchedTickerInsert.h */ = {

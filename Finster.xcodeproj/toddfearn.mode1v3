@@ -229,6 +229,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -264,16 +266,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
-								<string>080E96DDFE201D6D7F000001</string>
-								<string>82C1042C1357373700302082</string>
-								<string>82C104291357370D00302082</string>
+								<string>82C1064413575F4100302082</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>40</integer>
-									<integer>3</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -297,7 +296,7 @@
 							<real>300</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>118 223 1682 1152 0 0 2560 1418 </string>
+						<string>73 221 1682 1152 0 0 2560 1418 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -308,14 +307,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MoneyMouthAppDelegate.m</string>
+								<string>MGTwitterEngine.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -323,11 +320,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MoneyMouthAppDelegate.m</string>
+										<string>MGTwitterEngine.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>826F8B3113FC447D00D72727</string>
+										<string>826F8C6313FC58FD00D72727</string>
 										<key>history</key>
 										<array>
 											<string>82C1044813573DF700302082</string>
@@ -375,7 +372,6 @@
 											<string>8266AA2113EAF504007C3B3B</string>
 											<string>8266AA2413EAF504007C3B3B</string>
 											<string>8266AA8E13EB203B007C3B3B</string>
-											<string>8266AA9F13EB2157007C3B3B</string>
 											<string>8266AAC013EB249D007C3B3B</string>
 											<string>8266AAD913EB26B4007C3B3B</string>
 											<string>8266AADB13EB26B4007C3B3B</string>
@@ -429,7 +425,10 @@
 											<string>826F8B0113FC40E700D72727</string>
 											<string>826F8B0213FC40E700D72727</string>
 											<string>826F8B0313FC40E700D72727</string>
-											<string>826F8B0413FC40E700D72727</string>
+											<string>826F8BCD13FC576B00D72727</string>
+											<string>826F8BCE13FC576B00D72727</string>
+											<string>826F8C6113FC58FD00D72727</string>
+											<string>826F8C6213FC58FD00D72727</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -443,7 +442,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1360, 784}}</string>
 								<key>RubberWindowFrame</key>
-								<string>118 223 1682 1152 0 0 2560 1418 </string>
+								<string>73 221 1682 1152 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -463,7 +462,7 @@
 								<key>Frame</key>
 								<string>{{0, 789}, {1360, 322}}</string>
 								<key>RubberWindowFrame</key>
-								<string>118 223 1682 1152 0 0 2560 1418 </string>
+								<string>73 221 1682 1152 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -635,7 +634,7 @@
 		<string>/Users/toddfearn/Project/Finster/Finster.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>118 223 1682 1152 0 0 2560 1418 </string>
+	<string>73 221 1682 1152 0 0 2560 1418 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -656,7 +655,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>MGTwitterEngine.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -673,6 +672,8 @@
 							<string>410pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
