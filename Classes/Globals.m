@@ -76,8 +76,11 @@ static NSDate *lastNetworkError;
 	if(detail != nil) {
 		MyLog(@"%@", detail);
 		
+		// Log to Flurry only for a release version
+#ifndef NDEBUG
 		NSDictionary *errorDict = [NSDictionary dictionaryWithObjectsAndKeys:detail, @"logError", nil];
 		[FlurryAPI logEvent:name withParameters:errorDict timed:NO];
+#endif
 	}
 }
 

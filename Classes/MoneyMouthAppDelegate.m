@@ -25,7 +25,11 @@
 #pragma mark Uncaught exception handler
 
 void uncaughtExceptionHandler(NSException *exception) {
+	
+	// Log to Flurry only for a release version
+#ifndef NDEBUG
 	[FlurryAPI logError:@"Uncaught Exception" message:[exception name] exception:exception];
+#endif
 	
 	NSString *exceptionString = [NSString stringWithFormat:@"Uncaught Exception: %@ Reason: %@", [exception name], [exception reason]];
 	NSLog(@"%@", exceptionString);

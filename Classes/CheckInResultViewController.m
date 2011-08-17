@@ -89,7 +89,7 @@
 		cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-user" ofType:@"png"]];
 	}
 	else if(row == 3) {
-		int total = self.checkInResult.otherCheckInsForTicker + self.checkInResult.otherTickerInterest;
+		int total = self.checkInResult.otherTickerInterest;
 		cell.textLabel.text = [NSString stringWithFormat:@"Others checked into %@ %d times", self.ticker.symbol, total];
 		cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
 	}
