@@ -182,7 +182,7 @@ static NSString* const kGGTwitterLoadingBackgroundImage = @"twitter_load.png";
 	[self.view addSubview: _blockerView];
 	[spinner startAnimating];
 	
-	UINavigationItem				*navItem = [[[UINavigationItem alloc] initWithTitle: NSLocalizedString(@"Twitter Info", nil)] autorelease];
+	UINavigationItem				*navItem = [[[UINavigationItem alloc] initWithTitle: NSLocalizedString(@"", nil)] autorelease];
 	navItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemCancel target: self action: @selector(cancel:)] autorelease];
 	
 	[_navBar pushNavigationItem: navItem animated: NO];
@@ -219,7 +219,8 @@ static NSString* const kGGTwitterLoadingBackgroundImage = @"twitter_load.png";
 	_loading = NO;
 	//[self performInjection];
 	if (_firstLoad) {
-		[_webView performSelector: @selector(stringByEvaluatingJavaScriptFromString:) withObject: @"window.scrollBy(0,200)" afterDelay: 0];
+		// 08/18/2011 TODD FEARN - Commented this out to prevent the scroll down on the window
+		//[_webView performSelector: @selector(stringByEvaluatingJavaScriptFromString:) withObject: @"window.scrollBy(0,200)" afterDelay: 0];
 		_firstLoad = NO;
 	} else {
 		NSString					*authPin = [self locateAuthPinInWebView: webView];

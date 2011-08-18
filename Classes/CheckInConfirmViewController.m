@@ -8,10 +8,6 @@
 
 #import "CheckInConfirmViewController.h"
 
-@interface CheckInConfirmViewController (Private)
-	- (BOOL)isTwitterConfigured;
-@end
-
 #define kTextViewDefaultMessage		@"Add a comment..."
 
 @implementation CheckInConfirmViewController
@@ -22,6 +18,7 @@
 @synthesize twitterButton = _twitterButton;
 @synthesize request = _request;
 @synthesize jsonParser = _jsonParser;
+@synthesize twitterConnect = _twitterConnect;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -36,7 +33,7 @@
 	facebookOn = YES;
 
 	// Default Twitter share on?
-	if([self isTwitterConfigured]) {
+	if([Globals isTwitterConfigured]) {
 		twitterOn = YES;
 		self.twitterImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"twitter-icon" ofType:@"png"]];
 	}
@@ -70,11 +67,8 @@
 	[_facebookButton release];
 	[_twitterButton release];	
 	[_jsonParser release];
+	[_twitterConnect release];
     [super dealloc];
-}
-
-- (BOOL)isTwitterConfigured {
-	return [[NSUserDefaults standardUserDefaults] boolForKey: kTwitterConfigured];
 }
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
@@ -107,10 +101,11 @@
 	
 	// If Twitter is not configured, and we're going to Twitter = YES, we 
 	// must configure Twitter before proceeding
-	if([self isTwitterConfigured] == NO && twitterOn == NO) {
-		TwitterConnectViewController *controller = [[TwitterConnectViewController alloc] init];
-		[self.navigationController presentModalViewController:controller animated:YES];
-		[controller release];
+	if([Globals isTwitterConfigured] == NO && twitterOn == NO) {
+		[_twitterConnect release];
+		_twitterConnect = [[TwitterConnect alloc] init];
+		_twitterConnect.delegate = self;
+		[_twitterConnect connectWithTwitter:self.navigationController];
 	}
 	else {
 		twitterOn = ! twitterOn;
@@ -134,8 +129,11 @@
 	}
 	if(facebookOn)
 		urlString = [urlString stringByAppendingString:@"&sharefacebook=1"];
-	if(twitterOn)
+	if(twitterOn) {
 		urlString = [urlString stringByAppendingString:@"&sharetwitter=1"];
+		NSString *twitterOAuth = [Globals getTwitterOAuthData];
+		urlString = [urlString stringByAppendingString:twitterOAuth];
+	}
 	NSString* escapedUrlString =[urlString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
 	MyLog(@"%@", escapedUrlString);
 	
@@ -197,15 +195,15 @@
 }
 
 #pragma mark -
-#pragma mark TwitterConnectViewControllerDelegate Methods
+#pragma mark TwitterConnectDelegate Methods
 
-- (void)twitterConnectComplete {
+- (void)twitterConnectSucceeded {
+	twitterOn = YES;
+	self.twitterImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"twitter-icon" ofType:@"png"]];
+}	
 	
-	if([self isTwitterConfigured]) {
-		twitterOn = YES;
-		self.twitterImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"twitter-icon" ofType:@"png"]];
-	}
-}
-
+- (void)twitterConnectFailed {
+	// do nothing at this time
+}	
 
 @end

@@ -55,10 +55,14 @@
 // Notifications
 #define kNotificationCheckInComplete	@"NotificationCheckInComplete"
 
+// Twitter
+#define kTwitterOAuthConsumerKey		@"V6I9EVAHee2PN9UzUdzYnA"
+#define kTwitterOAuthConsumerSecret		@"SXZJg9jspz39i6Y7W8yr5kD41ZIPWiWLDRTj1ElmEc"
+#define kTwitterOAuthData				@"TwitterOAuthData"
+
 // Other defines
 #define kDatabaseFilename						@"finster.sqlite"
 #define kMaxSecondsBetweenNetworkErrorMessages	60.0
-#define kTwitterConfigured						@"TwitterConfigured"
 
 // Macros
 #ifndef NDEBUG
@@ -77,5 +81,7 @@
 + (CSqliteDatabase *)getDatabaseHandle;
 + (void)showNetworkError:(NSError *)error;
 + (void)logError:(NSError *)error name:(NSString *)name detail:(NSString *)detail;
++ (BOOL)isTwitterConfigured;
++ (NSString *) getTwitterOAuthData;
 
 @end

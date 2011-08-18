@@ -84,4 +84,15 @@ static NSDate *lastNetworkError;
 	}
 }
 
++ (BOOL)isTwitterConfigured {
+	NSObject *data = [[NSUserDefaults standardUserDefaults] objectForKey:kTwitterOAuthData];
+	if(data != nil)
+		return YES;
+	return NO;
+}
+
++ (NSString *) getTwitterOAuthData {
+	return [[NSUserDefaults standardUserDefaults] objectForKey:kTwitterOAuthData];
+}
+
 @end
