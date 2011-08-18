@@ -24,6 +24,7 @@
 }
 @property (assign) id<TwitterConnectDelegate> delegate;
 
-- (BOOL)connectWithTwitter:(UINavigationController *)navController;
-
+- (BOOL)authorize:(UINavigationController *)navController;
+- (BOOL)tweet:(NSString *)message;
+	
 @end

@@ -29,6 +29,10 @@
 	// Initialize the JSON parser
 	_jsonParser = [[SBJSON alloc] init];
 	
+	// Initialize TwitterConnect
+	_twitterConnect = [[TwitterConnect alloc] init];
+	_twitterConnect.delegate = self;
+	
 	// Default Facebook share on
 	facebookOn = YES;
 
@@ -102,10 +106,7 @@
 	// If Twitter is not configured, and we're going to Twitter = YES, we 
 	// must configure Twitter before proceeding
 	if([Globals isTwitterConfigured] == NO && twitterOn == NO) {
-		[_twitterConnect release];
-		_twitterConnect = [[TwitterConnect alloc] init];
-		_twitterConnect.delegate = self;
-		[_twitterConnect connectWithTwitter:self.navigationController];
+		[_twitterConnect authorize:self.navigationController];
 	}
 	else {
 		twitterOn = ! twitterOn;
@@ -129,11 +130,6 @@
 	}
 	if(facebookOn)
 		urlString = [urlString stringByAppendingString:@"&sharefacebook=1"];
-	if(twitterOn) {
-		urlString = [urlString stringByAppendingString:@"&sharetwitter=1"];
-		NSString *twitterOAuth = [Globals getTwitterOAuthData];
-		urlString = [urlString stringByAppendingString:twitterOAuth];
-	}
 	NSString* escapedUrlString =[urlString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
 	MyLog(@"%@", escapedUrlString);
 	
@@ -142,6 +138,18 @@
 	_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:escapedUrlString]];
 	[self.request setDelegate:self];
 	[self.request startAsynchronous];
+	
+	// Tweet the check-in?
+	if(twitterOn) {
+		CheckInTypeFormatter *formatter = [[[CheckInTypeFormatter alloc] init] autorelease];
+		NSString *message = [formatter format:self.checkInType symbol:self.ticker.symbol];
+
+		if([[self.textView text] isEqualToString:kTextViewDefaultMessage] == NO)
+			message = [message stringByAppendingFormat:@" '%@'", [self.textView text]];
+		
+		message = [message stringByAppendingString:@" via Finster @idatacorp"];
+		[_twitterConnect tweet:message];
+	}
 }
 
 #pragma mark -

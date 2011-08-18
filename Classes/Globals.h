@@ -58,7 +58,7 @@
 // Twitter
 #define kTwitterOAuthConsumerKey		@"V6I9EVAHee2PN9UzUdzYnA"
 #define kTwitterOAuthConsumerSecret		@"SXZJg9jspz39i6Y7W8yr5kD41ZIPWiWLDRTj1ElmEc"
-#define kTwitterOAuthData				@"TwitterOAuthData"
+#define kTwitterOAuthData				@"authData"
 
 // Other defines
 #define kDatabaseFilename						@"finster.sqlite"

@@ -11,6 +11,43 @@
 @implementation TwitterConnect
 @synthesize delegate = _delegate;
 
+- (id)init {
+    if (self = [super init]) {
+		_engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate: self];
+		_engine.consumerKey = kTwitterOAuthConsumerKey;
+		_engine.consumerSecret = kTwitterOAuthConsumerSecret;
+    }
+    return self;
+}
+
+- (BOOL)authorize:(UINavigationController *)navController {
+	UIViewController *controller = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine: _engine delegate: self];
+	if (controller) {
+		[navController presentModalViewController: controller animated: YES];
+		return YES;
+	}
+	return NO;
+}
+
+- (BOOL)tweet:(NSString *)message {
+	// This method must be called to initialize the engine
+	UIViewController *controller = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine: _engine delegate: self];
+	
+	if (controller) {
+		// Twitter must be authorized before tweeting
+		return NO;
+	}
+
+	[_engine sendUpdate:message];
+	return YES;
+}
+
+- (void)dealloc {
+	[_engine release];
+    [super dealloc];
+}
+
+
 #pragma mark SA_OAuthTwitterEngineDelegate
 - (void) storeCachedTwitterOAuthData: (NSString *) data forUsername: (NSString *) username {
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -53,29 +90,4 @@
 - (void) requestFailed: (NSString *) requestIdentifier withError: (NSError *) error {
 	MyLog(@"Request %@ failed with error: %@", requestIdentifier, error);
 }
-
-#pragma mark ViewController Stuff
-- (void)dealloc {
-	[_engine release];
-    [super dealloc];
-}
-
-- (BOOL)connectWithTwitter:(UINavigationController *)navController {
-	[_engine release];
-	_engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate: self];
-	_engine.consumerKey = kTwitterOAuthConsumerKey;
-	_engine.consumerSecret = kTwitterOAuthConsumerSecret;
-	
-	UIViewController *controller = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine: _engine delegate: self];
-	
-	if (controller) {
-		[navController presentModalViewController: controller animated: YES];
-		return YES;
-	}
-	else {
-		[_engine sendUpdate: [NSString stringWithFormat: @"Already Updated. %@", [NSDate date]]];
-		return NO;
-	}
-}
-
 @end
