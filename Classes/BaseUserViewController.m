@@ -24,6 +24,7 @@
 @synthesize request = _request;
 @synthesize imageManager = _imageManager;
 @synthesize user = _user;
+@synthesize leaderboard = _leaderboard;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -76,6 +77,7 @@
 	[_username release];
 	[_imageManager release];
 	[_user release];
+	[_leaderboard release];
     [super dealloc];
 }
 
@@ -109,6 +111,7 @@
 	// Parse the data
 	NSError *error = nil;
 	NSDictionary *dict = [jsonParser objectWithString:response error:&error];
+	MyLog(@"%@", dict);
 	if(error != nil) {
 		[Globals logError:error name:@"JSON_Parser_Error" detail:response];
 		
@@ -121,6 +124,22 @@
 	_user = [[User alloc] init];
 	[self.user assignValuesFromDictionary:dict];
 	
+	
+	[_leaderboard release];
+	_leaderboard = [[NSMutableArray alloc] init];
+	
+	NSArray *userList = [dict objectForKey:@"leaderboard"];
+	for(int i=0; i<[userList count]; i++) {
+		NSDictionary *userParentDict = [userList objectAtIndex:i];
+		NSDictionary *userDict = [userParentDict objectForKey:@"user"];
+		
+		User *user = [[User alloc] init];
+		[user assignValuesFromDictionary:userDict];
+		
+		[self.leaderboard addObject:user];
+		[user release];
+	}
+	
 	// Set the username label
 	self.username.text = self.user.userName;
 	
@@ -130,7 +149,7 @@
 		self.user.image = image.image;
 		[self.userImageView setImage:self.user.image];
 	}
-
+	
 	// Reload the table
 	[self.tableView reloadData];
 	
@@ -161,15 +180,25 @@
 #pragma mark UITableViewDataSource Methods
 
 - (NSInteger)numberOfSectionsInTableView: (UITableView *)tableView {
-	return 1;
+	// Show the leaderboard if we are viewing our own profile
+	if(self.user == nil)
+		return 2;
+	else
+		return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return 4;
+	if(section == 0)
+		return 4;
+	else
+		return [self.leaderboard count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	return @"My Statistics";
+	if(section == 0)
+		return @"My Statistics";
+	else
+		return @"Leaderboard";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -180,33 +209,43 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
 	
+	int section = [indexPath section];
 	int row = [indexPath row];
-	switch (row) {
-		case 0:
-			cell.textLabel.text = [NSString stringWithFormat:@"%d Check-Ins", self.user.checkins];
-			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-clock" ofType:@"png"]];
-			if(self.user.checkins > 0)
-				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-			break;
-		case 1:
-			cell.textLabel.text = [NSString stringWithFormat:@"%d Points", self.user.points];
-			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-piggy-bank" ofType:@"png"]];
-			break;
-		case 2:
-			cell.textLabel.text = [NSString stringWithFormat:@"Following %d", self.user.following];
-			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
-			if(self.user.following > 0)
-				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-			break;
-		case 3:
-			cell.textLabel.text = [NSString stringWithFormat:@"Followers %d", self.user.followers];
-			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
-			if(self.user.followers > 0)
-				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-			break;
-		default:
-			break;
+	
+	if(section == 0) {
+		switch (row) {
+			case 0:
+				cell.textLabel.text = [NSString stringWithFormat:@"%d Check-Ins", self.user.checkins];
+				cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-clock" ofType:@"png"]];
+				if(self.user.checkins > 0)
+					cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+				break;
+			case 1:
+				cell.textLabel.text = [NSString stringWithFormat:@"%d Points", self.user.points];
+				cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-piggy-bank" ofType:@"png"]];
+				break;
+			case 2:
+				cell.textLabel.text = [NSString stringWithFormat:@"Following %d", self.user.following];
+				cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
+				if(self.user.following > 0)
+					cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+				break;
+			case 3:
+				cell.textLabel.text = [NSString stringWithFormat:@"Followers %d", self.user.followers];
+				cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
+				if(self.user.followers > 0)
+					cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+				break;
+			default:
+				break;
+		}
 	}
+	else {
+		User *user = [self.leaderboard objectAtIndex:row];
+		cell.textLabel.text = user.userName;
+		cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-user" ofType:@"png"]];
+	}
+
 	
 	cell.textLabel.textColor = [UIColor darkGrayColor];
 	cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15.0];

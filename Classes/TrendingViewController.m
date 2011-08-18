@@ -63,6 +63,7 @@
     [self performSelector:@selector(stopLoading) withObject:nil afterDelay:2.0];
 	
 	NSString *response = [request responseString];
+	MyLog(@"%@", response);
 	
 	SBJSON *jsonParser = [[[SBJSON alloc] init] autorelease];
 	
@@ -134,7 +135,7 @@
 	int row = [indexPath row];
 	
 	Trend *trend = [self.trends objectAtIndex:row];
-	
+
 	cell.symbol.text = trend.ticker.symbol;
 	cell.symbolName.text = trend.ticker.symbolName;
 	cell.checkins.text = [NSString stringWithFormat:@"%d", trend.checkins];

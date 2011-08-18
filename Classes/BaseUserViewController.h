@@ -20,11 +20,13 @@
 	ASIHTTPRequest *_request;
 	ImageManager *_imageManager;
 	User *_user;
+	NSMutableArray *_leaderboard;
 }
 @property (nonatomic, retain) UIImageView *userImageView;
 @property (nonatomic, retain) UILabel *username;
 @property (nonatomic, retain) ASIHTTPRequest *request;
 @property (nonatomic, retain) ImageManager *imageManager;
 @property (nonatomic, retain) User *user;
+@property (nonatomic, retain) NSMutableArray *leaderboard;
 
 @end
