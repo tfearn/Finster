@@ -10,12 +10,10 @@
 
 
 @interface LeaderboardViewCell : UITableViewCell {
-	IBOutlet UILabel *_position;
 	IBOutlet UIImageView *_userImageView;
 	IBOutlet UILabel *_username;
 	IBOutlet UILabel *_score;
 }
-@property (nonatomic, retain) UILabel *position;
 @property (nonatomic, retain) UIImageView *userImageView;
 @property (nonatomic, retain) UILabel *username;
 @property (nonatomic, retain) UILabel *score;

@@ -60,7 +60,6 @@
 	int row = [indexPath row];
 	User *user = [self.users objectAtIndex:row];
 	
-	cell.position.text = [NSString stringWithFormat:@"#%d", row+1];
 	cell.username.text = user.userName;
 	cell.score.text = [NSString stringWithFormat:@"%d", user.points];
 	if(user.image != nil)

@@ -10,7 +10,6 @@
 
 
 @implementation LeaderboardViewCell
-@synthesize position = _position;
 @synthesize userImageView = _userImageView;
 @synthesize username = _username;
 @synthesize score = _score;
@@ -34,7 +33,6 @@
 
 
 - (void)dealloc {
-	[_position release];
 	[_userImageView release];
 	[_username release];
 	[_score release];
