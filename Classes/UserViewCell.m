@@ -1,20 +1,19 @@
 //
-//  TrendingViewCell.m
+//  UserViewCell.m
 //  Finster
 //
-//  Created by Todd Fearn on 8/3/11.
+//  Created by Todd Fearn on 8/18/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "TrendingViewCell.h"
+#import "UserViewCell.h"
 
 
-@implementation TrendingViewCell
-@synthesize symbol = _symbol;
-@synthesize symbolName = _symbolName;
-@synthesize exchangeName = _exchangeName;
-@synthesize checkins = _checkins;
-@synthesize arrowImageView = _arrowImageView;
+@implementation UserViewCell
+@synthesize position = _position;
+@synthesize userImageView = _userImageView;
+@synthesize username = _username;
+@synthesize score = _score;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     
@@ -35,11 +34,10 @@
 
 
 - (void)dealloc {
-	[_symbol release];
-	[_symbolName release];
-	[_exchangeName release];
-	[_checkins release];
-	[_arrowImageView release];
+	[_position release];
+	[_userImageView release];
+	[_username release];
+	[_score release];
     [super dealloc];
 }
 

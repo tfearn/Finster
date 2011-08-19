@@ -125,6 +125,8 @@
 		A89528CC13D315F000A54A38 /* CheckInsByTickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89528CB13D315F000A54A38 /* CheckInsByTickerView.xib */; };
 		A89528DE13D31C1900A54A38 /* CheckInResult.m in Sources */ = {isa = PBXBuildFile; fileRef = A89528DD13D31C1900A54A38 /* CheckInResult.m */; };
 		A8B12EC613E0EF0100A54B74 /* BaseUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B12EC513E0EF0100A54B74 /* BaseUserViewController.m */; };
+		A8B5FF6013FDD599002E20FF /* UserViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8B5FF5F13FDD599002E20FF /* UserViewCell.xib */; };
+		A8B5FF6613FDD5ED002E20FF /* UserViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B5FF6513FDD5ED002E20FF /* UserViewCell.m */; };
 		A8CFEF6D137D978C00D14F53 /* CheckInTypeFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CFEF6C137D978C00D14F53 /* CheckInTypeFormatter.m */; };
 		A8E6E13B13679389009DE488 /* finster.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A8E6E13A13679389009DE488 /* finster.sqlite */; };
 		A8EB4AD113F066EB0046836F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A8EB4AD013F066EB0046836F /* Default.png */; };
@@ -375,6 +377,9 @@
 		A89528DD13D31C1900A54A38 /* CheckInResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInResult.m; sourceTree = "<group>"; };
 		A8B12EC413E0EF0100A54B74 /* BaseUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUserViewController.h; sourceTree = "<group>"; };
 		A8B12EC513E0EF0100A54B74 /* BaseUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUserViewController.m; sourceTree = "<group>"; };
+		A8B5FF5F13FDD599002E20FF /* UserViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewCell.xib; sourceTree = "<group>"; };
+		A8B5FF6413FDD5ED002E20FF /* UserViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewCell.h; sourceTree = "<group>"; };
+		A8B5FF6513FDD5ED002E20FF /* UserViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewCell.m; sourceTree = "<group>"; };
 		A8CFEF6B137D978C00D14F53 /* CheckInTypeFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInTypeFormatter.h; sourceTree = "<group>"; };
 		A8CFEF6C137D978C00D14F53 /* CheckInTypeFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInTypeFormatter.m; sourceTree = "<group>"; };
 		A8E6E13A13679389009DE488 /* finster.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = finster.sqlite; sourceTree = "<group>"; };
@@ -521,6 +526,7 @@
 				A83AE1E013D0BC9E00D1C045 /* ActivityView.xib */,
 				822435CD135F813E00C6258F /* BaseCheckInsViewCell.xib */,
 				82765E0E138456A400C3FBC5 /* UserView.xib */,
+				A8B5FF5F13FDD599002E20FF /* UserViewCell.xib */,
 				A89528CB13D315F000A54A38 /* CheckInsByTickerView.xib */,
 				A877C6E713DDCFB900ABACE6 /* CheckInsByUserView.xib */,
 				A877C75613DDF4EE00ABACE6 /* TrendingView.xib */,
@@ -755,6 +761,8 @@
 			children = (
 				82E7411713E1E487002B88EB /* UserViewController.h */,
 				82E7411813E1E487002B88EB /* UserViewController.m */,
+				A8B5FF6413FDD5ED002E20FF /* UserViewCell.h */,
+				A8B5FF6513FDD5ED002E20FF /* UserViewCell.m */,
 				A8B12EC413E0EF0100A54B74 /* BaseUserViewController.h */,
 				A8B12EC513E0EF0100A54B74 /* BaseUserViewController.m */,
 				828A7A9E13E0BA450082D968 /* FollowingViewController.h */,
@@ -1170,6 +1178,7 @@
 				8274D09113FD6F1800E40CAF /* jQueryInject.txt in Resources */,
 				8274D09213FD6F1800E40CAF /* jQueryInjectLandscape.txt in Resources */,
 				8274D0A413FD6F1800E40CAF /* twitter_load.png in Resources */,
+				A8B5FF6013FDD599002E20FF /* UserViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1262,6 +1271,7 @@
 				8274D0A213FD6F1800E40CAF /* SA_OAuthTwitterController.m in Sources */,
 				8274D0A313FD6F1800E40CAF /* SA_OAuthTwitterEngine.m in Sources */,
 				8274D14213FD847E00E40CAF /* TwitterConnect.m in Sources */,
+				A8B5FF6613FDD5ED002E20FF /* UserViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

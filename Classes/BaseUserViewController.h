@@ -13,6 +13,7 @@
 #import "ImageManager.h"
 #import "User.h"
 #import "PullRefreshTableViewController.h"
+#import "UserViewCell.h"
 
 @interface BaseUserViewController : PullRefreshTableViewController <ASIHTTPRequestDelegate, ImageManagerDelegate> {
 	IBOutlet UIImageView *_userImageView;

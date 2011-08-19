@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.tableView.rowHeight = 50.0;
+	self.tableView.rowHeight = 70.0;
 	
 	[self getData];
 }
@@ -137,6 +137,8 @@
 	Trend *trend = [self.trends objectAtIndex:row];
 
 	cell.symbol.text = trend.ticker.symbol;
+	if(trend.ticker.exchangeName != nil)
+		cell.exchangeName.text = trend.ticker.exchangeName;
 	cell.symbolName.text = trend.ticker.symbolName;
 	cell.checkins.text = [NSString stringWithFormat:@"%d", trend.checkins];
 	

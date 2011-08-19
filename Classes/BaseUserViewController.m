@@ -140,6 +140,16 @@
 		[user release];
 	}
 	
+	// Tell the ImageManager to get the pictures if it does not already have them
+	for(int i=0; i<[self.leaderboard count]; i++) {
+		id object = [self.leaderboard objectAtIndex:i];
+		User *user = object;
+		
+		Image *image = [self.imageManager getImage:user.imageUrl];
+		if(image != nil)
+			user.image = image.image;
+	}
+	
 	// Set the username label
 	self.username.text = self.user.userName;
 	
@@ -169,6 +179,8 @@
 
 - (void)imageRequestComplete:(Image *)image {
 	[self.userImageView setImage:image.image];
+	
+	[self.tableView reloadData];
 }
 
 - (void)imageRequestFailure:(NSString *)url {
@@ -181,7 +193,7 @@
 
 - (NSInteger)numberOfSectionsInTableView: (UITableView *)tableView {
 	// Show the leaderboard if we are viewing our own profile
-	if(self.user == nil)
+	if(self.leaderboard != nil)
 		return 2;
 	else
 		return 1;
@@ -203,12 +215,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
 	
+	UserViewCell *cell = (UserViewCell *)[tableView dequeueReusableCellWithIdentifier: CellIdentifier];
+	if (cell == nil)  {
+		NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UserViewCell" owner:self options:nil];
+		for (id oneObject in nib)
+			if ([oneObject isKindOfClass:[UserViewCell class]])
+				cell = (UserViewCell *)oneObject;
+	}
+	cell.accessoryType = UITableViewCellAccessoryNone;
+    
 	int section = [indexPath section];
 	int row = [indexPath row];
 	
@@ -239,16 +255,19 @@
 			default:
 				break;
 		}
+		cell.textLabel.textColor = [UIColor darkGrayColor];
+		cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15.0];
 	}
 	else {
 		User *user = [self.leaderboard objectAtIndex:row];
-		cell.textLabel.text = user.userName;
-		cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-user" ofType:@"png"]];
+		cell.position.text = [NSString stringWithFormat:@"#%d", row+1];
+		cell.username.text = user.userName;
+		cell.score.text = [NSString stringWithFormat:@"%d", user.points];
+		if(user.image != nil)
+			cell.userImageView.image = user.image;
+		else
+			cell.userImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"default-user" ofType:@"png"]];
 	}
-
-	
-	cell.textLabel.textColor = [UIColor darkGrayColor];
-	cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15.0];
     
     return cell;
 }
@@ -258,28 +277,31 @@
 #pragma mark UITableViewDelegate Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	int section = [indexPath section];
 	int row = [indexPath row];
 	
-	if(row == 0 & self.user.checkins > 0) {
-		CheckInsByUserViewController *controller = [[CheckInsByUserViewController alloc] init];
-		controller.user = self.user;
-		[controller setHidesBottomBarWhenPushed:YES];
-		[self.navigationController pushViewController:controller animated:YES];
-		[controller release];	
-	}
-	else if(row == 2 && self.user.following > 0) {
-		FollowingViewController *controller = [[FollowingViewController alloc] init];
-		controller.user = self.user;
-		[controller setHidesBottomBarWhenPushed:YES];
-		[self.navigationController pushViewController:controller animated:YES];
-		[controller release];	
-	}
-	else if(row == 3 && self.user.followers > 0) {
-		FollowersViewController *controller = [[FollowersViewController alloc] init];
-		controller.user = self.user;
-		[controller setHidesBottomBarWhenPushed:YES];
-		[self.navigationController pushViewController:controller animated:YES];
-		[controller release];	
+	if(section == 0) {
+		if(row == 0 & self.user.checkins > 0) {
+			CheckInsByUserViewController *controller = [[CheckInsByUserViewController alloc] init];
+			controller.user = self.user;
+			[controller setHidesBottomBarWhenPushed:YES];
+			[self.navigationController pushViewController:controller animated:YES];
+			[controller release];	
+		}
+		else if(row == 2 && self.user.following > 0) {
+			FollowingViewController *controller = [[FollowingViewController alloc] init];
+			controller.user = self.user;
+			[controller setHidesBottomBarWhenPushed:YES];
+			[self.navigationController pushViewController:controller animated:YES];
+			[controller release];	
+		}
+		else if(row == 3 && self.user.followers > 0) {
+			FollowersViewController *controller = [[FollowersViewController alloc] init];
+			controller.user = self.user;
+			[controller setHidesBottomBarWhenPushed:YES];
+			[self.navigationController pushViewController:controller animated:YES];
+			[controller release];	
+		}
 	}
 }
 
