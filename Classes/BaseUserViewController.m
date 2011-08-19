@@ -47,6 +47,12 @@
 			[self.userImageView setImage:self.user.image];
 		}
 	}
+
+	// TODO: Remove later after the server groupType is returned properly
+	isYou = YES;
+	if(self.user != nil && self.user.userID != nil) {
+		isYou = NO;
+	}
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -80,8 +86,9 @@
 
 - (void)getData {
 	NSString *url = kUrlGetUser;
-	if(self.user != nil && self.user.userID != nil)
+	if(self.user != nil && self.user.userID != nil) {
 		url = [url stringByAppendingFormat:@"?userid=%@", self.user.userID];
+	}
 	
 	_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
 	[self.request setDelegate:self];
@@ -91,6 +98,9 @@
 }
 
 - (BOOL)isUserYou {
+	return isYou;
+	
+	
 	if(self.user != nil && [self.user.groupType caseInsensitiveCompare:@"you"])
 		return YES;
 	return NO;

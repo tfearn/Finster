@@ -21,6 +21,8 @@
 	ASIHTTPRequest *_request;
 	ImageManager *_imageManager;
 	User *_user;
+	
+	BOOL isYou;
 }
 @property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, retain) UIImageView *userImageView;
