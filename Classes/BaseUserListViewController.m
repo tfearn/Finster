@@ -124,7 +124,9 @@
 - (void)requestFailed:(ASIHTTPRequest *)request {
 	[self dismissSpinnerView];
 	
-	[Globals showNetworkError:request.error];
+	MyLog(@"Network Error: %@", [request.error description]);
+	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:@"Cannot connect to the network" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+	[alert show];
 	
 	_request = nil;
 }

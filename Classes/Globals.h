@@ -45,7 +45,7 @@
 #define kUrlGetTrending				@"http://developer.finster.mobi/api/gettrending?start=0&limit=20"
 #define kUrlFindUser				@"http://developer.finster.mobi/api/finduser?search=%@"
 #define kUrlTwitterConnect			@"http://developer.finster.mobi/api/twitterconnect?username=%@&password=%@"
-#define kUrlGetLeaderboard			@"http://developer.finster.mobi/api/leaderboard"
+#define kUrlGetLeaderboard			@"http://developer.finster.mobi/api/getleaderboard"
 
 // Maximum rows retrieved for all getcheckins REST calls
 #define kMaxRowsForGetCheckIns		50
@@ -80,7 +80,6 @@
 + (void)setLastTickerSearch:(NSString *)newLastTickerSearch;
 + (NSError *)openDatabase:(NSString *)filename;
 + (CSqliteDatabase *)getDatabaseHandle;
-+ (void)showNetworkError:(NSError *)error;
 + (void)logError:(NSError *)error name:(NSString *)name detail:(NSString *)detail;
 + (BOOL)isTwitterConfigured;
 + (NSString *) getTwitterOAuthData;

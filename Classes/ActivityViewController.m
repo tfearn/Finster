@@ -147,7 +147,9 @@
 - (void)requestFailed:(ASIHTTPRequest *)request {
     [self performSelector:@selector(stopLoading) withObject:nil afterDelay:2.0];
 	
-	[Globals showNetworkError:request.error];
+	MyLog(@"Network Error: %@", [request.error description]);
+	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:@"Cannot connect to the network" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+	[alert show];
 	
 	_request = nil;
 }
@@ -215,7 +217,9 @@
 - (void)getCheckInsNetworkRequestFailure:(ASIHTTPRequest *)request {
     [self performSelector:@selector(stopLoading) withObject:nil afterDelay:2.0];
 	
-	[Globals showNetworkError:request.error];
+	MyLog(@"Network Error: %@", [request.error description]);
+	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:@"Cannot connect to the network" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+	[alert show];
 	
 	_requestCheckInsNetwork = nil;
 }

@@ -17,8 +17,6 @@
 	
 	self.navigationItem.title = @"Leaderboard";
 	
-	self.tableView.rowHeight = 70.0;
-	
 	[self getUrl:kUrlGetLeaderboard];
 }
 

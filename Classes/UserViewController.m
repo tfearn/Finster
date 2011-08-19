@@ -116,7 +116,9 @@
 - (void)isFollowingUserRequestFailure:(ASIHTTPRequest *)request {
 	[self dismissWaitView];
 	
-	[Globals showNetworkError:request.error];
+	MyLog(@"Network Error: %@", [request.error description]);
+	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:@"Cannot connect to the network" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+	[alert show];
 	
 	_isFollowingUserRequest = nil;
 }
@@ -139,8 +141,10 @@
 - (void)followUnFollowUserRequestFailure:(ASIHTTPRequest *)request {
 	[self dismissWaitView];
 	
-	[Globals showNetworkError:request.error];
-
+	MyLog(@"Network Error: %@", [request.error description]);
+	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:@"Cannot connect to the network" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+	[alert show];
+	
 	_followUnfollowUserRequest = nil;
 }
 
