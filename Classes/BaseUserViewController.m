@@ -16,6 +16,7 @@
 
 @interface BaseUserViewController (Private)
 - (void)getData;
+- (BOOL)isUserYou;
 @end
 
 @implementation BaseUserViewController
@@ -24,7 +25,6 @@
 @synthesize request = _request;
 @synthesize imageManager = _imageManager;
 @synthesize user = _user;
-@synthesize leaderboard = _leaderboard;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -77,7 +77,6 @@
 	[_username release];
 	[_imageManager release];
 	[_user release];
-	[_leaderboard release];
     [super dealloc];
 }
 
@@ -91,6 +90,12 @@
 	[self.request setDidFinishSelector:@selector(getUserRequestComplete:)];
 	[self.request setDidFailSelector:@selector(getUserRequestFailure:)];
 	[self.request startAsynchronous];
+}
+
+- (BOOL)isUserYou {
+	if(self.user != nil && [self.user.groupType caseInsensitiveCompare:@"you"])
+		return YES;
+	return NO;
 }
 
 - (void)refresh {
@@ -123,32 +128,6 @@
 	[_user release];
 	_user = [[User alloc] init];
 	[self.user assignValuesFromDictionary:dict];
-	
-	
-	[_leaderboard release];
-	_leaderboard = [[NSMutableArray alloc] init];
-	
-	NSArray *userList = [dict objectForKey:@"leaderboard"];
-	for(int i=0; i<[userList count]; i++) {
-		NSDictionary *userParentDict = [userList objectAtIndex:i];
-		NSDictionary *userDict = [userParentDict objectForKey:@"user"];
-		
-		User *user = [[User alloc] init];
-		[user assignValuesFromDictionary:userDict];
-		
-		[self.leaderboard addObject:user];
-		[user release];
-	}
-	
-	// Tell the ImageManager to get the pictures if it does not already have them
-	for(int i=0; i<[self.leaderboard count]; i++) {
-		id object = [self.leaderboard objectAtIndex:i];
-		User *user = object;
-		
-		Image *image = [self.imageManager getImage:user.imageUrl];
-		if(image != nil)
-			user.image = image.image;
-	}
 	
 	// Set the username label
 	self.username.text = self.user.userName;
@@ -193,83 +172,62 @@
 
 - (NSInteger)numberOfSectionsInTableView: (UITableView *)tableView {
 	return 1;
-	
-	// Show the leaderboard if we are viewing our own profile
-	if(self.leaderboard != nil)
-		return 2;
-	else
-		return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	if(section == 0)
-		return 4;
-	else
-		return [self.leaderboard count];
+	if([self isUserYou])
+		return 5;
+	return 4;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	if(section == 0)
-		return @"My Statistics";
-	else
-		return @"Leaderboard";
+	return @"Statistics";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
-	
-	UserViewCell *cell = (UserViewCell *)[tableView dequeueReusableCellWithIdentifier: CellIdentifier];
-	if (cell == nil)  {
-		NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"UserViewCell" owner:self options:nil];
-		for (id oneObject in nib)
-			if ([oneObject isKindOfClass:[UserViewCell class]])
-				cell = (UserViewCell *)oneObject;
-	}
-	cell.accessoryType = UITableViewCellAccessoryNone;
     
-	int section = [indexPath section];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    }
+    
 	int row = [indexPath row];
-	
-	if(section == 0) {
-		switch (row) {
-			case 0:
-				cell.textLabel.text = [NSString stringWithFormat:@"%d Check-Ins", self.user.checkins];
-				cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-clock" ofType:@"png"]];
-				if(self.user.checkins > 0)
-					cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-				break;
-			case 1:
-				cell.textLabel.text = [NSString stringWithFormat:@"%d Points", self.user.points];
-				cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-piggy-bank" ofType:@"png"]];
-				break;
-			case 2:
-				cell.textLabel.text = [NSString stringWithFormat:@"Following %d", self.user.following];
-				cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
-				if(self.user.following > 0)
-					cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-				break;
-			case 3:
-				cell.textLabel.text = [NSString stringWithFormat:@"Followers %d", self.user.followers];
-				cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
-				if(self.user.followers > 0)
-					cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-				break;
-			default:
-				break;
-		}
-		cell.textLabel.textColor = [UIColor darkGrayColor];
-		cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15.0];
+	switch (row) {
+		case 0:
+			cell.textLabel.text = [NSString stringWithFormat:@"%d Check-Ins", self.user.checkins];
+			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-clock" ofType:@"png"]];
+			if(self.user.checkins > 0)
+				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+			break;
+		case 1:
+			cell.textLabel.text = [NSString stringWithFormat:@"%d Points", self.user.points];
+			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-piggy-bank" ofType:@"png"]];
+			cell.accessoryType = UITableViewCellAccessoryNone;
+			break;
+		case 2:
+			cell.textLabel.text = [NSString stringWithFormat:@"Following %d", self.user.following];
+			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
+			if([self isUserYou] && self.user.following > 0)
+				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+			break;
+		case 3:
+			cell.textLabel.text = [NSString stringWithFormat:@"Followers %d", self.user.followers];
+			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
+			if([self isUserYou] && self.user.followers > 0)
+				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+			break;
+		case 4:
+			cell.textLabel.text = @"Leaderboard";
+			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
+			if([self isUserYou])
+				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+			break;
+		default:
+			break;
 	}
-	else {
-		User *user = [self.leaderboard objectAtIndex:row];
-		cell.position.text = [NSString stringWithFormat:@"#%d", row+1];
-		cell.username.text = user.userName;
-		cell.score.text = [NSString stringWithFormat:@"%d", user.points];
-		if(user.image != nil)
-			cell.userImageView.image = user.image;
-		else
-			cell.userImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"default-user" ofType:@"png"]];
-	}
+	cell.textLabel.textColor = [UIColor darkGrayColor];
+	cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15.0];
     
     return cell;
 }
@@ -279,31 +237,31 @@
 #pragma mark UITableViewDelegate Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	int section = [indexPath section];
 	int row = [indexPath row];
 	
-	if(section == 0) {
-		if(row == 0 & self.user.checkins > 0) {
-			CheckInsByUserViewController *controller = [[CheckInsByUserViewController alloc] init];
-			controller.user = self.user;
-			[controller setHidesBottomBarWhenPushed:YES];
-			[self.navigationController pushViewController:controller animated:YES];
-			[controller release];	
-		}
-		else if(row == 2 && self.user.following > 0) {
-			FollowingViewController *controller = [[FollowingViewController alloc] init];
-			controller.user = self.user;
-			[controller setHidesBottomBarWhenPushed:YES];
-			[self.navigationController pushViewController:controller animated:YES];
-			[controller release];	
-		}
-		else if(row == 3 && self.user.followers > 0) {
-			FollowersViewController *controller = [[FollowersViewController alloc] init];
-			controller.user = self.user;
-			[controller setHidesBottomBarWhenPushed:YES];
-			[self.navigationController pushViewController:controller animated:YES];
-			[controller release];	
-		}
+	if(row == 0 & self.user.checkins > 0) {
+		CheckInsByUserViewController *controller = [[CheckInsByUserViewController alloc] init];
+		controller.user = self.user;
+		[controller setHidesBottomBarWhenPushed:YES];
+		[self.navigationController pushViewController:controller animated:YES];
+		[controller release];	
+	}
+	else if(row == 2 && [self isUserYou] && self.user.following > 0) {
+		FollowingViewController *controller = [[FollowingViewController alloc] init];
+		controller.user = self.user;
+		[controller setHidesBottomBarWhenPushed:YES];
+		[self.navigationController pushViewController:controller animated:YES];
+		[controller release];	
+	}
+	else if(row == 3 && [self isUserYou] && self.user.followers > 0) {
+		FollowersViewController *controller = [[FollowersViewController alloc] init];
+		controller.user = self.user;
+		[controller setHidesBottomBarWhenPushed:YES];
+		[self.navigationController pushViewController:controller animated:YES];
+		[controller release];	
+	}
+	else if(row == 4 && [self isUserYou]) {
+		// TODO: Leaderboard view controller here
 	}
 }
 

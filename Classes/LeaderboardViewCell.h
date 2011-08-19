@@ -1,5 +1,5 @@
 //
-//  UserViewCell.h
+//  LeaderboardViewCell.h
 //  Finster
 //
 //  Created by Todd Fearn on 8/18/11.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface UserViewCell : UITableViewCell {
+@interface LeaderboardViewCell : UITableViewCell {
 	IBOutlet UILabel *_position;
 	IBOutlet UIImageView *_userImageView;
 	IBOutlet UILabel *_username;

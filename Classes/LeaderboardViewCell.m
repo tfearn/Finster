@@ -1,15 +1,15 @@
 //
-//  UserViewCell.m
+//  LeaderboardViewCell.m
 //  Finster
 //
 //  Created by Todd Fearn on 8/18/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "UserViewCell.h"
+#import "LeaderboardViewCell.h"
 
 
-@implementation UserViewCell
+@implementation LeaderboardViewCell
 @synthesize position = _position;
 @synthesize userImageView = _userImageView;
 @synthesize username = _username;
