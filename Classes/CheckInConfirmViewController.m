@@ -147,7 +147,7 @@
 		if([[self.textView text] isEqualToString:kTextViewDefaultMessage] == NO)
 			message = [message stringByAppendingFormat:@" '%@'", [self.textView text]];
 		
-		message = [message stringByAppendingString:@" via Finster @idatacorp"];
+		message = [message stringByAppendingString:@" via @finsterapp"];
 		[_twitterConnect tweet:message];
 	}
 }

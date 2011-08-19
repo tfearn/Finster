@@ -192,6 +192,8 @@
 #pragma mark UITableViewDataSource Methods
 
 - (NSInteger)numberOfSectionsInTableView: (UITableView *)tableView {
+	return 1;
+	
 	// Show the leaderboard if we are viewing our own profile
 	if(self.leaderboard != nil)
 		return 2;
