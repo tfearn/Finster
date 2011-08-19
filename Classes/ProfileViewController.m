@@ -40,6 +40,9 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
+
+	// Retrieve the user stats every time the view appears
+	[self getData];
 }
 
 - (void)didReceiveMemoryWarning {

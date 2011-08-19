@@ -27,4 +27,6 @@
 @property (nonatomic, retain) ImageManager *imageManager;
 @property (nonatomic, retain) User *user;
 
+- (void)getData;
+
 @end

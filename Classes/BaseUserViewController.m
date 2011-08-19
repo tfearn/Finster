@@ -15,7 +15,6 @@
 
 
 @interface BaseUserViewController (Private)
-- (void)getData;
 - (BOOL)isUserYou;
 @end
 
@@ -47,9 +46,6 @@
 			[self.userImageView setImage:self.user.image];
 		}
 	}
-	
-	// Retrieve the user data
-	[self getData];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

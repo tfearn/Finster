@@ -35,6 +35,9 @@
 		
 		[self showWaitView:@"Retrieving user..."];
 	}
+	
+	// Retrieve the user stats
+	[self getData];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
