@@ -273,7 +273,7 @@
 	if(section == 0)
 		return @"You & People You Follow";
 	else
-		return @"Other Activity";
+		return @"Everyone";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableview cellForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -11,6 +11,7 @@
 @class UINavigationButton;
 
 @implementation ProfileViewController
+@synthesize scrollView = _scrollView;
 @synthesize findFriendsButton = _findFriendsButton;
 @synthesize shareAppActionSheet = _shareAppActionSheet;
 @synthesize findFriendsActionSheet = _findFriendsActionSheet;
@@ -18,6 +19,8 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+	//self.scrollView.contentSize = CGSizeMake(320, 500);
 
 	UIBarButtonItem *shareAppButton = [[UIBarButtonItem alloc] initWithTitle:@"Share App" style:UIBarButtonItemStyleBordered target:self action:@selector(shareAppButtonPressed:)];
 	self.navigationItem.leftBarButtonItem = shareAppButton; 
@@ -59,6 +62,7 @@
 }
 
 - (void)dealloc {
+	[_scrollView release];
 	[_findFriendsButton release];
 	[_shareAppActionSheet release];
 	[_findFriendsActionSheet release];
