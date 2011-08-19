@@ -45,6 +45,7 @@
 #define kUrlGetTrending				@"http://developer.finster.mobi/api/gettrending?start=0&limit=20"
 #define kUrlFindUser				@"http://developer.finster.mobi/api/finduser?search=%@"
 #define kUrlTwitterConnect			@"http://developer.finster.mobi/api/twitterconnect?username=%@&password=%@"
+#define kUrlGetLeaderboard			@"http://developer.finster.mobi/api/leaderboard"
 
 // Maximum rows retrieved for all getcheckins REST calls
 #define kMaxRowsForGetCheckIns		50

@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseUserListViewController.h"
+#import "LeaderboardViewCell.h"
 
-
-@interface LeaderboardViewController : UIViewController {
-
+@interface LeaderboardViewController : BaseUserListViewController {
 }
 
 @end

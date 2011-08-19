@@ -12,7 +12,7 @@
 #import "CheckInsByUserViewController.h"
 #import "FollowingViewController.h"
 #import "FollowersViewController.h"
-
+#import "LeaderboardViewController.h"
 
 @interface BaseUserViewController (Private)
 - (BOOL)isUserYou;
@@ -256,7 +256,10 @@
 		[controller release];	
 	}
 	else if(row == 4 && [self isUserYou]) {
-		// TODO: Leaderboard view controller here
+		LeaderboardViewController *controller = [[LeaderboardViewController alloc] init];
+		[controller setHidesBottomBarWhenPushed:YES];
+		[self.navigationController pushViewController:controller animated:YES];
+		[controller release];	
 	}
 }
 

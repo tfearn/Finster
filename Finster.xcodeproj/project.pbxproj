@@ -68,6 +68,7 @@
 		82C107A71357984B00302082 /* TickerFindViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82C107A61357984B00302082 /* TickerFindViewCell.xib */; };
 		82C107F51357A09C00302082 /* CheckInReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C107F41357A09C00302082 /* CheckInReviewViewController.m */; };
 		82C107F71357A0AB00302082 /* CheckInReviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82C107F61357A0AB00302082 /* CheckInReviewView.xib */; };
+		82D11C6413FED2FD00958416 /* LeaderboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D11C6313FED2FD00958416 /* LeaderboardViewController.xib */; };
 		82E7411913E1E487002B88EB /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E7411813E1E487002B88EB /* UserViewController.m */; };
 		A81EE05213E2F85D0073368E /* FindFriendsOnAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A81EE05113E2F85D0073368E /* FindFriendsOnAppViewController.m */; };
 		A81EE05413E2F8840073368E /* FindFriendsOnAppView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A81EE05313E2F8840073368E /* FindFriendsOnAppView.xib */; };
@@ -288,6 +289,7 @@
 		82C107F31357A09C00302082 /* CheckInReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInReviewViewController.h; sourceTree = "<group>"; };
 		82C107F41357A09C00302082 /* CheckInReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInReviewViewController.m; sourceTree = "<group>"; };
 		82C107F61357A0AB00302082 /* CheckInReviewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInReviewView.xib; sourceTree = "<group>"; };
+		82D11C6313FED2FD00958416 /* LeaderboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderboardViewController.xib; sourceTree = "<group>"; };
 		82E7411713E1E487002B88EB /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		82E7411813E1E487002B88EB /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Finster-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Finster-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -539,6 +541,7 @@
 				828A7AF013E0BEB40082D968 /* FollowingView.xib */,
 				828A7AF313E0BF020082D968 /* FollowersView.xib */,
 				A81EE05313E2F8840073368E /* FindFriendsOnAppView.xib */,
+				82D11C6313FED2FD00958416 /* LeaderboardViewController.xib */,
 				A8B5FF5F13FDD599002E20FF /* LeaderboardViewCell.xib */,
 			);
 			name = Resources;
@@ -1188,6 +1191,7 @@
 				8274D0A413FD6F1800E40CAF /* twitter_load.png in Resources */,
 				A8B5FF6013FDD599002E20FF /* LeaderboardViewCell.xib in Resources */,
 				828988FE13FEA9D3000A3E80 /* tabbar-id-card.png in Resources */,
+				82D11C6413FED2FD00958416 /* LeaderboardViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
