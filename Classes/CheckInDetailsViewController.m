@@ -94,10 +94,12 @@
 }
 
 - (IBAction)usernamePressed:(id)sender {
-	UserViewController *controller = [[UserViewController alloc] init];
-	controller.user = self.checkIn.user;
-	[self.navigationController pushViewController:controller animated:YES];
-	[controller release];	
+	if([self.checkIn.user.groupType caseInsensitiveCompare:@"you"] != NSOrderedSame) {
+		UserViewController *controller = [[UserViewController alloc] init];
+		controller.user = self.checkIn.user;
+		[self.navigationController pushViewController:controller animated:YES];
+		[controller release];	
+	}
 }
 
 

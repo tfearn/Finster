@@ -267,6 +267,7 @@
 								<string>82C1064413575F4100302082</string>
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>82C104291357370D00302082</string>
+								<string>82C10428135736D200302082</string>
 								<string>82E7411C13E1E4FF002B88EB</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C37FABC05509CD000000102</string>
@@ -274,15 +275,15 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>22</integer>
-									<integer>18</integer>
+									<integer>34</integer>
+									<integer>30</integer>
 									<integer>12</integer>
 									<integer>8</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 250}, {300, 1093}}</string>
+							<string>{{0, 58}, {300, 1093}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -331,7 +332,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>8289891713FEADCF000A3E80</string>
+										<string>8289894B13FEB2C1000A3E80</string>
 										<key>history</key>
 										<array>
 											<string>82C1044813573DF700302082</string>
@@ -391,8 +392,6 @@
 											<string>82B2B69413F31A5100C27F92</string>
 											<string>82B2B69613F31A5100C27F92</string>
 											<string>82B2B69713F31A5100C27F92</string>
-											<string>82B2B6B213F32C2000C27F92</string>
-											<string>8262534C13F43B82008E126A</string>
 											<string>8262534D13F43B82008E126A</string>
 											<string>8262534E13F43B82008E126A</string>
 											<string>8262534F13F43B82008E126A</string>
@@ -444,7 +443,9 @@
 											<string>828988C913FEA459000A3E80</string>
 											<string>828988F713FEA78D000A3E80</string>
 											<string>8289891513FEADCF000A3E80</string>
-											<string>8289891613FEADCF000A3E80</string>
+											<string>8289893913FEB1D7000A3E80</string>
+											<string>8289894913FEB2C1000A3E80</string>
+											<string>8289894A13FEB2C1000A3E80</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -642,12 +643,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>8289891813FEADCF000A3E80</string>
 		<string>828988F113FEA756000A3E80</string>
 		<string>828988F213FEA756000A3E80</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>823615A5135731AE00935425</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/toddfearn/Project/Finster/Finster.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -977,6 +977,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -1022,7 +1024,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
