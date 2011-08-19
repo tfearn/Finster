@@ -19,6 +19,7 @@
 @end
 
 @implementation BaseUserViewController
+@synthesize tableView = _tableView;
 @synthesize userImageView = _userImageView;
 @synthesize username = _username;
 @synthesize request = _request;
@@ -69,6 +70,7 @@
 	if(self.request != nil)
 		[self.request clearDelegatesAndCancel];
 
+	[_tableView release];
 	[_userImageView release];
 	[_username release];
 	[_imageManager release];
@@ -103,8 +105,6 @@
 #pragma mark RequestDelegate Methods
 
 - (void)getUserRequestComplete:(ASIHTTPRequest *)request {
-    [self performSelector:@selector(stopLoading) withObject:nil afterDelay:2.0];
-
 	NSString *response = [request responseString];
 	
 	SBJSON *jsonParser = [[[SBJSON alloc] init] autorelease];
@@ -142,7 +142,6 @@
 }
 
 - (void)getUserRequestFailure:(ASIHTTPRequest *)request {
-    [self performSelector:@selector(stopLoading) withObject:nil afterDelay:2.0];
 	[Globals showNetworkError:request.error];
 	
 	_request = nil;

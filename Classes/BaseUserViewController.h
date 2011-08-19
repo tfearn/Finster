@@ -12,15 +12,17 @@
 #import "Globals.h"
 #import "ImageManager.h"
 #import "User.h"
-#import "PullRefreshTableViewController.h"
+#import "BaseViewController.h"
 
-@interface BaseUserViewController : PullRefreshTableViewController <ASIHTTPRequestDelegate, ImageManagerDelegate> {
+@interface BaseUserViewController : BaseViewController <ASIHTTPRequestDelegate, ImageManagerDelegate> {
+	IBOutlet UITableView *_tableView;
 	IBOutlet UIImageView *_userImageView;
 	IBOutlet UILabel *_username;
 	ASIHTTPRequest *_request;
 	ImageManager *_imageManager;
 	User *_user;
 }
+@property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, retain) UIImageView *userImageView;
 @property (nonatomic, retain) UILabel *username;
 @property (nonatomic, retain) ASIHTTPRequest *request;
