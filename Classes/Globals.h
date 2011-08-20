@@ -31,7 +31,7 @@
 // URLs
 #define kUrlTickerLookup			@"http://d.yimg.com/autoc.finance.yahoo.com/autoc?query=%@&callback=YAHOO.Finance.SymbolSuggest.ssCallback"
 #define kUrlLoginUsingFacebook		@"http://developer.finster.mobi/api/loginUsingFacebook?facebookuserid=%@&accesstoken=%@"
-#define kUrlGetCheckInsYouFriends	@"http://developer.finster.mobi/api/getcheckins?feed=you,friends&start=0&limit=20"
+#define kUrlGetCheckInsYouFriends	@"http://developer.finster.mobi/api/getcheckins?feed=you,friends&start=0&limit=40"
 #define kUrlGetCheckInsNetwork		@"http://developer.finster.mobi/api/getcheckins?feed=network&start=0&limit=20"
 #define kUrlGetCheckInsByTicker		@"http://developer.finster.mobi/api/getcheckins?ticker=%@"
 #define kUrlGetCheckInsByUser		@"http://developer.finster.mobi/api/getcheckins?feed=user&userid=%@"

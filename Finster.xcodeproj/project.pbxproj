@@ -73,6 +73,7 @@
 		A81EE05213E2F85D0073368E /* FindFriendsOnAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A81EE05113E2F85D0073368E /* FindFriendsOnAppViewController.m */; };
 		A81EE05413E2F8840073368E /* FindFriendsOnAppView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A81EE05313E2F8840073368E /* FindFriendsOnAppView.xib */; };
 		A81EE05813E2F9E30073368E /* BaseUserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A81EE05713E2F9E30073368E /* BaseUserListViewController.m */; };
+		A82F907613FFA4BC00D51ED2 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = A82F907513FFA4BC00D51ED2 /* Utility.m */; };
 		A83419241367845C00DA62D1 /* DbSearchedTickerGet.m in Sources */ = {isa = PBXBuildFile; fileRef = A83419231367845C00DA62D1 /* DbSearchedTickerGet.m */; };
 		A83AE1AC13D0AC5400D1C045 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83AE1AB13D0AC5400D1C045 /* ActivityViewController.m */; };
 		A83AE1B913D0B0D100D1C045 /* BaseCheckInsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83AE1B813D0B0D100D1C045 /* BaseCheckInsViewController.m */; };
@@ -298,6 +299,8 @@
 		A81EE05313E2F8840073368E /* FindFriendsOnAppView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindFriendsOnAppView.xib; sourceTree = "<group>"; };
 		A81EE05613E2F9E30073368E /* BaseUserListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUserListViewController.h; sourceTree = "<group>"; };
 		A81EE05713E2F9E30073368E /* BaseUserListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUserListViewController.m; sourceTree = "<group>"; };
+		A82F907413FFA4BC00D51ED2 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		A82F907513FFA4BC00D51ED2 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		A83419221367845C00DA62D1 /* DbSearchedTickerGet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbSearchedTickerGet.h; sourceTree = "<group>"; };
 		A83419231367845C00DA62D1 /* DbSearchedTickerGet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbSearchedTickerGet.m; sourceTree = "<group>"; };
 		A83AE1AA13D0AC5400D1C045 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
@@ -706,6 +709,8 @@
 		82C1042A1357372200302082 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				A82F907413FFA4BC00D51ED2 /* Utility.h */,
+				A82F907513FFA4BC00D51ED2 /* Utility.m */,
 				A87EE79213622479000A91B6 /* WaitView.h */,
 				A87EE79313622479000A91B6 /* WaitView.m */,
 				8266AB1613EB32D5007C3B3B /* SpinnerView.h */,
@@ -1286,6 +1291,7 @@
 				8274D14213FD847E00E40CAF /* TwitterConnect.m in Sources */,
 				A8B5FF6613FDD5ED002E20FF /* LeaderboardViewCell.m in Sources */,
 				828988B213FEA342000A3E80 /* LeaderboardViewController.m in Sources */,
+				A82F907613FFA4BC00D51ED2 /* Utility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1318,7 +1324,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Todd Fearn (3TVVZ6J6JA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: iDATA Corporation";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Finster_Prefix.pch;
@@ -1330,7 +1336,7 @@
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
 				);
 				PRODUCT_NAME = Finster;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "11E7029B-1D7C-4E8E-96E6-9B00BCF71E92";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9AC9F9FF-9CC8-46D2-A8D6-BDD876356578";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

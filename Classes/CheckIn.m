@@ -32,7 +32,9 @@
 	self.checkinID = [[dict objectForKey:@"id"] longValue];
 	NSString *timestamp = [dict objectForKey:@"timestamp"];
 	self.timestamp = [dateFormatter dateFromString:timestamp];
-	self.checkinType = [[dict objectForKey:@"type"] intValue];
+	id object;
+	if((object = [Utility objectNotNSNull:[dict objectForKey:@"type"]]) != nil)
+		self.checkinType = [object intValue];
 	self.comment = [dict objectForKey:@"comment"];
 	
 	[dateFormatter release];

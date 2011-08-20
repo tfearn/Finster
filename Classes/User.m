@@ -26,11 +26,18 @@
 	self.groupType = [dict objectForKey:@"group"];
 	self.userName = [dict objectForKey:@"name"];
 	self.imageUrl = [dict objectForKey:@"image"];
-	self.followers = [[dict objectForKey:@"followers"] intValue];
-	self.following = [[dict objectForKey:@"following"] intValue];
-	self.checkins = [[dict objectForKey:@"checkins"] intValue];
-	self.badges = [[dict objectForKey:@"badges"] intValue];
-	self.points = [[dict objectForKey:@"points"] intValue];
+	
+	id object;
+	if((object = [Utility objectNotNSNull:[dict objectForKey:@"followers"]]) != nil)
+		self.followers = [object intValue];
+	if((object = [Utility objectNotNSNull:[dict objectForKey:@"following"]]) != nil)
+		self.following = [object intValue];
+	if((object = [Utility objectNotNSNull:[dict objectForKey:@"checkins"]]) != nil)
+		self.checkins = [object intValue];
+	if((object = [Utility objectNotNSNull:[dict objectForKey:@"badges"]]) != nil)
+		self.badges = [object intValue];
+	if((object = [Utility objectNotNSNull:[dict objectForKey:@"points"]]) != nil)
+		self.points = [object intValue];
 }
 
 - (void)dealloc {

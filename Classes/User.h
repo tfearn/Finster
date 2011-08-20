@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Utility.h"
 
 @interface User : NSObject {
 	NSString *_userID;

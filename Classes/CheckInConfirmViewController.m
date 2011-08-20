@@ -143,6 +143,8 @@
 	if(twitterOn) {
 		CheckInTypeFormatter *formatter = [[[CheckInTypeFormatter alloc] init] autorelease];
 		NSString *message = [formatter format:self.checkInType symbol:self.ticker.symbol];
+		if(self.ticker.symbolName != nil)
+			message = [message stringByAppendingFormat:@" (%@)", self.ticker.symbolName];
 
 		if([[self.textView text] isEqualToString:kTextViewDefaultMessage] == NO)
 			message = [message stringByAppendingFormat:@" '%@'", [self.textView text]];

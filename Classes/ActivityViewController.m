@@ -92,6 +92,7 @@
 	// Parse the data
 	NSError *error = nil;
 	NSDictionary *dict = [self.jsonParser objectWithString:response error:&error];
+	MyLog(@"%@", dict);
 	if(error != nil) {
 		[Globals logError:error name:@"JSON_Parser_Error" detail:response];
 		
@@ -162,6 +163,7 @@
 	// Parse the data
 	NSError *error = nil;
 	NSDictionary *dict = [self.jsonParser objectWithString:response error:&error];
+	MyLog(@"%@", dict);
 	if(error != nil) {
 		[Globals logError:error name:@"JSON_Parser_Error" detail:response];
 		
