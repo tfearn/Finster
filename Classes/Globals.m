@@ -58,7 +58,7 @@ static CSqliteDatabase *db;
 		MyLog(@"%@", detail);
 		
 		// Log to Flurry only for a release version
-#ifndef NDEBUG
+#ifdef NDEBUG
 		NSDictionary *errorDict = [NSDictionary dictionaryWithObjectsAndKeys:detail, @"logError", nil];
 		[FlurryAPI logEvent:name withParameters:errorDict timed:NO];
 #endif

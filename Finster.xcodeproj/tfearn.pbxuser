@@ -21,9 +21,9 @@
 		);
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Release;
+		activeBuildConfigurationName = Debug;
 		activeExecutable = A877438C135660B100DD721B /* Finster */;
-		activeSDKPreference = iphoneos4.3;
+		activeSDKPreference = iphonesimulator4.3;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Finster */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* Finster */,
@@ -405,14 +405,14 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1541, 1144}}";
 			sepNavSelRange = "{1293, 0}";
-			sepNavVisRange = "{302, 3377}";
+			sepNavVisRange = "{272, 3407}";
 		};
 	};
 	82C10430135737F000302082 /* Globals.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1171, 1027}}";
-			sepNavSelRange = "{909, 0}";
-			sepNavVisRange = "{894, 717}";
+			sepNavIntBoundsRect = "{{0, 0}, {1541, 1027}}";
+			sepNavSelRange = "{1135, 0}";
+			sepNavVisRange = "{133, 1477}";
 		};
 	};
 	82C1048C135741E500302082 /* Ticker.h */ = {
@@ -520,7 +520,7 @@
 	};
 	A81EE05613E2F9E30073368E /* BaseUserListViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {898, 566}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1541, 947}}";
 			sepNavSelRange = "{851, 0}";
 			sepNavVisRange = "{0, 851}";
 		};
@@ -2297,7 +2297,7 @@
 	A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1541, 2925}}";
-			sepNavSelRange = "{5047, 0}";
+			sepNavSelRange = "{3577, 0}";
 			sepNavVisRange = "{3095, 2848}";
 		};
 	};

@@ -27,7 +27,7 @@
 void uncaughtExceptionHandler(NSException *exception) {
 	
 	// Log to Flurry only for a release version
-#ifndef NDEBUG
+#ifdef NDEBUG
 	[FlurryAPI logError:@"Uncaught Exception" message:[exception name] exception:exception];
 #endif
 	
