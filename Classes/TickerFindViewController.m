@@ -96,7 +96,8 @@
 
 	// Do the request
 	NSString *urlString = [NSString stringWithFormat:kUrlTickerLookup, searchText];
-	NSURL *url = [NSURL URLWithString:urlString];
+	NSString* escapedUrlString =[urlString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+	NSURL *url = [NSURL URLWithString:escapedUrlString];
 	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
 	[request setDownloadCache:[ASIDownloadCache sharedCache]];
 	[request setDelegate:self];
@@ -107,6 +108,7 @@
 #pragma mark ASIHTTPRequestDelegate Methods
 
 - (void)requestFinished:(ASIHTTPRequest *)request {
+	[self dismissSpinnerView];
 	NSString *response = [request responseString];
 	
 	// Strip the YAHOO.Finance method function string
@@ -157,6 +159,7 @@
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request {
+	[self dismissSpinnerView];
 	NSError *error = [request error];
 	
 	// TO DO: Just log the error for now
@@ -233,10 +236,14 @@
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+	[self.searchBar resignFirstResponder];
+
 	NSString *searchText = searchBar.text;
 	[self doTickerRequest:searchText];
 	
 	[Globals setLastTickerSearch:searchText];
+	
+	[self showSpinnerView];
 }
 
 @end

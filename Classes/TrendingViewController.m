@@ -139,7 +139,7 @@
 	Trend *trend = [self.trends objectAtIndex:row];
 
 	cell.symbol.text = trend.ticker.symbol;
-	if(trend.ticker.exchangeName != nil)
+	if(trend.ticker.exchangeName != nil && [trend.ticker.exchangeName caseInsensitiveCompare:@"(null)"] != NSOrderedSame)
 		cell.exchangeName.text = trend.ticker.exchangeName;
 	cell.symbolName.text = trend.ticker.symbolName;
 	cell.checkins.text = [NSString stringWithFormat:@"%d", trend.checkins];
