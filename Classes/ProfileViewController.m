@@ -89,6 +89,7 @@
 
 - (IBAction)findFriendsButtonPressed:(id)sender {
 	FindFriendsOnAppViewController *controller = [[FindFriendsOnAppViewController alloc] init];
+	[controller setHidesBottomBarWhenPushed:YES];
 	[self.navigationController pushViewController:controller animated:YES];
 	[controller release];	
 }
