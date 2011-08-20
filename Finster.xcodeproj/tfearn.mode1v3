@@ -229,6 +229,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -265,20 +267,14 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
-								<string>82C104291357370D00302082</string>
-								<string>82C10428135736D200302082</string>
-								<string>A83AE1A913D0AB5A00D1C045</string>
-								<string>A83089EF13DB73660024090A</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>19C28FACFE9D520D11CA2CBB</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>17</integer>
-									<integer>9</integer>
-									<integer>7</integer>
-									<integer>3</integer>
+									<integer>38</integer>
+									<integer>37</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -313,14 +309,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CheckInConfirmViewController.m</string>
+								<string>Finster-Info.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -328,11 +322,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CheckInConfirmViewController.m</string>
+										<string>Finster-Info.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>A82F90C113FFACE300D51ED2</string>
+										<string>A82F90E213FFDB5100D51ED2</string>
 										<key>history</key>
 										<array>
 											<string>A87744431356918400DD721B</string>
@@ -410,14 +404,12 @@
 											<string>A8EB4BE713F09FD30046836F</string>
 											<string>A8240E5613F5AFFF006D9C5B</string>
 											<string>A8240ED413F5CC3D006D9C5B</string>
-											<string>A8240ED513F5CC3D006D9C5B</string>
 											<string>A8240F9313F5DA8C006D9C5B</string>
 											<string>A8240F9413F5DA8C006D9C5B</string>
 											<string>A8240FC113F5DD3E006D9C5B</string>
 											<string>A824106613F5E5B6006D9C5B</string>
 											<string>A824108B13F5E6CE006D9C5B</string>
 											<string>A82410B213F5F325006D9C5B</string>
-											<string>A8CF82BB13F8366B007246E7</string>
 											<string>A8CF831C13F96A50007246E7</string>
 											<string>A8CF833313F96C03007246E7</string>
 											<string>A8EA1C9A13FAC9FB00654AE0</string>
@@ -442,7 +434,6 @@
 											<string>A84855B313FEF949005697D7</string>
 											<string>A89E5B3C13FEFDCD000A88D0</string>
 											<string>A89E5B5713FEFEB4000A88D0</string>
-											<string>A89E5B8F13FF2475000A88D0</string>
 											<string>A89E5BAA13FF270A000A88D0</string>
 											<string>A89E5BAB13FF270A000A88D0</string>
 											<string>A895C53913FF4E9D00CF388A</string>
@@ -457,11 +448,14 @@
 											<string>A82F909813FFA89400D51ED2</string>
 											<string>A82F909913FFA89400D51ED2</string>
 											<string>A82F90B513FFAC7300D51ED2</string>
-											<string>A82F90B613FFAC7300D51ED2</string>
 											<string>A82F90B713FFAC7300D51ED2</string>
 											<string>A82F90B813FFAC7300D51ED2</string>
-											<string>A82F90B913FFAC7300D51ED2</string>
-											<string>A82F90BA13FFAC7300D51ED2</string>
+											<string>A82F90DC13FFDB5100D51ED2</string>
+											<string>A82F90DD13FFDB5100D51ED2</string>
+											<string>A82F90DE13FFDB5100D51ED2</string>
+											<string>A82F90DF13FFDB5100D51ED2</string>
+											<string>A82F90E013FFDB5100D51ED2</string>
+											<string>A82F90E113FFDB5100D51ED2</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
