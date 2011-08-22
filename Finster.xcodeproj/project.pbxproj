@@ -695,9 +695,8 @@
 				82E7411C13E1E4FF002B88EB /* User */,
 				A877C75413DDE38700ABACE6 /* Trending */,
 				A877C7B313DE065A00ABACE6 /* Profile */,
+				A8A533561402D34E00A166C2 /* FindFriends */,
 				A8EA1CFD13FAD5D700654AE0 /* Twitter */,
-				A81EE05013E2F85D0073368E /* FindFriendsOnAppViewController.h */,
-				A81EE05113E2F85D0073368E /* FindFriendsOnAppViewController.m */,
 				A87EE7951362248E000A91B6 /* BaseViewController.h */,
 				A87EE7961362248E000A91B6 /* BaseViewController.m */,
 				A81EE05613E2F9E30073368E /* BaseUserListViewController.h */,
@@ -926,6 +925,15 @@
 				A886324913DA01FD00C9AEB8 /* SBJsonWriter.m */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		A8A533561402D34E00A166C2 /* FindFriends */ = {
+			isa = PBXGroup;
+			children = (
+				A81EE05013E2F85D0073368E /* FindFriendsOnAppViewController.h */,
+				A81EE05113E2F85D0073368E /* FindFriendsOnAppViewController.m */,
+			);
+			name = FindFriends;
 			sourceTree = "<group>";
 		};
 		A8EA1CFD13FAD5D700654AE0 /* Twitter */ = {

@@ -527,7 +527,7 @@
 	};
 	A81EE05013E2F85D0073368E /* FindFriendsOnAppViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {940, 591}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1301, 892}}";
 			sepNavSelRange = "{290, 0}";
 			sepNavVisRange = "{0, 390}";
 		};
@@ -541,7 +541,7 @@
 	};
 	A81EE05613E2F9E30073368E /* BaseUserListViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1541, 947}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1301, 892}}";
 			sepNavSelRange = "{851, 0}";
 			sepNavVisRange = "{0, 851}";
 		};
@@ -550,7 +550,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1363, 2743}}";
 			sepNavSelRange = "{5463, 0}";
-			sepNavVisRange = "{3692, 1876}";
+			sepNavVisRange = "{3648, 1920}";
 		};
 	};
 	A81EE05A13E302420073368E /* PBXTextBookmark */ = {
@@ -1209,9 +1209,9 @@
 	};
 	A877C7B513DE066700ABACE6 /* ProfileViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1321, 1794}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1321, 1768}}";
 			sepNavSelRange = "{653, 0}";
-			sepNavVisRange = "{555, 2557}";
+			sepNavVisRange = "{577, 2586}";
 		};
 	};
 	A877C7E313DE1DD300ABACE6 /* PBXBookmark */ = {
@@ -1261,16 +1261,16 @@
 	};
 	A87EE7951362248E000A91B6 /* BaseViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1302, 917}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1301, 892}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 414}";
+			sepNavVisRange = "{0, 519}";
 		};
 	};
 	A87EE7961362248E000A91B6 /* BaseViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1139, 591}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1301, 892}}";
 			sepNavSelRange = "{648, 0}";
-			sepNavVisRange = "{0, 1032}";
+			sepNavVisRange = "{0, 1342}";
 		};
 	};
 	A886304313D872E700C9AEB8 /* PBXBookmark */ = {
