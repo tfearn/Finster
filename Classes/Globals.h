@@ -42,6 +42,7 @@
 #define kUrlIsFollowingUser			@"http://developer.finster.mobi/api/isfollowinguser?userid=%@"
 #define kUrlGetUserFollowing		@"http://developer.finster.mobi/api/getuserfollowing"
 #define kUrlGetUserFollowers		@"http://developer.finster.mobi/api/getuserfollowers"
+#define kUrlGetUserLastCheckins		@"http://developer.finster.mobi/api/getuserlastcheckins"
 #define kUrlGetTrending				@"http://developer.finster.mobi/api/gettrending?start=0&limit=20"
 #define kUrlFindUser				@"http://developer.finster.mobi/api/finduser?search=%@"
 #define kUrlTwitterConnect			@"http://developer.finster.mobi/api/twitterconnect?username=%@&password=%@"

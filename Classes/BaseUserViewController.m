@@ -13,6 +13,7 @@
 #import "FollowingViewController.h"
 #import "FollowersViewController.h"
 #import "LeaderboardViewController.h"
+#import "LastCheckinsViewController.h"
 
 @interface BaseUserViewController (Private)
 - (BOOL)isUserYou;
@@ -183,8 +184,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	if([self isUserYou])
-		return 5;
-	return 4;
+		return 6;
+	return 5;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -202,29 +203,35 @@
 	int row = [indexPath row];
 	switch (row) {
 		case 0:
+			cell.textLabel.text = @"My Market Outlook";
+			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-line-chart" ofType:@"png"]];
+			if(self.user.checkins > 0)
+				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+			break;
+		case 1:
 			cell.textLabel.text = [NSString stringWithFormat:@"%d Check-Ins", self.user.checkins];
 			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-clock" ofType:@"png"]];
 			if(self.user.checkins > 0)
 				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			break;
-		case 1:
+		case 2:
 			cell.textLabel.text = [NSString stringWithFormat:@"%d Points", self.user.points];
 			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-piggy-bank" ofType:@"png"]];
 			cell.accessoryType = UITableViewCellAccessoryNone;
 			break;
-		case 2:
+		case 3:
 			cell.textLabel.text = [NSString stringWithFormat:@"Following %d", self.user.following];
 			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
 			if([self isUserYou] && self.user.following > 0)
 				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			break;
-		case 3:
+		case 4:
 			cell.textLabel.text = [NSString stringWithFormat:@"Followers %d", self.user.followers];
 			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
 			if([self isUserYou] && self.user.followers > 0)
 				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			break;
-		case 4:
+		case 5:
 			cell.textLabel.text = @"Leaderboard";
 			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-bulleted-list" ofType:@"png"]];
 			if([self isUserYou])
@@ -247,27 +254,34 @@
 	int row = [indexPath row];
 	
 	if(row == 0 & self.user.checkins > 0) {
+		LastCheckinsViewController *controller = [[LastCheckinsViewController alloc] init];
+		controller.user = self.user;
+		[controller setHidesBottomBarWhenPushed:YES];
+		[self.navigationController pushViewController:controller animated:YES];
+		[controller release];	
+	}
+	else if(row == 1 & self.user.checkins > 0) {
 		CheckInsByUserViewController *controller = [[CheckInsByUserViewController alloc] init];
 		controller.user = self.user;
 		[controller setHidesBottomBarWhenPushed:YES];
 		[self.navigationController pushViewController:controller animated:YES];
 		[controller release];	
 	}
-	else if(row == 2 && [self isUserYou] && self.user.following > 0) {
+	else if(row == 3 && [self isUserYou] && self.user.following > 0) {
 		FollowingViewController *controller = [[FollowingViewController alloc] init];
 		controller.user = self.user;
 		[controller setHidesBottomBarWhenPushed:YES];
 		[self.navigationController pushViewController:controller animated:YES];
 		[controller release];	
 	}
-	else if(row == 3 && [self isUserYou] && self.user.followers > 0) {
+	else if(row == 4 && [self isUserYou] && self.user.followers > 0) {
 		FollowersViewController *controller = [[FollowersViewController alloc] init];
 		controller.user = self.user;
 		[controller setHidesBottomBarWhenPushed:YES];
 		[self.navigationController pushViewController:controller animated:YES];
 		[controller release];	
 	}
-	else if(row == 4 && [self isUserYou]) {
+	else if(row == 5 && [self isUserYou]) {
 		LeaderboardViewController *controller = [[LeaderboardViewController alloc] init];
 		[controller setHidesBottomBarWhenPushed:YES];
 		[self.navigationController pushViewController:controller animated:YES];
