@@ -226,7 +226,7 @@
 			break;
 		case 4:
 			cell.textLabel.text = @"Leaderboard";
-			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
+			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-bulleted-list" ofType:@"png"]];
 			if([self isUserYou])
 				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			break;

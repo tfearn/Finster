@@ -108,7 +108,6 @@
 		A877C6E813DDCFB900ABACE6 /* CheckInsByUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A877C6E713DDCFB900ABACE6 /* CheckInsByUserView.xib */; };
 		A877C75313DDE38200ABACE6 /* TrendingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A877C75213DDE38200ABACE6 /* TrendingViewController.m */; };
 		A877C75713DDF4EE00ABACE6 /* TrendingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A877C75613DDF4EE00ABACE6 /* TrendingView.xib */; };
-		A877C7B213DE064E00ABACE6 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A877C7B113DE064E00ABACE6 /* ProfileViewController.xib */; };
 		A877C7B613DE066700ABACE6 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A877C7B513DE066700ABACE6 /* ProfileViewController.m */; };
 		A87EE79413622479000A91B6 /* WaitView.m in Sources */ = {isa = PBXBuildFile; fileRef = A87EE79313622479000A91B6 /* WaitView.m */; };
 		A87EE7971362248E000A91B6 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A87EE7961362248E000A91B6 /* BaseViewController.m */; };
@@ -128,6 +127,8 @@
 		A89528C613D313C000A54A38 /* CheckInsByTickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89528C513D313C000A54A38 /* CheckInsByTickerViewController.m */; };
 		A89528CC13D315F000A54A38 /* CheckInsByTickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89528CB13D315F000A54A38 /* CheckInsByTickerView.xib */; };
 		A89528DE13D31C1900A54A38 /* CheckInResult.m in Sources */ = {isa = PBXBuildFile; fileRef = A89528DD13D31C1900A54A38 /* CheckInResult.m */; };
+		A8A53301140179F700A166C2 /* tabbar-bulleted-list.png in Resources */ = {isa = PBXBuildFile; fileRef = A8A53300140179F700A166C2 /* tabbar-bulleted-list.png */; };
+		A8A5331314017BCC00A166C2 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8A5331214017BCC00A166C2 /* ProfileViewController.xib */; };
 		A8B12EC613E0EF0100A54B74 /* BaseUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B12EC513E0EF0100A54B74 /* BaseUserViewController.m */; };
 		A8B5FF6013FDD599002E20FF /* LeaderboardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8B5FF5F13FDD599002E20FF /* LeaderboardViewCell.xib */; };
 		A8B5FF6613FDD5ED002E20FF /* LeaderboardViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B5FF6513FDD5ED002E20FF /* LeaderboardViewCell.m */; };
@@ -346,7 +347,6 @@
 		A877C75113DDE38200ABACE6 /* TrendingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrendingViewController.h; sourceTree = "<group>"; };
 		A877C75213DDE38200ABACE6 /* TrendingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrendingViewController.m; sourceTree = "<group>"; };
 		A877C75613DDF4EE00ABACE6 /* TrendingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendingView.xib; sourceTree = "<group>"; };
-		A877C7B113DE064E00ABACE6 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileViewController.xib; path = Classes/ProfileViewController.xib; sourceTree = "<group>"; };
 		A877C7B413DE066700ABACE6 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		A877C7B513DE066700ABACE6 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		A87EE79213622479000A91B6 /* WaitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitView.h; sourceTree = "<group>"; };
@@ -385,6 +385,8 @@
 		A89528CB13D315F000A54A38 /* CheckInsByTickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInsByTickerView.xib; sourceTree = "<group>"; };
 		A89528DC13D31C1900A54A38 /* CheckInResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInResult.h; sourceTree = "<group>"; };
 		A89528DD13D31C1900A54A38 /* CheckInResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInResult.m; sourceTree = "<group>"; };
+		A8A53300140179F700A166C2 /* tabbar-bulleted-list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar-bulleted-list.png"; path = "images/tabbar-bulleted-list.png"; sourceTree = "<group>"; };
+		A8A5331214017BCC00A166C2 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		A8B12EC413E0EF0100A54B74 /* BaseUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUserViewController.h; sourceTree = "<group>"; };
 		A8B12EC513E0EF0100A54B74 /* BaseUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUserViewController.m; sourceTree = "<group>"; };
 		A8B5FF5F13FDD599002E20FF /* LeaderboardViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderboardViewCell.xib; sourceTree = "<group>"; };
@@ -540,7 +542,7 @@
 				A877C6E713DDCFB900ABACE6 /* CheckInsByUserView.xib */,
 				A877C75613DDF4EE00ABACE6 /* TrendingView.xib */,
 				82A4C29713E9F7E6005AA353 /* TrendingViewCell.xib */,
-				A877C7B113DE064E00ABACE6 /* ProfileViewController.xib */,
+				A8A5331214017BCC00A166C2 /* ProfileViewController.xib */,
 				828A7AF013E0BEB40082D968 /* FollowingView.xib */,
 				828A7AF313E0BF020082D968 /* FollowersView.xib */,
 				A81EE05313E2F8840073368E /* FindFriendsOnAppView.xib */,
@@ -815,7 +817,6 @@
 		A87743BA1356669500DD721B /* images */ = {
 			isa = PBXGroup;
 			children = (
-				828988FD13FEA9D3000A3E80 /* tabbar-id-card.png */,
 				A8EB4AD013F066EB0046836F /* Default.png */,
 				A860C07A13EA15C000E5A9E5 /* down-arrow.png */,
 				A860C06E13EA121800E5A9E5 /* up-arrow.png */,
@@ -844,6 +845,8 @@
 				A87743C0135668DF00DD721B /* tabbar-line-chart.png */,
 				A87743BD135667DE00DD721B /* tabbar-user.png */,
 				A87744261356873E00DD721B /* tabbar-group.png */,
+				A8A53300140179F700A166C2 /* tabbar-bulleted-list.png */,
+				828988FD13FEA9D3000A3E80 /* tabbar-id-card.png */,
 				A87743BB135666A900DD721B /* tabbar-clock.png */,
 			);
 			name = images;
@@ -1181,7 +1184,6 @@
 				A886326213DA01FD00C9AEB8 /* FBDialog.bundle in Resources */,
 				A877C6E813DDCFB900ABACE6 /* CheckInsByUserView.xib in Resources */,
 				A877C75713DDF4EE00ABACE6 /* TrendingView.xib in Resources */,
-				A877C7B213DE064E00ABACE6 /* ProfileViewController.xib in Resources */,
 				828A798A13E09DA40082D968 /* tabbar-piggy-bank.png in Resources */,
 				828A7AF113E0BEB40082D968 /* FollowingView.xib in Resources */,
 				828A7AF413E0BF020082D968 /* FollowersView.xib in Resources */,
@@ -1197,6 +1199,8 @@
 				A8B5FF6013FDD599002E20FF /* LeaderboardViewCell.xib in Resources */,
 				828988FE13FEA9D3000A3E80 /* tabbar-id-card.png in Resources */,
 				82D11C6413FED2FD00958416 /* LeaderboardViewController.xib in Resources */,
+				A8A53301140179F700A166C2 /* tabbar-bulleted-list.png in Resources */,
+				A8A5331314017BCC00A166C2 /* ProfileViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-	//self.scrollView.contentSize = CGSizeMake(320, 500);
+	self.scrollView.contentSize = CGSizeMake(320, 450);
 
 	UIBarButtonItem *shareAppButton = [[UIBarButtonItem alloc] initWithTitle:@"Share App" style:UIBarButtonItemStyleBordered target:self action:@selector(shareAppButtonPressed:)];
 	self.navigationItem.leftBarButtonItem = shareAppButton; 
