@@ -54,7 +54,7 @@
 	if(self.user != nil && self.user.userID != nil) {
 		isYou = NO;
 	}
-}
+}s
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
