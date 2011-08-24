@@ -241,6 +241,8 @@
 	int row = [indexPath row];
 	CheckIn *checkIn = [self.checkIns objectAtIndex:row];
 	
+	checkIn.user.image = self.userImageView.image;
+	
 	CheckInDetailsViewController *controller = [[CheckInDetailsViewController alloc] init];
 	controller.checkIn = checkIn;
 	[self.navigationController pushViewController:controller animated:YES];
