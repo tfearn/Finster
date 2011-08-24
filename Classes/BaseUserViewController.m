@@ -15,10 +15,6 @@
 #import "LeaderboardViewController.h"
 #import "LastCheckinsViewController.h"
 
-@interface BaseUserViewController (Private)
-- (BOOL)isUserYou;
-@end
-
 @implementation BaseUserViewController
 @synthesize tableView = _tableView;
 @synthesize userImageView = _userImageView;
@@ -26,6 +22,7 @@
 @synthesize request = _request;
 @synthesize imageManager = _imageManager;
 @synthesize user = _user;
+@synthesize isYou = _isYou;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -47,12 +44,6 @@
 			self.user.image = image.image;
 			[self.userImageView setImage:self.user.image];
 		}
-	}
-
-	// TODO: Remove later after the server groupType is returned properly
-	isYou = YES;
-	if(self.user != nil && self.user.userID != nil) {
-		isYou = NO;
 	}
 }
 
@@ -96,15 +87,6 @@
 	[self.request setDidFinishSelector:@selector(getUserRequestComplete:)];
 	[self.request setDidFailSelector:@selector(getUserRequestFailure:)];
 	[self.request startAsynchronous];
-}
-
-- (BOOL)isUserYou {
-	return isYou;
-	
-	
-	if(self.user != nil && [self.user.groupType caseInsensitiveCompare:@"you"])
-		return YES;
-	return NO;
 }
 
 - (void)refresh {
@@ -183,7 +165,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	if([self isUserYou])
+	if(self.isYou)
 		return 6;
 	return 5;
 }
@@ -222,19 +204,19 @@
 		case 3:
 			cell.textLabel.text = [NSString stringWithFormat:@"Following %d", self.user.following];
 			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
-			if([self isUserYou] && self.user.following > 0)
+			if(self.isYou && self.user.following > 0)
 				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			break;
 		case 4:
 			cell.textLabel.text = [NSString stringWithFormat:@"Followers %d", self.user.followers];
 			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
-			if([self isUserYou] && self.user.followers > 0)
+			if(self.isYou && self.user.followers > 0)
 				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			break;
 		case 5:
 			cell.textLabel.text = @"Leaderboard";
 			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-bulleted-list" ofType:@"png"]];
-			if([self isUserYou])
+			if(self.isYou)
 				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			break;
 		default:
@@ -267,21 +249,21 @@
 		[self.navigationController pushViewController:controller animated:YES];
 		[controller release];	
 	}
-	else if(row == 3 && [self isUserYou] && self.user.following > 0) {
+	else if(row == 3 && self.isYou && self.user.following > 0) {
 		FollowingViewController *controller = [[FollowingViewController alloc] init];
 		controller.user = self.user;
 		[controller setHidesBottomBarWhenPushed:YES];
 		[self.navigationController pushViewController:controller animated:YES];
 		[controller release];	
 	}
-	else if(row == 4 && [self isUserYou] && self.user.followers > 0) {
+	else if(row == 4 && self.isYou && self.user.followers > 0) {
 		FollowersViewController *controller = [[FollowersViewController alloc] init];
 		controller.user = self.user;
 		[controller setHidesBottomBarWhenPushed:YES];
 		[self.navigationController pushViewController:controller animated:YES];
 		[controller release];	
 	}
-	else if(row == 5 && [self isUserYou]) {
+	else if(row == 5 && self.isYou) {
 		LeaderboardViewController *controller = [[LeaderboardViewController alloc] init];
 		[controller setHidesBottomBarWhenPushed:YES];
 		[self.navigationController pushViewController:controller animated:YES];

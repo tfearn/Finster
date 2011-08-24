@@ -44,6 +44,15 @@
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 
+	// Is this me?
+	if(self.user == nil && self.user.userID == nil) {
+		self.isYou = YES;
+	}
+	else if(self.user != nil) {
+		if([self.user.groupType caseInsensitiveCompare:@"you"] == NSOrderedSame)
+			self.isYou = YES;
+	}
+	
 	// Retrieve the user stats every time the view appears
 	[self getData];
 }

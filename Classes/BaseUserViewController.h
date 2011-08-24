@@ -21,8 +21,7 @@
 	ASIHTTPRequest *_request;
 	ImageManager *_imageManager;
 	User *_user;
-	
-	BOOL isYou;
+	BOOL _isYou;
 }
 @property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, retain) UIImageView *userImageView;
@@ -30,6 +29,7 @@
 @property (nonatomic, retain) ASIHTTPRequest *request;
 @property (nonatomic, retain) ImageManager *imageManager;
 @property (nonatomic, retain) User *user;
+@property BOOL isYou;
 
 - (void)getData;
 

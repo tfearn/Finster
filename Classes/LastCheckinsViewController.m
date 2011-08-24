@@ -142,6 +142,10 @@
 	return [self.checkIns count];
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	return @"Last check-in by ticker";
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableview cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	static NSString *CustomCellIdentifier = @"LastCheckInsViewCellIdentifier ";
 	
