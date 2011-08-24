@@ -275,7 +275,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>41</integer>
+									<integer>40</integer>
 									<integer>27</integer>
 									<integer>21</integer>
 									<integer>3</integer>
@@ -283,7 +283,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 195}, {318, 966}}</string>
+							<string>{{0, 603}, {318, 966}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -320,7 +320,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>LastCheckinsViewController.m</string>
+								<string>LastCheckinsViewController.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -328,11 +328,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>LastCheckinsViewController.m</string>
+										<string>LastCheckinsViewController.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>A8F06D931405359B00784638</string>
+										<string>A8F06DCE14053C1900784638</string>
 										<key>history</key>
 										<array>
 											<string>A87744431356918400DD721B</string>
@@ -445,9 +445,7 @@
 											<string>A8A5330814017A2400A166C2</string>
 											<string>A8A5332714017D5300A166C2</string>
 											<string>A8A5332814017D5300A166C2</string>
-											<string>A8A533671402DC4700A166C2</string>
 											<string>A8A533691402DC4700A166C2</string>
-											<string>A8A5336A1402DC4700A166C2</string>
 											<string>A8A5336B1402DC4700A166C2</string>
 											<string>A8A5336C1402DC4700A166C2</string>
 											<string>A8A5336E1402DC4700A166C2</string>
@@ -461,15 +459,17 @@
 											<string>A8A533761402DC4700A166C2</string>
 											<string>A8A533781402DC4700A166C2</string>
 											<string>A8A533791402DC4700A166C2</string>
-											<string>A8A533891402DE7000A166C2</string>
 											<string>A8A5338B1402DE7000A166C2</string>
 											<string>A8F06D7F140534C400784638</string>
-											<string>A8F06D80140534C400784638</string>
 											<string>A8F06D81140534C400784638</string>
-											<string>A8F06D82140534C400784638</string>
 											<string>A8F06D891405356000784638</string>
 											<string>A8F06D8A1405356000784638</string>
-											<string>A8F06D641405303800784638</string>
+											<string>A8F06D9F140536C100784638</string>
+											<string>A8F06DAF1405398F00784638</string>
+											<string>A8F06DB01405398F00784638</string>
+											<string>A8F06DB21405398F00784638</string>
+											<string>A8F06DCC14053C1900784638</string>
+											<string>A8F06DCD14053C1900784638</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -667,13 +667,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>A8F06D8E1405356000784638</string>
-		<string>1C530D57069F1CE1000CFCEE</string>
+		<string>A8F06DCF14053C1900784638</string>
 		<string>A8F06D691405303800784638</string>
 		<string>A8F06D5C14050D0F00784638</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>A8774399135660B600DD721B</string>
+		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>/Users/tfearn/Project/Finster/Finster.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -693,12 +693,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>BaseUserViewController.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -916,7 +918,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CheckInReviewViewController.m</string>
+										<string>ActivityViewController.m</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
@@ -982,7 +984,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C530D57069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

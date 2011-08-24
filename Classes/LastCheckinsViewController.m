@@ -15,9 +15,12 @@
 
 
 @implementation LastCheckinsViewController
+@synthesize userImageView = _userImageView;
+@synthesize username = _username;
 @synthesize tableView = _tableView;
 @synthesize request = _request;
 @synthesize jsonParser = _jsonParser;
+@synthesize imageManager = _imageManager;
 @synthesize checkIns = _checkIns;
 @synthesize user = _user;
 
@@ -27,10 +30,26 @@
 	
 	self.navigationItem.title = @"Market Outlook";
 	
-	[self.tableView setRowHeight:80.0];
+	[self.tableView setRowHeight:70.0];
 	
 	// Initialize the JSON parser
 	_jsonParser = [[SBJSON alloc] init];
+
+	// Initialize the ImageManager to get user pictures
+	_imageManager = [[ImageManager alloc] init];
+	self.imageManager.delegate = self;
+	
+	// Set the username label
+	self.username.text = self.user.userName;
+	
+	// Tell the ImageManager to get the pictures if it does not already have them
+	if(self.user != nil) {
+		Image *image = [self.imageManager getImage:self.user.imageUrl];
+		if(image != nil) {
+			self.user.image = image.image;
+			[self.userImageView setImage:self.user.image];
+		}
+	}
 	
 	// Do a request for data
 	[self getData];
@@ -53,8 +72,11 @@
 	if(self.request != nil)
 		[_request clearDelegatesAndCancel];
 	
+	[_userImageView release];
+	[_username release];
 	[_tableView release];
 	[_jsonParser release];
+	[_imageManager release];
 	[_checkIns release];
 	[_user release];
     [super dealloc];
@@ -132,6 +154,18 @@
 
 
 #pragma mark -
+#pragma mark ImageManagerDelegate Methods
+
+- (void)imageRequestComplete:(Image *)image {
+	[self.userImageView setImage:image.image];
+}
+
+- (void)imageRequestFailure:(NSString *)url {
+	// We don't care if it fails
+}
+
+
+#pragma mark -
 #pragma mark UITableViewDataSource Methods
 
 - (NSInteger)numberOfSectionsInTableView: (UITableView *)tableview {
@@ -143,7 +177,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	return @"Last check-in by ticker";
+	return @"Last check-in for ticker";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableview cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -204,6 +238,13 @@
 #pragma mark UITableViewDelegate Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	int row = [indexPath row];
+	CheckIn *checkIn = [self.checkIns objectAtIndex:row];
+	
+	CheckInDetailsViewController *controller = [[CheckInDetailsViewController alloc] init];
+	controller.checkIn = checkIn;
+	[self.navigationController pushViewController:controller animated:YES];
+	[controller release];
 }
 
 @end
