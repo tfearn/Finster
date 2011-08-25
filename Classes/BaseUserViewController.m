@@ -204,13 +204,13 @@
 		case 3:
 			cell.textLabel.text = [NSString stringWithFormat:@"Following %d", self.user.following];
 			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
-			if(self.isYou && self.user.following > 0)
+			if(self.user.following > 0)
 				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			break;
 		case 4:
 			cell.textLabel.text = [NSString stringWithFormat:@"Followers %d", self.user.followers];
 			cell.imageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tabbar-group" ofType:@"png"]];
-			if(self.isYou && self.user.followers > 0)
+			if(self.user.followers > 0)
 				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			break;
 		case 5:
@@ -249,14 +249,14 @@
 		[self.navigationController pushViewController:controller animated:YES];
 		[controller release];	
 	}
-	else if(row == 3 && self.isYou && self.user.following > 0) {
+	else if(row == 3 && self.user.following > 0) {
 		FollowingViewController *controller = [[FollowingViewController alloc] init];
 		controller.user = self.user;
 		[controller setHidesBottomBarWhenPushed:YES];
 		[self.navigationController pushViewController:controller animated:YES];
 		[controller release];	
 	}
-	else if(row == 4 && self.isYou && self.user.followers > 0) {
+	else if(row == 4 && self.user.followers > 0) {
 		FollowersViewController *controller = [[FollowersViewController alloc] init];
 		controller.user = self.user;
 		[controller setHidesBottomBarWhenPushed:YES];

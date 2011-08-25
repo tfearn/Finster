@@ -1356,7 +1356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Todd Fearn (3TVVZ6J6JA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: iDATA Corporation";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Finster_Prefix.pch;
@@ -1368,7 +1368,7 @@
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
 				);
 				PRODUCT_NAME = Finster;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "11E7029B-1D7C-4E8E-96E6-9B00BCF71E92";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9AC9F9FF-9CC8-46D2-A8D6-BDD876356578";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
