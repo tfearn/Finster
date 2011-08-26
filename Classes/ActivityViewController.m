@@ -20,6 +20,7 @@
 @synthesize checkIns = _checkIns;
 @synthesize checkInsNetwork = _checkInsNetwork;
 @synthesize imageManager = _imageManager;
+@synthesize lastRequestDate = _lastRequestDate;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -36,6 +37,15 @@
 	
 	// Do a request for data
 	[self getData];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+
+	// If we haven't had an update in over 10 minutes, automatically refresh
+	NSDate *now = [NSDate date];
+	if([now timeIntervalSince1970] - [self.lastRequestDate timeIntervalSince1970] > (10*60))
+		[self getData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,10 +71,13 @@
 	[_checkIns release];
 	[_checkInsNetwork release];
 	[_imageManager release];
+	[_lastRequestDate release];
     [super dealloc];
 }
 
 - (void)getData {
+	self.lastRequestDate = [NSDate date];
+	
 	// Do the request for You and Friends
 	_request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:kUrlGetCheckInsYouFriends]];
 	[self.request setDelegate:self];

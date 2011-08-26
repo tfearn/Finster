@@ -175,6 +175,11 @@
 			A892CFB0140809AF00ED69E6 /* PBXTextBookmark */ = A892CFB0140809AF00ED69E6 /* PBXTextBookmark */;
 			A892CFB1140809AF00ED69E6 /* PBXTextBookmark */ = A892CFB1140809AF00ED69E6 /* PBXTextBookmark */;
 			A892CFB2140809AF00ED69E6 /* PBXTextBookmark */ = A892CFB2140809AF00ED69E6 /* PBXTextBookmark */;
+			A892CFBD14080C2A00ED69E6 /* PBXTextBookmark */ = A892CFBD14080C2A00ED69E6 /* PBXTextBookmark */;
+			A892CFBE14080C2A00ED69E6 /* PBXTextBookmark */ = A892CFBE14080C2A00ED69E6 /* PBXTextBookmark */;
+			A892CFBF14080C2A00ED69E6 /* PBXTextBookmark */ = A892CFBF14080C2A00ED69E6 /* PBXTextBookmark */;
+			A892CFC014080C2A00ED69E6 /* PBXTextBookmark */ = A892CFC014080C2A00ED69E6 /* PBXTextBookmark */;
+			A892CFC214080CAE00ED69E6 /* PBXTextBookmark */ = A892CFC214080CAE00ED69E6 /* PBXTextBookmark */;
 			A895C53913FF4E9D00CF388A = A895C53913FF4E9D00CF388A /* PBXTextBookmark */;
 			A89E5BAA13FF270A000A88D0 = A89E5BAA13FF270A000A88D0 /* PBXTextBookmark */;
 			A89E5BAB13FF270A000A88D0 = A89E5BAB13FF270A000A88D0 /* PBXTextBookmark */;
@@ -686,7 +691,7 @@
 		fRef = A83AE1AB13D0AC5400D1C045 /* ActivityViewController.m */;
 		name = "ActivityViewController.m: 166";
 		rLen = 0;
-		rLoc = 4998;
+		rLoc = 5404;
 		rType = 0;
 		vrLen = 2271;
 		vrLoc = 1117;
@@ -767,16 +772,16 @@
 	};
 	A83AE1AA13D0AC5400D1C045 /* ActivityViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1541, 947}}";
-			sepNavSelRange = "{530, 0}";
-			sepNavVisRange = "{0, 1202}";
+			sepNavIntBoundsRect = "{{0, 0}, {1125, 566}}";
+			sepNavSelRange = "{1276, 0}";
+			sepNavVisRange = "{0, 1284}";
 		};
 	};
 	A83AE1AB13D0AC5400D1C045 /* ActivityViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1391, 4758}}";
-			sepNavSelRange = "{7062, 0}";
-			sepNavVisRange = "{6335, 825}";
+			sepNavIntBoundsRect = "{{0, 0}, {879, 5213}}";
+			sepNavSelRange = "{1223, 0}";
+			sepNavVisRange = "{600, 1244}";
 		};
 	};
 	A83AE1B713D0B0D100D1C045 /* BaseCheckInsViewController.h */ = {
@@ -1191,7 +1196,7 @@
 		fRef = A83AE1AB13D0AC5400D1C045 /* ActivityViewController.m */;
 		name = "ActivityViewController.m: 228";
 		rLen = 0;
-		rLoc = 7062;
+		rLoc = 7468;
 		rType = 0;
 		vrLen = 825;
 		vrLoc = 6335;
@@ -1310,6 +1315,56 @@
 		rType = 0;
 		vrLen = 1416;
 		vrLoc = 6163;
+	};
+	A892CFBD14080C2A00ED69E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A8ED1E97135C99700003115F /* CheckInConfirmViewController.m */;
+		name = "CheckInConfirmViewController.m: 202";
+		rLen = 13;
+		rLoc = 6980;
+		rType = 0;
+		vrLen = 1572;
+		vrLoc = 6007;
+	};
+	A892CFBE14080C2A00ED69E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A83AE1AA13D0AC5400D1C045 /* ActivityViewController.h */;
+		name = "ActivityViewController.h: 37";
+		rLen = 0;
+		rLoc = 1276;
+		rType = 0;
+		vrLen = 1284;
+		vrLoc = 0;
+	};
+	A892CFBF14080C2A00ED69E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A83AE1AB13D0AC5400D1C045 /* ActivityViewController.m */;
+		name = "ActivityViewController.m: 47";
+		rLen = 0;
+		rLoc = 1298;
+		rType = 0;
+		vrLen = 1237;
+		vrLoc = 551;
+	};
+	A892CFC014080C2A00ED69E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A83AE1AB13D0AC5400D1C045 /* ActivityViewController.m */;
+		name = "ActivityViewController.m: 47";
+		rLen = 0;
+		rLoc = 1298;
+		rType = 0;
+		vrLen = 1188;
+		vrLoc = 600;
+	};
+	A892CFC214080CAE00ED69E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A83AE1AB13D0AC5400D1C045 /* ActivityViewController.m */;
+		name = "ActivityViewController.m: 47";
+		rLen = 0;
+		rLoc = 1223;
+		rType = 0;
+		vrLen = 1244;
+		vrLoc = 600;
 	};
 	A89528C413D313C000A54A38 /* CheckInsByTickerViewController.h */ = {
 		uiCtxt = {
@@ -2157,7 +2212,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1363, 2756}}";
 			sepNavSelRange = "{6980, 13}";
-			sepNavVisRange = "{6163, 1416}";
+			sepNavVisRange = "{6007, 1572}";
 		};
 	};
 	A8ED1EB3135CA82C0003115F /* BaseCheckInViewController.h */ = {

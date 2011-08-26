@@ -26,6 +26,7 @@
 	NSMutableArray *_checkIns;
 	NSMutableArray *_checkInsNetwork;
 	ImageManager *_imageManager;
+	NSDate *_lastRequestDate;
 }
 @property (nonatomic, retain) ASIHTTPRequest *request;
 @property (nonatomic, retain) ASIHTTPRequest *requestCheckInsNetwork;
@@ -33,6 +34,7 @@
 @property (nonatomic, retain) NSMutableArray *checkIns;
 @property (nonatomic, retain) NSMutableArray *checkInsNetwork;
 @property (nonatomic, retain) ImageManager *imageManager;
+@property (nonatomic, retain) NSDate *lastRequestDate;
 
 
 @end
