@@ -64,7 +64,7 @@
 
 // Other defines
 #define kDatabaseFilename						@"finster.sqlite"
-#define kMaxSecondsBetweenNetworkErrorMessages	60.0
+#define kMaxSecondsBetweenNetworkErrorMessages	10.0
 
 // Macros
 #ifndef NDEBUG
@@ -84,5 +84,6 @@
 + (void)logError:(NSError *)error name:(NSString *)name detail:(NSString *)detail;
 + (BOOL)isTwitterConfigured;
 + (NSString *) getTwitterOAuthData;
++ (BOOL)showNetworkError;
 
 @end

@@ -117,8 +117,10 @@
 	[self dismissWaitView];
 	
 	MyLog(@"Network Error: %@", [request.error description]);
-	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:@"Cannot connect to the network" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
-	[alert show];
+	if([Globals showNetworkError]) {
+		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:@"Cannot connect to the network" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+		[alert show];
+	}
 	
 	_isFollowingUserRequest = nil;
 }
@@ -142,8 +144,10 @@
 	[self dismissWaitView];
 	
 	MyLog(@"Network Error: %@", [request.error description]);
-	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:@"Cannot connect to the network" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
-	[alert show];
+	if([Globals showNetworkError]) {
+		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Network Error" message:@"Cannot connect to the network" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] autorelease];
+		[alert show];
+	}
 	
 	_followUnfollowUserRequest = nil;
 }

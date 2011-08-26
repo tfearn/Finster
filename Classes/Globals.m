@@ -10,12 +10,16 @@
 
 static NSString *lastTickerSearch;
 static CSqliteDatabase *db;
-
+static NSDate *lastNetworkError;
 
 @implementation Globals
 
 + (void)initialize {
 	lastTickerSearch = [[NSString alloc] init];
+	
+	// Initialize the last network error date to now - 120 seconds so the initial
+	// network error will show if triggered at startup
+	lastNetworkError = [[NSDate alloc] initWithTimeIntervalSinceNow:-120];
 }
 
 + (NSString *)getLastTickerSearch {
@@ -74,6 +78,18 @@ static CSqliteDatabase *db;
 
 + (NSString *) getTwitterOAuthData {
 	return [[NSUserDefaults standardUserDefaults] objectForKey:kTwitterOAuthData];
+}
+
++ (BOOL)showNetworkError {
+	// Determine how many seconds has passed since the last network error.  If greater than ? then display the network
+	// This reduces annoying network error popups for the user
+	NSTimeInterval seconds = [[NSDate date] timeIntervalSince1970] - [lastNetworkError timeIntervalSince1970];
+	if(seconds > kMaxSecondsBetweenNetworkErrorMessages) {
+		lastNetworkError = [NSDate date];
+		return YES;
+	}
+	
+	return NO;
 }
 
 @end
