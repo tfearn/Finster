@@ -138,6 +138,9 @@
 	[self.navigationController popToRootViewControllerAnimated:YES];
 	
 	_followUnfollowUserRequest = nil;
+	
+	// Send notification
+	[[NSNotificationCenter defaultCenter] postNotificationName:kNotificationFollowingUnfollowing object:self];
 }
 
 - (void)followUnFollowUserRequestFailure:(ASIHTTPRequest *)request {

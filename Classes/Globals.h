@@ -55,12 +55,13 @@
 #define kStartupDelay				1.0
 
 // Notifications
-#define kNotificationCheckInComplete	@"NotificationCheckInComplete"
+#define kNotificationCheckIn				@"NotificationCheckIn"
+#define kNotificationFollowingUnfollowing	@"NotificationFollowingUnfollowing"
 
 // Twitter
-#define kTwitterOAuthConsumerKey		@"V6I9EVAHee2PN9UzUdzYnA"
-#define kTwitterOAuthConsumerSecret		@"SXZJg9jspz39i6Y7W8yr5kD41ZIPWiWLDRTj1ElmEc"
-#define kTwitterOAuthData				@"authData"
+#define kTwitterOAuthConsumerKey			@"V6I9EVAHee2PN9UzUdzYnA"
+#define kTwitterOAuthConsumerSecret			@"SXZJg9jspz39i6Y7W8yr5kD41ZIPWiWLDRTj1ElmEc"
+#define kTwitterOAuthData					@"authData"
 
 // Other defines
 #define kDatabaseFilename						@"finster.sqlite"
@@ -85,5 +86,5 @@
 + (BOOL)isTwitterConfigured;
 + (NSString *) getTwitterOAuthData;
 + (BOOL)showNetworkError;
-
+	
 @end

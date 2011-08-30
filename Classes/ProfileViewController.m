@@ -15,6 +15,7 @@
 @synthesize findFriendsButton = _findFriendsButton;
 @synthesize shareAppActionSheet = _shareAppActionSheet;
 @synthesize findFriendsActionSheet = _findFriendsActionSheet;
+@synthesize lastRequestDate = _lastRequestDate;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -30,6 +31,12 @@
 	self.navigationItem.rightBarButtonItem = feedbackButton; 
 	[feedbackButton release];
 
+	// Add notification observers
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationCheckIn) name:kNotificationCheckIn object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationFollowingUnfollowing) name:kNotificationFollowingUnfollowing object:nil];
+	
+	viewDirty = YES;
+	
 /*
 	// Set the nav bar buttons to green
 	for (UIView *view in self.navigationController.navigationBar.subviews) {
@@ -53,8 +60,21 @@
 			self.isYou = YES;
 	}
 	
-	// Retrieve the user stats every time the view appears
-	[self getData];
+	if(self.lastRequestDate != nil) {
+		// If we haven't had an update in over 1 minute, automatically refresh
+		NSDate *now = [NSDate date];
+		if([now timeIntervalSince1970] - [self.lastRequestDate timeIntervalSince1970] > (1*60))
+			viewDirty = YES;
+	}
+	
+	if(viewDirty) {
+		[self getData];
+		
+		// TODO: this should be in the base class upon a successful request.
+		// Setup a method to call from the base that this class will handle upon success
+		viewDirty = NO;
+		self.lastRequestDate = [NSDate date];
+	}
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,11 +91,23 @@
 }
 
 - (void)dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:kNotificationCheckIn object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:kNotificationFollowingUnfollowing object:nil];
+
 	[_scrollView release];
 	[_findFriendsButton release];
 	[_shareAppActionSheet release];
 	[_findFriendsActionSheet release];
+	[_lastRequestDate release];
     [super dealloc];
+}
+
+- (void)notificationCheckIn {
+	viewDirty = YES;
+}
+
+- (void)notificationFollowingUnfollowing {
+	viewDirty = YES;
 }
 
 - (IBAction)shareAppButtonPressed:(id)sender {

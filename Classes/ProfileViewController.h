@@ -16,11 +16,14 @@
 	IBOutlet UIButton *_findFriendsButton;
 	UIActionSheet *_shareAppActionSheet;
 	UIActionSheet *_findFriendsActionSheet;
+	BOOL viewDirty;
+	NSDate *_lastRequestDate;
 }
 @property (nonatomic, retain) UIScrollView *scrollView;
 @property (nonatomic, retain) UIButton *findFriendsButton;
 @property (nonatomic, retain) UIActionSheet *shareAppActionSheet;
 @property (nonatomic, retain) UIActionSheet *findFriendsActionSheet;
+@property (nonatomic, retain) NSDate *lastRequestDate;
 
 - (IBAction)feedbackButtonPressed:(id)sender;
 - (IBAction)shareAppButtonPressed:(id)sender;

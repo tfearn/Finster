@@ -25,6 +25,9 @@
 	CheckInTypeFormatter *formatter = [[[CheckInTypeFormatter alloc] init] autorelease];
 	NSString *checkInString = [formatter format:self.checkInType symbol:self.ticker.symbol];
 	self.description.text = [NSString stringWithFormat:@"Ok!  We have you as '%@'", checkInString];
+	
+	// Send notification
+	[[NSNotificationCenter defaultCenter] postNotificationName:kNotificationCheckIn object:self];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -41,9 +41,6 @@
 		twitterOn = YES;
 		self.twitterImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"twitter-icon" ofType:@"png"]];
 	}
-
-	// Add a notification observer for check-in complete
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(viewFilterChanged) name:kNotificationCheckInComplete object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,8 +57,6 @@
 }
 
 - (void)dealloc {
-	[[NSNotificationCenter defaultCenter] removeObserver:self name:kNotificationCheckInComplete object:nil];
-	
 	if(self.request != nil)
 		[_request clearDelegatesAndCancel];
 
