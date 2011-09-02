@@ -85,7 +85,8 @@ static NSDate *lastNetworkError;
 	// This reduces annoying network error popups for the user
 	NSTimeInterval seconds = [[NSDate date] timeIntervalSince1970] - [lastNetworkError timeIntervalSince1970];
 	if(seconds > kMaxSecondsBetweenNetworkErrorMessages) {
-		lastNetworkError = [NSDate date];
+		[lastNetworkError release];
+		lastNetworkError = [[NSDate alloc] initWithTimeIntervalSinceNow:0];
 		return YES;
 	}
 	
