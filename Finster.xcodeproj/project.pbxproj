@@ -68,6 +68,7 @@
 		82C107A71357984B00302082 /* TickerFindViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82C107A61357984B00302082 /* TickerFindViewCell.xib */; };
 		82C107F51357A09C00302082 /* CheckInReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C107F41357A09C00302082 /* CheckInReviewViewController.m */; };
 		82C107F71357A0AB00302082 /* CheckInReviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82C107F61357A0AB00302082 /* CheckInReviewView.xib */; };
+		82CF12A9142BCB1200C6E4EF /* BaseCheckInsViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82CF12A8142BCB1200C6E4EF /* BaseCheckInsViewCell2.xib */; };
 		82D11C6413FED2FD00958416 /* LeaderboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D11C6313FED2FD00958416 /* LeaderboardView.xib */; };
 		82E7411913E1E487002B88EB /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E7411813E1E487002B88EB /* UserViewController.m */; };
 		A81EE05213E2F85D0073368E /* FindFriendsOnAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A81EE05113E2F85D0073368E /* FindFriendsOnAppViewController.m */; };
@@ -295,6 +296,7 @@
 		82C107F31357A09C00302082 /* CheckInReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInReviewViewController.h; sourceTree = "<group>"; };
 		82C107F41357A09C00302082 /* CheckInReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInReviewViewController.m; sourceTree = "<group>"; };
 		82C107F61357A0AB00302082 /* CheckInReviewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInReviewView.xib; sourceTree = "<group>"; };
+		82CF12A8142BCB1200C6E4EF /* BaseCheckInsViewCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCheckInsViewCell2.xib; sourceTree = "<group>"; };
 		82D11C6313FED2FD00958416 /* LeaderboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderboardView.xib; sourceTree = "<group>"; };
 		82E7411713E1E487002B88EB /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		82E7411813E1E487002B88EB /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
@@ -547,6 +549,7 @@
 				82C107A61357984B00302082 /* TickerFindViewCell.xib */,
 				A83AE1E013D0BC9E00D1C045 /* ActivityView.xib */,
 				822435CD135F813E00C6258F /* BaseCheckInsViewCell.xib */,
+				82CF12A8142BCB1200C6E4EF /* BaseCheckInsViewCell2.xib */,
 				82765E0E138456A400C3FBC5 /* UserView.xib */,
 				A89528CB13D315F000A54A38 /* CheckInsByTickerView.xib */,
 				A877C6E713DDCFB900ABACE6 /* CheckInsByUserView.xib */,
@@ -1227,6 +1230,7 @@
 				A8A5331314017BCC00A166C2 /* ProfileViewController.xib in Resources */,
 				A8A5335B1402D52700A166C2 /* LastCheckinsView.xib in Resources */,
 				A8A533621402D73A00A166C2 /* LastCheckinsViewCell.xib in Resources */,
+				82CF12A9142BCB1200C6E4EF /* BaseCheckInsViewCell2.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,6 +15,7 @@
 @synthesize ticker = _ticker;
 @synthesize title = _title;
 @synthesize company = _company;
+@synthesize comment = _comment;
 @synthesize timestamp = _timestamp;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -42,6 +43,7 @@
 	[_ticker release];
 	[_title release];
 	[_company release];
+	[_comment release];
 	[_timestamp release];
     [super dealloc];
 }

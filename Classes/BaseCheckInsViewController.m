@@ -200,19 +200,35 @@
 	return nil;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	int row = [indexPath row];
+	CheckIn *checkIn = [self.checkIns objectAtIndex:row];
+	if(checkIn.comment != nil && [checkIn.comment length])
+		return 150.0;
+	else
+		return 100.0;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableview cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	static NSString *CustomCellIdentifier = @"BaseCheckInsViewCellIdentifier ";
+	static NSString *CustomCellIdentifier = @"BaseCheckInsViewCellIdentifier";
+	
+	int row = [indexPath row];
+	CheckIn *checkIn = [self.checkIns objectAtIndex:row];
 	
 	BaseCheckInsViewCell *cell = (BaseCheckInsViewCell *)[tableview dequeueReusableCellWithIdentifier: CustomCellIdentifier];
 	if (cell == nil)  {
-		NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BaseCheckInsViewCell" owner:self options:nil];
+		NSArray *nib = nil;
+		if(checkIn.comment != nil && [checkIn.comment length]) {
+			nib = [[NSBundle mainBundle] loadNibNamed:@"BaseCheckInsViewCell2" owner:self options:nil];
+		}
+		else {
+			nib = [[NSBundle mainBundle] loadNibNamed:@"BaseCheckInsViewCell" owner:self options:nil];
+		}
+
 		for (id oneObject in nib)
 			if ([oneObject isKindOfClass:[BaseCheckInsViewCell class]])
 				cell = (BaseCheckInsViewCell *)oneObject;
 	}
-	
-	int row = [indexPath row];
-	CheckIn *checkIn = [self.checkIns objectAtIndex:row];
 	
 	if(checkIn.user.image != nil)
 		cell.userImageView.image = checkIn.user.image;
@@ -225,6 +241,8 @@
 	cell.title.text = [formatter format:checkIn.checkinType symbol:checkIn.ticker.symbol];
 	
 	cell.company.text = checkIn.ticker.symbolName;
+	
+	cell.comment.text = checkIn.comment;
 	
 	// Determine the differnce between the check-in time and the current time
 	TimePassedFormatter *timePassedFormatter = [[[TimePassedFormatter alloc] init] autorelease];

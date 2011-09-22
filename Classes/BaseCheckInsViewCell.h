@@ -16,6 +16,7 @@
 	IBOutlet UILabel *_ticker;
 	IBOutlet UILabel *_title;
 	IBOutlet UILabel *_company;
+	IBOutlet UILabel *_comment;
 	IBOutlet UILabel *_timestamp;
 }
 @property (nonatomic, retain) UIImageView *userImageView;
@@ -24,6 +25,7 @@
 @property (nonatomic, retain) UILabel *ticker;
 @property (nonatomic, retain) UILabel *title;
 @property (nonatomic, retain) UILabel *company;
+@property (nonatomic, retain) UILabel *comment;
 @property (nonatomic, retain) UILabel *timestamp;
 
 @end
