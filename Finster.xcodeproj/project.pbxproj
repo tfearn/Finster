@@ -63,7 +63,6 @@
 		82C1058813574E6C00302082 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C1058713574E6C00302082 /* CFNetwork.framework */; };
 		82C1058A13574E8400302082 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C1058913574E8400302082 /* SystemConfiguration.framework */; };
 		82C1058C13574E9A00302082 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C1058B13574E9A00302082 /* MobileCoreServices.framework */; };
-		82C105D013574EDD00302082 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C105CF13574EDD00302082 /* libz.1.2.3.dylib */; };
 		82C107A01357970700302082 /* TickerFindViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C1079F1357970700302082 /* TickerFindViewCell.m */; };
 		82C107A71357984B00302082 /* TickerFindViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82C107A61357984B00302082 /* TickerFindViewCell.xib */; };
 		82C107F51357A09C00302082 /* CheckInReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C107F41357A09C00302082 /* CheckInReviewViewController.m */; };
@@ -74,6 +73,7 @@
 		A81EE05213E2F85D0073368E /* FindFriendsOnAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A81EE05113E2F85D0073368E /* FindFriendsOnAppViewController.m */; };
 		A81EE05413E2F8840073368E /* FindFriendsOnAppView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A81EE05313E2F8840073368E /* FindFriendsOnAppView.xib */; };
 		A81EE05813E2F9E30073368E /* BaseUserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A81EE05713E2F9E30073368E /* BaseUserListViewController.m */; };
+		A825D5A815C2B9DC00E7B81E /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A825D5A715C2B9DC00E7B81E /* libz.1.1.3.dylib */; };
 		A82F907613FFA4BC00D51ED2 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = A82F907513FFA4BC00D51ED2 /* Utility.m */; };
 		A83419241367845C00DA62D1 /* DbSearchedTickerGet.m in Sources */ = {isa = PBXBuildFile; fileRef = A83419231367845C00DA62D1 /* DbSearchedTickerGet.m */; };
 		A83AE1AC13D0AC5400D1C045 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83AE1AB13D0AC5400D1C045 /* ActivityViewController.m */; };
@@ -289,7 +289,6 @@
 		82C1058713574E6C00302082 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		82C1058913574E8400302082 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		82C1058B13574E9A00302082 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		82C105CF13574EDD00302082 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		82C1079E1357970700302082 /* TickerFindViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TickerFindViewCell.h; sourceTree = "<group>"; };
 		82C1079F1357970700302082 /* TickerFindViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TickerFindViewCell.m; sourceTree = "<group>"; };
 		82C107A61357984B00302082 /* TickerFindViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TickerFindViewCell.xib; sourceTree = "<group>"; };
@@ -306,6 +305,7 @@
 		A81EE05313E2F8840073368E /* FindFriendsOnAppView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindFriendsOnAppView.xib; sourceTree = "<group>"; };
 		A81EE05613E2F9E30073368E /* BaseUserListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUserListViewController.h; sourceTree = "<group>"; };
 		A81EE05713E2F9E30073368E /* BaseUserListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUserListViewController.m; sourceTree = "<group>"; };
+		A825D5A715C2B9DC00E7B81E /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		A82F907413FFA4BC00D51ED2 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		A82F907513FFA4BC00D51ED2 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		A83419221367845C00DA62D1 /* DbSearchedTickerGet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbSearchedTickerGet.h; sourceTree = "<group>"; };
@@ -469,13 +469,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A825D5A815C2B9DC00E7B81E /* libz.1.1.3.dylib in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
 				82C1058813574E6C00302082 /* CFNetwork.framework in Frameworks */,
 				82C1058A13574E8400302082 /* SystemConfiguration.framework in Frameworks */,
 				82C1058C13574E9A00302082 /* MobileCoreServices.framework in Frameworks */,
-				82C105D013574EDD00302082 /* libz.1.2.3.dylib in Frameworks */,
 				A8FD286F1367674C0099E7FC /* libsqlite3.0.dylib in Frameworks */,
 				828A79BD13E0A1550082D968 /* MessageUI.framework in Frameworks */,
 				A86C8FE213E6F51E001529AE /* QuartzCore.framework in Frameworks */,
@@ -576,7 +576,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
-				82C105CF13574EDD00302082 /* libz.1.2.3.dylib */,
+				A825D5A715C2B9DC00E7B81E /* libz.1.1.3.dylib */,
 				A8FD286E1367674C0099E7FC /* libsqlite3.0.dylib */,
 				828A79BC13E0A1550082D968 /* MessageUI.framework */,
 				A86C8FE113E6F51E001529AE /* QuartzCore.framework */,
@@ -1338,6 +1338,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv6,
+					armv7,
+				);
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Todd Fearn (3TVVZ6J6JA)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1360,7 +1364,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Todd Fearn (3TVVZ6J6JA)";
+				ARCHS = (
+					armv6,
+					armv7,
+				);
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: iDATA Corporation";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Finster_Prefix.pch;
@@ -1372,7 +1380,7 @@
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
 				);
 				PRODUCT_NAME = Finster;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "11E7029B-1D7C-4E8E-96E6-9B00BCF71E92";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9AC9F9FF-9CC8-46D2-A8D6-BDD876356578";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
